@@ -1,4 +1,4 @@
-baseurl: https://wizardofmenlo.github.io/WizBlog/
+baseurl: wizardofmenlo.github.io/WizBlog/
 languageCode: en-us
 theme: hugo-theme-stack
 paginate: 5
