@@ -8,13 +8,13 @@ title: Wizard's Blog
 # Available values: en, fr, id, ja, ko, pt-br, zh-cn, es, de, nl
 DefaultContentLanguage: en
 
-enambleEmoji: true
+enableEmoji: true
 
 googleAnalytics: G-183HXT3DZB
 
 params:
     mainSections:
-        - post
+        - crypto
     featuredImageField: image
     rssFullContent: true
     favicon:
