@@ -15,6 +15,7 @@ googleAnalytics: G-183HXT3DZB
 params:
     mainSections:
         - crypto
+        - math
     featuredImageField: image
     rssFullContent: true
     favicon:
