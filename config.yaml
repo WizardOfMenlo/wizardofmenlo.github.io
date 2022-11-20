@@ -30,7 +30,7 @@ params:
 
     sidebar:
         emoji: 🚀
-        subtitle: MSc in Cybersecurity at ETH Zurich. 
+        subtitle: PhD in Cryptography at EPFL. 
         avatar:
             local: true
             src: img/avatar.jpg

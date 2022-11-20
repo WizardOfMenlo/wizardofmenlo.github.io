@@ -1,7 +1,7 @@
 ---
 title: "Exercises"
 date: 2021-07-30T01:01:55+02:00
-draft: false
+draft: true
 ---
 
 # Exercises

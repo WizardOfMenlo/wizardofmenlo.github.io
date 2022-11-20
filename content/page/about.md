@@ -1,6 +1,6 @@
 ---
 title: About me
-description: Hugo, the world's fastest framework for building websites
+description: Some things about myself
 date: '2020-04-26'
 aliases:
   - about-us
@@ -12,7 +12,8 @@ menu:
         weight: -90
         pre: user
 ---
-Hi! You have stumbled onto my blog, and it might be rude not to introduce myself. I am Giacomo, a MSc student of Cybersecurity at ETH Zurich.
-I am interested in a variety of things, mostly about cryptography and formal security methods, but also fascinated by pure maths such as category 
-theory, number theory and algebraic geometry. To be completely honest, I still have not decided what this blog will be about, I suspect it will be all 
-over the place, so I hope you will enjoy the ride!
+Hi! Welcome to this space. I am Giacomo, a PhD student at EPFL, where I am lucky enough to be supervised by [Alessandro Chiesa](https://ic-people.epfl.ch/~achiesa/).
+
+My research interests are quite varied, spacing from (my main focus) interactive proof systems and their practical instantations to cryptanalysis of post quantum cryptographic primitives, methods for automatic discovery of bugs in cryptographic implementations and more.
+
+Outside of this, I tend to be passionate about coffee, football, basketball, and obscure tidbits of italian history.
