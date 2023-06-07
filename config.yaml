@@ -33,7 +33,7 @@ params:
         subtitle: PhD in Cryptography at EPFL. 
         avatar:
             local: true
-            src: img/avatar.jpg
+            src: img/avatar.png
 
     article:
         math: true 
