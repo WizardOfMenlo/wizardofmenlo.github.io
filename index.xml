@@ -1,1 +1,92 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Giacomo's Blog</title><link>https://wizardofmenlo.github.io/</link><description>Recent content on Giacomo's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 26 Apr 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://wizardofmenlo.github.io/index.xml" rel="self" type="application/rss+xml"/></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Giacomo's Blog</title><link>https://wizardofmenlo.github.io/</link><description>Recent content on Giacomo's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 14 Aug 2023 20:49:45 +0200</lastBuildDate><atom:link href="https://wizardofmenlo.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Lattice-Based Polynomial Commitments: Towards Asymptotic and Concrete Efficiency</title><link>https://wizardofmenlo.github.io/lattices/towards-asymptotic-and-concrete-efficiency/</link><pubDate>Mon, 14 Aug 2023 20:49:45 +0200</pubDate><guid>https://wizardofmenlo.github.io/lattices/towards-asymptotic-and-concrete-efficiency/</guid><description>&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>In this blog-post, I will be taking a look at my recent work with Ngoc Khanh Nguyen, &lt;a class="link" href="https://eprint.iacr.org/2023/846" target="_blank" rel="noopener"
+>full version&lt;/a>.
+We extend the vector commitment scheme of [WW23]&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup> with an evaluation proof, and achieve a lattice-based polynomial commitment scheme with polylogarithmic proof size and verifier complexity.
+We further investigate the applicability of our techniques to the Polynomial IOP of [Marlin]&lt;sup id="fnref:2">&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref">2&lt;/a>&lt;/sup>, show that our scheme is easily batchable and more!&lt;/p>
+&lt;h2 id="polynomial-commitments">Polynomial Commitments&lt;/h2>
+&lt;p>A polynomial commitment scheme is a natural generalization of a vector commitment scheme, in which a party is able to commit to a polynomial $f$, and later engage in a &lt;em>evaluation protocol&lt;/em> to show that $f(u) = z$. In this work, we consider polynomials of bounded degree $d$ with coefficients over the polynomial ring $\mathcal{R}_q$ (we also show to adapt this construction for polynomials in $\mathbb{F}^{\leq d}[X]$, but details are left for the full version).&lt;/p>
+&lt;p>The interface of a polynomial commitment scheme follows partially that of standard commitmentscheme:&lt;/p>
+&lt;ul>
+&lt;li>$\mathsf{Setup}(1^\lambda) \to (\mathsf{pk}, \mathsf{vk})$ takes a security parameter and outputs a proving and a verification key.&lt;/li>
+&lt;li>$\mathsf{Com}(\mathsf{pk}, f) \to (\sigma, \mathsf{aux})$ takes a proving key and a polynomial $f$ and outputs a commitment $\sigma$ and auxiliary decommitment information $\mathsf{aux}$.&lt;/li>
+&lt;li>$\mathsf{Open}(\mathsf{vk}, f, \sigma, \mathsf{aux})$ checks whether $(\sigma, \mathsf{aux})$ are a valid commitment-opening pair for $f$.&lt;/li>
+&lt;/ul>
+&lt;p>Furthermore, we extend the interface with an evaluation protocol between a prover and a verifier $\mathbf{P}, \mathbf{V}$. We denote the protocol as $\langle \mathbf{P}(\mathsf{pk}, f, \mathsf{aux}), \mathbf{V}(\mathsf{vk}) \rangle(\sigma, u, v)$.&lt;/p>
+&lt;p>The properties that we require from a polynomial commitment scheme are:&lt;/p>
+&lt;ol>
+&lt;li>Completeness of the commitment scheme: If $\mathsf{pk}, \mathsf{vk}, \sigma, \mathsf{aux} $ are honestly generated (w.r.t to $f$), then $\mathsf{Open}(\mathsf{vk}, f, \sigma, \mathsf{aux}) = 1$.&lt;/li>
+&lt;li>Binding of the commitment scheme: The probability that an efficient adversary can find $\sigma, f,g, \mathsf{aux}_f, \mathsf{aux_g}$ such that $\mathsf{Open}(\mathsf{vk}, f, \sigma, \mathsf{aux}_f) = 1 = \mathsf{Open}(\mathsf{vk}, g, \sigma, \mathsf{aux}_g)$ is negligible.&lt;/li>
+&lt;li>Evaluation completeness: If $f(u) = z$, the evaluation protocol will accept.&lt;/li>
+&lt;li>Evaluation knowledge-soundness: There exists an efficient extractor that, if a malicous prover is able to make the verifier accept with non-negligible probability, is able to extract a polynomial $f$ and an opening $\mathsf{aux}$ such that $f(u) = z$ and $\mathsf{Open}(\mathsf{vk}, f, \sigma, \mathsf{aux}_f) = 1$.&lt;/li>
+&lt;/ol>
+&lt;p>In the paper, we also consider hiding, but in the interest of space we avoid this here.&lt;/p>
+&lt;h2 id="weewu-commitments">WeeWu Commitments&lt;/h2>
+&lt;p>Our starting point is the commitment scheme introduced in [WW23]&lt;sup id="fnref1:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>. Their commitments relies on the BASIS assumption (Basis-Augmented Short Integer Solution). It roughly states that an adversary that is given access to a random matrix $\mathbf{A}$, should not be able to find a short vector $\mathbf{v}$ such that $\mathbf{A}\mathbf{v} = 0$ even when given access to a trapdoor to sample short preimages of a matrix $\mathbf{B}$ related to $\mathbf{A}$. In their work, the matrix $\mathbf{B}$ is defined as $$\begin{pmatrix}\mathbf{A}_0 &amp;amp;&amp;amp;&amp;amp; - \mathbf{G}\\ &amp;amp; \ddots &amp;amp; &amp;amp; \\ &amp;amp; &amp;amp; \mathbf{A}_d &amp;amp; - \mathbf{G} \end{pmatrix}$$ where $\mathbf{A_i} = \mathbf{W_i} \mathbf{A}$ for $\mathbf{W_i}$ random invertible matrices and $\mathbf{G}$ the gadget matrix of [MP12]&lt;sup id="fnref:3">&lt;a href="#fn:3" class="footnote-ref" role="doc-noteref">3&lt;/a>&lt;/sup>.
+We extend this to two new assumptions, the powerBASIS and PRISIS assumptions. Roughly, we introduce more structure in the $\mathbf{W}_i$. In powerBASIS, we let $\mathbf{W}_i = \mathbf{W}^{i}$, while in PRISIS we set $\mathbf{W}_i = w^{i} \mathbf{I}$.
+With this added structure, the commitment scheme that we construct is exactly as in [WW23] (here we present the powerBASIS version).
+Namely:&lt;/p>
+&lt;ul>
+&lt;li>$\mathsf{Setup}(1^\lambda) \to (\mathsf{pk}, \mathsf{vk})$ samples $\mathbf{A}, \mathbf{W}$ and uses [MP12] sampling to construct a trapdoor $\mathbf{T}$ of $\mathbf{B}$. The verification key consists of $\mathbf{A}, \mathbf{W}$ and the proving key additionally contains $\mathbf{T}$.&lt;/li>
+&lt;li>$\mathsf{Com}(\mathsf{pk}, f) \to (\sigma, \mathsf{aux})$ uses $\mathbf{T}$ to sample short $\mathbf{z_i}$ and $\hat{\mathbf{c}}$ such that $\mathbf{B}[\mathbf{z}_0, \dots, \mathbf{z}_d, \hat{\mathbf{c}}]^\top = [-f_0 \mathbf{W}^0 \mathbf{e}_1, \dots, - f_d \mathbf{W}^d \mathbf{e}_1]^\top$, it then outputs $\mathbf{c} := \mathbf{G}\hat{\mathbf{c}}$ and $(\mathbf{z}_i)$ as decommitment.&lt;/li>
+&lt;li>$\mathsf{Open}(\mathsf{vk}, f, \sigma, \mathsf{aux})$ checks that the openings are indeed short, and that the equations are all satisfied: namely it checks that $$\mathbf{A}\mathbf{z}_i + f_i \mathbf{e}_1 = \mathbf{W}^{-i}\mathbf{c} \enspace.$$&lt;/li>
+&lt;/ul>
+&lt;p>We then show that this commitment scheme is binding (even with respect to relaxed openings, as customary in the lattice-world).&lt;/p>
+&lt;h2 id="evaluation-proofs">Evaluation Proofs&lt;/h2>
+&lt;p>Now, our evaluation protocols are inspired partly by FRI (even though the setting and analysis are completely different). Suppose we aim to show that $f(u) = z$.
+We take our polynomial $f$ and write it as an odd an even part i.e.:
+$$f(X) = f_0(X^2) + Xf_1(X^2)$$
+The prover then sends evaluations $z_0, z_1$ of $f_0, f_1$ on $u^2$.
+The verifier checks that $z_0 + u z_1 = z$ and sends a random challenge $\alpha$ to the prover, and computes an updated commitment $\mathbf{c}&amp;rsquo; = (1 + \alpha \mathbf{W}^{-1}) \mathbf{c}$ and a new verification key where $\mathbf{W}&amp;rsquo; = \mathbf{W}^2$.
+The prover computes a new folded polynomial $g$ and updated opening as follows:
+$$g(X) = f_0(X) + \alpha f_1(X), \mathbf{s}_i = \mathbf{z}_{2i} + \alpha \mathbf{z}_{2i+1}\enspace.$$
+The crucial observation is that the parties now can recurse on the claim that $g(u^2) = z_0 + \alpha z_1$, which is about a polynomial of degree $d/2$. We recurse thus $\log d$ times, until the prover can just send a constant sized opening.
+Note in particular that the additional structure of the powerBASIS construction allowed the verifier to efficiently construct a commitment to $g$ from one to $f$. In particular, note that
+$$\mathbf{A}\mathbf{s}_i + g_i \mathbf{e}_1 = \mathbf{A}\mathbf{z}_{2i} + f_{2i}\mathbf{e}_1 + \alpha \cdot ( \mathbf{A}\mathbf{z}_{2i+1} + f_{2i+1}\mathbf{e}_1)$$
+$$ = \mathbf{W}^{-2i}\mathbf{c} + \alpha \mathbf{W}^{-2i - 1}\mathbf{c} = (\mathbf{W}^2)^{-i} (1 + \alpha \mathbf{W}^{-1})\mathbf{c}$$&lt;/p>
+&lt;p>Crucially, compared to other protocols like lattice-bulletproofs, the extraction keeps the norm growth more manageable (at the cost of trusted setup), which should lead to more concretely efficient protocols. The details are in the paper, due to the requirement of a flurry of notation.&lt;/p>
+&lt;p>Now, what is left to do is to manage the norm growth. We do this in two ways, which leads to two different protocols (with different tradeoff).&lt;/p>
+&lt;ul>
+&lt;li>By selecting the challenge $\alpha$ to be a (signed) monomial, we can ensure that the norm (here and in extraction) remains polynomial throught the $\log d$ rounds of the protocol. This achieves a protocol with polylogarithmic communication and verifier complexity. However, since the challenge set is of size $\mathrm{poly}(\lambda)$, we obtain a non-negligible soundness error, which needs to be mitigated by parallel repetition, making the protocol unsuitable to be made non-interactive via Fiat-Shamir.&lt;/li>
+&lt;li>Instead of folding the polynomial halfway, we can aim to fold it in $k$-parts, and sample from an exponentially sized set. The norm growth is then much higher, only making it affordable to run the protocol $\log \log d$ iterations. Choosing $k$ appropriately, we are able to obtain a protocol with negligible knowledge soundness error and verifier and communication complexity &amp;ldquo;quasi-polylogarithmic&amp;rdquo; $d^{1/\log \log d}$&lt;sup id="fnref:4">&lt;a href="#fn:4" class="footnote-ref" role="doc-noteref">4&lt;/a>&lt;/sup>.&lt;/li>
+&lt;/ul>
+&lt;h2 id="instantiations">Instantiations&lt;/h2>
+&lt;p>We then looked at how the scheme could perform concretely. The repetition needed to achieve 128 bits of security in the monomial protocol yields very large proof sizes, in the order of hundred of MBs. The other protocol strikes much closer to concrete efficiency, achieving proof sizes around 6 MBs.
+We also looked at applying the two protocols in Marlin, making also use of some natural ways to aggregate our protocols. With this, we obtain a post-quantum zkSNARK for R1CS with proof size roughly 26 MBs. While this is still rather large, we are confident that further work will follow the asymptotic improvement to yield concretely efficient zkSNARKs from lattices.&lt;/p>
+&lt;h2 id="drawbacks">Drawbacks&lt;/h2>
+&lt;p>We inherit many of the drawbacks of [WW23]&lt;sup id="fnref2:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>, namely:&lt;/p>
+&lt;ul>
+&lt;li>The size of the proving key is quadratic in $d$.&lt;/li>
+&lt;li>We could not reduce powerBASIS (or original BASIS) to standard assumptions.&lt;/li>
+&lt;li>We require a trusted setup.&lt;/li>
+&lt;/ul>
+&lt;p>Furthermore, we our evaluations proof come with their own drawbacks:&lt;/p>
+&lt;ul>
+&lt;li>The concrete proof sizes are rather large.&lt;/li>
+&lt;li>We could not achieve a fully polylogarithmic protocol with negligible soundness error.&lt;/li>
+&lt;/ul>
+&lt;p>We are confident that these drawbacks can be overcome in future work (wink 😉).&lt;/p>
+&lt;h2 id="conclusion">Conclusion&lt;/h2>
+&lt;p>Find the &lt;a class="link" href="https://eprint.iacr.org/2023/846" target="_blank" rel="noopener"
+>full version&lt;/a> for the gory details!&lt;/p>
+&lt;div class="footnotes" role="doc-endnotes">
+&lt;hr>
+&lt;ol>
+&lt;li id="fn:1">
+&lt;p>H. Wee and D. J. Wu. &amp;ldquo;Succinct Vector, Polynomial, and Functional Commitments from Lattices&amp;rdquo;. In: EUROCRYPT (3). Vol. 14006. Lecture Notes in Computer Science. Full version: &lt;a class="link" href="https://eprint.iacr.org/2022/1515" target="_blank" rel="noopener"
+>https://eprint.iacr.org/2022/1515&lt;/a>. Springer, 2023, pp. 385–416.&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&amp;#160;&lt;a href="#fnref1:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&amp;#160;&lt;a href="#fnref2:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li id="fn:2">
+&lt;p>A. Chiesa, Y. Hu, M. Maller, P. Mishra, N. Vesely, and N. Ward. &amp;ldquo;Marlin: Preprocessing zkSNARKs with Universal and Updatable SRS&amp;rdquo;. In: Proceedings of the 39th Annual International Conference on the Theory and Applications of Cryptographic Techniques. EUROCRYPT ’20. 2020, pp. 738–768.&amp;#160;&lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li id="fn:3">
+&lt;p>D. Micciancio and C. Peikert. &amp;ldquo;Trapdoors for Lattices: Simpler, Tighter, Faster, Smaller&amp;rdquo;. In: EUROCRYPT. 2012, pp. 700–718.&amp;#160;&lt;a href="#fnref:3" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li id="fn:4">
+&lt;p>We called this quasi-polylogarithmic because it roughly sits between sublinear ($d^{1/t}$ for $t$ a constant) and polylogarithmic $\mathrm{poly}(\log d)$.&amp;#160;&lt;a href="#fnref:4" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description></item><item><title>Publications</title><link>https://wizardofmenlo.github.io/publications/publications/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://wizardofmenlo.github.io/publications/publications/</guid><description>&lt;h1 id="2023">2023&lt;/h1>
+&lt;ul>
+&lt;li>[FN23] G. Fenzi, N. K. Nguyen. &amp;ldquo;&lt;em>Lattice-Based Polynomial Commitments: Towards Concrete and Asymptotical Efficiency&lt;/em>&amp;rdquo;. Cryptology ePrint Archive, Paper 2023/846. Available at: &lt;a class="link" href="https://ia.cr/2023/846" target="_blank" rel="noopener"
+>https://ia.cr/2023/846&lt;/a>. &lt;a class="link" href="https://wizardofmenlo.github.io/lattices/towards-asymptotic-and-concrete-efficiency/" >Accompanying blog-post&lt;/a>&lt;/li>
+&lt;/ul></description></item></channel></rss>
