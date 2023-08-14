@@ -14,14 +14,14 @@ googleAnalytics: G-183HXT3DZB
 
 params:
     mainSections:
-        - crypto
-        - math
+        - publications
+        - lattices 
     featuredImageField: image
     rssFullContent: true
     favicon:
 
     footer:
-        since: 2021
+        since: 
         customText: 
 
     dateFormat:
