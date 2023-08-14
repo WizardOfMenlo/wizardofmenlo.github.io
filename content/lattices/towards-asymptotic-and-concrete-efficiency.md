@@ -1,7 +1,7 @@
 ---
 title: "Lattice-Based Polynomial Commitments: Towards Asymptotic and Concrete Efficiency"
 date: 2023-08-14T20:49:45+02:00
-draft: true
+draft: false
 ---
 ## Introduction
 In this blog-post, I will be taking a look at my recent work with Ngoc Khanh Nguyen, [full version](https://eprint.iacr.org/2023/846).
