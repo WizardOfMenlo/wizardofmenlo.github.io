@@ -6,7 +6,7 @@ draft: false
 ## Introduction
 In this blog-post, I will be taking a look at my recent work with Ngoc Khanh Nguyen, [full version](https://eprint.iacr.org/2023/846).
 We extend the vector commitment scheme of [WW23][^WeeWu] with an evaluation proof, and achieve a lattice-based polynomial commitment scheme with polylogarithmic proof size and verifier complexity.
-We further investigate the applicability of our techniques to the Polynomial IOP of [Marlin][^Marlin], apply batching techniques and .
+We further investigate the applicability of our techniques to the Polynomial IOP of [Marlin][^Marlin], show that our scheme is easily batchable and more!
 
 ## Polynomial Commitments
 A polynomial commitment scheme is a natural generalization of a vector commitment scheme, in which a party is able to commit to a polynomial $f$, and later engage in a _evaluation protocol_ to show that $f(u) = z$. In this work, we consider polynomials of bounded degree $d$ with coefficients over the polynomial ring $\mathcal{R}_q$ (we also show to adapt this construction for polynomials in $\mathbb{F}^{\leq d}[X]$, but details are left for the full version). 
@@ -64,9 +64,10 @@ We also looked at applying the two protocols in Marlin, making also use of some 
 We inherit many of the drawbacks of [WW23][^WeeWu], namely:
 - The size of the proving key is quadratic in $d$.
 - We could not reduce powerBASIS (or original BASIS) to standard assumptions.
+- We require a trusted setup.
 
-Furthermore, we have our own drawbacks:
-- The concrete proof sizes are rather larges.
+Furthermore, we our evaluations proof come with their own drawbacks:
+- The concrete proof sizes are rather large.
 - We could not achieve a fully polylogarithmic protocol with negligible soundness error.
 
 We are confident that these drawbacks can be overcome in future work (wink 😉).
@@ -75,9 +76,7 @@ We are confident that these drawbacks can be overcome in future work (wink 😉)
 
 Find the [full version](https://eprint.iacr.org/2023/846) for the gory details!
 
-[^WeeWu]: H. Wee and D. J. Wu. "Succinct Vector, Polynomial, and Functional Commitments from Lattices". In: EUROCRYPT (3). Vol. 14006. Lecture Notes in Computer Science. Full version: https://eprint.
-iacr.org/2022/1515. Springer, 2023, pp. 385–416.
-[^Marlin]: A. Chiesa, Y. Hu, M. Maller, P. Mishra, N. Vesely, and N. Ward. "Marlin: Preprocessing zkSNARKs with Universal and Updatable SRS". In: Proceedings of the 39th Annual International Conference on
-the Theory and Applications of Cryptographic Techniques. EUROCRYPT ’20. 2020, pp. 738–768.
+[^WeeWu]: H. Wee and D. J. Wu. "Succinct Vector, Polynomial, and Functional Commitments from Lattices". In: EUROCRYPT (3). Vol. 14006. Lecture Notes in Computer Science. Full version: https://eprint.iacr.org/2022/1515. Springer, 2023, pp. 385–416.
+[^Marlin]: A. Chiesa, Y. Hu, M. Maller, P. Mishra, N. Vesely, and N. Ward. "Marlin: Preprocessing zkSNARKs with Universal and Updatable SRS". In: Proceedings of the 39th Annual International Conference on the Theory and Applications of Cryptographic Techniques. EUROCRYPT ’20. 2020, pp. 738–768.
 [^MP12]: D. Micciancio and C. Peikert. "Trapdoors for Lattices: Simpler, Tighter, Faster, Smaller". In: EUROCRYPT. 2012, pp. 700–718.
 [^1]: We called this quasi-polylogarithmic because it roughly sits between sublinear ($d^{1/t}$ for $t$ a constant) and polylogarithmic $\mathrm{poly}(\log d)$.
