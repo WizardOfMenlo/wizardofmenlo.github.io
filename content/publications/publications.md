@@ -1,6 +1,11 @@
 ---
 title: "Publications"
 draft: false
+menu: 
+    main:
+        name: Publications
+        weight: -90
+        pre: book 
 ---
 
 # 2023
