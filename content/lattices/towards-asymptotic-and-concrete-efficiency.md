@@ -27,11 +27,11 @@ The properties that we require from a polynomial commitment scheme are:
 In the paper, we also consider hiding, but in the interest of space we avoid this here.
 
 ## WeeWu Commitments
-Our starting point is the commitment scheme introduced in [WW23][^WeeWu]. Their commitments relies on the BASIS assumption (Basis-Augmented Short Integer Solution). It roughly states that an adversary that is given access to a random matrix $\mathbf{A}$, should not be able to find a short vector $\mathbf{v}$ such that $\mathbf{A}\mathbf{v} = 0$ even when given access to a trapdoor to sample short preimages of a matrix $\mathbf{B}$ related to $\mathbf{A}$. In their work, the matrix $\mathbf{B}$ is defined as $$\begin{pmatrix}\mathbf{A}_0 &&& - \mathbf{G}\\\  & \ddots & & \\\ & & \mathbf{A}_d & - \mathbf{G} \end{pmatrix}$$ where $\mathbf{A_i} = \mathbf{W_i} \mathbf{A}$ for $\mathbf{W_i}$ random invertible matrices and $\mathbf{G}$ the gadget matrix of [MP12][^MP12].
+Our starting point is the commitment scheme introduced in [WW23][^WeeWu]. Their commitments relies on the BASIS assumption (Basis-Augmented Short Integer Solution). It roughly states that an adversary that is given access to a random matrix $\mathbf{A}$, should not be able to find a short vector $\mathbf{v}$ such that $\mathbf{A}\mathbf{v} = 0$ even when given access to a trapdoor to sample short preimages of a matrix $\mathbf{B}$ related to $\mathbf{A}$. In their work, the matrix $\mathbf{B}$ is defined as $$\begin{bmatrix}\mathbf{A}_0 &&& - \mathbf{G}\\\  & \ddots & & \\\ & & \mathbf{A}_d & - \mathbf{G} \end{bmatrix}$$ where $\mathbf{A}_i = \mathbf{W}_i \mathbf{A}$ for $\mathbf{W_i}$ random invertible matrices and $\mathbf{G}$ the gadget matrix of [MP12][^MP12].
 We extend this to two new assumptions, the powerBASIS and PRISIS assumptions. Roughly, we introduce more structure in the $\mathbf{W}_i$. In powerBASIS, we let $\mathbf{W}_i = \mathbf{W}^{i}$, while in PRISIS we set $\mathbf{W}_i = w^{i} \mathbf{I}$.
 With this added structure, the commitment scheme that we construct is exactly as in [WW23] (here we present the powerBASIS version). 
 Namely:
-- $\mathsf{Setup}(1^\lambda) \to (\mathsf{pk}, \mathsf{vk})$ samples $\mathbf{A}, \mathbf{W}$ and uses [MP12] sampling to construct a trapdoor $\mathbf{T}$ of $\mathbf{B}$. The verification key consists of $\mathbf{A}, \mathbf{W}$ and the proving key additionally contains $\mathbf{T}$.
+- $\mathsf{Setup}(1^\lambda) \to (\mathsf{pk}, \mathsf{vk})$ samples $\mathbf{A}, \mathbf{W}$ and uses [MP12][^MP12] sampling to construct a trapdoor $\mathbf{T}$ of $\mathbf{B}$. The verification key consists of $\mathbf{A}, \mathbf{W}$ and the proving key additionally contains $\mathbf{T}$.
 - $\mathsf{Com}(\mathsf{pk}, f) \to (\sigma, \mathsf{aux})$ uses $\mathbf{T}$ to sample short $\mathbf{z_i}$ and $\hat{\mathbf{c}}$ such that $\mathbf{B}[\mathbf{z}_0, \dots, \mathbf{z}_d, \hat{\mathbf{c}}]^\top = [-f_0 \mathbf{W}^0 \mathbf{e}_1, \dots, - f_d \mathbf{W}^d \mathbf{e}_1]^\top$, it then outputs $\mathbf{c} := \mathbf{G}\hat{\mathbf{c}}$ and $(\mathbf{z}_i)$ as decommitment.
 - $\mathsf{Open}(\mathsf{vk}, f, \sigma, \mathsf{aux})$ checks that the openings are indeed short, and that the equations are all satisfied: namely it checks that $$\mathbf{A}\mathbf{z}_i + f_i \mathbf{e}_1 = \mathbf{W}^{-i}\mathbf{c} \enspace.$$
 
@@ -70,7 +70,7 @@ Furthermore, we our evaluations proof come with their own drawbacks:
 - The concrete proof sizes are rather large.
 - We could not achieve a fully polylogarithmic protocol with negligible soundness error.
 
-We are confident that these drawbacks can be overcome in future work (wink 😉).
+We are confident that these drawbacks can be overcome in future work ([wink 😉]({{< ref "/lattices/slap.md" >}})).
 
 ## Conclusion
 
@@ -79,4 +79,4 @@ Find the [full version](https://eprint.iacr.org/2023/846) for the gory details!
 [^WeeWu]: H. Wee and D. J. Wu. "Succinct Vector, Polynomial, and Functional Commitments from Lattices". In: EUROCRYPT (3). Vol. 14006. Lecture Notes in Computer Science. Full version: https://eprint.iacr.org/2022/1515. Springer, 2023, pp. 385–416.
 [^Marlin]: A. Chiesa, Y. Hu, M. Maller, P. Mishra, N. Vesely, and N. Ward. "Marlin: Preprocessing zkSNARKs with Universal and Updatable SRS". In: Proceedings of the 39th Annual International Conference on the Theory and Applications of Cryptographic Techniques. EUROCRYPT ’20. 2020, pp. 738–768.
 [^MP12]: D. Micciancio and C. Peikert. "Trapdoors for Lattices: Simpler, Tighter, Faster, Smaller". In: EUROCRYPT. 2012, pp. 700–718.
-[^1]: We called this quasi-polylogarithmic because it roughly sits between sublinear ($d^{1/t}$ for $t$ a constant) and polylogarithmic $\mathrm{poly}(\log d)$.
+[^1]: We called this quasi-polylogarithmic because it roughly sits between sublinear ($d^{1/t}$ for $t$ a constant) and polylogarithmic $\mathrm{polylog}(d)$.
