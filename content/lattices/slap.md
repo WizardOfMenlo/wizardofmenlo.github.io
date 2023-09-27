@@ -4,7 +4,7 @@ date: 2023-09-26T17:35:55+02:00
 draft: true
 ---
 ## Introduction
-This blog-post is a short introduction to our new work: "SLAP: Succinct Lattice-Based Polynomial Commitments from Standard Assumptions". This is joint work with Martin Albrecht, Oleksandra Lapiha and Ngoc Khanh Nguyen, and the full version is [available on eprint](xxxx).
+This blog-post is a short introduction to our new work: "SLAP: Succinct Lattice-Based Polynomial Commitments from Standard Assumptions". This is joint work with Martin Albrecht, Oleksandra Lapiha and Ngoc Khanh Nguyen, and the full version is [available on eprint](https://eprint.iacr.org/2023/1469).
 
 In our [previous paper]({{< ref "/lattices/towards-asymptotic-and-concrete-efficiency.md" >}}), me and Khanh looked at the problem of constructing efficient lattice-based polynomial commitments, to be used in as a drop-in replacement to non-post-quantum secure schemes such as KZG. 
 In doing so we constructed two schemes making use of the techniques in [WW23][^WeeWu] to obtain succinct verification and extractability. The schemes that we came up two came with a number of caveats namely:
