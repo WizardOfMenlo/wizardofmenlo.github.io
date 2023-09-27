@@ -1,7 +1,7 @@
 ---
 title: "SLAP: Succinct Lattice-Based Polynomial Commitments from Standard Assumptions"
 date: 2023-09-26T17:35:55+02:00
-draft: true
+draft: false
 ---
 ## Introduction
 This blog-post is a short introduction to our new work: "SLAP: Succinct Lattice-Based Polynomial Commitments from Standard Assumptions". This is joint work with Martin Albrecht, Oleksandra Lapiha and Ngoc Khanh Nguyen, and the full version is [available on eprint](https://eprint.iacr.org/2023/1469).
