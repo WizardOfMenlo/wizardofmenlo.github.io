@@ -4,7 +4,7 @@ date: 2023-08-14T20:49:45+02:00
 draft: false
 ---
 ## Introduction
-In this blog-post, I will be taking a look at my recent work with Ngoc Khanh Nguyen, [full version](https://eprint.iacr.org/2023/846).
+In this blog-post, I will be taking a look at my recent work with Hossein Moghaddas and Ngoc Khanh Nguyen, [full version](https://eprint.iacr.org/2023/846).
 We extend the vector commitment scheme of [WW23][^WeeWu] with an evaluation proof, and achieve a lattice-based polynomial commitment scheme with polylogarithmic proof size and verifier complexity.
 We further investigate the applicability of our techniques to the Polynomial IOP of [Marlin][^Marlin], show that our scheme is easily batchable and more!
 
