@@ -64,7 +64,7 @@ In particular, this means that we can compile the protocol to a non-interactive 
 &lt;/li>
 &lt;/ol>
 &lt;/div></description></item><item><title>Lattice-Based Polynomial Commitments: Towards Asymptotic and Concrete Efficiency</title><link>https://wizardofmenlo.github.io/lattices/towards-asymptotic-and-concrete-efficiency/</link><pubDate>Mon, 14 Aug 2023 20:49:45 +0200</pubDate><guid>https://wizardofmenlo.github.io/lattices/towards-asymptotic-and-concrete-efficiency/</guid><description>&lt;h2 id="introduction">Introduction&lt;/h2>
-&lt;p>In this blog-post, I will be taking a look at my recent work with Ngoc Khanh Nguyen, &lt;a class="link" href="https://eprint.iacr.org/2023/846" target="_blank" rel="noopener"
+&lt;p>In this blog-post, I will be taking a look at my recent work with Hossein Moghaddas and Ngoc Khanh Nguyen, &lt;a class="link" href="https://eprint.iacr.org/2023/846" target="_blank" rel="noopener"
 >full version&lt;/a>.
 We extend the vector commitment scheme of [WW23]&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup> with an evaluation proof, and achieve a lattice-based polynomial commitment scheme with polylogarithmic proof size and verifier complexity.
 We further investigate the applicability of our techniques to the Polynomial IOP of [Marlin]&lt;sup id="fnref:2">&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref">2&lt;/a>&lt;/sup>, show that our scheme is easily batchable and more!&lt;/p>
