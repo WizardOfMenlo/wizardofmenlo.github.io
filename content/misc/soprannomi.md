@@ -19,3 +19,6 @@ I seem to have picked up a number of nicknames over the years. Keeping track of 
 - **Il Burattinaio**
 - **Guacamole**
 - **Papà**
+- **Bauscia**
+- **Taranto**
+- **El Chico di Porta Venezia**
