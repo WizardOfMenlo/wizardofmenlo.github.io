@@ -22,6 +22,7 @@ I seem to have picked up a number of nicknames over the years. Keeping track of 
 - **Bauscia**
 - **Taranto**
 - **El Chico di Porta Venezia**
+- **Gramigna**
 
 ## Some quotes
 - _We might be morally bankrupt, but we are very much not financially bankrupt_ - about funding from blockchain companies
