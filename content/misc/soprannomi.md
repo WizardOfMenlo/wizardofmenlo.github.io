@@ -24,6 +24,9 @@ I seem to have picked up a number of nicknames over the years. Keeping track of 
 - **El Chico di Porta Venezia**
 - **Gramigna**
 - **Kingmaker**
+- **Milano Milano**
+- **Xylello**
+- **Rattazzo**
 
 
 ## Some quotes
