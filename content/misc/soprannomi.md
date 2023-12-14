@@ -5,7 +5,7 @@ draft: false
 ---
 
 # Preface
-I seem to have picked up a number of nicknames over the years. Keeping track of them here not to forget (and for a laugh). Most of them have been given in a moment of _delirio di onnipotenza_, so tread with caution.
+I seem to have picked up a number of nicknames over the years. Keeping track of them here not to forget (and for a laugh). Most of them have been given in a moment of _delirio di onnipotenza_, so tread with caution. 
 
 ## The Self-Referential List
 - **Jack**
@@ -19,3 +19,15 @@ I seem to have picked up a number of nicknames over the years. Keeping track of 
 - **Il Burattinaio**
 - **Guacamole**
 - **Papà**
+- **Bauscia**
+- **Taranto**
+- **El Chico di Porta Venezia**
+- **Gramigna**
+- **Kingmaker**
+- **Milano Milano**
+- **Xylello**
+- **Rattazzo**
+
+
+## Some quotes
+- _We might be morally bankrupt, but we are very much not financially bankrupt_ - about funding from blockchain companies
