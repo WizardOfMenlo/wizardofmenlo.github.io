@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Giacomo's Blog</title><link>https://wizardofmenlo.github.io/</link><description>Recent content on Giacomo's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 23 Oct 2023 19:34:14 +0200</lastBuildDate><atom:link href="https://wizardofmenlo.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>SLAP: Succinct Lattice-Based Polynomial Commitments from Standard Assumptions</title><link>https://wizardofmenlo.github.io/lattices/slap/</link><pubDate>Tue, 26 Sep 2023 17:35:55 +0200</pubDate><guid>https://wizardofmenlo.github.io/lattices/slap/</guid><description>&lt;h2 id="introduction">Introduction&lt;/h2>
 &lt;p>This blog-post is a short introduction to our new work: &amp;ldquo;SLAP: Succinct Lattice-Based Polynomial Commitments from Standard Assumptions&amp;rdquo;. This is joint work with Martin Albrecht, Oleksandra Lapiha and Ngoc Khanh Nguyen, and the full version is &lt;a class="link" href="https://eprint.iacr.org/2023/1469" target="_blank" rel="noopener"
->available on eprint&lt;/a>.&lt;/p>
+>available on eprint&lt;/a>. Here are also &lt;a class="link" href="https://wizardofmenlo.github.io/presentations/slap.pdf" >some slides&lt;/a> that might be helpful.&lt;/p>
 &lt;p>In our &lt;a class="link" href="https://wizardofmenlo.github.io/lattices/towards-asymptotic-and-concrete-efficiency/" >previous paper&lt;/a>, we looked at the problem of constructing efficient lattice-based polynomial commitments, to be used in as a drop-in replacement to non-post-quantum secure schemes such as KZG.
 In doing so we constructed two schemes making use of the techniques in [WW23]&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup> to obtain succinct verification and extractability. The schemes that we came up two came with a number of caveats namely:&lt;/p>
 &lt;ul>
@@ -154,7 +154,7 @@ We also looked at applying the two protocols in Marlin, making also use of some 
 &lt;ul>
 &lt;li>
 &lt;p>[AFLN23] M. R. Albrecht, G. Fenzi, O. Lapiha, N. K. Nguyen. &amp;ldquo;&lt;em>SLAP: Succinct Lattice-Based Polynomial Commitments from Standard Assumptions&lt;/em>&amp;rdquo;. Cryptology ePrint Archive, Paper 2023/1469. Available at: &lt;a class="link" href="https://ia.cr/2023/1469" target="_blank" rel="noopener"
->https://ia.cr/2023/1469&lt;/a>. &lt;a class="link" href="https://wizardofmenlo.github.io/lattices/slap/" >Accompanying blog-post&lt;/a>&lt;/p>
+>https://ia.cr/2023/1469&lt;/a>. &lt;a class="link" href="https://wizardofmenlo.github.io/lattices/slap/" >Accompanying blog-post&lt;/a>. &lt;a class="link" href="https://wizardofmenlo.github.io/presentations/slap.pdf" >Slides&lt;/a>.&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>[FMN23] G. Fenzi, H. Moghaddas, N. K. Nguyen. &amp;ldquo;&lt;em>Lattice-Based Polynomial Commitments: Towards Concrete and Asymptotical Efficiency&lt;/em>&amp;rdquo;. Cryptology ePrint Archive, Paper 2023/846. Available at: &lt;a class="link" href="https://ia.cr/2023/846" target="_blank" rel="noopener"
