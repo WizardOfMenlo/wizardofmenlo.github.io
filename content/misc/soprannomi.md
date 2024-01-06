@@ -27,6 +27,8 @@ I seem to have picked up a number of nicknames over the years. Keeping track of 
 - **Milano Milano**
 - **Xylello**
 - **Rattazzo**
+- **Etereo**
+- **Medicane**
 
 
 ## Some quotes
