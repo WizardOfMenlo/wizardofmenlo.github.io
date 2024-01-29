@@ -1,0 +1,98 @@
+baseURL: "https://wizardofmenlo.github.io/" 
+title: Giacomo's Blog
+paginate: 20
+theme: PaperMod
+
+enableInlineShortcodes: true
+enableRobotsTXT: true
+
+taxonomies:
+    tag: tags
+
+menu:
+    main:
+        - name: About
+          url: about
+          weight: 1
+        - name: Papers
+          url: papers/
+          weight: 2
+
+params:
+    description: "Webpage of Giacomo. PhD student at EPFL, interested in proof systems and cryptography."
+    author: Giacomo
+    googleAnalyticsID: "G-183HXT3DZB"
+    DateFormat: "January 2006"
+    defaultTheme: dark
+    hideFooter: true
+    disableThemeToggle: true
+    ShowShareButtons: false
+    ShowReadingTime: false
+    disableSpecial1stPost: true
+    disableAnchoredHeadings: true
+    ShowPostNavLinks: false
+    ShowBreadCrumbs: false
+    ShowCodeCopyButtons: true
+    ShowRssButtonInSectionTermList: false
+    ShowToc: false
+    disableScrollToTop: true
+    TocOpen: true
+    ShowWordCount: false
+    UseHugoToc: true
+    comments: false
+    math: true
+    profileMode:
+          enabled: true
+          title: Giacomo Fenzi
+          subtitle: "I am a PhD student at EPFL, interested in proof systems and cryptography."
+          imageUrl: "image.png"
+          imageWidth: 160
+          imageHeight: 160
+          imageTitle: Giacomo Fenzi
+          buttons:
+            - name: About
+              url: about
+            - name: Papers
+              url: papers/
+            - name: Tags
+              url: tags/
+            - name: Archive
+              url: archive/
+    socialIcons:
+        - name: GitHub
+          url: https://github.com/WizardOfMenlo
+        - name: Twitter
+          url: https://twitter.com/GiacomoFenzi
+        - name: Email
+          url: mailto:giacomo.fenzi@epfl.ch
+        - name: Google Scholar
+          url: https://scholar.google.com/citations?user=lnJtN4cAAAAJ
+        - name: CV
+          url: cv.pdf
+        - name: YouTube
+          url: https://www.youtube.com/WizardOfMenlo
+        - name: LinkedIn
+          url: https://www.linkedin.com/in/giacomo-fenzi
+
+    assets:
+        disableHLJS: true
+        disableScrollBarStyle: true
+    cover:
+        hiddenInList: false
+        hiddenInSingle: true
+    label:
+      text: "Giacomo Fenzi"
+      icon: favicon.ico
+      iconHeight: 18
+
+markup:
+    goldmark:
+        renderer:
+            unsafe: true
+    highlight:
+        guessSyntax: true
+        style: autumn 
+    tableOfContents:
+        endLevel: 2
+        ordered: false
+        startLevel: 2

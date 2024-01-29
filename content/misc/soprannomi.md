@@ -1,12 +1,15 @@
 ---
 title: "Soprannomi"
-date: 2023-10-23T19:34:14+02:00
+tags: []
+author: "G. Fenzi"
+description: "An humble list of nicknames."
+summary: "A list of nicknames, ironic (or not?) that I have been given over the years." 
 draft: false
 ---
 
-# Preface
 I seem to have picked up a number of nicknames over the years. Keeping track of them here not to forget (and for a laugh). Most of them have been given in a moment of _delirio di onnipotenza_, so tread with caution. 
 
+---
 ## The Self-Referential List
 - **Jack**
 - **Wiz**
@@ -28,6 +31,6 @@ I seem to have picked up a number of nicknames over the years. Keeping track of 
 - **Xylello**
 - **Rattazzo**
 
-
+---
 ## Some quotes
 - _We might be morally bankrupt, but we are very much not financially bankrupt_ - about funding from blockchain companies
