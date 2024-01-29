@@ -30,7 +30,10 @@ I seem to have picked up a number of nicknames over the years. Keeping track of 
 - **Milano Milano**
 - **Xylello**
 - **Rattazzo**
+- **Etereo**
+- **Medicane**
 
 ---
 ## Some quotes
 - _We might be morally bankrupt, but we are very much not financially bankrupt_ - about funding from blockchain companies
+- _I am capable of love!_ - Giacomo pointing to his grill
