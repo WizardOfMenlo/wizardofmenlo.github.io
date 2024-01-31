@@ -4,6 +4,8 @@ tags: ["lattices", "polynomial-commitments"]
 date: 2023-09-25
 author: "M.R. Albrecht, G. Fenzi, N.K. Nguyen, O. Lapiha"
 description: "In this paper, we construct a succinct polynomial commitment scheme from standard assumptions."
+aliases:
+- /lattices/slap
 editPost:
     URL: "https://eprint.iacr.org/2023/1469"
     Text: "ePrint: 2023/1469"
