@@ -44,8 +44,10 @@ params:
     profileMode:
           enabled: true
           title: Giacomo Fenzi
-          subtitle: "I am a PhD student at EPFL, interested in proof systems and cryptography."
-          imageUrl: "image.png"
+          subtitle: "I am a PhD student @EPFL. I research cryptography, with a focus on proof systems. 
+            Interaction and randomness allow to trustlessly outsource computation and check its correctness with resources exponentially smaller than the original computation. This fact is already, a priori, surprising. Even more surprisingly, in conjunction with cryptography, these proof systems lead to *concretely* efficient protocols called zkSNARKs. These play a central role in a number of applications, such as blockchain L2 rollups, anonymous credentials, signatures and more.
+            I study how to make zkSNARKs that are *theoretically* and *concretely* efficient."
+          imageUrl: "image.jpg"
           imageWidth: 160
           imageHeight: 160
           imageTitle: Giacomo Fenzi
