@@ -2,7 +2,7 @@
 title: "SLAP: Succinct Lattice-Based Polynomial Commitments from Standard Assumptions"
 tags: ["lattices", "polynomial-commitments"]
 date: 2023-09-25
-author: "M.R. Albrecht, G. Fenzi, N.K. Nguyen, O. Lapiha"
+author: "Martin R. Albrecht, Giacomo Fenzi, Oleksandra Lapiha,  Ngoc Khanh Nguyen"
 description: "In this paper, we construct a succinct polynomial commitment scheme from standard assumptions."
 aliases:
 - /lattices/slap
