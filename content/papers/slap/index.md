@@ -8,7 +8,7 @@ aliases:
 - /lattices/slap
 editPost:
     URL: "https://eprint.iacr.org/2023/1469"
-    Text: "ePrint: 2023/1469"
+    Text: "EUROCRYPT 2024 - ePrint: 2023/1469"
 ---
 This blog-post is a short introduction to our new work: "SLAP: Succinct Lattice-Based Polynomial Commitments from Standard Assumptions". This is joint work with Martin Albrecht, Oleksandra Lapiha and Ngoc Khanh Nguyen, and the full version is [available on eprint](https://eprint.iacr.org/2023/1469). Here are also [some slides](/presentations/slap.pdf) that might be helpful.
 
@@ -73,17 +73,16 @@ We performed an evaluation of the concrete efficiency of our scheme, details of 
 ---
 ##### Citation
 
-M. R. Albrecht, G. Fenzi, O. Lapiha, N. K. Nguyen. "_SLAP: Succinct Lattice-Based Polynomial Commitments from Standard Assumptions_". Cryptology ePrint Archive, Paper 2023/1469. Available at: https://ia.cr/2023/1469. 
+M. R. Albrecht, G. Fenzi, O. Lapiha, N. K. Nguyen. "_SLAP: Succinct Lattice-Based Polynomial Commitments from Standard Assumptions_". In: _Proceedings of the 43rd Annual International Conference on Theory and Application of Cryptographic Techniques_. EUROCRYPT '24. 2024. 
 
 
 ```BibTeX
-@misc{AFNL23,
-	author = {Martin R. Albrecht and Giacomo Fenzi and Ngoc Khanh Nguyen and Oleksandra Lapiha},
-	title = {SLAP: Succinct Lattice-Based Polynomial Commitments from Standard Assumptions},
-	howpublished = {Cryptology ePrint Archive, Paper 2023/1469},
-	year = {2023},
-	note = {\url{https://eprint.iacr.org/2023/1469},
-	url = {https://eprint.iacr.org/2023/1469}
+@inproceedings{AlbrechtFNL23,
+  author    = {Martin R. Albrecht and Giacomo Fenzi and Ngoc Khanh Nguyen and Oleksandra Lapiha},
+  title     = {SLAP: Succinct Lattice-Based Polynomial Commitments from Standard Assumptions},
+  booktitle = {Proceedings of the 43rd Annual International Conference on Theory and Application of Cryptographic Techniques},
+  series    = {EUROCRYPT~'24},
+  year      = {2024},
 }
 ```
 

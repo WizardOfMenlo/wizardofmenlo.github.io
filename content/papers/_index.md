@@ -7,8 +7,12 @@ Preprints, publications and short descriptions of the content of the project I w
 
 ## List of Publications
 ### 2023
-- [AFLN23] M. R. Albrecht, G. Fenzi, O. Lapiha, N. K. Nguyen. "_SLAP: Succinct Lattice-Based Polynomial Commitments from Standard Assumptions_". Cryptology ePrint Archive, Paper 2023/1469. Available at: https://ia.cr/2023/1469. [Accompanying blog-post]({{< ref "/papers/slap" >}}). [Slides](/presentations/slap.pdf).
+- [AFLN23] "_SLAP: Succinct Lattice-Based Polynomial Commitments from Standard Assumptions_". 
+    M. R. Albrecht, G. Fenzi, O. Lapiha, N. K. Nguyen. \
+    **EUROCRYPT 2024.** Available at: [2023/1469.](https://ia.cr/2023/1469) [Accompanying blog-post.]({{< ref "/papers/slap" >}}) [Slides.](/presentations/slap.pdf)
 
-- [FMN23] G. Fenzi, H. Moghaddas, N. K. Nguyen. "_Lattice-Based Polynomial Commitments: Towards Concrete and Asymptotical Efficiency_". Cryptology ePrint Archive, Paper 2023/846. Available at: https://ia.cr/2023/846. [Accompanying blog-post]({{< ref "/papers/towards-pcs" >}})
+- [FMN23] "_Lattice-Based Polynomial Commitments: Towards Concrete and Asymptotical Efficiency_". 
+    G. Fenzi, H. Moghaddas, N. K. Nguyen. \
+    Cryptology ePrint Archive, Paper 2023/846. Available at: [2023/846.](https://ia.cr/2023/846). [Accompanying blog-post.]({{< ref "/papers/towards-pcs" >}})
  
 ## Descriptions
