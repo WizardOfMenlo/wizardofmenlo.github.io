@@ -1,6 +1,6 @@
 ---
 title: "Lattice-Based Polynomial Commitments: Towards Asymptotic and Concrete Efficiency"
-tags: ["lattices", "polynomial-commitments"]
+tags: ["lattices", "polynomial-commitments", "theory"]
 date: 2023-06-06
 author: "Giacomo Fenzi, Hossein Moghaddas, Ngoc Khanh Nguyen"
 description: "In this paper, we introduce the powerBASIS assumption, and use it construct quasi-succinct polynomial commitment schemes from lattices."
