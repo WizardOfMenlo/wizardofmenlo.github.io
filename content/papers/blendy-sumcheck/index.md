@@ -8,7 +8,7 @@ editPost:
     URL: "https://eprint.iacr.org/2024/XXX"
     Text: "ePrint: 2024/XXX"
 ---
-This blog-post is a short introduction to our new work: "A Time-Space Tradeoff for the Sumcheck Prover". This is joint work with Alessandro Chiesa, Elisabetta Fedele, Andrew Zitek-Estrada, and the full version is [available on ePrint](https://eprint.iacr.org/2024/XXX).
+This blog-post is a short introduction to our new work: "A Time-Space Tradeoff for the Sumcheck Prover". This is joint work with Alessandro Chiesa, Elisabetta Fedele, Andrew Zitek-Estrada, and the full version is [available on ePrint.](https://eprint.iacr.org/2024/XXX) Code accompanying this work can be found at [space-efficient-sumcheck.](https://github.com/compsec-epfl/space-efficient-sumcheck)
 
 The sumcheck protocol [LFKN92][^sumcheck] is an interactive protocol between a prover and a verifier that allows a verifier to _succinctly_ check claims of the form
 $$ \sum_{\mathbf{b} \in \\{0, 1\\}^n} p(\mathbf{b}) = \gamma \enspace. $$
