@@ -16,10 +16,10 @@ cover:
 This blog-post is a short introduction to our new work: "STIR: Reed-Solomon Proximity Testing with Fewer Queries". This is joint work with Gal Arnon, Alessandro Chiesa and Eylon Yogev, and the full version is [available on ePrint](https://eprint.iacr.org/2024/XXX). Code is also available at [stir](https://github.com/WizardOfMenlo/stir).
 
 Testing proximity to Reed-Solomon (RS) codes is the problem of, given oracle access to $f: \mathcal{L} \to \mathbb{F}$, determining whether
-- $f \in \mathsf{RS}[\mathbb{F}, \mathcal{L}, d]$ i.e. $f$ is a RS codeword.
-- $\Delta(f, \mathsf{RS}[\mathbb{F}, \mathcal{L}, d]) > \delta$ i.e. $f$ is $\delta$-far (in terms of Hamming distance) from any RS codeword.
+- $f \in \mathsf{RS}[\mathbb{F}, \mathcal{L}, d]$ i.e., $f$ is a RS codeword.
+- $\Delta(f, \mathsf{RS}[\mathbb{F}, \mathcal{L}, d]) > \delta$ i.e., $f$ is $\delta$-far (in terms of Hamming distance) from any RS codeword.
 
-In this work, we consider Interactive Oracle Proofs of Proximity (IOPP) for RS codes, i.e. interactive protocols between a prover and a verifier that aims to test proximity to a RS code in which the prover sends oracle messages.
+In this work, we consider Interactive Oracle Proofs of Proximity (IOPP) for RS codes, i.e., interactive protocols between a prover and a verifier that aims to test proximity to a RS code in which the prover sends oracle messages.
 
 The FRI protocol [BBHR18][^fri] is one such IOPP, and underlies many SNARK-based real-world systems which offer state-of-the-art technology that protects billions of dollars' worth of transactions in blockchains.
 
@@ -28,6 +28,12 @@ We present STIR (Shift To Improve Rate), a concretely efficient IOPP for RS code
 
 When compiled into an argument, STIR compares favourably to FRI in (i) argument size (ii) verifier time (iii) verifier hashes.
 
+Taking $d = 2^{24}$ and $\rho = 1/2$ as an example:
+- STIR arguments' have size 160 KiB compared to FRI's 306 KiB (**1.8x better**).
+- STIR verifier's perform 2600 hashes compared to FRI's 5600 (**2.13x better**).
+- STIR verifier's runtime is 3.8ms compared to FRI's 3.9ms (**1.03x better**).
+
+---
 ## High-level overview
 The core intuition behind STIR is that decreasing rate makes proximity testing easier. Intuitively, the lower the rate the more redundant the code is, and thus the verifier can make use of more structure in its testing.
 
@@ -93,7 +99,7 @@ Again:
 
 ### The STIR iteration 
 
-We describe, at an high level, an iteration of STIR. Let $\mathcal{L}^k = \\{ x^k : x \in \mathcal{L} \\}$.
+We describe, at a high level, an iteration of STIR. Let $\mathcal{L}^k = \\{ x^k : x \in \mathcal{L} \\}$.
 
 1. **Folding-randomness**: The verifier samples and sends $\alpha \gets \mathbb{F}$.
 2. **Fold**: The prover sends $g$, the evaluation of the folding $\hat{g}$ of $f$ around $\alpha$ over $\mathcal{L}'$. (Note, the folding would be a function $\mathcal{L}^k \to \mathbb{F}$ where $|\mathcal{L}^k| = |\mathcal{L}|/k$, while here $\mathcal{L'}$ is a domain of size $\mathcal{L}/2$.)
@@ -110,7 +116,7 @@ Now, if there is no such codeword, then $f$ will be $1 - \sqrt{\rho'}$ far from 
 If instead such a codeword exists, by the first point $\hat{u}$ can agree with the fold on at most a $1 - \delta$ fraction of the domain (since the fold preserves distance). If any of the sampled points $v_i$ are in the disagreement portion, then again the quotient will be $1 - \sqrt{\rho'}$ far from the RS code. Thus this happens unless with probability $(1 - \delta)^t$.
 
 ---
-### Benchmarks
+# Benchmarks
 We implemented STIR and FRI in Rust and compared their performance. Our code can be found at [stir](https://github.com/WizardOfMenlo/stir).
 Below, we present the results of our benchmarks when $\rho = 1/2$
 
@@ -128,7 +134,7 @@ For a more detailed comparison, see Section 6 of the paper.
 ---
 
 ### Practical considerations
-We consider the prover costs of STIR. In practice, FRI is run in a heavily batched context i.e. instead of testing proximity of a single polynomial to a RS code, a random linear combination of a list of polynomials $f_1, \dots, f_\ell$ is tested. The dominating prover cost is then that of committing to the polynomials, which involves performing $\ell$ FFTs to compute the evaluations of the $f_i$s over $\mathcal{L}$ and then committing to said evaluation. This cost is shared by both FRI and STIR, and, especially in this batch setting, comes to dominate. The rest of the proximity test, which is where STIR is slower than FRI, is independent of the number of polynomials committed. So changing from FRI to STIR should have an almost negligible effect on prover runtime. 
+We consider the prover costs of STIR. In practice, FRI is run in a heavily batched context i.e., instead of testing proximity of a single polynomial to a RS code, a random linear combination of a list of polynomials $f_1, \dots, f_\ell$ is tested. The dominating prover cost is then that of committing to the polynomials, which involves performing $\ell$ FFTs to compute the evaluations of the $f_i$s over $\mathcal{L}$ and then committing to said evaluation. This cost is shared by both FRI and STIR, and, especially in this batch setting, comes to dominate. The rest of the proximity test, which is where STIR is slower than FRI, is independent of the number of polynomials committed. So, changing from FRI to STIR should have an almost negligible effect on prover runtime. 
 
 Further, STIR's better argument size and verifier hash complexity enables setting larger rates while still achieving better metrics than FRI. For example, [ethSTARK][^ethSTARK] uses FRI with $d = 2^{22}$ and $\rho = 1/4$. In our experiments, FRI yields arguments of size 154 KiB and which can be verified by performing $\approx 2800$ hashes. Instead, using STIR with $d = 2^{22}$ and $\rho = 1/2$ yields arguments of size 143 KiB whose verifier performs $\approx 2200$ hashes. Further, the dominating costs of FRI and STIR has costs quasi-linear in $d/\rho$. Thus, with these parameters, we expect the dominating costs to be approximately half as large in STIR compared to FRI. Thus, we expect to achieve _better prover costs while achieving smaller proofs and a more efficient verifier_ than FRI.
 
