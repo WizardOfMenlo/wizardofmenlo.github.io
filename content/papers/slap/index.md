@@ -2,7 +2,7 @@
 title: "SLAP: Succinct Lattice-Based Polynomial Commitments from Standard Assumptions"
 tags: ["lattices", "polynomial-commitments"]
 date: 2023-09-25
-author: "M.R. Albrecht, G. Fenzi, N.K. Nguyen, O. Lapiha"
+author: "Martin R. Albrecht, Giacomo Fenzi, Oleksandra Lapiha,  Ngoc Khanh Nguyen"
 description: "In this paper, we construct a succinct polynomial commitment scheme from standard assumptions."
 aliases:
 - /lattices/slap
@@ -10,7 +10,7 @@ editPost:
     URL: "https://eprint.iacr.org/2023/1469"
     Text: "EUROCRYPT 2024 - ePrint: 2023/1469"
 ---
-This blog-post is a short introduction to our new work: "SLAP: Succinct Lattice-Based Polynomial Commitments from Standard Assumptions". This is joint work with Martin Albrecht, Oleksandra Lapiha and Ngoc Khanh Nguyen, and the full version is [available on eprint](https://eprint.iacr.org/2023/1469). Here are also [some slides](/presentations/slap.pdf) that might be helpful.
+This blog-post is a short introduction to our new work: "SLAP: Succinct Lattice-Based Polynomial Commitments from Standard Assumptions". This is joint work with Martin Albrecht, Oleksandra Lapiha and Ngoc Khanh Nguyen, and the full version is [available on ePrint](https://eprint.iacr.org/2023/1469). Here are also [some slides](/presentations/slap.pdf) that might be helpful.
 
 In our [previous paper]({{< ref "/papers/towards-pcs" >}}), we looked at the problem of constructing efficient lattice-based polynomial commitments, to be used in as a drop-in replacement to non-post-quantum secure schemes such as KZG. 
 In doing so we constructed two schemes making use of the techniques in [WW23][^WeeWu] to obtain succinct verification and extractability. The schemes that we came up two came with a number of caveats namely:

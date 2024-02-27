@@ -2,7 +2,7 @@
 title: "Lattice-Based Polynomial Commitments: Towards Asymptotic and Concrete Efficiency"
 tags: ["lattices", "polynomial-commitments"]
 date: 2023-06-06
-author: "G. Fenzi, H. Moghaddas, N.K. Nguyen"
+author: "Giacomo Fenzi, Hossein Moghaddas, Ngoc Khanh Nguyen"
 description: "In this paper, we introduce the powerBASIS assumption, and use it construct quasi-succinct polynomial commitment schemes from lattices."
 editPost:
     URL: "https://eprint.iacr.org/2023/846"
@@ -92,14 +92,13 @@ Find the [full version](https://eprint.iacr.org/2023/846) for the gory details!
 G. Fenzi, H. Moghaddas, N. K. Nguyen. "_Lattice-Based Polynomial Commitments: Towards Concrete and Asymptotical Efficiency_". Cryptology ePrint Archive, Paper 2023/846. Available at: https://ia.cr/2023/846.
 
 ```BibTeX
-@misc{FenMogNgu23,
-	author = {Giacomo Fenzi and Hossein Moghaddas and Ngoc Khanh Nguyen},
-	title = {Lattice-Based Polynomial Commitments: Towards Asymptotic and
-  Concrete Efficiency},
+@misc{FenziMN23,
+	author       = {Giacomo Fenzi and Hossein Moghaddas and Ngoc Khanh Nguyen},
+	title        = {Lattice-Based Polynomial Commitments: Towards Asymptotic and Concrete Efficiency},
 	howpublished = {Cryptology ePrint Archive, Paper 2023/846},
-	year = {2023},
-	note = {\url{https://eprint.iacr.org/2023/846}},
-	url = {https://eprint.iacr.org/2023/846}
+	year         = {2023},
+	note         = {\url{https://eprint.iacr.org/2023/846}},
+	url          = {https://eprint.iacr.org/2023/846}
 }
 ```
 
