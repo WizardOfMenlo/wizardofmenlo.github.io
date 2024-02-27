@@ -8,6 +8,10 @@ draft: true
 editPost:
     URL: "https://eprint.iacr.org/2024/XXX"
     Text: "ePrint: 2024/XXX"
+cover:
+    image: "stir_logo.jpg"
+    alt: "STIR"
+    relative: false
 ---
 Testing proximity to Reed-Solomon (RS) codes is the problem of, when given oracle access to $f: \mathcal{L} \to \mathbb{F}$, determining whether
 - $f \in \mathsf{RS}[\mathbb{F}, d, \mathcal{L}]$ i.e. $f$ is a RS codeword.
