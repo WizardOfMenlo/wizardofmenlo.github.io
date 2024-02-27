@@ -4,7 +4,6 @@ tags: ["sumcheck", "concrete"]
 date: 2024-02-20
 author: "Alessandro Chiesa, Elisabetta Fedele, Giacomo Fenzi, Andrew Zitek-Estrada"
 description: "We present a new family of algorithms for the sumcheck protocol prover that offer new time-space tradeoffs."
-draft: true
 editPost:
     URL: "https://eprint.iacr.org/2024/XXX"
     Text: "ePrint: 2024/XXX"

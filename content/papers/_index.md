@@ -12,10 +12,10 @@ Preprints, publications and short descriptions of the content of the project I w
     Cryptology ePrint Archive, Paper 2024/XXX.
 - [AC**F**Y24] "_STIR: Reed–Solomon Proximity Testing with Fewer Queries_" \
     Gal Arnon, Alessandro Chiesa, Giacomo Fenzi, Eylon Yogev. \
-    Cryptology ePrint Archive, Paper 2024/XXX.
+    Cryptology ePrint Archive, Paper 2024/XXX. [Accompanying blog-post.]({{< ref "/papers/stir" >}})
 - [CF**F**Z24] "_A Time-Space Tradeoff for the Sumcheck Prover_". \
     Alessandro Chiesa, Elisabetta Fedele, Giacomo Fenzi, Andrew Zitek-Estrada. \
-    Cryptology ePrint Archive, Paper 2024/XXX. 
+    Cryptology ePrint Archive, Paper 2024/XXX. [Accompanying blog-post.]({{< ref "/papers/blendy-sumcheck" >}})
 
 ### 2023
 - [A**F**LN23] "_SLAP: Succinct Lattice-Based Polynomial Commitments from Standard Assumptions_". \
@@ -24,6 +24,6 @@ Preprints, publications and short descriptions of the content of the project I w
 
 - [**F**MN23] "_Lattice-Based Polynomial Commitments: Towards Concrete and Asymptotical Efficiency_". \
     Giacomo Fenzi, Hossein Moghaddas, Ngoc Khanh Nguyen. \
-    Cryptology ePrint Archive, Paper 2023/846. Available at: [2023/846.](https://ia.cr/2023/846). [Accompanying blog-post.]({{< ref "/papers/towards-pcs" >}})
+    Cryptology ePrint Archive, Paper 2023/846. Available at: [2023/846.](https://ia.cr/2023/846) [Accompanying blog-post.]({{< ref "/papers/towards-pcs" >}})
  
 ## Descriptions

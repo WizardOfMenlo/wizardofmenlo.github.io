@@ -4,7 +4,6 @@ tags: ["hashes", "concrete", "theory"]
 date: 2024-02-21
 author: "Gal Arnon, Alessandro Chiesa, Giacomo Fenzi, Eylon Yogev"
 description: "We present STIR (Shift To Improve Rate), a concretely efficient interactive oracle proof of proximity (IOPP) for Reed–Solomon codes that achieves the best known query complexity of any concretely efficient IOPP for this problem."
-draft: true
 editPost:
     URL: "https://eprint.iacr.org/2024/XXX"
     Text: "ePrint: 2024/XXX"
@@ -13,6 +12,9 @@ cover:
     alt: "STIR"
     relative: false
 ---
+
+This blog-post is a short introduction to our new work: "STIR: Reed-Solomon Proximity Testing with Fewer Queries". This is joint work with Gal Arnon, Alessandro Chiesa and Eylon Yogev, and the full version is [available on ePrint](https://eprint.iacr.org/2024/XXX). Code is also available at [stir](https://github.com/WizardOfMenlo/stir).
+
 Testing proximity to Reed-Solomon (RS) codes is the problem of, given oracle access to $f: \mathcal{L} \to \mathbb{F}$, determining whether
 - $f \in \mathsf{RS}[\mathbb{F}, \mathcal{L}, d]$ i.e. $f$ is a RS codeword.
 - $\Delta(f, \mathsf{RS}[\mathbb{F}, \mathcal{L}, d]) > \delta$ i.e. $f$ is $\delta$-far (in terms of Hamming distance) from any RS codeword.
