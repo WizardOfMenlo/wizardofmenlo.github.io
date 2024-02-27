@@ -9,7 +9,7 @@ Preprints, publications and short descriptions of the content of the project I w
 ### 2024
 - [CFFZ24] "_A Time-Space Tradeoff for the Sumcheck Prover_".
     Alessandro Chiesa, Elisabetta Fedele, Giacomo Fenzi, Andrew Zitek-Estrada. \
-    Cryptology ePrint Archive, Paper 2024/XXX. Available at: [2024/XXX.](https://ia.cr/2024/XXX). [Accompanying blog-post.]({{< ref "/papers/blendy-sumcheck" >}})
+    Cryptology ePrint Archive, Paper 2024/XXX. 
 
 ### 2023
 - [AFLN23] "_SLAP: Succinct Lattice-Based Polynomial Commitments from Standard Assumptions_". 
