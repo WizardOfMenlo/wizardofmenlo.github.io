@@ -15,13 +15,16 @@ cover:
 
 This blog-post is a short introduction to our new work: "STIR: Reed-Solomon Proximity Testing with Fewer Queries". This is joint work with Gal Arnon, Alessandro Chiesa and Eylon Yogev, and the full version is [available on ePrint](https://eprint.iacr.org/2024/XXX). Code is also available at [stir](https://github.com/WizardOfMenlo/stir).
 
-Testing proximity to Reed-Solomon (RS) codes is the problem of, given oracle access to $f: \mathcal{L} \to \mathbb{F}$, determining whether
+Denote by $\mathsf{RS}[\mathbb{F}, \mathcal{L}, d]$ the Reed-Solomon (RS) code[^1] over the field $\mathbb{F}$ of rate $\rho = d/|\mathcal{L}|$.
+Testing proximity to a RS code is the problem of, given oracle access to $f: \mathcal{L} \to \mathbb{F}$, determining whether
 - $f \in \mathsf{RS}[\mathbb{F}, \mathcal{L}, d]$ i.e., $f$ is a RS codeword.
 - $\Delta(f, \mathsf{RS}[\mathbb{F}, \mathcal{L}, d]) > \delta$ i.e., $f$ is $\delta$-far (in terms of Hamming distance) from any RS codeword.
 
 In this work, we consider Interactive Oracle Proofs of Proximity (IOPP) for RS codes, i.e., interactive protocols between a prover and a verifier that aims to test proximity to a RS code in which the prover sends oracle messages.
 
-The FRI protocol [BBHR18][^fri] is one such IOPP, and underlies many SNARK-based real-world systems which offer state-of-the-art technology that protects billions of dollars' worth of transactions in blockchains.
+The FRI protocol [BBHR18, BCIKS20][^fri] [^proximitygaps] is one such IOPP, and underlies many SNARK-based real-world systems which offer state-of-the-art technology that protects billions of dollars' worth of transactions in blockchains.
+
+[^1]: Formally $\mathsf{RS}[\mathbb{F}, \mathcal{L}, d] = \\{ \hat{p}|\_\mathcal{L} : \hat{p} \in \mathbb{F}^{< d}[X] \\}$ where $\hat{p}|\_\mathcal{L}: \mathcal{L} \to \mathbb{F}$ is the restriction of $\hat{p}$ to $\mathcal{L}$.
 
 # STIR 🥣
 We present STIR (Shift To Improve Rate), a concretely efficient IOPP for RS codes that achieves the best known query complexity of any concretely efficient IOPP for this problem.
@@ -43,7 +46,9 @@ Let $\mathcal{C} := \mathsf{RS}[\mathbb{F}, \mathcal{L}, d]$ and $\mathcal{C'} :
 
 A STIR iteration performs $t$ queries while fulfilling two roles:
 1. Reduces testing proximity of $f$ to $\mathcal{C}$ to testing proximity of a new (virtual) function $f'$ to $\mathcal{C'}$.
-2. Amplifies distance. Roughly, if $f$ is $\delta$-far from $\mathcal{C}$, then $f'$ is $(1 - \sqrt{\rho'})$-far from $\mathcal{C'}$ (expect with probability $(1 - \delta)^t$, we dub this a "bad event").
+2. Amplifies distance. Roughly, if $f$ is $\delta$-far from $\mathcal{C}$, then $f'$ is $(1 - \sqrt{\rho'})$-far[^2] from $\mathcal{C'}$ (except with probability roughly $(1 - \delta)^t$, we dub this a "bad event").
+
+[^2]: Here and throughout, distances of the form $1 - \sqrt{\rho}$ can be improved to $1 - \rho$ by assuming a conjecture on the list-decoding of RS codes proposed in [BCIKS20,BGKS20] [^proximitygaps][^deepfri].
 
 Testing proximity to $\mathcal{C}'$ is now easier. First, the polynomial has had its degree reduced by a factor of $k$. Second, note that $\rho' = (2/k) \cdot \rho$, so if $k > 2$ then $\rho' < \rho$, so the rate has improved.
 
@@ -84,8 +89,8 @@ A STIR iteration roughly consists of the combination of two steps:
 #### Folding
 As in FRI, folding is the process of reducing the degree of a polynomial from $d$ to $d/k$ by decomposing it into $k$ polynomials of degree $d/k$ and taking a random combination of them.
 We rely mainly on two properties of folding:
-1. Folding preserves distance (except with probability at most $1 - \mathrm{poly}(d)/\mathbb{F}$, assuming the field is large enough this is negligible).
-2. Folding is local: given oracle access to $f$, the folding of $f$ can be efficiently evaluated.
+1. Folding preserves distance (except with probability at most $1 - \mathrm{poly}(|\mathcal{L}|)/\mathbb{F}$, which, assuming a large field, is very small).
+2. Folding is local. Given oracle access to $f$, computing the value of the fold $f$ at a point in the folded domain is efficient (and involves querying $f$ at exactly $k$ locations).
 
 #### Quotienting
 The quotient of a function $f$ w.r.t to a function $p: S \to \mathbb{F}$ is the function of $X$ defined as:
@@ -93,9 +98,9 @@ $$
 \frac{f(X) - \hat{p}(X)}{\prod_{a \in S} (X - a)}
 $$
 where $\hat{p}$ is the polynomial interpolating $p$ over $S$.
-Again:
+We rely on two properties of quotients:
 1. If all low-degree polynomials close to $f$ disagree with $p$, then the quotient is far from the RS code.
-2. Quotienting is local.
+2. Quotienting is local. Given oracle access to $f$, computing the value of the quotient at a point is efficient (and involves querying $f$ at a single location).
 
 ### The STIR iteration 
 
@@ -136,7 +141,7 @@ For a more detailed comparison, see Section 6 of the paper.
 ### Practical considerations
 We consider the prover costs of STIR. In practice, FRI is run in a heavily batched context i.e., instead of testing proximity of a single polynomial to a RS code, a random linear combination of a list of polynomials $f_1, \dots, f_\ell$ is tested. The dominating prover cost is then that of committing to the polynomials, which involves performing $\ell$ FFTs to compute the evaluations of the $f_i$s over $\mathcal{L}$ and then committing to said evaluation. This cost is shared by both FRI and STIR, and, especially in this batch setting, comes to dominate. The rest of the proximity test, which is where STIR is slower than FRI, is independent of the number of polynomials committed. So, changing from FRI to STIR should have an almost negligible effect on prover runtime. 
 
-Further, STIR's better argument size and verifier hash complexity enables setting larger rates while still achieving better metrics than FRI. For example, [ethSTARK][^ethSTARK] uses FRI with $d = 2^{22}$ and $\rho = 1/4$. In our experiments, FRI yields arguments of size 154 KiB and which can be verified by performing $\approx 2800$ hashes. Instead, using STIR with $d = 2^{22}$ and $\rho = 1/2$ yields arguments of size 143 KiB whose verifier performs $\approx 2200$ hashes. Further, the dominating costs of FRI and STIR has costs quasi-linear in $d/\rho$. Thus, with these parameters, we expect the dominating costs to be approximately half as large in STIR compared to FRI. Thus, we expect to achieve _better prover costs while achieving smaller proofs and a more efficient verifier_ than FRI.
+Further, STIR's improvement in query complexity enable new parameter tradeoffs in which one can achieve better prover time, argument sizes and verifier hash complexity than FRI. For example, [ethSTARK][^ethSTARK] uses FRI with $d = 2^{22}$ and $\rho = 1/4$. In our experiments, FRI's prover runs in 11s, yields arguments of size 154 KiB which can be verified by performing $\approx 2800$ hashes. Instead, running STIR with $d = 2^{22}$ and $\rho = 1/2$ yields a prover which runs in 10s, has arguments of size 143 KiB and a verifier which performs $\approx 2200$ hashes. More generally, in the batched setting, we expect the dominating costs of both FRI and STIR to be proportional to $\ell \cdot d/\rho$. If the improvements in argument size/verifier hash allow to set a larger rate (say by a factor of 2), the dominating cost of the STIR prover would as well decrease by that factor.
 
 ---
 ##### Citation
@@ -156,5 +161,7 @@ G. Arnon, A. Chiesa, G. Fenzi, E. Yogev. "_STIR: Reed–Solomon Proximity Testin
 
 ---
 ##### Related material
-[^fri]: Eli Ben-Sasson, Iddo Bentov, Yinon Horesh, and Michael Riabzev. “Fast Reed–Solomon In- teractive Oracle Proofs of Proximity”. In: Proceedings of the 45th International Colloquium on Automata, Languages and Programming. ICALP ’18. 2018,
-[^ethSTARK]: StarkWare. ethSTARK Documentation. Cryptology ePrint Archive, Paper 2021/582. https://eprint.iacr.org/2021/582. 2021.
+[^fri]: [BBHR18] Eli Ben-Sasson, Iddo Bentov, Yinon Horesh, and Michael Riabzev. “Fast Reed–Solomon In- teractive Oracle Proofs of Proximity”. In: Proceedings of the 45th International Colloquium on Automata, Languages and Programming. ICALP ’18. 2018,
+[^ethSTARK]: [ethSTARK] StarkWare. ethSTARK Documentation. Cryptology ePrint Archive, Paper 2021/582. https://eprint.iacr.org/2021/582. 2021.
+[^proximitygaps]: [BCIKS20] Eli Ben-Sasson, Dan Carmon, Yuval Ishai, Swastik Kopparty, and Shubhangi Saraf. “Prox- imity Gaps for Reed–Solomon Codes”. In: Proceedings of the 61st Annual IEEE Symposium on Foundations of Computer Science. FOCS ’20. 2020.
+[^deepfri]: [BGKS20] Eli Ben-Sasson, Lior Goldberg, Swastik Kopparty, and Shubhangi Saraf. “DEEP-FRI: Sam- pling Outside the Box Improves Soundness”. In: Proceedings of the 11th Innovations in Theoretical Computer Science Conference. ITCS ’20.
