@@ -13,7 +13,7 @@ cover:
     relative: false
 ---
 
-This blog-post is a short introduction to our new work: "STIR: Reed-Solomon Proximity Testing with Fewer Queries". This is joint work with Gal Arnon, Alessandro Chiesa and Eylon Yogev, and the full version is [available on ePrint](https://eprint.iacr.org/2024/XXX). Code is also available at [stir](https://github.com/WizardOfMenlo/stir).
+This blog-post is a short introduction to our new work: "STIR: Reed-Solomon Proximity Testing with Fewer Queries". This is joint work with Gal Arnon, Alessandro Chiesa and Eylon Yogev, and the full version is [available on ePrint](https://eprint.iacr.org/2024/XXX). Code is also available at [WizardOfMenlo/stir](https://github.com/WizardOfMenlo/stir).
 
 Denote by $\mathsf{RS}[\mathbb{F}, \mathcal{L}, d]$ the Reed-Solomon (RS) code[^1] over the field $\mathbb{F}$ of rate $\rho = d/|\mathcal{L}|$.
 Testing proximity to a RS code is the problem of, given oracle access to $f: \mathcal{L} \to \mathbb{F}$, determining whether
@@ -52,13 +52,13 @@ A STIR iteration performs $t$ queries while fulfilling two roles:
 
 Testing proximity to $\mathcal{C}'$ is now easier. First, the polynomial has had its degree reduced by a factor of $k$. Second, note that $\rho' = (2/k) \cdot \rho$, so if $k > 2$ then $\rho' < \rho$, so the rate has improved.
 
-Imagine now applying $M$ STIR iterations. Let $f_i, t_i$, $\mathcal{L}_i$ be the functions tested, repetition parameters and domains at each round. Let also $\rho_i := (2/k)^i \cdot \rho$ and $d_i = d/k^i$. At the end of those iterations, the (honest) prover will send a polynomial $p$ of degree $d_M$. The verifier then checks at $t_M$ points of $\mathcal{L}_M$ that $f_M(x) = p(x)$.
+Imagine now applying $M$ STIR iterations. Let $f_i, t_i$, $\mathcal{L}_i$ be the functions tested, repetition parameters and domains at each round. Let also $\rho_i := (2/k)^i \cdot \rho$ and $d_i = d/k^i$. At the end of those iterations, the (honest) prover will send a polynomial $\hat{p}$ of degree $d_M$. The verifier then checks at $t_M$ points of $\mathcal{L}_M$ that $f_M(x) = \hat{p}(x)$.
 
 Let's analyse soundness of this protocol. First, we bound the probability of a bad event happening at each iteration. At the first round, this probability is $(1 - \delta)^{t_0}$. In later rounds, since the distance was amplified the probability is now:
 $$ 
 (1 - (1 - \sqrt{\rho_i}))^{t_i} = \rho_i^{t_i/2}
 $$
-If none of these bad events happen, then the polynomial $p$ must be at distance $(1 - \sqrt{\rho_M})$ from $\mathcal{C}_M$, and so the final check will detect this with probability at least $1 - \rho_M^{t_M/2}$.
+If none of these bad events happen, then the polynomial $\hat{p}$ must be at distance $(1 - \sqrt{\rho_M})$ from $\mathcal{C}_M$, and so the final check will detect this with probability at least $1 - \rho_M^{t_M/2}$.
 
 The overall soundness error of this protocol is then:
 $$ 
@@ -122,7 +122,7 @@ If instead such a codeword exists, by the first point $\hat{u}$ can agree with t
 
 ---
 # Benchmarks
-We implemented STIR and FRI in Rust and compared their performance. Our code can be found at [stir](https://github.com/WizardOfMenlo/stir).
+We implemented STIR and FRI in Rust and compared their performance. Our code can be found at [WizardOfMenlo/stir](https://github.com/WizardOfMenlo/stir).
 Below, we present the results of our benchmarks when $\rho = 1/2$
 
 ##### Comparison of FRI and STIR. FRI is red, STIR is blue.
