@@ -65,7 +65,7 @@ $$
 \varepsilon \leq (1 - \delta)^{t_0} + \sum_{i = 1}^M \rho_i^{t_i/2}.
 $$
 
-Aiming each term in the above sum to be $\leq 2^{-lambda}$ so that $\varepsilon < (M+1) \cdot 2^{-\lambda}$, leads to setting $t_0 = \frac{\lambda}{- \log (1 - \delta)}$ and $t_i = \frac{\lambda}{- \log \sqrt{\rho_i}}$.
+Aiming each term in the above sum to be $\leq 2^{-\lambda}$ so that $\varepsilon \leq (M+1) \cdot 2^{-\lambda}$, leads to setting $t_0 = \frac{\lambda}{- \log (1 - \delta)}$ and $t_i = \frac{\lambda}{- \log \sqrt{\rho_i}}$.
 
 The improved rate, translates in a decrease in the values of $t_i$ (apart from the first iteration). 
 This is where STIR gains its efficiency. 
