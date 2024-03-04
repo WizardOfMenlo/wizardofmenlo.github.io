@@ -5,15 +5,15 @@ date: 2024-02-21
 author: "Gal Arnon, Alessandro Chiesa, Giacomo Fenzi, Eylon Yogev"
 description: "We present STIR (Shift To Improve Rate), a concretely efficient interactive oracle proof of proximity (IOPP) for Reed–Solomon codes that achieves the best known query complexity of any concretely efficient IOPP for this problem."
 editPost:
-    URL: "https://eprint.iacr.org/2024/XXX"
-    Text: "ePrint: 2024/XXX"
+    URL: "https://eprint.iacr.org/2024/390"
+    Text: "ePrint: 2024/390"
 cover:
     image: "stir_logo.jpg"
     alt: "STIR"
     relative: false
 ---
 
-This blog-post is a short introduction to our new work: "STIR: Reed-Solomon Proximity Testing with Fewer Queries". This is joint work with Gal Arnon, Alessandro Chiesa and Eylon Yogev, and the full version is [available on ePrint](https://eprint.iacr.org/2024/XXX). Code is also available at [WizardOfMenlo/stir](https://github.com/WizardOfMenlo/stir).
+This blog-post is a short introduction to our new work: "STIR: Reed-Solomon Proximity Testing with Fewer Queries". This is joint work with Gal Arnon, Alessandro Chiesa and Eylon Yogev, and the full version is [available on ePrint](https://eprint.iacr.org/2024/390). Code is also available at [WizardOfMenlo/stir](https://github.com/WizardOfMenlo/stir).
 
 Denote by $\mathsf{RS}[\mathbb{F}, \mathcal{L}, d]$ the Reed-Solomon (RS) code[^1] over the field $\mathbb{F}$ of rate $\rho = d/|\mathcal{L}|$.
 Testing proximity to a RS code is the problem of, given oracle access to $f: \mathcal{L} \to \mathbb{F}$, determining whether
@@ -146,16 +146,16 @@ Further, STIR's improvement in query complexity enable new parameter tradeoffs i
 ---
 ##### Citation
 
-G. Arnon, A. Chiesa, G. Fenzi, E. Yogev. "_STIR: Reed–Solomon Proximity Testing with Fewer Queries_". Cryptology ePrint Archive, Paper 2024/XXX. Available at: https://ia.cr/2024/XXX.
+G. Arnon, A. Chiesa, G. Fenzi, E. Yogev. "_STIR: Reed–Solomon Proximity Testing with Fewer Queries_". Cryptology ePrint Archive, Paper 2024/390. Available at: https://ia.cr/2024/390.
 
 ```BibTeX
 @misc{ArnonCFY,
 	author       = {Gal Arnon and Alessandro Chiesa and Giacomo Fenzi and Eylon Yogev},
 	title        = {STIR: Reed–Solomon Proximity Testing with Fewer Queries},
-	howpublished = {Cryptology ePrint Archive, Paper 2024/XXX},
+	howpublished = {Cryptology ePrint Archive, Paper 2024/390},
 	year         = {2024},
-	note         = {\url{https://eprint.iacr.org/2024/XXX}},
-	url          = {https://eprint.iacr.org/2024/XXX}
+	note         = {\url{https://eprint.iacr.org/2024/390}},
+	url          = {https://eprint.iacr.org/2024/390}
 }
 ```
 
