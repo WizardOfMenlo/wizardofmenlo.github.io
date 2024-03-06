@@ -107,7 +107,7 @@ We rely on two properties of quotients:
 We describe, at a high level, an iteration of STIR. Let $\mathcal{L}^k = \\{ x^k : x \in \mathcal{L} \\}$.
 
 1. **Folding-randomness**: The verifier samples and sends $\alpha \gets \mathbb{F}$.
-2. **Fold**: The prover sends $g$, the evaluation of the folding $\hat{g}$ of $f$ around $\alpha$ over $\mathcal{L}'$. (Note, the folding would be a function $\mathcal{L}^k \to \mathbb{F}$ where $|\mathcal{L}^k| = |\mathcal{L}|/k$, while here $\mathcal{L'}$ is a domain of size $\mathcal{L}/2$.)
+2. **Fold**: The prover sends $g$, the evaluation of the folding $\hat{g}$ of $f$ around $\alpha$ over $\mathcal{L}'$. (Note, the folding would be a function $\mathcal{L}^k \to \mathbb{F}$ where $|\mathcal{L}^k| = |\mathcal{L}|/k$, while here $\mathcal{L'}$ is a domain of size $|\mathcal{L}|/2$.)
 3. **Out-of-domain sample**: The verifier samples and sends $x \gets \mathbb{F}$.
 4. **Out-of-domain reply**: The prover sends $y = \hat{g}(x)$.
 5. **Shift-queries**: The verifier samples $v_1, \dots, v_t \gets \mathcal{L^k}$ and queries $f$ to compute the value of the folding of $f$ at these points (using the local mapping). Denote these values as $y_1, \dots, y_t$.
@@ -161,7 +161,7 @@ G. Arnon, A. Chiesa, G. Fenzi, E. Yogev. "_STIR: Reed–Solomon Proximity Testin
 
 ---
 ##### Related material
-[^fri]: [BBHR18] Eli Ben-Sasson, Iddo Bentov, Yinon Horesh, and Michael Riabzev. “Fast Reed–Solomon In- teractive Oracle Proofs of Proximity”. In: Proceedings of the 45th International Colloquium on Automata, Languages and Programming. ICALP ’18. 2018,
+[^fri]: [BBHR18] Eli Ben-Sasson, Iddo Bentov, Yinon Horesh, and Michael Riabzev. “Fast Reed–Solomon Interactive Oracle Proofs of Proximity”. In: Proceedings of the 45th International Colloquium on Automata, Languages and Programming. ICALP ’18. 2018,
 [^ethSTARK]: [ethSTARK] StarkWare. ethSTARK Documentation. Cryptology ePrint Archive, Paper 2021/582. https://eprint.iacr.org/2021/582. 2021.
-[^proximitygaps]: [BCIKS20] Eli Ben-Sasson, Dan Carmon, Yuval Ishai, Swastik Kopparty, and Shubhangi Saraf. “Prox- imity Gaps for Reed–Solomon Codes”. In: Proceedings of the 61st Annual IEEE Symposium on Foundations of Computer Science. FOCS ’20. 2020.
-[^deepfri]: [BGKS20] Eli Ben-Sasson, Lior Goldberg, Swastik Kopparty, and Shubhangi Saraf. “DEEP-FRI: Sam- pling Outside the Box Improves Soundness”. In: Proceedings of the 11th Innovations in Theoretical Computer Science Conference. ITCS ’20.
+[^proximitygaps]: [BCIKS20] Eli Ben-Sasson, Dan Carmon, Yuval Ishai, Swastik Kopparty, and Shubhangi Saraf. “Proximity Gaps for Reed–Solomon Codes”. In: Proceedings of the 61st Annual IEEE Symposium on Foundations of Computer Science. FOCS ’20. 2020.
+[^deepfri]: [BGKS20] Eli Ben-Sasson, Lior Goldberg, Swastik Kopparty, and Shubhangi Saraf. “DEEP-FRI: Sampling Outside the Box Improves Soundness”. In: Proceedings of the 11th Innovations in Theoretical Computer Science Conference. ITCS ’20.
