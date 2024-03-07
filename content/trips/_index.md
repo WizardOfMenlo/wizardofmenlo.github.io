@@ -9,7 +9,7 @@ List of past and upcoming trips and presentations.
 ### 2024
 - 8-11 March. Philadelphia. Presenting UC-secure zkSNARKs at [Penn](https://www.upenn.edu/).
 - 11-14 March. New York. Presenting UC-secure zkSNARKs at [NYU](https://cs.nyu.edu/home/index.html).
-- 8-14 April. Athens. Presenting STIR 🥣 at [zkSummit11](https://www.zksummit.com/).
+- 8-14 April. Athens. Presenting [STIR 🥣](/papers/stir) at [zkSummit11](https://www.zksummit.com/).
 
 ## Past
 ### 2023
