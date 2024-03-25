@@ -9,6 +9,7 @@ List of past and upcoming trips and presentations.
 ### 2024
 
 - 8-14 April. Athens. Presenting [STIR 🥣](/papers/stir) at [zkSummit11](https://www.zksummit.com/).
+- 26-30 May. Zurich. Presenting [SLAP 👋](/papers/slap) at [EUROCRYPT24](https://eurocrypt.iacr.org/2024/).
 
 ## Past
 ### 2024
