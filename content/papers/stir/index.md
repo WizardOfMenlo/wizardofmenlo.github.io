@@ -74,12 +74,12 @@ In FRI, for example, the rate is _unchanged_ between iterations, so each round (
 In fact, since FRI does _correlated_ queries, the number of queries will be the same at each round as the first one, and at least $\max \left(\frac{\lambda}{-\log (1 - \delta)}, \frac{\lambda}{- \log \sqrt{\rho}}\right)$.
 Roughly then, the total number of queries of the FRI protocol is:
 $$
-O\left(\lambda \cdot \left( \frac{\log d}{\log (1 - \delta)} + \frac{\log d}{-\log \sqrt{\rho}} \right)\right)
+O\left(\lambda \log d \cdot \max \left\{ \frac{1}{-\log (1 - \delta)}, \frac{1}{-\log \sqrt{\rho}} \right\}\right)
 $$
 
 STIR instead can perform only:
 $$
-O\left(\log d + \lambda \cdot \log \left(\frac{\log d}{\log 1/\rho}\right)\right)
+O\left(\frac{\lambda}{-\log (1 - \delta)} + \log d + \lambda \cdot \log \left(\frac{\log d}{-\log \sqrt{\rho}}\right)\right)
 $$
 
 ---
