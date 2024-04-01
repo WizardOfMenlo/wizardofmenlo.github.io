@@ -71,10 +71,10 @@ The improved rate, translates in a decrease in the values of $t_i$ (apart from t
 This is where STIR gains its efficiency. 
 
 In FRI, for example, the rate is _unchanged_ between iterations, so each round (apart from the first) will query its corresponding oracle at least $\frac{\lambda}{- \log \sqrt{\rho}}$ times.
-In fact, since FRI does _correlated_ queries, the number of queries will be the same at each round as the first one, and at least $\max \left(\frac{\lambda}{-\log (1 - \delta)}, \frac{\lambda}{- \log \sqrt{\rho}}\right)$.
+In fact, since FRI does _correlated_ queries, the number of queries will be the same at each round as the first one, and at least $\max \left\\{\frac{\lambda}{-\log (1 - \delta)}, \frac{\lambda}{- \log \sqrt{\rho}}\right\\}$.
 Roughly then, the total number of queries of the FRI protocol is:
 $$
-O\left(\lambda \log d \cdot \max \left\{ \frac{1}{-\log (1 - \delta)}, \frac{1}{-\log \sqrt{\rho}} \right\}\right)
+O\left(\lambda \log d \cdot \max \left\\{ \frac{1}{-\log (1-\delta)}, \frac{1}{-\log \sqrt{\rho}} \right\\}\right)
 $$
 
 STIR instead can perform only:
