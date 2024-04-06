@@ -5,10 +5,10 @@ date: 2024-02-20
 author: "Alessandro Chiesa, Elisabetta Fedele, Giacomo Fenzi, Andrew Zitek-Estrada"
 description: "We present a new family of algorithms for the sumcheck protocol prover that offer new time-space tradeoffs."
 editPost:
-    URL: "https://eprint.iacr.org/2024/XXX"
-    Text: "ePrint: 2024/XXX"
+    URL: "https://eprint.iacr.org/2024/524"
+    Text: "ePrint: 2024/524"
 ---
-This blog-post is a short introduction to our new work: "A Time-Space Tradeoff for the Sumcheck Prover". This is joint work with Alessandro Chiesa, Elisabetta Fedele, Andrew Zitek-Estrada, and the full version is [available on ePrint.](https://eprint.iacr.org/2024/XXX) Code accompanying this work can be found at [space-efficient-sumcheck.](https://github.com/compsec-epfl/space-efficient-sumcheck)
+This blog-post is a short introduction to our new work: "A Time-Space Tradeoff for the Sumcheck Prover". This is joint work with Alessandro Chiesa, Elisabetta Fedele, Andrew Zitek-Estrada, and the full version is [available on ePrint.](https://eprint.iacr.org/2024/524) Code accompanying this work can be found at [space-efficient-sumcheck.](https://github.com/compsec-epfl/space-efficient-sumcheck)
 
 The sumcheck protocol [LFKN92][^sumcheck] is an interactive protocol between a prover and a verifier that allows a verifier to _succinctly_ check claims of the form
 $$ \sum_{\mathbf{b} \in \\{0, 1\\}^n} p(\mathbf{b}) = \gamma \enspace. $$
@@ -29,16 +29,16 @@ We implement our algorithms (which is made available at [space-efficient-sumchec
 ---
 ##### Citation
 
-A. Chiesa, E. Fedele, G. Fenzi, A. Zitek-Estrada. "_A Time-Space Tradeoff for the Sumcheck Prover_". Cryptology ePrint Archive, Paper 2024/XXX. Available at: https://ia.cr/2024/XXX.
+A. Chiesa, E. Fedele, G. Fenzi, A. Zitek-Estrada. "_A Time-Space Tradeoff for the Sumcheck Prover_". Cryptology ePrint Archive, Paper 2024/524. Available at: https://ia.cr/2024/524.
 
 ```BibTeX
 @misc{ChiesaFFZ24,
 	author       = {Alessandro Chiesa and Elisabetta Fedele and Giacomo Fenzi and Andrew Zitek-Estrada},
 	title        = {A Time-Space Tradeoff for the Sumcheck Prover},
-	howpublished = {Cryptology ePrint Archive, Paper 2024/XXX},
+	howpublished = {Cryptology ePrint Archive, Paper 2024/524},
 	year         = {2024},
-	note         = {\url{https://eprint.iacr.org/2024/XXX}},
-	url          = {https://eprint.iacr.org/2024/XXX}
+	note         = {\url{https://eprint.iacr.org/2024/524}},
+	url          = {https://eprint.iacr.org/2024/524}
 }
 ```
 
