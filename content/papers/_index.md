@@ -16,7 +16,7 @@ Preprints, publications and short descriptions of the content of the project I w
 - [CF**F**Z24] "_A Time-Space Tradeoff for the Sumcheck Prover_". \
     Alessandro Chiesa, Elisabetta Fedele, Giacomo Fenzi, Andrew Zitek-Estrada. \
     Cryptology ePrint Archive, Paper 2024/524. Available at: [2024/524.](https://ia.cr/2024/524) [Accompanying blog-post.]({{< ref "/papers/blendy-sumcheck" >}})
-- [AB**F**KKZ] "_Post-Quantum Access Control with Application to Secure Data Retrieval_" \
+- [AB**F**KKZ24] "_Post-Quantum Access Control with Application to Secure Data Retrieval_" \
     Behzad Abdolmaleki, Hannes Blümel, Giacomo Fenzi, Homa Khajeh, Stefan Köpsell, Maryam Zarezadeh. \
     In submission.
 
