@@ -8,7 +8,7 @@ Preprints, publications and short descriptions of the content of the project I w
 ## Highlights
 
 - STIR 🥣: RS IOPP with fewer queries. [2024/390.](https://ia.cr/2024/390) [Blog-post.]({{< ref "/papers/stir" >}})
-- UC-secure zkSNARKs 🌍: Commonly deployed zkSNARKs are UC-secure. 
+- UC-secure zkSNARKs 🌍: Commonly deployed zkSNARKs are UC-secure in the ROM. 
 - SLAP 👋: Succinct lattice-based polynomial commitment scheme from SIS [2023/1469.](https://ia.cr/2023/1469) [Blog-post.]({{< ref "/papers/slap" >}})
 - Blendy 🍹: Space-efficient prover for sumcheck [2024/524.](https://ia.cr/2024/524) [Blog-post.]({{< ref "/papers/blendy-sumcheck" >}})
 
