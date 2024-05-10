@@ -19,6 +19,9 @@ Preprints, publications and short descriptions of the content of the project I w
 - [AB**F**KKZ24] "_Post-Quantum Access Control with Application to Secure Data Retrieval_" \
     Behzad Abdolmaleki, Hannes Blümel, Giacomo Fenzi, Homa Khajeh, Stefan Köpsell, Maryam Zarezadeh. \
     In submission.
+- [**F**GV24] "_Finding Bugs and Features Using Cryptographically-Informed Functional Testing_" \
+    Giacomo Fenzi, Jan Gilcher, Fernando Virdia. \
+    In submission.
 
 ### 2023
 - [A**F**LN23] "_SLAP: Succinct Lattice-Based Polynomial Commitments from Standard Assumptions_". \
