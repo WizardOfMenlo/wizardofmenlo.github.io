@@ -8,7 +8,7 @@ Preprints, publications and short descriptions of the content of the project I w
 ## Highlights
 
 - STIR 🥣: RS IOPP with fewer queries. [2024/390.](https://ia.cr/2024/390) [Blog-post.]({{< ref "/papers/stir" >}})
-- UC-secure zkSNARKs 🌍: Commonly deployed zkSNARKs are UC-secure in the ROM. 
+- UC-secure zkSNARKs 🌍: Commonly deployed zkSNARKs are UC-secure in the ROM. [2024/XXX.](https://ia.cr/2024/XXX) [Blog-post.]({{< ref "/papers/uc-snarks" >}})
 - SLAP 👋: Succinct lattice-based polynomial commitment scheme from SIS [2023/1469.](https://ia.cr/2023/1469) [Blog-post.]({{< ref "/papers/slap" >}})
 - Blendy 🍹: Space-efficient prover for sumcheck. [2024/524.](https://ia.cr/2024/524) [Blog-post.]({{< ref "/papers/blendy-sumcheck" >}})
 
@@ -17,7 +17,7 @@ Preprints, publications and short descriptions of the content of the project I w
 ### 2024
 - [C**F**24] "_zkSNARKs in the ROM with Unconditional UC-Security_". \
     Alessandro Chiesa, Giacomo Fenzi. \
-    Cryptology ePrint Archive, Paper 2024/XXX.
+    Cryptology ePrint Archive, Paper 2024/XXX. Available at: [2024/XXX.](https://ia.cr/2024/XXX) [Accompanying blog-post.]({{< ref "/papers/uc-snarks" >}})
 - [AC**F**Y24] "_STIR: Reed–Solomon Proximity Testing with Fewer Queries_". \
     Gal Arnon, Alessandro Chiesa, Giacomo Fenzi, Eylon Yogev. \
     **CRYPTO 2024.** Available at: [2024/390.](https://ia.cr/2024/390) [Accompanying blog-post.]({{< ref "/papers/stir" >}})

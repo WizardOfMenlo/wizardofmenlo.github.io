@@ -1,0 +1,81 @@
+---
+title: "zkSNARKs in the ROM with Unconditional UC-Security"
+tags: ["concrete", "theory"]
+date: 2024-05-10
+author: "Alessandro Chiesa, Giacomo Fenzi"
+description: "We show that commonly deployed zkSNARKs are UC-secure in the ROM, with no modifications needed."
+editPost:
+    URL: "https://eprint.iacr.org/2024/XXX"
+    Text: "ePrint: 2024/XXX"
+---
+
+This blog-post is a short introduction to our new work: "zkSNARKs in the ROM with Unconditional UC-Security". This is joint work with [Alessandro Chiesa,](https://ic-people.epfl.ch/~achiesa/) and the full version is [available on ePrint.](https://eprint.iacr.org/2024/XXX)
+
+The Universal Composability (UC) [Can01][^UC] framework is a "gold-standard" for security in cryptography. 
+UC-secure protocols achieve strong security guarantees against powerful adaptive adversaries, and retain these guarantees when used as part of larger protocols. Zero knowledge succinct non-interactive arguments of knowledge are often used within larger protocols deployed in dynamic environments, and so UC-security is a highly desirable, if not necessary, goal.
+
+In this work, we show that widely studied and deployed zkSNARKs in the ROM are UC-secure without modifications. Our main theorem states that:
+
+_zkSNARKs constructed by instantiating the [BCS][^BCS] construction with a suitable IOP are unconditionally UC-secure_
+
+Above, suitable IOPs are those that zero-knowledge and (state-restoration) knowledge sound, which are the **same conditions** required for the BCS construction to yield zero-knowledge and knowledge sound arguments in the ROM. So, achieving UC-secure zkSNARKs require **no** additional strengthening of the building blocks used to construct those zkSNARKs.
+
+Unconditional in our setting refers to the fact that our zkSNARKs are secure in the pure random oracle model, and the security is statistical and depends only on the number of queries the environment makes to the random oracle. Further, we also show that the zkSNARKs that we consider are UC-secure in the face of adaptive corruptions.
+
+Finally, all our results come with **concrete security bounds**, which inform how to set parameters in real systems.
+
+## Modelling
+We consider UC-security in the UC with global subroutines framework [BCHTZ20][^UCGS], and the global subroutine that we consider is that of the restricted observable programmable global random oracle model [CDGLN18][^GROM]. This GROM has an interface consisting of four methods: a query method, a programming method, a observe method and a is-programmed method. The query method models a standard random oracle query. The programming method allows _every party_ in the security experiment to program the GROM, and this power is kept "in check" by the is-programmed method, which allows honest parties to detect whether a point was programmed or not. By this, the simulator is the only party that is allowed to program the GROM undetectably. Finally, the observe method allows gathering the queries made to the GROM by parties outside of the session. Roughly, in Micali and BCS, programming is required for zero-knowledge, while observability for knowledge soundness.
+Since in our setting we target unconditional UC-security, we slightly modify the UC-framework to account for environments that are computationally unbounded and whose only limits are in the number of time they can access "resources". To do so, we introduce a mechanism of **budgets**. In our main experiment, the budgets will reflect GROM queries and programming queries and queries to the proving and verification interface.
+
+## UC-friendly properties
+Our UC-security proof is modular. We show that any argument (in the ROM) that satisfies three strong security properties yields a UC-secure argument. 
+The three properties we define are:
+1. UC-friendly completeness
+2. UC-friendly zero knowledge
+3. UC-friendly knowledge soundness
+
+We further show that these properties are in fact _necessary_ for UC-security, giving us confidence that they really are the "right ones".
+
+In each setting we consider adversaries that have adaptive access to random, programming, prover and verifier oracles. 
+Each property then reflects a corresponding property in the ROM that should be upheld in the face of this strong adversarial model.
+
+1. UC-friendly completeness states that such an adversary cannot cause the prover oracle to output proofs that are not subsequently accepted. Since the adversary has access to a programming oracle, perfect completeness of the underlying argument is in fact not sufficient, and we show a separation. We further puth forth a set of convenient properties that, together with perfect completeness, imply UC-friendly completeness.
+2. UC-friendly zero knowledge states that the adversary cannot distinguish between two security experiments, in the first of which the prover oracle returns honestly generated proofs and in the latter those proofs are in fact generated by a simulator (which has no access to the witness). Again, we show that adaptive zero knowledge in the ROM does not suffice for achieving this UC-friendly security notion.
+3. UC-friendly knowledge soundness states that an adversary cannot produce instance-proof pairs that validate successfully but from which an extractor is unable to extract a valid witness (for the corresponding instance). This is a strengthening of simulation extractability to our strong adversarial model. In fact, here we do not know of a separation, and we leave figuring out if one exists to future work.
+
+## Micali and BCS security
+In light of the previous section, to show that the Micali and BCS construction are UC-secure showing that the satisfy these UC-friendly properties suffices. We focus on Micali for simplicity here, but the case for BCS is entirely analogous. 
+
+1. UC-friendly completeness follows from perfect completeness of Micali and by showing that it satisfy two properties that we call monotone proofs and unpredictable queries. Roughly, since the prover queries will be unpredictable and the verifier only queries what the prover has previously queried, the adversary cannot use programming to influence verification.
+2. UC-friendly zero knowledge follows by a careful analysis of the Micali zero knowledge simulator (which requires zero knowledge of the underlying PCP) and by showing that Merkle trees satisfy a notion of UC-friendly hiding.
+3. UC-friendly knowledge soundness was harder to prove, but ultimately comes down to reducing to straightline state-restoration knowledge soundness of the underlying PCP (which is implied by knowledge soundness of the PCP) and an analysis of Merkle trees that show that they satisfy a notion of UC-friendly extraction suitable for this reduction.
+
+We note that, by restricting the adversarial capabilities, our work also shows a full end-to-end proof that Micali and BCS are perfectly complete, adaptive zero knowledge and (straightline) simulation knowledge sound. 
+
+## Adaptive corruptions
+Finally, we strengthen each of the properties to show that Micali and BCS in fact satisfy a stronger still notion of UC-security: they are secure in the face of adversaries that can adaptively corrupt parties in the security experiment and force them to reveal the randomness used thus far. This requires a strengthening of the underlying information theoretical building blocks, and we both show PCPs that satisfy this notion and by inspection conclude that common zero knowledge IOPs already satisfy this strengthening.
+
+---
+##### Citation
+
+A. Chiesa, G. Fenzi. "_zkSNARKs in the ROM with Unconditional UC-Security_". Cryptology ePrint Archive, Paper 2024/XXX. Available at: https://ia.cr/2024/XXX.
+
+```BibTeX
+@misc{ChiesaFenzi24,
+	author       = {Alessandro Chiesa and Giacomo Fenzi},
+	title        = {zkSNARKs in the ROM with Unconditional UC-Security},
+	howpublished = {Cryptology ePrint Archive, Paper 2024/XXX},
+	year         = {2024},
+	note         = {\url{https://eprint.iacr.org/2024/XXX}},
+	url          = {https://eprint.iacr.org/2024/XXX}
+}
+```
+
+---
+##### Related material
+
+[^UC]: [Can01] Ran Canetti. “Universally Composable Security: A New Paradigm for Cryptographic Protocols”. In: Proceedings of the 42nd Annual IEEE Symposium on Foundations of Computer Science. FOCS ’01. 2001, pp. 136–145.
+[^BCS]: [BCS16] Eli Ben-Sasson, Alessandro Chiesa, and Nicholas Spooner. “Interactive Oracle Proofs”. In: Proceed- ings of the 14th Theory of Cryptography Conference. TCC ’16-B. 2016, pp. 31–60.
+[^UCGS]: [BCHTZ20] Christian Badertscher, Ran Canetti, Julia Hesse, Bjorn Tackmann, and Vassilis Zikas. “Universal Composition with Global Subroutines: Capturing Global Setup Within Plain UC”. In: Proceedings of the 18th Theory of Cryptography Conference. TCC 20. 2020, pp. 1–30.
+[^GROM]: [CDGLN18] Jan Camenisch, Manu Drijvers, Tommaso Gagliardoni, Anja Lehmann, and Gregory Neven. “The Wonderful World of Global Random Oracles”. In: Proceedings of the 37th Annual International Conference on Theory and Application of Cryptographic Techniques. EUROCRYPT ’18. 2018, pp. 280–312.
