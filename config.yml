@@ -64,6 +64,8 @@ params:
               url: about
             - name: Papers
               url: papers/
+            - name: Blurbs 
+              url: blurbs/
             - name: Trips
               url: trips/
             - name: Tags
