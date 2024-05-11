@@ -56,16 +56,16 @@ Finally, $t$ and $\lambda_b$ should be set so that $(1 - \delta)^t < 2^{\lambda 
 
 ## Prover time
 Prover time in a STIR iteration is easy to estimate.
-We assume that the prover has access to the message $\hat{f} \in \mathbb{F}^{<d}[X]$ for the codeword $f: \mathcal{L} \to \mathbb{F}$ being tested.
+We assume that the prover has access to the message $\hat{f} \in \mathbb{F}[X]$ of degree $d$ for the codeword $f: \mathcal{L} \to \mathbb{F}$ being tested.
 The STIR prover does the following:
 1. Derives $\alpha \in \mathbb{F}$ by FS.
-2. Computes $\hat{g} := \mathsf{PolyFold}(\hat{f}, \alpha, k) \in \mathbb{F}^{<d/k}[X]$.
+2. Computes $\hat{g} := \mathsf{PolyFold}(\hat{f}, \alpha, k) \in \mathbb{F}[X]$ of degree $d/k$.
 3. Evaluates $\hat{g}$ on $\mathcal{L}^\star $ via a FFT to compute a vector of evaluations $g: \mathcal{L}^\star \to \mathbb{F}$.
 4. Commits to $g$ using a Merkle tree.
 5. Derives $x_1, \dots, x_s \in \mathbb{F}$ by FS.
 6. Evaluates $g$ at $x_1, \dots, x_s$ using Horner's rule.
 7. Derives $v_1, \dots, v_t \in \mathcal{L}^k$ by FS.
-8. Computes a new function $\hat{f}^\star \in \mathbb{F}^{<d/k}[X]$ by quotienting $\hat{g}$ at $s + t$ points, and degree correcting.
+8. Computes a new function $\hat{f}^\star \in \mathbb{F}[X]$ of degree $d/k$ by quotienting $\hat{g}$ at $s + t$ points, and degree correcting.
 
 All summed up, the prover does:
 1. Squeeze $1 + s + t$ elements out of the FS sponge.
