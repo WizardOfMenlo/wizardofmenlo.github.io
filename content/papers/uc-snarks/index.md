@@ -5,11 +5,11 @@ date: 2024-05-10
 author: "Alessandro Chiesa, Giacomo Fenzi"
 description: "We show that commonly deployed zkSNARKs are UC-secure in the ROM, with no modifications needed."
 editPost:
-    URL: "https://eprint.iacr.org/2024/XXX"
-    Text: "ePrint: 2024/XXX"
+    URL: "https://eprint.iacr.org/2024/724"
+    Text: "ePrint: 2024/724"
 ---
 
-This blog-post is a short introduction to our new work: "zkSNARKs in the ROM with Unconditional UC-Security". This is joint work with [Alessandro Chiesa,](https://ic-people.epfl.ch/~achiesa/) and the full version is [available on ePrint.](https://eprint.iacr.org/2024/XXX)
+This blog-post is a short introduction to our new work: "zkSNARKs in the ROM with Unconditional UC-Security". This is joint work with [Alessandro Chiesa,](https://ic-people.epfl.ch/~achiesa/) and the full version is [available on ePrint.](https://eprint.iacr.org/2024/724)
 
 The Universal Composability (UC) [Can01][^UC] framework is a "gold-standard" for security in cryptography. 
 UC-secure protocols achieve strong security guarantees against powerful adaptive adversaries, and retain these guarantees when used as part of larger protocols. Zero knowledge succinct non-interactive arguments of knowledge are often used within larger protocols deployed in dynamic environments, and so UC-security is a highly desirable, if not necessary, goal.
@@ -59,16 +59,16 @@ Finally, we strengthen each of the properties to show that Micali and BCS in fac
 ---
 ##### Citation
 
-A. Chiesa, G. Fenzi. "_zkSNARKs in the ROM with Unconditional UC-Security_". Cryptology ePrint Archive, Paper 2024/XXX. Available at: https://ia.cr/2024/XXX.
+A. Chiesa, G. Fenzi. "_zkSNARKs in the ROM with Unconditional UC-Security_". Cryptology ePrint Archive, Paper 2024/724. Available at: https://ia.cr/2024/724.
 
 ```BibTeX
 @misc{ChiesaFenzi24,
 	author       = {Alessandro Chiesa and Giacomo Fenzi},
 	title        = {zkSNARKs in the ROM with Unconditional UC-Security},
-	howpublished = {Cryptology ePrint Archive, Paper 2024/XXX},
+	howpublished = {Cryptology ePrint Archive, Paper 2024/724},
 	year         = {2024},
-	note         = {\url{https://eprint.iacr.org/2024/XXX}},
-	url          = {https://eprint.iacr.org/2024/XXX}
+	note         = {\url{https://eprint.iacr.org/2024/724}},
+	url          = {https://eprint.iacr.org/2024/724}
 }
 ```
 
