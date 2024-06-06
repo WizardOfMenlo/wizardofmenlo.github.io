@@ -7,7 +7,7 @@ List of past and upcoming trips and presentations.
 
 ## Upcoming
 ### 2024
-- 5-9 August. London. Visiting [Khanh](https://khanhcrypto.github.io/). 
+- 5-9 August. London. Visiting [Khanh](https://khanhcrypto.github.io/) at [KCL](https://www.kcl.ac.uk/). 
 - 18-22 August. Santa Barbara. Presenting [STIR 🥣](/papers/stir) at [CRYPTO24](https://crypto.iacr.org/2024/).
 
 ## Past
