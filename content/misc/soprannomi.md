@@ -14,7 +14,7 @@ I seem to have picked up a number of nicknames over the years. Keeping track of 
 - **Jack**
 - **Wiz**
 - **Fancy**
-- **El Mas Grande**
+- **El Grande**
 - **Le Petit Roi**
 - **Il Mecenate**
 - **Il Grande Vecchio**
