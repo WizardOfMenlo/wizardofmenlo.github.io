@@ -11,29 +11,16 @@ I seem to have picked up a number of nicknames over the years. Keeping track of 
 
 ---
 ## The Self-Referential List
-- **Jack**
-- **Wiz**
-- **Fancy**
-- **El Mas Grande**
-- **Le Petit Roi**
-- **Il Mecenate**
-- **Il Grande Vecchio**
-- **L'Andreotti della Crittografia**
-- **Il Burattinaio**
-- **Guacamole**
-- **Papà**
-- **Bauscia**
-- **Taranto**
-- **El Chico di Porta Venezia**
-- **Gramigna**
-- **Kingmaker**
-- **Milano Milano**
-- **Xylello**
-- **Rattazzo**
-- **Etereo**
-- **Medicane**
-- **Tezcatlipoca**
-- **L'Ultima Primula Rossa**
+- **One ball**
+- **Last man standing**
+- **Cartonato**
+- **Volevo solo te**
+- **Circonciso**
+- **Parenzo**
+- **Buscetta**
+- **Langsam**
+- **El Pequeño**
+- **Chiaccherone**
 
 ---
 ## Some quotes
