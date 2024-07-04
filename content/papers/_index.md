@@ -20,7 +20,7 @@ Preprints, publications and short descriptions of the content of the project I w
     **ZKProof 6.** Cryptology ePrint Archive, Paper 2024/724. Available at: [2024/724.](https://ia.cr/2024/724) [Accompanying blog-post.]({{< ref "/papers/uc-snarks" >}})
 - [AC**F**Y24] "_STIR: Reed–Solomon Proximity Testing with Fewer Queries_". \
     Gal Arnon, Alessandro Chiesa, Giacomo Fenzi, Eylon Yogev. \
-    **CRYPTO 2024 & zkSummit11 & ZKProof 6.** Available at: [2024/390.](https://ia.cr/2024/390) [Accompanying blog-post.]({{< ref "/papers/stir" >}})
+    **Best Paper Award ⭐️ @ CRYPTO 2024 & zkSummit11 & ZKProof 6.** Available at: [2024/390.](https://ia.cr/2024/390) [Accompanying blog-post.]({{< ref "/papers/stir" >}})
 - [CF**F**Z24] "_A Time-Space Tradeoff for the Sumcheck Prover_". \
     Alessandro Chiesa, Elisabetta Fedele, Giacomo Fenzi, Andrew Zitek-Estrada. \
     **ZKProof 6.** Cryptology ePrint Archive, Paper 2024/524. Available at: [2024/524.](https://ia.cr/2024/524) [Accompanying blog-post.]({{< ref "/papers/blendy-sumcheck" >}})
