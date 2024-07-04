@@ -14,6 +14,7 @@ cover:
 ---
 
 This blog-post is a short introduction to our new work: "STIR: Reed-Solomon Proximity Testing with Fewer Queries". This is joint work with [Gal Arnon](https://galarnon42.github.io/), [Alessandro Chiesa](https://ic-people.epfl.ch/~achiesa/), and [Eylon Yogev](https://www.eylonyogev.com/about), and the full version is [available on ePrint](https://eprint.iacr.org/2024/390). Code is also available at [WizardOfMenlo/stir](https://github.com/WizardOfMenlo/stir). Here are also [some slides](/presentations/stir.pdf) that might be helpful, the [recording of the talk at zkSummit11](https://youtu.be/OLklJjp8KB4?si=-Brr6YLj6YCoQvh9), and our episode on [zkPodcast](https://open.spotify.com/episode/1CRYtmzNHIFNZ0yceS3aO4?si=721b999fff674618).
+**This paper won Best Paper Award 🥇 at CRYPTO 2024!**
 
 Denote by $\mathsf{RS}[\mathbb{F}, \mathcal{L}, d]$ the Reed-Solomon (RS) code[^1] over the field $\mathbb{F}$ of rate $\rho = d/|\mathcal{L}|$.
 Testing proximity to a RS code is the problem of, given oracle access to $f: \mathcal{L} \to \mathbb{F}$, determining whether
