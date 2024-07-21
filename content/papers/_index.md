@@ -29,7 +29,7 @@ Preprints, publications and short descriptions of the content of the project I w
     Cryptology ePrint Archive, Paper 2024/1122. Available at: [2024/1122.](https://ia.cr/2024/1122)
 - [AB**F**KKZ24] "_Post-Quantum Access Control with Application to Secure Data Retrieval_". \
     Behzad Abdolmaleki, Hannes Blümel, Giacomo Fenzi, Homa Khajeh, Stefan Köpsell, Maryam Zarezadeh. \
-    In submission.
+    Cryptology ePrint Archive, Paper 2024/1160. Available at: [2024/1160.](https://ia.cr/2024/1160)
 
 ### 2023
 - [A**F**LN23] "_SLAP: Succinct Lattice-Based Polynomial Commitments from Standard Assumptions_". \
