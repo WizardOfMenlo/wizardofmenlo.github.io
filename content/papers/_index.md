@@ -17,7 +17,7 @@ Preprints, publications and short descriptions of the content of the project I w
 ### 2024
 - [C**F**24] "_zkSNARKs in the ROM with Unconditional UC-Security_". \
     Alessandro Chiesa, Giacomo Fenzi. \
-    **ZKProof 6.** Cryptology ePrint Archive, Paper 2024/724. Available at: [2024/724.](https://ia.cr/2024/724) [Accompanying blog-post.]({{< ref "/papers/uc-snarks" >}})
+    **TCC 2024 & ZKProof 6.** Cryptology ePrint Archive, Paper 2024/724. Available at: [2024/724.](https://ia.cr/2024/724) [Accompanying blog-post.]({{< ref "/papers/uc-snarks" >}})
 - [AC**F**Y24] "_STIR: Reed–Solomon Proximity Testing with Fewer Queries_". \
     Gal Arnon, Alessandro Chiesa, Giacomo Fenzi, Eylon Yogev. \
     **CRYPTO 2024 (⭐️ Best Paper ⭐️) & zkSummit11 & ZKProof 6.** Available at: [2024/390.](https://ia.cr/2024/390) [Accompanying blog-post.]({{< ref "/papers/stir" >}})
