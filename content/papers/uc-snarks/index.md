@@ -6,7 +6,7 @@ author: "Alessandro Chiesa, Giacomo Fenzi"
 description: "We show that commonly deployed zkSNARKs are UC-secure in the ROM, with no modifications needed."
 editPost:
     URL: "https://eprint.iacr.org/2024/724"
-    Text: "ePrint: 2024/724"
+    Text: "TCC 2024 - ePrint: 2024/724"
 ---
 
 This blog-post is a short introduction to our new work: "zkSNARKs in the ROM with Unconditional UC-Security". This is joint work with [Alessandro Chiesa,](https://ic-people.epfl.ch/~achiesa/) and the full version is [available on ePrint.](https://eprint.iacr.org/2024/724)
