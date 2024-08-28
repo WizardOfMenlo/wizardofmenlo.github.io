@@ -6,7 +6,7 @@ author: "Gal Arnon, Alessandro Chiesa, Giacomo Fenzi, Eylon Yogev"
 description: "We present STIR (Shift To Improve Rate), a concretely efficient interactive oracle proof of proximity (IOPP) for Reed–Solomon codes that achieves the best known query complexity of any concretely efficient IOPP for this problem."
 editPost:
     URL: "https://eprint.iacr.org/2024/390"
-    Text: "ePrint: 2024/390"
+    Text: "CRYPTO 2024 - ePrint: 2024/390"
 cover:
     image: "stir_logo.jpg"
     alt: "STIR"
