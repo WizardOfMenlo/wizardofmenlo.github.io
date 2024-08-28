@@ -6,7 +6,7 @@ author: "Giacomo Fenzi, Hossein Moghaddas, Ngoc Khanh Nguyen"
 description: "In this paper, we introduce the powerBASIS assumption, and use it construct quasi-succinct polynomial commitment schemes from lattices."
 editPost:
     URL: "https://eprint.iacr.org/2023/846"
-    Text: "ePrint: 2023/846"
+    Text: "JoC 2024 - ePrint: 2023/846"
 ---
 In this blog-post, I will be taking a look at my recent work with Hossein Moghaddas and Ngoc Khanh Nguyen, [full version](https://eprint.iacr.org/2023/846).
 We extend the vector commitment scheme of [WW23][^WeeWu] with an evaluation proof, and achieve a lattice-based polynomial commitment scheme with polylogarithmic proof size and verifier complexity.
