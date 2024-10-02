@@ -20,20 +20,20 @@ It does so while mantaining state-of-the-art argument size and verifier hash com
 
 As a multilinear and univariate PCS, WHIR achieve by far the smallest verification time across all scheme that we tested.
 Taking $d = 2^{24}$ as an example:
-- At the 100-bit security level, a WHIR proof takes between 740μs (with $\rho = 1/2$) to 340μs (with $\rho = 1/16$). This is a speedup of between **5300×-10600×** against Brakedown, **1100×- 2200×** against Ligero, **150×-300×** against Hyrax, **12×-24×** against PST and **3.7×-7.3×** against KZG.
-- At the 128-bit security level, a WHIR proof takes between 1.4ms to 700μs achieving a speedup of between **2600×-5300×** against Brakedown, **535×-1100×** against Ligero, **93×-186×** against Greyhound, **108×-216×** against Hyrax, **7×-14×** against PST and **2.6×-5.2×** against KZG.
+- At the 100-bit security level, a WHIR proof verification takes between 610μs (with $\rho = 1/2$) to 290μs (with $\rho = 1/16$). This is a speedup of between **5700×-12000×** against Brakedown, **1200×- 2500×** against Ligero, **164×-345×** against Hyrax, **13×-27×** against PST and **4.0×-8.3×** against KZG.
+- At the 128-bit security level, a WHIR proof verification takes between 1.4ms to 700μs achieving a speedup of between **2600×-5300×** against Brakedown, **535×-1100×** against Ligero, **93×-186×** against Greyhound, **108×-216×** against Hyrax, **7×-14×** against PST and **2.6×-5.2×** against KZG.
 
 As an hash-based multilinear PCS, WHIR compares favourably to BaseFold in (i) argument size (ii) verifier time (iii) verifier hashes.
 
 Taking $d = 2^{24}$ and $\rho = 1/2$ as an example, at the 100-bit security level:
 - WHIR's arguments are 101 KiB vs BaseFold's 7.95 MiB (**74× better**).
-- WHIR's verifier runs in 740μs vs BaseFold's 24ms (**34× better**).
+- WHIR's verifier runs in 610μs vs BaseFold's 24ms (**39× better**).
 
 As a low-degree test, WHIR achieves best-in-class verifier time, while mantaining state-of-the-art argument size and verifier hash complexity.
 Taking $d = 2^{24}$ and $\rho = 1/2$ as an example, at the 128-bit security level:
 - WHIR's arguments occupy 157 KiB vs STIR's 160 KiB and FRI's 306 KiB (**1.95× better**).
-- WHIR's verifier perform 2.8k hashes vs STIR's 2.6k and FRI's 5.6k (**2× better**).
-- WHIR's verifier runs in 1.1ms vs STIR's 3.8ms and FRI's 3.9ms (**3.5× better**).
+- WHIR's verifier perform 2.7k hashes vs STIR's 2.6k and FRI's 5.6k (**2.1× better**).
+- WHIR's verifier runs in 1.0ms vs STIR's 3.8ms and FRI's 3.9ms (**3.8× better**).
 
 ---
 ## Applications
