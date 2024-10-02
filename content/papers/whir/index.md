@@ -83,16 +83,16 @@ The iteration consists of the following steps:
 1. **Sumcheck rounds.** The prover and the verifier engage in $k$ rounds of the sumcheck protocol for the claim
     $$ \sum_{\mathbf{b}} \hat{w}(\hat{f}(\mathbf{b}), \mathbf{b}) = \sigma $$
     where $\hat{f}$ is the multilinear polynomial associated with $f$.
-    At the end of the interaction, the prover will have sent quadratic $(\hat{h}_1, \dots, \hat_{h}_k)$ while the verifier will have sampled randomness $(\alpha_{1},\dots,\alpha_{k})\in \mathbf{F}^k$. This reduces the initial claim to the simpler claim
+    At the end of the interaction, the prover will have sent quadratic $(\hat{h}\_1, \dots, \hat{h}\_k)$ while the verifier will have sampled randomness $(\alpha_{1},\dots,\alpha_{k})\in \mathbb{F}^k$. This reduces the initial claim to the simpler claim
     $$ \sum_{\mathbf{b}} \hat{w}(\hat{f}(\alpha_1, \dots, \alpha_k, \mathbf{b}), \alpha_1, \dots, \alpha_k, \mathbf{b}) = \sigma $$
-2. **Claimed codeword.** The prover sends a function $g: L^2 \to \mathbb{F}$. In the honest case, $g$ is the codeword associated to the $m - k$-variate multilinear polynomial $\hat{f}(\alpha_1, \dots, \alpha_k, \cdot)$.
+2. **Claimed codeword.** The prover sends a function $g: L^2 \to \mathbb{F}$. In the honest case, $g$ is the codeword associated to the $(m - k)$-variate multilinear polynomial $\hat{f}(\alpha_1, \dots, \alpha_k, \cdot)$.
 3. **Out-of-domain sample.** The verifier samples and sets $z_0 \gets \mathbb{F}$. We let $\mathbf{z}_0 := (z_0, \dots, z_0^{2^{m-1}})$.
 4. **Out-of-domain answer.** The prover replies with $y_0$. In the honest case $y_0 := \hat{g}(\mathbf{z}_0)$.
 5. **Shift queries and combination randomness.** For every $i \in [t]$, the verifier samples $z_i \gets L^{2^k}$, computes $y_i := \mathsf{Fold}(f, (\alpha_1, \dots, \alpha_k))(z_i)$ by querying $f$[^3], and sets $\mathbf{z}_i := (z_i, \dots, z_i^{2^{m-1}})$. It then samples $\xi \gets \mathbb{F}$ and sends $z_1, \dots, z_t, \xi$ to the prover.
 6. **Recursive claim.** Prover and verifier set:
-$$ \hat{w}'(Z, X_1, \dots, X_{m - k}) := \hat{w}(Z, \alpha_1, \dots, \alpha_k, X_1, \dots, X_{m-k}) + Z \cdot \sum_{i = 0}^t \xi^{i + 1} \cdot \mathsf{eq}(X_1, \dots, X_{m-k}, \mathbf{z}_i) $$
+$$ \hat{w}'(Z, \mathbf{X}) := \hat{w}(Z, \alpha_1, \dots, \alpha_k, \mathbf{X}) + Z \cdot \sum_{i = 0}^t \xi^{i + 1} \cdot \mathsf{eq}(\mathbf{X}, \mathbf{z}_i) $$
 and
-$$ \sigma' := \hat{h}_k(\alpha_k) + \sum_{i = 0}^t \xi^{i + 1} y_i $$
+$$ \sigma' := \hat{h}_k(\alpha_k) + \sum\_{i = 0}^t \xi^{i + 1} y_i $$
 
 At each iteration, the verifier performs exactly $t$ queries to the function being tested each of which reads $2^k$ field elements, performs $O(k)$ field operations to check the sumcheck claims and $O(t \cdot 2^k)$ fops to compute the folds[^4]. Additionally, in the final iteration the verifier will have to evaluate a final weight polynomial $\hat{w}$ which contains $O(\sum_i t_i)$ equality polynomials over at most $m$ variables (plus the initial weight).
 
