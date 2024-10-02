@@ -36,9 +36,6 @@ Taking $d = 2^{24}$ and $\rho = 1/2$ as an example, at the 128-bit security leve
 - WHIR's verifier runs in 1.1ms vs STIR's 3.8ms and FRI's 3.9ms (**3.5× better**).
 
 ---
-## High-level overview
-
---
 ## Applications
 We present a few applications that we believe WHIR is a natural candidate for.
 ### On chain verification
@@ -51,6 +48,75 @@ Due to the small number of hashes, WHIR's verifier (as STIR's was) is a natural 
 
 ### zkLogin
 Various blockchains such as [Sui](https://sui.io/zklogin) and [Aptos](https://aptos.dev/en/build/guides/aptos-keyless/how-keyless-works) have new onboarding and login strategy which make heavy use of zero-knowledge proofs. Currently, taking Sui's zkLogin as an example, the final circuit is around the size of a million of constraints and is currently proven by using a Groth16 proof system. WHIR could be used instead, reducing both proving time and verification time (which now is native!).
+
+
+---
+# High-level overview
+
+We first introduce constrained Reed--Solomon codes, then we describe the main protocol and sketch its complexity.
+
+## Constrained Reed--Solomon codes
+WHIR is an expressive IOPP for a generic class of codes, that we call constrained Reed--Solomon codes.
+Recall that the Reed--Solomon code over field $\mathbb{F}$, domain $L \subseteq \mathbb{F}$ and rate $\rho = 2^m/|L|$ is defined as $\mathsf{RS}[\mathbb{F}, L, m] = \\{ f: L \to \mathbb{F}: \exists \hat{p} \in \mathbb{F}^{< 2^m}[X] : \hat{p}(L) = f(L)\\}$. Equivalently, one can view a univariate polynomial of degree $2^m$ as a multilinear polynomial over $m$ variables, and one can recover evaluations of the former from the evaluations of the latter on points of the form $(x, x^2, \dots, x^{2^{m-1}})$.
+Thus, we rewrite $\mathsf{RS}[\mathbb{F}, L, m] = \\{ f: L \to \mathbb{F}: \exists \hat{p} \in \mathbb{F}^{< 2}[X_1, ..., X_m] \text{ s.t. } \forall x \in L \; \hat{p}(x, \dots, x^{2^{m-1}}) = f(x) \\}$.
+For any codeword $f \in \mathsf{RS}[\mathbb{F}, L, m]$, we let $\hat{f}$ denote the corresponding multilinear polynomial.
+
+Constrained Reed--Solomon codes are defined by a constraint, which consists of a weight polynomial $\hat{w}\in \mathbb{F}[Z, X_1, \dots, X_m]$ and of a target $\sigma \in \mathbb{F}$:
+
+$$ \mathsf{CRS}[\mathbb{F}, L, m, \hat{w}, \sigma] := \\{ f \in \mathsf{RS}[\mathbb{F}, L, m] : \sum_{\mathbf{b}} \hat{w}(\hat{f}(\mathbf{b}), \mathbf{b}) \\} $$
+
+Note, for example, that by setting $\hat{w}(Z, X_1, \dots, X_m) = Z \cdot \mathsf{eq}(\mathbf{z}, X_1, \dots, X_m)$ for some $\mathbf{z} \in \sigma$ the constrained code exactly captures Reed--Solomon codewords whose corresponding polynomial evaluates to $\sigma$ at $\mathbf{z}$.
+
+---
+## WHIR
+WHIR is an IOPP of proximity for constrained Reed--Solomon codes. WHIR makes use of both the sumcheck techniques introduced in [ZFC24][^basefold] and of the rate improvement techniques in [ACFY24][^stir].
+
+Let $k$ be a folding parameter, $\delta \in (0, 1 - \sqrt{\rho})$[^2] a proximity parameter and $t$ a repetition parameter. A WHIR iteration reduces testing that
+$$ f \in \mathsf{CRS}[\mathbb{F}, L, m, \hat{w}, \sigma] $$
+to testing that 
+$$ g \in \mathsf{CRS}[\mathbb{F}, L^2, m - k, \hat{w}', \sigma'],$$
+for related $g, \hat{w}', \sigma'$.
+
+Further, if $f$ was $\delta$-far from the original code, then, unless with probability approximately $(1 - \delta)^t$, $g$ will be $(1 - \sqrt{\rho'})$-far from the smaller code, where $\rho' = 2^{1 - k} \cdot \rho$ is the code of this new code.
+
+The iteration consists of the following steps:
+1. **Sumcheck rounds.** The prover and the verifier engage in $k$ rounds of the sumcheck protocol for the claim
+    $$ \sum_{\mathbf{b}} \hat{w}(\hat{f}(\mathbf{b}), \mathbf{b}) = \sigma $$
+    where $\hat{f}$ is the multilinear polynomial associated with $f$.
+    At the end of the interaction, the prover will have sent quadratic $(\hat{h}_1, \dots, \hat_{h}_k)$ while the verifier will have sampled randomness $(\alpha_{1},\dots,\alpha_{k})\in \mathbf{F}^k$. This reduces the initial claim to the simpler claim
+    $$ \sum_{\mathbf{b}} \hat{w}(\hat{f}(\alpha_1, \dots, \alpha_k, \mathbf{b}), \alpha_1, \dots, \alpha_k, \mathbf{b}) = \sigma $$
+2. **Claimed codeword.** The prover sends a function $g: L^2 \to \mathbb{F}$. In the honest case, $g$ is the codeword associated to the $m - k$-variate multilinear polynomial $\hat{f}(\alpha_1, \dots, \alpha_k, \cdot)$.
+3. **Out-of-domain sample.** The verifier samples and sets $z_0 \gets \mathbb{F}$. We let $\mathbf{z}_0 := (z_0, \dots, z_0^{2^{m-1}})$.
+4. **Out-of-domain answer.** The prover replies with $y_0$. In the honest case $y_0 := \hat{g}(\mathbf{z}_0)$.
+5. **Shift queries and combination randomness.** For every $i \in [t]$, the verifier samples $z_i \gets L^{2^k}$, computes $y_i := \mathsf{Fold}(f, (\alpha_1, \dots, \alpha_k))(z_i)$ by querying $f$[^3], and sets $\mathbf{z}_i := (z_i, \dots, z_i^{2^{m-1}})$. It then samples $\xi \gets \mathbb{F}$ and sends $z_1, \dots, z_t, \xi$ to the prover.
+6. **Recursive claim.** Prover and verifier set:
+$$ \hat{w}'(Z, X_1, \dots, X_{m - k}) := \hat{w}(Z, \alpha_1, \dots, \alpha_k, X_1, \dots, X_{m-k}) + Z \cdot \sum_{i = 0}^t \xi^{i + 1} \cdot \mathsf{eq}(X_1, \dots, X_{m-k}, \mathbf{z}_i) $$
+and
+$$ \sigma' := \hat{h}_k(\alpha_k) + \sum_{i = 0}^t \xi^{i + 1} y_i $$
+
+At each iteration, the verifier performs exactly $t$ queries to the function being tested each of which reads $2^k$ field elements, performs $O(k)$ field operations to check the sumcheck claims and $O(t \cdot 2^k)$ fops to compute the folds[^4]. Additionally, in the final iteration the verifier will have to evaluate a final weight polynomial $\hat{w}$ which contains $O(\sum_i t_i)$ equality polynomials over at most $m$ variables (plus the initial weight).
+
+The soundness analysis relies on a new property of Reed--Solomon codes, that we call **mutual correlated agreement**. This is a strenghtening of correlated agreement [BCIKS20][^proximitygaps], which we show holds in the unique decoding regime. We are confident to conjecture that it also holds in the list-decoding regime. Further, we believe that WHIR can be proven sound from weaker assumptions still. 
+We refer the reader to the paper for more details.
+
+---
+## Benchmarks
+We implemented WHIR in Rust, and evaluated its performance. Our code can be found at [WizardOfMenlo/whir](https://github.com/WizardOfMenlo/whir). _We thank in particular Remco Bloemen for his invaluable help in optimizing the prover performance of WHIR_.
+
+We present some of our comparisons here, and refer the reader to Section 6 of the paper for full details.
+
+### Comparison with BaseFold
+![](basefold_compare.png)
+
+WHIR achieves significantly smaller argument size compared to BaseFold[ZFC24][^basefold], while achieving significantly faster proving and verification. In part, this is due to WHIR having a more optimized implementation.
+
+### Comparison with other PCSes
+![](kzg_compare.png)
+WHIR achieves the fastest verification time of **any** PCS know thus far. In particular, this includes schemes such as PST and KZG which rely on both a trusted setup and on pairings of elliptic curves.
+
+## Comparision with LDTs
+![](ldt_compare.png)
+Finally, WHIR achieves state-of-the-art argument size, verifier hash-complexity among low-degree tests, while not compromising prover performance and achieving best-in-class verifier performance.
 
 ---
 ##### Citation
@@ -71,7 +137,11 @@ G. Arnon, A. Chiesa, G. Fenzi, E. Yogev. "_WHIR: Reed–Solomon Proximity Testin
 ---
 ##### Related material
 [^1]: constrained Reed--Solomon codes are a generalization of Reed--Solomon codes which we introduce later. 
+[^2]: here and in other places, $1 - \sqrt{\rho}$ can be improved to $1 - \rho$ via an appropriate conjecture on list-decoding of Reed--Solomon codes up to capacity. 
+[^3]: the folding herein is the same as in FRI [BBHR18][^fri] and STIR [ACFY24][^stir], and we assume familiarity with it.
+[^4]: traditionally, this step would require $O(t \cdot k \cdot 2^k)$ fops, but we present an optimization to avoid the quasilinear cost in $k$, see paper for details.
 [^fri]: [BBHR18] Eli Ben-Sasson, Iddo Bentov, Yinon Horesh, and Michael Riabzev. “Fast Reed–Solomon Interactive Oracle Proofs of Proximity”. In: Proceedings of the 45th International Colloquium on Automata, Languages and Programming. ICALP ’18. 2018,
-[^ethSTARK]: [ethSTARK] StarkWare. ethSTARK Documentation. Cryptology ePrint Archive, Paper 2021/582. https://eprint.iacr.org/2021/582. 2021.
 [^proximitygaps]: [BCIKS20] Eli Ben-Sasson, Dan Carmon, Yuval Ishai, Swastik Kopparty, and Shubhangi Saraf. “Proximity Gaps for Reed–Solomon Codes”. In: Proceedings of the 61st Annual IEEE Symposium on Foundations of Computer Science. FOCS ’20. 2020.
 [^deepfri]: [BGKS20] Eli Ben-Sasson, Lior Goldberg, Swastik Kopparty, and Shubhangi Saraf. “DEEP-FRI: Sampling Outside the Box Improves Soundness”. In: Proceedings of the 11th Innovations in Theoretical Computer Science Conference. ITCS ’20.
+[^stir]: [ACFY24] Gal Arnon, Alessandro Chiesa, Giacomo Fenzi, Eylon Yogev. “STIR: Reed--Solomon Proximity Testing with Fewer Queries”. In: Proceedings of the 44th Annual International Cryptology Conference. CRYPTO ’24. CRYPTO ’24.
+[^basefold]: [ZCF24] Hadas Zeilberger, Binyi Chen, and Ben Fisch. “BaseFold: Efficient Field-Agnostic Poly- nomial Commitment Schemes from Foldable Codes”. In: Proceedings of the 44th Annual International Cryptology Conference. CRYPTO ’24
