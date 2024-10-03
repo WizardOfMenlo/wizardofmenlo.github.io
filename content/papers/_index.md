@@ -8,7 +8,7 @@ Preprints, publications and short descriptions of the content of the project I w
 ## Highlights
 
 - STIR 🥣: RS IOPP with fewer queries. **⭐️ Best Paper ⭐️ @ CRYPTO 2024.** [2024/390.](https://ia.cr/2024/390) [Blog-post.]({{< ref "/papers/stir" >}})
-- WHIR 🌪️: Constrained RS IOPP with fewer queries **and** super-fast verification.  [2024/XXX.](https://ia.cr/2024/XXX)
+- WHIR 🌪️: Constrained RS IOPP with fewer queries **and** super-fast verification.  [2024/XXX.](https://ia.cr/2024/XXX) [Blog-post.]({{< ref "/papers/whir" >}})
 - UC-secure zkSNARKs 🌍: Commonly deployed zkSNARKs are UC-secure in the ROM. [2024/724.](https://ia.cr/2024/724) [Blog-post.]({{< ref "/papers/uc-snarks" >}})
 - SLAP 👋: Succinct lattice-based polynomial commitment scheme from SIS. [2023/1469.](https://ia.cr/2023/1469) [Blog-post.]({{< ref "/papers/slap" >}})
 - Blendy 🍹: Space-efficient prover for sumcheck. [2024/524.](https://ia.cr/2024/524) [Blog-post.]({{< ref "/papers/blendy-sumcheck" >}})
@@ -19,10 +19,10 @@ Preprints, publications and short descriptions of the content of the project I w
 
 - [AC**F**Y24] "_WHIR: Reed–Solomon Proximity Testing with Super-Fast Verification_". \
     Gal Arnon, Alessandro Chiesa, Giacomo Fenzi, Eylon Yogev. \
-    Cryptology ePrint Archive, Paper 2024/XXX. Available at: [2024/XXX.](https://ia.cr/2024/XXX)
+    **zkSummit12.** Cryptology ePrint Archive, Paper 2024/XXX. Available at: [2024/XXX.](https://ia.cr/2024/XXX) [Accompanying blog-post.]({{< ref "/papers/whir" >}})
 - [C**F**24] "_zkSNARKs in the ROM with Unconditional UC-Security_". \
     Alessandro Chiesa, Giacomo Fenzi. \
-    **TCC 2024 & ZKProof 6.** Cryptology ePrint Archive, Paper 2024/724. Available at: [2024/724.](https://ia.cr/2024/724) [Accompanying blog-post.]({{< ref "/papers/uc-snarks" >}})
+    **TCC 2024 & ZKProof 6.** Available at: [2024/724.](https://ia.cr/2024/724) [Accompanying blog-post.]({{< ref "/papers/uc-snarks" >}})
 - [AC**F**Y24] "_STIR: Reed–Solomon Proximity Testing with Fewer Queries_". \
     Gal Arnon, Alessandro Chiesa, Giacomo Fenzi, Eylon Yogev. \
     **CRYPTO 2024 (⭐️ Best Paper ⭐️) & zkSummit11 & ZKProof 6.** Available at: [2024/390.](https://ia.cr/2024/390) [Accompanying blog-post.]({{< ref "/papers/stir" >}})
@@ -31,7 +31,7 @@ Preprints, publications and short descriptions of the content of the project I w
     **ASIACRYPT 2024.** 
 - [CF**F**Z24] "_A Time-Space Tradeoff for the Sumcheck Prover_". \
     Alessandro Chiesa, Elisabetta Fedele, Giacomo Fenzi, Andrew Zitek-Estrada. \
-    **ZKProof 6.** Cryptology ePrint Archive, Paper 2024/524. Available at: [2024/524.](https://ia.cr/2024/524) [Accompanying blog-post.]({{< ref "/papers/blendy-sumcheck" >}})
+    **ZKProof 6.** Available at: [2024/524.](https://ia.cr/2024/524) [Accompanying blog-post.]({{< ref "/papers/blendy-sumcheck" >}})
 - [**F**GV24] "_Finding Bugs and Features Using Cryptographically-Informed Functional Testing_". \
     Giacomo Fenzi, Jan Gilcher, Fernando Virdia. \
     Cryptology ePrint Archive, Paper 2024/1122. Available at: [2024/1122.](https://ia.cr/2024/1122)

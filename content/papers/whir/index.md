@@ -23,7 +23,7 @@ Taking $d = 2^{24}$ as an example:
 - At the 100-bit security level, a WHIR proof verification takes between 610μs (with $\rho = 1/2$) to 290μs (with $\rho = 1/16$). This is a speedup of between **5700×-12000×** against Brakedown, **1200×- 2500×** against Ligero, **164×-345×** against Hyrax, **13×-27×** against PST and **4.0×-8.3×** against KZG.
 - At the 128-bit security level, a WHIR proof verification takes between 1.4ms to 700μs achieving a speedup of between **2600×-5300×** against Brakedown, **535×-1100×** against Ligero, **93×-186×** against Greyhound, **108×-216×** against Hyrax, **7×-14×** against PST and **2.6×-5.2×** against KZG.
 
-As an hash-based multilinear PCS, WHIR compares favourably to BaseFold in (i) argument size (ii) verifier time (iii) verifier hashes.
+As a hash-based multilinear PCS, WHIR compares favourably to BaseFold in (i) argument size (ii) verifier time (iii) verifier hashes.
 
 Taking $d = 2^{24}$ and $\rho = 1/2$ as an example, at the 100-bit security level:
 - WHIR's arguments are 101 KiB vs BaseFold's 7.95 MiB (**74× better**).
@@ -65,19 +65,19 @@ Constrained Reed--Solomon codes are defined by a constraint, which consists of a
 
 $$ \mathsf{CRS}[\mathbb{F}, L, m, \hat{w}, \sigma] := \\{ f \in \mathsf{RS}[\mathbb{F}, L, m] : \sum_{\mathbf{b}} \hat{w}(\hat{f}(\mathbf{b}), \mathbf{b}) \\} $$
 
-Note, for example, that by setting $\hat{w}(Z, X_1, \dots, X_m) = Z \cdot \mathsf{eq}(\mathbf{z}, X_1, \dots, X_m)$ for some $\mathbf{z} \in \sigma$ the constrained code exactly captures Reed--Solomon codewords whose corresponding polynomial evaluates to $\sigma$ at $\mathbf{z}$.
+Note, for example, that by setting $\hat{w}(Z, X_1, \dots, X_m) = Z \cdot \mathsf{eq}(\mathbf{z}, X_1, \dots, X_m)$[^eq] for some $\mathbf{z} \in \sigma$ the constrained code exactly captures Reed--Solomon codewords whose corresponding polynomial evaluates to $\sigma$ at $\mathbf{z}$.
 
 ---
 ## WHIR
 WHIR is an IOPP of proximity for constrained Reed--Solomon codes. WHIR makes use of both the sumcheck techniques introduced in [ZFC24][^basefold] and of the rate improvement techniques in [ACFY24][^stir].
 
-Let $k$ be a folding parameter, $\delta \in (0, 1 - \sqrt{\rho})$[^2] a proximity parameter and $t$ a repetition parameter. A WHIR iteration reduces testing that
+Let $k$ be a folding parameter, $\delta \in (0, 1 - \rho)$[^2] a proximity parameter and $t$ a repetition parameter. A WHIR iteration reduces testing that
 $$ f \in \mathsf{CRS}[\mathbb{F}, L, m, \hat{w}, \sigma] $$
 to testing that 
 $$ g \in \mathsf{CRS}[\mathbb{F}, L^2, m - k, \hat{w}', \sigma'],$$
 for related $g, \hat{w}', \sigma'$.
 
-Further, if $f$ was $\delta$-far from the original code, then, unless with probability approximately $(1 - \delta)^t$, $g$ will be $(1 - \sqrt{\rho'})$-far from the smaller code, where $\rho' = 2^{1 - k} \cdot \rho$ is the code of this new code.
+Further, if $f$ was $\delta$-far from the original code, then, unless with probability approximately $(1 - \delta)^t$, $g$ will be $(1 - \rho')$-far from the smaller code, where $\rho' = 2^{1 - k} \cdot \rho$ is the code of this new code.
 
 The iteration consists of the following steps:
 1. **Sumcheck rounds.** The prover and the verifier engage in $k$ rounds of the sumcheck protocol for the claim
@@ -136,10 +136,11 @@ G. Arnon, A. Chiesa, G. Fenzi, E. Yogev. "_WHIR: Reed–Solomon Proximity Testin
 
 ---
 ##### Related material
+[^eq]: $\mathsf{eq}(X_1, \dots, X_m, Y_1, \dots, Y_m) = \prod_{i = 1}^m (X_i \cdot Y_i + (1 - X_i) \cdot(1 - Y_i))$.
 [^1]: constrained Reed--Solomon codes are a generalization of Reed--Solomon codes which we introduce later. 
-[^2]: here and in other places, $1 - \sqrt{\rho}$ can be improved to $1 - \rho$ via an appropriate conjecture on list-decoding of Reed--Solomon codes up to capacity. 
+[^2]: here and in other places, proximity parameter of the form $1 - \rho$ are obtained via an appropriate conjecture on list-decoding of Reed--Solomon codes up to capacity. Provable bounds are obtained by replacing these with $1 - \sqrt{\rho}$ wherever they appear.
 [^3]: the folding herein is the same as in FRI [BBHR18][^fri] and STIR [ACFY24][^stir], and we assume familiarity with it.
-[^4]: traditionally, this step would require $O(t \cdot k \cdot 2^k)$ fops, but we present an optimization to avoid the quasilinear cost in $k$, see paper for details.
+[^4]: traditionally, this step would require $O(t \cdot k \cdot 2^k)$ fops, but we present an optimization to avoid the quasilinear cost in $k$, see paper and [blurb](/blurbs/whir-folding).
 [^fri]: [BBHR18] Eli Ben-Sasson, Iddo Bentov, Yinon Horesh, and Michael Riabzev. “Fast Reed–Solomon Interactive Oracle Proofs of Proximity”. In: Proceedings of the 45th International Colloquium on Automata, Languages and Programming. ICALP ’18. 2018,
 [^proximitygaps]: [BCIKS20] Eli Ben-Sasson, Dan Carmon, Yuval Ishai, Swastik Kopparty, and Shubhangi Saraf. “Proximity Gaps for Reed–Solomon Codes”. In: Proceedings of the 61st Annual IEEE Symposium on Foundations of Computer Science. FOCS ’20. 2020.
 [^deepfri]: [BGKS20] Eli Ben-Sasson, Lior Goldberg, Swastik Kopparty, and Shubhangi Saraf. “DEEP-FRI: Sampling Outside the Box Improves Soundness”. In: Proceedings of the 11th Innovations in Theoretical Computer Science Conference. ITCS ’20.
