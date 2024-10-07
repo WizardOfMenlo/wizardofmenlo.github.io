@@ -41,7 +41,7 @@ We present a few applications that we believe WHIR is a natural candidate for.
 ### On chain verification
 Currently, most onchain verification is done with Groth16 over a BN254 curve. The benefits of such verification is that the proof is constant size and verification is supposed to cheap, keeping both data availability (DA) costs and compute costs low. Currently, this verification costs [~280k gas](https://sepolia.etherscan.io/tx/0x9db0680f9164e045cf1cbf6f6c3a1afff204e2dc6c5af9582fb2ba89ef3e2b12). 
 We believe that, as long as DA costs are low (as they currently are), WHIR can offer significantly lower compute costs for onchain proof verification (and we are working on a Solidity verifier to confirm this thesis). 
-A rough back-of-the-envelope calculation: a WHIR verifier for a polynomial of size $2^{24}$ performs between 2.2k to 1.1k hashes (depending on the initial rate, using 100-bits of security to compare with BN254). Assuming the hash used is Keccak, and that each of these hashes is for Merkle tree verification (and thus hashes together 64 bytes), each of these hashes costs 48 gas. Thus, the cost of hash-verification is between **106k gas to 53k gas**. Estimating the cost of the field operations is harder, but they tend account for a much smaller portion of the verification costs (on native experiments) compared to the hashing.
+A rough back-of-the-envelope calculation: a WHIR verifier for a polynomial of size $2^{24}$ and rate $1/2$ performs around 1.5k hashes (using 100-bits of security to compare with BN254). Assuming the hash used is Keccak, and that each of these hashes is for Merkle tree verification (and thus hashes together 64 bytes), each of these hashes costs 48 gas. Thus, the cost of hash-verification is around **96k gas**. Estimating the cost of the field operations is harder, but they tend account for a much smaller portion of the verification costs (on native experiments) compared to the hashing. 
 
 ### Recursive verification
 Due to the small number of hashes, WHIR's verifier (as STIR's was) is a natural candidate for recursion. Again, let's do some back-of-the-envelope calculation. At the 128-bit security level, for a computation of size $2^{28}$, starting with rate $1/2$, WHIR's recursive circuit performs $3.4$k hashes. Assuming both use Poseidon hashing and that each hash contributes ~400 R1CS constraints, the WHIR's recursive circuit size is approximately of size $2^{20}$. Then, running WHIR with even a large rate is a negligible cost (compared to the initial computation), leading to a tiny final proof. For example, running a computation of that size with rate $1/32$ gives a 64KiB proof in less than 3s (on my M1 Macbook), that verifies in less that $350µ$s while performing only 800 hashes.
@@ -101,7 +101,7 @@ We refer the reader to the paper for more details.
 
 ---
 ## Benchmarks
-We implemented WHIR in Rust, and evaluated its performance. Our code can be found at [WizardOfMenlo/whir](https://github.com/WizardOfMenlo/whir). _We thank in particular Remco Bloemen for his invaluable help in optimizing the prover performance of WHIR_.
+We implemented WHIR in Rust, and evaluated its performance. Our code can be found at [WizardOfMenlo/whir](https://github.com/WizardOfMenlo/whir). _We thank in particular [Remco Bloemen](https://xn--2-umb.com/about/) for his invaluable help in optimizing the prover performance of WHIR_.
 
 We present some of our comparisons here, and refer the reader to Section 6 of the paper for full details.
 
