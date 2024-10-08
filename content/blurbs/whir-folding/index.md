@@ -5,11 +5,11 @@ date: 2024-10-03
 author: "Giacomo Fenzi"
 description: "Computing folds is a large portion of the verifier work in schemes like FRI, STIR and WHIR. We describe an optimization to reduce this cost."
 editPost:
-    URL: "https://eprint.iacr.org/2024/XXX"
-    Text: "ePrint: 2024/XXX"
+    URL: "https://eprint.iacr.org/2024/1586"
+    Text: "ePrint: 2024/1586"
 ---
 
-Our recent work, WHIR 🌪️ (See [2024/XXX](https://ia.cr/2024/XXX) and [blog-post.]({{< ref "/papers/whir" >}})) is an IOPP for constrained RS codes with exceptionally fast verification.
+Our recent work, WHIR 🌪️ (See [2024/1586](https://ia.cr/2024/1586) and [blog-post.]({{< ref "/papers/whir" >}})) is an IOPP for constrained RS codes with exceptionally fast verification.
 In this blog we explain in detail one of the optimization that we used to achieve a faster verifier, with applications to schemes such as FRI and STIR as well.
 Verifier complexity usually consists of two components: (i) an algebraic component and; (ii) computing hashes.
 Reducing the second load (ii) usually involves reducing the IOPP query complexity, which is the main objective of STIR and WHIR.
