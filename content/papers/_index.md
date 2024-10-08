@@ -8,7 +8,7 @@ Preprints, publications and short descriptions of the content of the project I w
 ## Highlights
 
 - STIR 🥣: RS IOPP with fewer queries. **⭐️ Best Paper ⭐️ @ CRYPTO 2024.** [2024/390.](https://ia.cr/2024/390) [Blog-post.]({{< ref "/papers/stir" >}})
-- WHIR 🌪️: Constrained RS IOPP with fewer queries **and** super-fast verification.  [2024/XXX.](https://ia.cr/2024/XXX) [Blog-post.]({{< ref "/papers/whir" >}})
+- WHIR 🌪️: Constrained RS IOPP with fewer queries **and** super-fast verification.  [2024/1586.](https://ia.cr/2024/1586) [Blog-post.]({{< ref "/papers/whir" >}})
 - UC-secure zkSNARKs 🌍: Commonly deployed zkSNARKs are UC-secure in the ROM. [2024/724.](https://ia.cr/2024/724) [Blog-post.]({{< ref "/papers/uc-snarks" >}})
 - SLAP 👋: Succinct lattice-based polynomial commitment scheme from SIS. [2023/1469.](https://ia.cr/2023/1469) [Blog-post.]({{< ref "/papers/slap" >}})
 - Blendy 🍹: Space-efficient prover for sumcheck. [2024/524.](https://ia.cr/2024/524) [Blog-post.]({{< ref "/papers/blendy-sumcheck" >}})
@@ -19,7 +19,7 @@ Preprints, publications and short descriptions of the content of the project I w
 
 - [AC**F**Y24] "_WHIR: Reed–Solomon Proximity Testing with Super-Fast Verification_". \
     Gal Arnon, Alessandro Chiesa, Giacomo Fenzi, Eylon Yogev. \
-    **zkSummit12.** Cryptology ePrint Archive, Paper 2024/XXX. Available at: [2024/XXX.](https://ia.cr/2024/XXX) [Accompanying blog-post.]({{< ref "/papers/whir" >}})
+    **zkSummit12.** Cryptology ePrint Archive, Paper 2024/1586. Available at: [2024/1586.](https://ia.cr/2024/1586) [Accompanying blog-post.]({{< ref "/papers/whir" >}})
 - [C**F**24] "_zkSNARKs in the ROM with Unconditional UC-Security_". \
     Alessandro Chiesa, Giacomo Fenzi. \
     **TCC 2024 & ZKProof 6.** Available at: [2024/724.](https://ia.cr/2024/724) [Accompanying blog-post.]({{< ref "/papers/uc-snarks" >}})
