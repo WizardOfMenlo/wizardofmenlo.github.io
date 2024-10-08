@@ -5,11 +5,11 @@ date: 2024-09-27
 author: "Gal Arnon, Alessandro Chiesa, Giacomo Fenzi, Eylon Yogev"
 description: "We present WHIR (Weights Help Improving Rate), an interactive oracle proof of proximity (IOPP) for constrained Reed–Solomon codes. WHIR doubles as a multilinear polynomial commitment scheme, achieving the fastest verification speed of any such scheme while mantaining state-of-the-art argument size, verifier hash complexity and prover times."
 editPost:
-    URL: "https://eprint.iacr.org/2024/XXX"
-    Text: "ePrint: 2024/XXX"
+    URL: "https://eprint.iacr.org/2024/1586"
+    Text: "ePrint: 2024/1586"
 ---
 
-This blog-post is a short introduction to our new work: "WHIR: Reed--Solomon Proximity Testing with Super-Fast Verification". This is joint work with [Gal Arnon,](https://galarnon42.github.io/) [Alessandro Chiesa,](https://ic-people.epfl.ch/~achiesa/) and [Eylon Yogev,](https://www.eylonyogev.com/about) and the full version is [available on ePrint](https://eprint.iacr.org/2024/XXX). Code is also available at [WizardOfMenlo/whir.](https://github.com/WizardOfMenlo/whir)
+This blog-post is a short introduction to our new work: "WHIR: Reed--Solomon Proximity Testing with Super-Fast Verification". This is joint work with [Gal Arnon,](https://galarnon42.github.io/) [Alessandro Chiesa,](https://ic-people.epfl.ch/~achiesa/) and [Eylon Yogev,](https://www.eylonyogev.com/about) and the full version is [available on ePrint](https://eprint.iacr.org/2024/1586). Code is also available at [WizardOfMenlo/whir.](https://github.com/WizardOfMenlo/whir)
 
 
 # WHIR 🌪️
@@ -121,16 +121,16 @@ Finally, WHIR achieves state-of-the-art argument size, verifier hash-complexity 
 ---
 ##### Citation
 
-G. Arnon, A. Chiesa, G. Fenzi, E. Yogev. "_WHIR: Reed–Solomon Proximity Testing with Super-Fast Verification_". Cryptology ePrint Archive, Paper 2024/XXX. Available at: https://ia.cr/2024/XXX.
+G. Arnon, A. Chiesa, G. Fenzi, E. Yogev. "_WHIR: Reed–Solomon Proximity Testing with Super-Fast Verification_". Cryptology ePrint Archive, Paper 2024/XXX. Available at: https://ia.cr/2024/1586.
 
 ```BibTeX
 @misc{ArnonCFY,
 	author       = {Gal Arnon and Alessandro Chiesa and Giacomo Fenzi and Eylon Yogev},
 	title        = {WHIR: Reed–Solomon Proximity Testing with Super-Fast Verification},
-	howpublished = {Cryptology ePrint Archive, Paper 2024/XXX},
+	howpublished = {Cryptology ePrint Archive, Paper 2024/1586},
 	year         = {2024},
-	note         = {\url{https://eprint.iacr.org/2024/XXX}},
-	url          = {https://eprint.iacr.org/2024/XXX}
+	note         = {\url{https://eprint.iacr.org/2024/1586}},
+	url          = {https://eprint.iacr.org/2024/1586}
 }
 ```
 
