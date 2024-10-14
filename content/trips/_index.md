@@ -7,15 +7,18 @@ List of past and upcoming trips and presentations.
 
 ## Upcoming
 ### 2024
+- 16 October. Online. Presenting [STIR 🥣](/papers/stir) at [Nexus speaker series](https://nexus.xyz/) and [sumcheck builder group](https://hackmd.io/@ap95hIPHTcCFbPYZ5pRs5g/S1aHQ9ga0).
+- 8 November. Online. Presenting [WHIR 🌪️](/papers/whir) at [Nexus speaker series](https://nexus.xyz/) and [sumcheck builder group](https://hackmd.io/@ap95hIPHTcCFbPYZ5pRs5g/S1aHQ9ga0).
 - 2-6 December. Milan. Presenting [UC-secure zkSNARKs🌍](/papers/uc-snarks) at [TCC24](https://tcc.iacr.org/2024/).
 
 
 ## Past
 ### 2024
-- 12-13 September. Munich. Presenting [STIR 🥣](/papers/stir) at [TUM Blockchain Conference](https://conference.tum-blockchain.com).
-- 2 September. St Gallen. Presenting [STIR 🥣](/papers/stir) at [Swiss Crypyo Day](https://swisscryptoday.github.io/2024/).
-- 18-22 August. Santa Barbara. Presenting [STIR 🥣](/papers/stir) at [CRYPTO24](https://crypto.iacr.org/2024/).
+- 12-13 September. Munich. Presented [STIR 🥣](/papers/stir) at [TUM Blockchain Conference](https://conference.tum-blockchain.com).
+- 2 September. St Gallen. Presented [STIR 🥣](/papers/stir) at [Swiss Crypyo Day](https://swisscryptoday.github.io/2024/).
+- 18-22 August. Santa Barbara. Presented [STIR 🥣](/papers/stir) at [CRYPTO24](https://crypto.iacr.org/2024/).
 - 5-9 August. London. Visiting [Khanh](https://khanhcrypto.github.io/) at [KCL](https://www.kcl.ac.uk/). 
+- 3 July. Online. Presented [STIR 🥣](/papers/stir) at Starkitecture.
 - 26-30 May. Zurich. Presented [SLAP 👋](/papers/slap) at [EUROCRYPT24](https://eurocrypt.iacr.org/2024/).
 - 22-24 May. Berlin. Presented [STIR 🥣](/papers/stir), [SLAP 👋](/papers/slap), [UC-secure zkSNARKs🌍](/papers/uc-snarks) and [Blendy 🍹](/papers/blendy-sumcheck/) at [ZKProof6](https://zkproof.org/events/zkproof-6-berlin/).
 - 8-14 April. Athens. Presenting [STIR 🥣](/papers/stir) at [zkSummit11](https://www.zksummit.com/).
