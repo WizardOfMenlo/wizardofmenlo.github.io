@@ -32,13 +32,14 @@ Typically:
 In each of these schemes, the prover will commit to a function $f: L \to \mathbb{F}$ by sending a function $\tilde{f}: L^{2^k} \to \mathbb{F}^{2^k}$ such that $\tilde{f}(z^{2^k}) = f(\mathcal{B}_z)$. The verifier will sample (a single or many) challenges $\alpha$, and the verifier will require to compute the folding with respect to $\alpha$ at some randomly sampled element of $L^{2^k}$.
 
 ## Optimizing folding
-The verifier can use the definition of folding to evaluate it. Naively, this is a quadratic cost, but in fact since $\mathcal{B}_z$ is a smooth coset of $L$, the verifier can use an FFT to evaluate it in time $O(k \cdot 2^k)$. In fact, since the verifier needs only to evaluate the polynomial at a single point, this can in fact be done in linear time via some version of barycentric evaluation for such subsets. (See E.2 in [SNARKs for C](https://eprint.iacr.org/2013/507.pdf) for example). Nonetheless, some benchmarks I ran[^2] seems to suggest that the quasi-linear FFT method is in fact cheaper despite the faster asymptotics.
+The verifier can use the definition of folding to evaluate it. Naively, this is a quadratic cost, but in fact since $\mathcal{B}_z$ is a smooth coset of $L$, the verifier can use an FFT to evaluate it in time $O(k \cdot 2^k)$. In fact, since the verifier needs only to evaluate the polynomial at a single point, this can in fact be done in linear time $O(2^k)$ via some version of barycentric evaluation for such subsets. (See E.2 in [SNARKs for C](https://eprint.iacr.org/2013/507.pdf) for example). Concretely, this seems to require $2 \cdot (2^k - 1)$ multiplications.
+
 
 We suggest the following optimization. Instead of committing to $f: L \to \mathbb{F}$ as beforehand:
 - In the univariate folding case the prover will commit to a related function $\tilde{f}: L^{2^k} \to \mathbb{F}^{<2^k}[X]$ where $\tilde{g}(z^{2^k}) = \mathsf{Interpol}(\mathcal{B}_z, f(\mathcal{B_z}))$.
 - In the multilinear folding case the prover will commit to a related function $\tilde{f}: L^{2^k} \to \mathbb{F}^{< 2}[X_1, \dots, X_k]$ where $\tilde{g}(z^{2^k}) = \mathsf{Interpol}(\mathcal{B}_z, f(\mathcal{B_z}))$ (interpreted as a $k$-variate multilinear polynomial).
 
-Now, when computing the fold, the verifier can simply read the corresponding polynomial and evaluate it at the point $\alpha$, which takes linear time $O(2^k)$ (and is concretely efficient).
+Now, when computing the fold, the verifier can simply read the corresponding polynomial and evaluate it at the point $\alpha$, which takes exactly $2^k$ multiplications, roughly a **2x** improvement.
 Soundness holds since the prover is sending the same exactly information (as the two representations can be recovered from one-another).
 
 Experimentally, this gives around a 20% saving in the WHIR verification.

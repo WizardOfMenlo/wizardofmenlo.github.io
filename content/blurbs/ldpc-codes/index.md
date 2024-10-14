@@ -1,7 +1,7 @@
 ---
 title: "LDPC codes vs RS codes"
 tags: ["hashes", "concrete", "theory"]
-date: 2024-02-21
+date: 2024-10-14
 author: "Giacomo Fenzi"
 description: "Some thoughts on LDPC codes vs RS codes"
 editPost:

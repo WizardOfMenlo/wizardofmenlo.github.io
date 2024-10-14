@@ -38,10 +38,13 @@ Taking $d = 2^{24}$ and $\rho = 1/2$ as an example, at the 128-bit security leve
 ---
 ## Applications
 We present a few applications that we believe WHIR is a natural candidate for.
-### On chain verification
+### Ethereum on chain verification
 Currently, most onchain verification is done with Groth16 over a BN254 curve. The benefits of such verification is that the proof is constant size and verification is supposed to cheap, keeping both data availability (DA) costs and compute costs low. Currently, this verification costs [~280k gas](https://sepolia.etherscan.io/tx/0x9db0680f9164e045cf1cbf6f6c3a1afff204e2dc6c5af9582fb2ba89ef3e2b12). 
-We believe that, as long as DA costs are low (as they currently are), WHIR can offer significantly lower compute costs for onchain proof verification (and we are working on a Solidity verifier to confirm this thesis). 
-A rough back-of-the-envelope calculation: a WHIR verifier for a polynomial of size $2^{24}$ and rate $1/2$ performs around 1.5k hashes (using 100-bits of security to compare with BN254). Assuming the hash used is Keccak, and that each of these hashes is for Merkle tree verification (and thus hashes together 64 bytes), each of these hashes costs 48 gas. Thus, the cost of hash-verification is around **96k gas**. Estimating the cost of the field operations is harder, but they tend account for a much smaller portion of the verification costs (on native experiments) compared to the hashing. Increasing the rate to $1/16$ this cost can be reduced even further, to around **53k** gas.
+We believe that, WHIR can offer significantly competitive compute costs for onchain proof verification (and we are working on a Solidity verifier to confirm this thesis). 
+A rough back-of-the-envelope calculation follows.
+On the compute side: a WHIR verifier for a polynomial of size $2^{24}$ and rate $1/2$ performs around 1.5k hashes (using 100-bits of security to compare with BN254). Assuming the hash used is Keccak, and that each of these hashes is for Merkle tree verification (and thus hashes together 64 bytes), each of these hashes costs 48 gas. Thus, the cost of hash-verification is around **96k gas**. Estimating the cost of the field operations is harder, but they tend account for a much smaller portion of the verification costs (on native experiments) compared to the hashing. Increasing the rate to $1/16$ this cost can be reduced even further, to around **53k** gas.
+On the data side, calldata is currently priced at 16 gas per non-zero byte. A WHIR proof for $2^{24}$ variables is between 101 KiB to 48 KiB, resulting in between **1.6m gas** and **790k** gas.  
+Overall then, the cost for a WHIR proof verification can be as low as **850k** gas (while still using a not excessively small rate, this can be reduced further), all while not requiring a trusted setup and providing post-quantum security. Further, the cost can be ammortized by aggregation, which WHIR is also very suitable for (next).
 
 ### Recursive verification
 Due to the small number of hashes, WHIR's verifier (as STIR's was) is a natural candidate for recursion. Again, let's do some back-of-the-envelope calculation. At the 128-bit security level, for a computation of size $2^{28}$, starting with rate $1/2$, WHIR's recursive circuit performs $3.4$k hashes. Assuming both use Poseidon hashing and that each hash contributes ~400 R1CS constraints, the WHIR's recursive circuit size is approximately of size $2^{20}$. Then, running WHIR with even a large rate is a negligible cost (compared to the initial computation), leading to a tiny final proof. For example, running a computation of that size with rate $1/32$ gives a 64KiB proof in less than 3s (on my M1 Macbook), that verifies in less that $350µ$s while performing only 800 hashes.
@@ -49,6 +52,8 @@ Due to the small number of hashes, WHIR's verifier (as STIR's was) is a natural 
 ### zkLogin
 Various blockchains such as [Sui](https://sui.io/zklogin) and [Aptos](https://aptos.dev/en/build/guides/aptos-keyless/how-keyless-works) have new onboarding and login strategy which make heavy use of zero-knowledge proofs. Currently, taking Sui's zkLogin as an example, the final circuit is around the size of a million of constraints and is currently proven by using a Groth16 proof system. WHIR could be used instead, reducing both proving time and verification time (which now is native!).
 
+## Bitcoin verification
+There are efforts to bringing verification of STARKs on Bitcoin. In that setting, field operations are much expensive than hashing (say 5000-2500x). Since WHIR has both extremely small arithmetic and hashing complexity, WHIR's verifier can significantly reduce the cost of verification on Bitcoin compared to FRI and STIR.
 
 ---
 # High-level overview
@@ -140,7 +145,7 @@ G. Arnon, A. Chiesa, G. Fenzi, E. Yogev. "_WHIR: Reed–Solomon Proximity Testin
 [^1]: constrained Reed--Solomon codes are a generalization of Reed--Solomon codes which we introduce later. 
 [^2]: here and in other places, proximity parameter of the form $1 - \rho$ are obtained via an appropriate conjecture on list-decoding of Reed--Solomon codes up to capacity. Provable bounds are obtained by replacing these with $1 - \sqrt{\rho}$ wherever they appear.
 [^3]: the folding herein is the same as in FRI [BBHR18][^fri] and STIR [ACFY24][^stir], and we assume familiarity with it.
-[^4]: traditionally, this step would require $O(t \cdot k \cdot 2^k)$ fops, but we present an optimization to avoid the quasilinear cost in $k$, see paper and [blurb](/blurbs/whir-folding).
+[^4]: traditionally, this step would require $O(t \cdot 2^k)$ fops, and we present an optimization to reduce the cost in $k$, see paper and [blurb](/blurbs/whir-folding).
 [^fri]: [BBHR18] Eli Ben-Sasson, Iddo Bentov, Yinon Horesh, and Michael Riabzev. “Fast Reed–Solomon Interactive Oracle Proofs of Proximity”. In: Proceedings of the 45th International Colloquium on Automata, Languages and Programming. ICALP ’18. 2018,
 [^proximitygaps]: [BCIKS20] Eli Ben-Sasson, Dan Carmon, Yuval Ishai, Swastik Kopparty, and Shubhangi Saraf. “Proximity Gaps for Reed–Solomon Codes”. In: Proceedings of the 61st Annual IEEE Symposium on Foundations of Computer Science. FOCS ’20. 2020.
 [^deepfri]: [BGKS20] Eli Ben-Sasson, Lior Goldberg, Swastik Kopparty, and Shubhangi Saraf. “DEEP-FRI: Sampling Outside the Box Improves Soundness”. In: Proceedings of the 11th Innovations in Theoretical Computer Science Conference. ITCS ’20.
