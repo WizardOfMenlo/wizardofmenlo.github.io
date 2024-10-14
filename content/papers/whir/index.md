@@ -5,11 +5,11 @@ date: 2024-09-27
 author: "Gal Arnon, Alessandro Chiesa, Giacomo Fenzi, Eylon Yogev"
 description: "We present WHIR (Weights Help Improving Rate), an interactive oracle proof of proximity (IOPP) for constrained Reed–Solomon codes. WHIR doubles as a multilinear polynomial commitment scheme, achieving the fastest verification speed of any such scheme while mantaining state-of-the-art argument size, verifier hash complexity and prover times."
 editPost:
-    URL: "https://eprint.iacr.org/2024/XXX"
-    Text: "ePrint: 2024/XXX"
+    URL: "https://eprint.iacr.org/2024/1586"
+    Text: "ePrint: 2024/1586"
 ---
 
-This blog-post is a short introduction to our new work: "WHIR: Reed--Solomon Proximity Testing with Super-Fast Verification". This is joint work with [Gal Arnon,](https://galarnon42.github.io/) [Alessandro Chiesa,](https://ic-people.epfl.ch/~achiesa/) and [Eylon Yogev,](https://www.eylonyogev.com/about) and the full version is [available on ePrint](https://eprint.iacr.org/2024/XXX). Code is also available at [WizardOfMenlo/whir.](https://github.com/WizardOfMenlo/whir)
+This blog-post is a short introduction to our new work: "WHIR: Reed--Solomon Proximity Testing with Super-Fast Verification". This is joint work with [Gal Arnon,](https://galarnon42.github.io/) [Alessandro Chiesa,](https://ic-people.epfl.ch/~achiesa/) and [Eylon Yogev,](https://www.eylonyogev.com/about) and the full version is [available on ePrint](https://eprint.iacr.org/2024/1586). Code is also available at [WizardOfMenlo/whir.](https://github.com/WizardOfMenlo/whir)
 
 
 # WHIR 🌪️
@@ -41,7 +41,7 @@ We present a few applications that we believe WHIR is a natural candidate for.
 ### On chain verification
 Currently, most onchain verification is done with Groth16 over a BN254 curve. The benefits of such verification is that the proof is constant size and verification is supposed to cheap, keeping both data availability (DA) costs and compute costs low. Currently, this verification costs [~280k gas](https://sepolia.etherscan.io/tx/0x9db0680f9164e045cf1cbf6f6c3a1afff204e2dc6c5af9582fb2ba89ef3e2b12). 
 We believe that, as long as DA costs are low (as they currently are), WHIR can offer significantly lower compute costs for onchain proof verification (and we are working on a Solidity verifier to confirm this thesis). 
-A rough back-of-the-envelope calculation: a WHIR verifier for a polynomial of size $2^{24}$ and rate $1/2$ performs around 1.5k hashes (using 100-bits of security to compare with BN254). Assuming the hash used is Keccak, and that each of these hashes is for Merkle tree verification (and thus hashes together 64 bytes), each of these hashes costs 48 gas. Thus, the cost of hash-verification is around **96k gas**. Estimating the cost of the field operations is harder, but they tend account for a much smaller portion of the verification costs (on native experiments) compared to the hashing. 
+A rough back-of-the-envelope calculation: a WHIR verifier for a polynomial of size $2^{24}$ and rate $1/2$ performs around 1.5k hashes (using 100-bits of security to compare with BN254). Assuming the hash used is Keccak, and that each of these hashes is for Merkle tree verification (and thus hashes together 64 bytes), each of these hashes costs 48 gas. Thus, the cost of hash-verification is around **96k gas**. Estimating the cost of the field operations is harder, but they tend account for a much smaller portion of the verification costs (on native experiments) compared to the hashing. Increasing the rate to $1/16$ this cost can be reduced even further, to around **53k** gas.
 
 ### Recursive verification
 Due to the small number of hashes, WHIR's verifier (as STIR's was) is a natural candidate for recursion. Again, let's do some back-of-the-envelope calculation. At the 128-bit security level, for a computation of size $2^{28}$, starting with rate $1/2$, WHIR's recursive circuit performs $3.4$k hashes. Assuming both use Poseidon hashing and that each hash contributes ~400 R1CS constraints, the WHIR's recursive circuit size is approximately of size $2^{20}$. Then, running WHIR with even a large rate is a negligible cost (compared to the initial computation), leading to a tiny final proof. For example, running a computation of that size with rate $1/32$ gives a 64KiB proof in less than 3s (on my M1 Macbook), that verifies in less that $350µ$s while performing only 800 hashes.
@@ -121,16 +121,16 @@ Finally, WHIR achieves state-of-the-art argument size, verifier hash-complexity 
 ---
 ##### Citation
 
-G. Arnon, A. Chiesa, G. Fenzi, E. Yogev. "_WHIR: Reed–Solomon Proximity Testing with Super-Fast Verification_". Cryptology ePrint Archive, Paper 2024/XXX. Available at: https://ia.cr/2024/XXX.
+G. Arnon, A. Chiesa, G. Fenzi, E. Yogev. "_WHIR: Reed–Solomon Proximity Testing with Super-Fast Verification_". Cryptology ePrint Archive, Paper 2024/XXX. Available at: https://ia.cr/2024/1586.
 
 ```BibTeX
 @misc{ArnonCFY,
 	author       = {Gal Arnon and Alessandro Chiesa and Giacomo Fenzi and Eylon Yogev},
 	title        = {WHIR: Reed–Solomon Proximity Testing with Super-Fast Verification},
-	howpublished = {Cryptology ePrint Archive, Paper 2024/XXX},
+	howpublished = {Cryptology ePrint Archive, Paper 2024/1586},
 	year         = {2024},
-	note         = {\url{https://eprint.iacr.org/2024/XXX}},
-	url          = {https://eprint.iacr.org/2024/XXX}
+	note         = {\url{https://eprint.iacr.org/2024/1586}},
+	url          = {https://eprint.iacr.org/2024/1586}
 }
 ```
 
