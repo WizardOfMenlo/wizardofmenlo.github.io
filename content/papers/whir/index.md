@@ -68,7 +68,7 @@ For any codeword $f \in \mathsf{RS}[\mathbb{F}, L, m]$, we let $\hat{f}$ denote 
 
 Constrained Reed--Solomon codes are defined by a constraint, which consists of a weight polynomial $\hat{w}\in \mathbb{F}[Z, X_1, \dots, X_m]$ and of a target $\sigma \in \mathbb{F}$:
 
-$$ \mathsf{CRS}[\mathbb{F}, L, m, \hat{w}, \sigma] := \\{ f \in \mathsf{RS}[\mathbb{F}, L, m] : \sum_{\mathbf{b}} \hat{w}(\hat{f}(\mathbf{b}), \mathbf{b}) \\} $$
+$$ \mathsf{CRS}[\mathbb{F}, L, m, \hat{w}, \sigma] := \\{ f \in \mathsf{RS}[\mathbb{F}, L, m] : \sum_{\mathbf{b}} \hat{w}(\hat{f}(\mathbf{b}), \mathbf{b}) = \sigma \\} $$
 
 Note, for example, that by setting $\hat{w}(Z, X_1, \dots, X_m) = Z \cdot \mathsf{eq}(\mathbf{z}, X_1, \dots, X_m)$[^eq] for some $\mathbf{z} \in \sigma$ the constrained code exactly captures Reed--Solomon codewords whose corresponding polynomial evaluates to $\sigma$ at $\mathbf{z}$.
 
