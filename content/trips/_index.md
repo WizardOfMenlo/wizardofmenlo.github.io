@@ -7,7 +7,7 @@ List of past and upcoming trips and presentations.
 
 ## Upcoming
 ### 2024
-- 10 October. EPFL. Presenting [STIR 🥣] and [WHIR 🌪️] at [BSA EPFL](https://lu.ma/7uu1085t). 
+- 10 October. EPFL. Presenting [STIR 🥣](/papers/stir) and [WHIR 🌪️](/papers/whir) at [BSA EPFL](https://lu.ma/7uu1085t). 
 - 16 October. Online. Presenting [STIR 🥣](/papers/stir) at [Nexus speaker series](https://nexus.xyz/) and [sumcheck builder group](https://hackmd.io/@ap95hIPHTcCFbPYZ5pRs5g/S1aHQ9ga0).
 - 8 November. Online. Presenting [WHIR 🌪️](/papers/whir) at [Nexus speaker series](https://nexus.xyz/) and [sumcheck builder group](https://hackmd.io/@ap95hIPHTcCFbPYZ5pRs5g/S1aHQ9ga0).
 - 2-6 December. Milan. Presenting [UC-secure zkSNARKs🌍](/papers/uc-snarks) at [TCC24](https://tcc.iacr.org/2024/).
