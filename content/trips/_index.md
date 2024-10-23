@@ -7,14 +7,14 @@ List of past and upcoming trips and presentations.
 
 ## Upcoming
 ### 2024
-- 10 October. EPFL. Presenting [STIR 🥣](/papers/stir) and [WHIR 🌪️](/papers/whir) at [BSA EPFL](https://lu.ma/7uu1085t). 
-- 16 October. Online. Presenting [STIR 🥣](/papers/stir) at [Nexus speaker series](https://nexus.xyz/) and [sumcheck builder group](https://hackmd.io/@ap95hIPHTcCFbPYZ5pRs5g/S1aHQ9ga0).
+- 30 October. EPFL. Presenting [STIR 🥣](/papers/stir) and [WHIR 🌪️](/papers/whir) at [BSA EPFL](https://lu.ma/7uu1085t). 
 - 8 November. Online. Presenting [WHIR 🌪️](/papers/whir) at [Nexus speaker series](https://nexus.xyz/) and [sumcheck builder group](https://hackmd.io/@ap95hIPHTcCFbPYZ5pRs5g/S1aHQ9ga0).
 - 2-6 December. Milan. Presenting [UC-secure zkSNARKs🌍](/papers/uc-snarks) at [TCC24](https://tcc.iacr.org/2024/).
 
 
 ## Past
 ### 2024
+- 16 October. Online. Presented [STIR 🥣](/papers/stir) at [Nexus speaker series](https://nexus.xyz/) and [sumcheck builder group](https://hackmd.io/@ap95hIPHTcCFbPYZ5pRs5g/S1aHQ9ga0).
 - 12-13 September. Munich. Presented [STIR 🥣](/papers/stir) at [TUM Blockchain Conference](https://conference.tum-blockchain.com).
 - 2 September. St Gallen. Presented [STIR 🥣](/papers/stir) at [Swiss Crypyo Day](https://swisscryptoday.github.io/2024/).
 - 18-22 August. Santa Barbara. Presented [STIR 🥣](/papers/stir) at [CRYPTO24](https://crypto.iacr.org/2024/).
