@@ -46,6 +46,6 @@ Preprints, publications and short descriptions of the content of the project I w
 
 - [**F**MN23] "_Lattice-Based Polynomial Commitments: Towards Concrete and Asymptotical Efficiency_". \
     Giacomo Fenzi, Hossein Moghaddas, Ngoc Khanh Nguyen. \
-    **Journal of Cryptology 2024.** Available at: [2023/846.](https://ia.cr/2023/846) [Accompanying blog-post.]({{< ref "/papers/towards-pcs" >}})
+    **Journal of Cryptology 2024 & ArticCrypt 2025.** Available at: [2023/846.](https://ia.cr/2023/846) [Accompanying blog-post.]({{< ref "/papers/towards-pcs" >}})
  
 ## Descriptions
