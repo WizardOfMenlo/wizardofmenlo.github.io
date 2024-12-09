@@ -28,7 +28,7 @@ Preprints, publications and short descriptions of the content of the project I w
     **CRYPTO 2024 (⭐️ Best Paper ⭐️) & zkSummit11 & ZKProof 6.** Available at: [2024/390.](https://ia.cr/2024/390) [Accompanying blog-post.]({{< ref "/papers/stir" >}})
 - [**F**KNP24] "_Lova: Lattice-Based Folding Scheme from Unstructured Lattices_". \
     Giacomo Fenzi, Christian Knabenhans, Khanh Ngoc Nguyen, Duc Tu Pham \
-    **ASIACRYPT 2024.** 
+    **ASIACRYPT 2024.** Available at: [2024/1964.](https://ia.cr/2024/1964)
 - [CF**F**Z24] "_A Time-Space Tradeoff for the Sumcheck Prover_". \
     Alessandro Chiesa, Elisabetta Fedele, Giacomo Fenzi, Andrew Zitek-Estrada. \
     **ZKProof 6.** Available at: [2024/524.](https://ia.cr/2024/524) [Accompanying blog-post.]({{< ref "/papers/blendy-sumcheck" >}})
