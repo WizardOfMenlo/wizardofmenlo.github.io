@@ -8,7 +8,7 @@ List of past and upcoming trips and presentations.
 ## Upcoming
 
 ### 2025
-- 4-8 May. Madrid. Presented [WHIR 🌪️](/papers/whir) at [EUROCRYPT25](https://eurocrypt.iacr.org/2025/).
+- 4-8 May. Madrid. Presenting [WHIR 🌪️](/papers/whir) at [EUROCRYPT25](https://eurocrypt.iacr.org/2025/).
 - 6-11 July. Longyearbyen. Presenting [towards lattice based polynomial commitments](/papers/towards-pcs) at [ArticCrypt25](https://simula-uib.com/arcticcrypt2025/).
 
 ## Past
