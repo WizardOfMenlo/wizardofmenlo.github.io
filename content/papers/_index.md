@@ -19,7 +19,7 @@ Preprints, publications and short descriptions of the content of the project I w
 
 - [AC**F**Y24] "_WHIR: Reed–Solomon Proximity Testing with Super-Fast Verification_". \
     Gal Arnon, Alessandro Chiesa, Giacomo Fenzi, Eylon Yogev. \
-    **zkSummit12.** Cryptology ePrint Archive, Paper 2024/1586. Available at: [2024/1586.](https://ia.cr/2024/1586) [Accompanying blog-post.]({{< ref "/papers/whir" >}})
+    **EUROCRYPT 2025 & zkSummit12.** Cryptology ePrint Archive, Paper 2024/1586. Available at: [2024/1586.](https://ia.cr/2024/1586) [Accompanying blog-post.]({{< ref "/papers/whir" >}})
 - [C**F**24] "_zkSNARKs in the ROM with Unconditional UC-Security_". \
     Alessandro Chiesa, Giacomo Fenzi. \
     **TCC 2024 & ZKProof 6.** Available at: [2024/724.](https://ia.cr/2024/724) [Accompanying blog-post.]({{< ref "/papers/uc-snarks" >}})
