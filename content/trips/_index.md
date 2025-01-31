@@ -6,14 +6,14 @@ description: "Past and upcoming trips and talks."
 List of past and upcoming trips and presentations. 
 
 ## Upcoming
-### 2024
-- 2-6 December. Milan. Presenting [UC-secure zkSNARKs🌍](/papers/uc-snarks) at [TCC24](https://tcc.iacr.org/2024/).
-### 2025
-- 6-11 July. Longyearbyen. Presenting [towards lattice based polynomial commitments](/papers/towards-pcs) at [ArticCrypt25](https://simula-uib.com/arcticcrypt2025/).
 
+### 2025
+- 4-8 May. Madrid. Presented [WHIR 🌪️](/papers/whir) at [EUROCRYPT25](https://eurocrypt.iacr.org/2025/).
+- 6-11 July. Longyearbyen. Presenting [towards lattice based polynomial commitments](/papers/towards-pcs) at [ArticCrypt25](https://simula-uib.com/arcticcrypt2025/).
 
 ## Past
 ### 2024
+- 2-6 December. Milan. Presented [UC-secure zkSNARKs🌍](/papers/uc-snarks) at [TCC24](https://tcc.iacr.org/2024/).
 - 28 November. Zurich. Presented [WHIR 🌪️](/papers/whir) at [IBM Research Zurich](https://research.ibm.com/labs/zurich).
 - 8 November. Online. Presented [WHIR 🌪️](/papers/whir) at [Nexus speaker series](https://nexus.xyz/) and [sumcheck builder group](https://hackmd.io/@ap95hIPHTcCFbPYZ5pRs5g/S1aHQ9ga0).
 - 30 October. Lausanne. Presented [UC-secure zkSNARKs🌍](/papers/uc-snarks), [STIR 🥣](/papers/stir) and [WHIR 🌪️](/papers/whir) at [BSA EPFL](https://lu.ma/7uu1085t). 
