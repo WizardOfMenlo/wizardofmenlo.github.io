@@ -38,5 +38,6 @@ I seem to have picked up a number of nicknames over the years. Keeping track of 
 
 ---
 ## Some quotes
+- _Choose a code, any code_ - introduction to a terrible magic trick
 - _We might be morally bankrupt, but we are very much not financially bankrupt_ - about funding from blockchain companies
 - _I am capable of love!_ - Giacomo pointing to his grill
