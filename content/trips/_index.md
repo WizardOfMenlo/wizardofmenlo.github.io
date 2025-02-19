@@ -14,6 +14,8 @@ List of past and upcoming trips and presentations.
 - 6-11 July. Longyearbyen. Presenting [towards lattice based polynomial commitments](/papers/towards-pcs) at [ArticCrypt25](https://simula-uib.com/arcticcrypt2025/).
 
 ## Past
+### 2025
+- 18 February. Paris. Presented [WHIR 🌪️](/papers/whir) at [RWC Paris](https://cryptography.paris).
 ### 2024
 - 2-6 December. Milan. Presented [UC-secure zkSNARKs🌍](/papers/uc-snarks) at [TCC24](https://tcc.iacr.org/2024/).
 - 28 November. Zurich. Presented [WHIR 🌪️](/papers/whir) at [IBM Research Zurich](https://research.ibm.com/labs/zurich).
