@@ -8,7 +8,9 @@ List of past and upcoming trips and presentations.
 ## Upcoming
 
 ### 2025
+- 17 March. Online. Presenting [Lova 💕](https://eprint.iacr.org/2024/1964) at [ENSL/CWI/KCL/IRISA Joint Online Cryptography Seminars](https://jcs.trusted-third-party.org/).
 - 23-25 March. Sofia. Presenting [WHIR 🌪️](/papers/whir) at [ZKProof7](https://zkproof.org/events/zkproof-7-sofia/).
+- 31 March. Online. Presenting [WHIR 🌪️](/papers/whir) at [Penn's Security and Privacy Lab](https://splab.cis.upenn.edu/seminars.html).
 - 4-8 May. Madrid. Presenting [WHIR 🌪️](/papers/whir) at [EUROCRYPT25](https://eurocrypt.iacr.org/2025/).
 - 19 May - 15 August. Berkeley. Attending [Cryptography: 10 Years Later](https://simons.berkeley.edu/programs/cryptography-10-years-later-obfuscation-proof-systems-secure-computation) at [Simons](https://simons.berkeley.edu/homepage).
 - 6-11 July. Longyearbyen. Presenting [towards lattice based polynomial commitments](/papers/towards-pcs) at [ArticCrypt25](https://simula-uib.com/arcticcrypt2025/).
