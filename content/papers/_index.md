@@ -19,7 +19,7 @@ Preprints, publications and short descriptions of the content of the project I w
 ### 2025
 - [BC**F**W25] "_Linear Time Accumulation Schemes_". \
     Benedikt Bünz, Alessandro Chiesa, Giacomo Fenzi, William Wang. \
-    **CAW 2025.** Cryptology ePrint Archive, Paper 2025/753. Available at: [2025/753.](https://ia.cr/2025/753)
+    **CAW 2025 & zkSummit13.** Cryptology ePrint Archive, Paper 2025/753. Available at: [2025/753.](https://ia.cr/2025/753)
   
 ### 2024
 
