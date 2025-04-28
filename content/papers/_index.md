@@ -9,17 +9,23 @@ Preprints, publications and short descriptions of the content of the project I w
 
 - STIR 🥣: RS IOPP with fewer queries. **⭐️ Best Paper ⭐️ @ CRYPTO 2024.** [2024/390.](https://ia.cr/2024/390) [Blog-post.]({{< ref "/papers/stir" >}})
 - WHIR 🌪️: Constrained RS IOPP with fewer queries **and** super-fast verification.  [2024/1586.](https://ia.cr/2024/1586) [Blog-post.]({{< ref "/papers/whir" >}})
+- WARP 🌀: A linear time accumulation scheme from any linear code. [2025/753.](https://ia.cr/2025/753)
 - UC-secure zkSNARKs 🌍: Commonly deployed zkSNARKs are UC-secure in the ROM. [2024/724.](https://ia.cr/2024/724) [Blog-post.]({{< ref "/papers/uc-snarks" >}})
 - SLAP 👋: Succinct lattice-based polynomial commitment scheme from SIS. [2023/1469.](https://ia.cr/2023/1469) [Blog-post.]({{< ref "/papers/slap" >}})
 - Blendy 🍹: Space-efficient prover for sumcheck. [2024/524.](https://ia.cr/2024/524) [Blog-post.]({{< ref "/papers/blendy-sumcheck" >}})
 
 
 ## Full List of Publications
+### 2025
+- [BC**F**W25] "_Linear Time Accumulation Schemes_". \
+    Benedikt Bünz, Alessandro Chiesa, Giacomo Fenzi, William Wang. \
+    **CAW 2025.** Cryptology ePrint Archive, Paper 2025/753. Available at: [2025/753.](https://ia.cr/2025/753)
+  
 ### 2024
 
 - [AC**F**Y24] "_WHIR: Reed–Solomon Proximity Testing with Super-Fast Verification_". \
     Gal Arnon, Alessandro Chiesa, Giacomo Fenzi, Eylon Yogev. \
-    **EUROCRYPT 2025 & zkSummit12.** Cryptology ePrint Archive, Paper 2024/1586. Available at: [2024/1586.](https://ia.cr/2024/1586) [Accompanying blog-post.]({{< ref "/papers/whir" >}})
+    **EUROCRYPT 2025 & zkSummit12.** Available at: [2024/1586.](https://ia.cr/2024/1586) [Accompanying blog-post.]({{< ref "/papers/whir" >}})
 - [C**F**24] "_zkSNARKs in the ROM with Unconditional UC-Security_". \
     Alessandro Chiesa, Giacomo Fenzi. \
     **TCC 2024 & ZKProof 6.** Available at: [2024/724.](https://ia.cr/2024/724) [Accompanying blog-post.]({{< ref "/papers/uc-snarks" >}})
