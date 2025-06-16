@@ -35,6 +35,8 @@ I seem to have picked up a number of nicknames over the years. Keeping track of 
 - **Tezcatlipoca**
 - **L'Ultima Primula Rossa**
 - **Il Sultano**
+- **Il Sasso che Distrugge l'Ingranaggio**
+
 
 ---
 ## Some quotes
