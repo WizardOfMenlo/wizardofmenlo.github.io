@@ -9,7 +9,8 @@ List of past and upcoming trips and presentations.
 
 ### 2025
 - 19 May - 15 August. Berkeley. Attending [Cryptography: 10 Years Later](https://simons.berkeley.edu/programs/cryptography-10-years-later-obfuscation-proof-systems-secure-computation) at [Simons](https://simons.berkeley.edu/homepage).
-- 13 August. Sunnyvale. Presenting at [Google: ZK & AI Summit](https://rsvp.withgoogle.com/events/google-zk-ai-web3-summit_4a974d).
+- 13-14 August. Sunnyvale. Presenting at [Google: ZK & AI Summit](https://rsvp.withgoogle.com/events/google-zk-ai-web3-summit_4a974d).
+- 4-7 October. Cambridge. Attending the [EF](ethereum.foundation) summit on PQ interop.
 
 ## Past
 ### 2025
