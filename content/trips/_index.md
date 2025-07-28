@@ -9,10 +9,11 @@ List of past and upcoming trips and presentations.
 
 ### 2025
 - 19 May - 15 August. Berkeley. Attending [Cryptography: 10 Years Later](https://simons.berkeley.edu/programs/cryptography-10-years-later-obfuscation-proof-systems-secure-computation) at [Simons](https://simons.berkeley.edu/homepage).
-- 6-11 July. Longyearbyen. Presenting [towards lattice based polynomial commitments](/papers/towards-pcs) at [ArticCrypt25](https://simula-uib.com/arcticcrypt2025/).
+- 13 August. Sunnyvale. Presenting at [Google: ZK & AI Summit](https://rsvp.withgoogle.com/events/google-zk-ai-web3-summit_4a974d).
 
 ## Past
 ### 2025
+- 6-11 July. Longyearbyen. Presented [towards lattice based polynomial commitments](/papers/towards-pcs) at [ArticCrypt25](https://simula-uib.com/arcticcrypt2025/).
 - 20 June. Berkeley. Presented a [survey on efficient succinct arguments](/presentations/practical-snarks.pdf) at [Cryptography: 10 Years Later](https://simons.berkeley.edu/programs/cryptography-10-years-later-obfuscation-proof-systems-secure-computation) at [Simons](https://simons.berkeley.edu/homepage).
 - 2 June. Stanford. Presented [WARP 🌀](https://eprint.iacr.org/2025/753) at [Stanford](https://crypto.stanford.edu/). 
 - 4-8 May. Madrid. Presented [WHIR 🌪️](/papers/whir) at [EUROCRYPT25](https://eurocrypt.iacr.org/2025/).
