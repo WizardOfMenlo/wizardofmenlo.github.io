@@ -23,7 +23,9 @@ Preprints, publications and short descriptions of the content of the project I w
 - [AC**F**Y25] "_Interactive Proofs for Batch Polynomial Evaluation_". \
     Gal Arnon, Alessandro Chiesa, Giacomo Fenzi, Eylon Yogev. 
 - [BCF**F**MMZ25] "_Time-space trade-offs for the sumcheck protocol_". \
-    Anubhav Baweja, Alessandro Chiesa, Elisabetta Fedele, Giacomo Fenzi, Pratyush Mishra, Tushar Mopuri, Andrew Zitek-Estrada. 
+    Anubhav Baweja, Alessandro Chiesa, Elisabetta Fedele, Giacomo Fenzi, Pratyush Mishra, Tushar Mopuri, Andrew Zitek-Estrada.
+- [**F**Z25] "_zip: Reducing Proof Sizes for Hash-Based SNARGs_". \
+    Giacomo Fenzi, Yuwen Zhang. 
     
     
   
