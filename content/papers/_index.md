@@ -26,7 +26,7 @@ Preprints, publications and short descriptions of the content of the project I w
     Anubhav Baweja, Alessandro Chiesa, Elisabetta Fedele, Giacomo Fenzi, Pratyush Mishra, Tushar Mopuri, Andrew Zitek-Estrada.
 - [**F**Z25] "_zip: Reducing Proof Sizes for Hash-Based SNARGs_". \
     Giacomo Fenzi, Yuwen Zhang.
-    Cryptology ePrint Archive, Paper 2025/1446. Available at: [2025/1446.](https://ia.cr/2024/1446)
+    Cryptology ePrint Archive, Paper 2025/1446. Available at: [2025/1446.](https://ia.cr/2025/1446)
   
     
     
