@@ -12,7 +12,7 @@ Preprints, publications and short descriptions of the content of the project I w
 - WARP 🌀: A linear time accumulation scheme from any linear code. [2025/753.](https://ia.cr/2025/753)
 - UC-secure zkSNARKs 🌍: Commonly deployed zkSNARKs are UC-secure in the ROM. [2024/724.](https://ia.cr/2024/724) [Blog-post.]({{< ref "/papers/uc-snarks" >}})
 - SLAP 👋: Succinct lattice-based polynomial commitment scheme from SIS. [2023/1469.](https://ia.cr/2023/1469) [Blog-post.]({{< ref "/papers/slap" >}})
-- Blendy 🍹: Space-efficient prover for sumcheck. [2024/524.](https://ia.cr/2024/524) [Blog-post.]({{< ref "/papers/blendy-sumcheck" >}})
+- Blendy 🍹: Space-efficient prover for sumcheck. [2024/524](https://ia.cr/2024/524) and [2025/1473.](https://ia.cr/2025/1473) [Blog-post.]({{< ref "/papers/blendy-sumcheck" >}})
 
 
 ## Full List of Publications
@@ -24,6 +24,7 @@ Preprints, publications and short descriptions of the content of the project I w
     Gal Arnon, Alessandro Chiesa, Giacomo Fenzi, Eylon Yogev. 
 - [BCF**F**MMZ25] "_Time-space trade-offs for the sumcheck protocol_". \
     Anubhav Baweja, Alessandro Chiesa, Elisabetta Fedele, Giacomo Fenzi, Pratyush Mishra, Tushar Mopuri, Andrew Zitek-Estrada.
+    Cryptology ePrint Archive, Paper 2025/1473. Available at: [2025/1473.](https://ia.cr/2025/1473)
 - [**F**Z25] "_zip: Reducing Proof Sizes for Hash-Based SNARGs_". \
     Giacomo Fenzi, Yuwen Zhang.
     Cryptology ePrint Archive, Paper 2025/1446. Available at: [2025/1446.](https://ia.cr/2025/1446)
