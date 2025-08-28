@@ -19,12 +19,12 @@ Preprints, publications and short descriptions of the content of the project I w
 ### 2025
 - [BC**F**W25] "_Linear Time Accumulation Schemes_". \
     Benedikt Bünz, Alessandro Chiesa, Giacomo Fenzi, William Wang. \
-    **CAW 2025 & zkSummit13.** Cryptology ePrint Archive, Paper 2025/753. Available at: [2025/753.](https://ia.cr/2025/753)
+    **TCC 2025 & CAW 2025 & zkSummit13.** Cryptology ePrint Archive, Paper 2025/753. Available at: [2025/753.](https://ia.cr/2025/753)
 - [AC**F**Y25] "_Interactive Proofs for Batch Polynomial Evaluation_". \
     Gal Arnon, Alessandro Chiesa, Giacomo Fenzi, Eylon Yogev. 
 - [BCF**F**MMZ25] "_Time-space trade-offs for the sumcheck protocol_". \
     Anubhav Baweja, Alessandro Chiesa, Elisabetta Fedele, Giacomo Fenzi, Pratyush Mishra, Tushar Mopuri, Andrew Zitek-Estrada.
-    Cryptology ePrint Archive, Paper 2025/1473. Available at: [2025/1473.](https://ia.cr/2025/1473)
+    **TCC 2025.** Cryptology ePrint Archive, Paper 2025/1473. Available at: [2025/1473.](https://ia.cr/2025/1473)
 - [**F**Z25] "_zip: Reducing Proof Sizes for Hash-Based SNARGs_". \
     Giacomo Fenzi, Yuwen Zhang.
     Cryptology ePrint Archive, Paper 2025/1446. Available at: [2025/1446.](https://ia.cr/2025/1446)
@@ -48,7 +48,7 @@ Preprints, publications and short descriptions of the content of the project I w
     **ASIACRYPT 2024.** Available at: [2024/1964.](https://ia.cr/2024/1964)
 - [CF**F**Z24] "_A Time-Space Tradeoff for the Sumcheck Prover_". \
     Alessandro Chiesa, Elisabetta Fedele, Giacomo Fenzi, Andrew Zitek-Estrada. \
-    **ZKProof 6.** Available at: [2024/524.](https://ia.cr/2024/524) [Accompanying blog-post.]({{< ref "/papers/blendy-sumcheck" >}})
+    **TCC 2025 & ZKProof 6.** Available at: [2024/524.](https://ia.cr/2024/524) [Accompanying blog-post.]({{< ref "/papers/blendy-sumcheck" >}})
 - [**F**GV24] "_Finding Bugs and Features Using Cryptographically-Informed Functional Testing_". \
     Giacomo Fenzi, Jan Gilcher, Fernando Virdia. \
     Cryptology ePrint Archive, Paper 2024/1122. Available at: [2024/1122.](https://ia.cr/2024/1122)
