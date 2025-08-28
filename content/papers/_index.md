@@ -19,12 +19,12 @@ Preprints, publications and short descriptions of the content of the project I w
 ### 2025
 - [BC**F**W25] "_Linear Time Accumulation Schemes_". \
     Benedikt Bünz, Alessandro Chiesa, Giacomo Fenzi, William Wang. \
-    **TCC 2025 & CAW 2025 & zkSummit13.** Cryptology ePrint Archive, Paper 2025/753. Available at: [2025/753.](https://ia.cr/2025/753)
+    **TCC 2025 & CAW 2025 & zkSummit13.** Available at: [2025/753.](https://ia.cr/2025/753)
 - [AC**F**Y25] "_Interactive Proofs for Batch Polynomial Evaluation_". \
     Gal Arnon, Alessandro Chiesa, Giacomo Fenzi, Eylon Yogev. 
 - [BCF**F**MMZ25] "_Time-space trade-offs for the sumcheck protocol_". \
-    Anubhav Baweja, Alessandro Chiesa, Elisabetta Fedele, Giacomo Fenzi, Pratyush Mishra, Tushar Mopuri, Andrew Zitek-Estrada.
-    **TCC 2025.** Cryptology ePrint Archive, Paper 2025/1473. Available at: [2025/1473.](https://ia.cr/2025/1473)
+    Anubhav Baweja, Alessandro Chiesa, Elisabetta Fedele, Giacomo Fenzi, Pratyush Mishra, Tushar Mopuri, Andrew Zitek-Estrada. \
+    **TCC 2025.** Available at: [2025/1473.](https://ia.cr/2025/1473)
 - [**F**Z25] "_zip: Reducing Proof Sizes for Hash-Based SNARGs_". \
     Giacomo Fenzi, Yuwen Zhang.
     Cryptology ePrint Archive, Paper 2025/1446. Available at: [2025/1446.](https://ia.cr/2025/1446)
