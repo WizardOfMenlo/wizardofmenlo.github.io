@@ -29,9 +29,6 @@ Preprints, publications and short descriptions of the content of the project I w
     Giacomo Fenzi, Yuwen Zhang.
     Cryptology ePrint Archive, Paper 2025/1446. Available at: [2025/1446.](https://ia.cr/2025/1446)
   
-    
-    
-  
 ### 2024
 
 - [AC**F**Y24] "_WHIR: Reed–Solomon Proximity Testing with Super-Fast Verification_". \
@@ -51,7 +48,10 @@ Preprints, publications and short descriptions of the content of the project I w
     **TCC 2025 & ZKProof 6.** Available at: [2024/524.](https://ia.cr/2024/524) [Accompanying blog-post.]({{< ref "/papers/blendy-sumcheck" >}})
 - [**F**GV24] "_Finding Bugs and Features Using Cryptographically-Informed Functional Testing_". \
     Giacomo Fenzi, Jan Gilcher, Fernando Virdia. \
-    Cryptology ePrint Archive, Paper 2024/1122. Available at: [2024/1122.](https://ia.cr/2024/1122)
+    **TCHES 2026.** Available at: [2024/1122.](https://ia.cr/2024/1122)
+- [ABD**F**KKZ24] "_Post-Quantum Access Control with Application to Secure Data Retrieval_". \
+    Behzad Abdolmaleki, Hannes Blümel, Tianxiang Dai, Giacomo Fenzi, Homa Khajeh, Stefan Köpsell, Maryam Zarezadeh. \
+    **Communications in Cryptology 2025**.
 
 ### 2023
 - [A**F**LN23] "_SLAP: Succinct Lattice-Based Polynomial Commitments from Standard Assumptions_". \
