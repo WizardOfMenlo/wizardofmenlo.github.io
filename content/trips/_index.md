@@ -8,10 +8,12 @@ List of past and upcoming trips and presentations.
 ## Upcoming
 
 ### 2025
-- 4-7 October. Cambridge. Attending the [EF](ethereum.foundation) summit on PQ interop.
+- 7 November. Online. Presenting [Proximity Prize](proximityprize.org) at [Ethproofs.](ethproofs.org)
 
 ## Past
 ### 2025
+- 31 October. Lausanne. Presented [WARP 🌀](https://eprint.iacr.org/2025/753) at [Swiss Crypyo Day.](https://swisscryptoday.github.io/2025/)
+- 4-7 October. Cambridge. Attended the [EF](ethereum.foundation) summit on PQ interop.
 - 13-14 August. Sunnyvale. Presented at [Google: ZK & AI Summit.](https://rsvp.withgoogle.com/events/google-zk-ai-web3-summit_4a974d)
 - 19 May - 15 August. Berkeley. Attended [Cryptography: 10 Years Later.](https://simons.berkeley.edu/programs/cryptography-10-years-later-obfuscation-proof-systems-secure-computation) at [Simons](https://simons.berkeley.edu/homepage)
 - 6-11 July. Longyearbyen. Presented [towards lattice based polynomial commitments](/papers/towards-pcs) at [ArticCrypt25.](https://simula-uib.com/arcticcrypt2025/)
