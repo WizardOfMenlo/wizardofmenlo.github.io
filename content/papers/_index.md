@@ -9,6 +9,7 @@ Preprints, publications and short descriptions of the content of the project I w
 
 - STIR 🥣: RS IOPP with fewer queries. **⭐️ Best Paper ⭐️ @ CRYPTO 2024.** [2024/390.](https://ia.cr/2024/390) [Blog-post.]({{< ref "/papers/stir" >}})
 - WHIR 🌪️: Constrained RS IOPP with fewer queries **and** super-fast verification.  [2024/1586.](https://ia.cr/2024/1586) [Blog-post.]({{< ref "/papers/whir" >}})
+- TensorSwitch 🧮: Nearly-optimal polynomial commitment scheme from tensor codes. [2025/2065.](https://ia.cr/2025/2065)
 - WARP 🌀: A linear time accumulation scheme from any linear code. [2025/753.](https://ia.cr/2025/753)
 - UC-secure zkSNARKs 🌍: Commonly deployed zkSNARKs are UC-secure in the ROM. [2024/724.](https://ia.cr/2024/724) [Blog-post.]({{< ref "/papers/uc-snarks" >}})
 - SLAP 👋: Succinct lattice-based polynomial commitment scheme from SIS. [2023/1469.](https://ia.cr/2023/1469) [Blog-post.]({{< ref "/papers/slap" >}})
@@ -17,6 +18,9 @@ Preprints, publications and short descriptions of the content of the project I w
 
 ## Full List of Publications
 ### 2025
+- [B**F**RW25] "_TensorSwitch: Nearly Optimal Polynomial Commitments from Tensor Codes_". \
+    Benedikt Bünz, Giacomo Fenzi, Ron D. Rothblum, William Wang. \
+    Cryptology ePrint Archive, Paper 2025/2065. Available at: [2025/2065.](https://ia.cr/2025/2065)
 - [BC**F**W25] "_Linear Time Accumulation Schemes_". \
     Benedikt Bünz, Alessandro Chiesa, Giacomo Fenzi, William Wang. \
     **TCC 2025 & CAW 2025 & zkSummit13.** Available at: [2025/753.](https://ia.cr/2025/753)
@@ -26,7 +30,7 @@ Preprints, publications and short descriptions of the content of the project I w
     Anubhav Baweja, Alessandro Chiesa, Elisabetta Fedele, Giacomo Fenzi, Pratyush Mishra, Tushar Mopuri, Andrew Zitek-Estrada. \
     **TCC 2025.** Available at: [2025/1473.](https://ia.cr/2025/1473)
 - [**F**Z25] "_zip: Reducing Proof Sizes for Hash-Based SNARGs_". \
-    Giacomo Fenzi, Yuwen Zhang.
+    Giacomo Fenzi, Yuwen Zhang. \
     Cryptology ePrint Archive, Paper 2025/1446. Available at: [2025/1446.](https://ia.cr/2025/1446)
   
 ### 2024
