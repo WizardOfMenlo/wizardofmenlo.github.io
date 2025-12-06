@@ -21,6 +21,9 @@ Preprints, publications and short descriptions of the content of the project I w
 - [B**F**RW25] "_TensorSwitch: Nearly Optimal Polynomial Commitments from Tensor Codes_". \
     Benedikt Bünz, Giacomo Fenzi, Ron D. Rothblum, William Wang. \
     Cryptology ePrint Archive, Paper 2025/2065. Available at: [2025/2065.](https://ia.cr/2025/2065)
+- [**F**S25] "_Small-field hash-based SNARGs are less sound than conjectured_". \
+    Giacomo Fenzi, Antonio Sanso. \
+    Cryptology ePrint Archive, Paper 2025/2197. Available at: [2025/2197.](https://ia.cr/2025/2197)
 - [BC**F**W25] "_Linear Time Accumulation Schemes_". \
     Benedikt Bünz, Alessandro Chiesa, Giacomo Fenzi, William Wang. \
     **TCC 2025 & CAW 2025 & zkSummit13.** Available at: [2025/753.](https://ia.cr/2025/753)
@@ -29,9 +32,6 @@ Preprints, publications and short descriptions of the content of the project I w
 - [BCF**F**MMZ25] "_Time-space trade-offs for the sumcheck protocol_". \
     Anubhav Baweja, Alessandro Chiesa, Elisabetta Fedele, Giacomo Fenzi, Pratyush Mishra, Tushar Mopuri, Andrew Zitek-Estrada. \
     **TCC 2025.** Available at: [2025/1473.](https://ia.cr/2025/1473)
-- [**F**S25] "_Small-field hash-based SNARGs are less sound than conjectured_". \
-    Giacomo Fenzi, Antonio Sanso. \
-    Cryptology ePrint Archive, Paper 2025/2197. Available at: [2025/2197.](https://ia.cr/2025/2197)
 - [**F**Z25] "_zip: Reducing Proof Sizes for Hash-Based SNARGs_". \
     Giacomo Fenzi, Yuwen Zhang. \
     Cryptology ePrint Archive, Paper 2025/1446. Available at: [2025/1446.](https://ia.cr/2025/1446)
