@@ -29,6 +29,9 @@ Preprints, publications and short descriptions of the content of the project I w
 - [BCF**F**MMZ25] "_Time-space trade-offs for the sumcheck protocol_". \
     Anubhav Baweja, Alessandro Chiesa, Elisabetta Fedele, Giacomo Fenzi, Pratyush Mishra, Tushar Mopuri, Andrew Zitek-Estrada. \
     **TCC 2025.** Available at: [2025/1473.](https://ia.cr/2025/1473)
+- [**F**S25] "_Small-field hash-based SNARGs are less sound than conjectured_". \
+    Giacomo Fenzi, Antonio Sanso. \
+    Cryptology ePrint Archive, Paper 2025/2197. Available at: [2025/2197.](https://ia.cr/2025/2197)
 - [**F**Z25] "_zip: Reducing Proof Sizes for Hash-Based SNARGs_". \
     Giacomo Fenzi, Yuwen Zhang. \
     Cryptology ePrint Archive, Paper 2025/1446. Available at: [2025/1446.](https://ia.cr/2025/1446)
