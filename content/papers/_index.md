@@ -55,7 +55,7 @@ Preprints, publications and short descriptions of the content of the project I w
     **TCC 2025 & ZKProof 6.** Available at: [2024/524.](https://ia.cr/2024/524) [Accompanying blog-post.]({{< ref "/papers/blendy-sumcheck" >}})
 - [**F**GV24] "_Finding Bugs and Features Using Cryptographically-Informed Functional Testing_". \
     Giacomo Fenzi, Jan Gilcher, Fernando Virdia. \
-    **TCHES 2026.** Available at: [2024/1122.](https://ia.cr/2024/1122)
+    **RWC 2026 & TCHES 2026.** Available at: [2024/1122.](https://ia.cr/2024/1122)
 - [ABD**F**KKZ24] "_Post-Quantum Access Control with Application to Secure Data Retrieval_". \
     Behzad Abdolmaleki, Hannes Blümel, Tianxiang Dai, Giacomo Fenzi, Homa Khajeh, Stefan Köpsell, Maryam Zarezadeh. \
     **Communications in Cryptology 2025**.
