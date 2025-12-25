@@ -7,11 +7,13 @@ List of past and upcoming trips and presentations.
 
 ## Upcoming
 
-### 2025
-- 7 November. Online. Presenting [Proximity Prize](proximityprize.org) at [Ethproofs.](ethproofs.org)
+### 2026
+- 14 January. Online. Presenting [WHIR 🌪️](/papers/whir) at [Aztec.](https://aztec.network/)
 
 ## Past
 ### 2025
+- 19 December. Online. Presented [Small-field hash-based SNARGs are less sound](https://eprint.iacr.org/2025/2197) at [Ethproofs.](ethproofs.org)
+- 7 November. Online. Presented [Proximity Prize](proximityprize.org) at [Ethproofs.](ethproofs.org)
 - 31 October. Lausanne. Presented [WARP 🌀](https://eprint.iacr.org/2025/753) at [Swiss Crypyo Day.](https://swisscryptoday.github.io/2025/)
 - 4-7 October. Cambridge. Attended the [EF](ethereum.foundation) summit on PQ interop.
 - 13-14 August. Sunnyvale. Presented at [Google: ZK & AI Summit.](https://rsvp.withgoogle.com/events/google-zk-ai-web3-summit_4a974d)
