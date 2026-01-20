@@ -7,10 +7,13 @@ List of past and upcoming trips and presentations.
 
 ## Upcoming
 
-### 2026
-- 14 January. Online. Presenting [WHIR 🌪️](/papers/whir) at [Aztec.](https://aztec.network/)
+
 
 ## Past
+### 2026
+- 20 January. Online. Presented [WHIR 🌪️](/papers/whir) at [Starkware.](https://starkware.co/)
+- 14 January. Online. Presented [WHIR 🌪️](/papers/whir) at [Aztec.](https://aztec.network/)
+
 ### 2025
 - 19 December. Online. Presented [Small-field hash-based SNARGs are less sound](https://eprint.iacr.org/2025/2197) at [Ethproofs.](ethproofs.org)
 - 7 November. Online. Presented [Proximity Prize](proximityprize.org) at [Ethproofs.](ethproofs.org)
