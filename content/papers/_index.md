@@ -9,6 +9,7 @@ Preprints, publications and short descriptions of the content of the project I w
 
 - STIR 🥣: RS IOPP with fewer queries. **⭐️ Best Paper ⭐️ @ CRYPTO 2024.** [2024/390.](https://ia.cr/2024/390) [Blog-post.]({{< ref "/papers/stir" >}})
 - WHIR 🌪️: Constrained RS IOPP with fewer queries **and** super-fast verification.  [2024/1586.](https://ia.cr/2024/1586) [Blog-post.]({{< ref "/papers/whir" >}})
+- ZO0K 🦓: Zero-Knowledge IOPPs with Zero-Overhead. [2026/391.](https://ia.cr/2024/391)
 - TensorSwitch 🧮: Nearly-optimal polynomial commitment scheme from tensor codes. [2025/2065.](https://ia.cr/2025/2065)
 - WARP 🌀: A linear time accumulation scheme from any linear code. [2025/753.](https://ia.cr/2025/753)
 - UC-secure zkSNARKs 🌍: Commonly deployed zkSNARKs are UC-secure in the ROM. [2024/724.](https://ia.cr/2024/724) [Blog-post.]({{< ref "/papers/uc-snarks" >}})
@@ -17,6 +18,11 @@ Preprints, publications and short descriptions of the content of the project I w
 
 
 ## Full List of Publications
+### 2026
+- [C**F**W26] "_Zero-Knowledge IOPPs for Constrained Interleaved Codes_". \
+    Alessandro Chiesa, Giacomo Fenzi, Guy Weissenberg. \
+    Cryptology ePrint Archive, Paper 2026/391. Available at: [2026/391.](https://ia.cr/2026/391)
+
 ### 2025
 - [B**F**RW25] "_TensorSwitch: Nearly Optimal Polynomial Commitments from Tensor Codes_". \
     Benedikt Bünz, Giacomo Fenzi, Ron D. Rothblum, William Wang. \
