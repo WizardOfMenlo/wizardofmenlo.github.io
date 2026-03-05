@@ -22,6 +22,9 @@ Preprints, publications and short descriptions of the content of the project I w
 - [C**F**W26] "_Zero-Knowledge IOPPs for Constrained Interleaved Codes_". \
     Alessandro Chiesa, Giacomo Fenzi, Guy Weissenberg. \
     Cryptology ePrint Archive, Paper 2026/391. Available at: [2026/391.](https://ia.cr/2026/391)
+- [AC**F**Y26] "_Interactive Proofs for Batch Polynomial Evaluation_". \
+    Gal Arnon, Alessandro Chiesa, Giacomo Fenzi, Eylon Yogev. \
+    Cryptology ePrint Archive, Paper 2026/448. Available at: [2026/448.](https://ia.cr/2026/448)
 
 ### 2025
 - [B**F**RW25] "_TensorSwitch: Nearly Optimal Polynomial Commitments from Tensor Codes_". \
