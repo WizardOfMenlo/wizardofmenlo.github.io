@@ -21,7 +21,7 @@ Preprints, publications and short descriptions of the content of the project I w
 ### 2026
 - [C**F**W26] "_Zero-Knowledge IOPPs for Constrained Interleaved Codes_". \
     Alessandro Chiesa, Giacomo Fenzi, Guy Weissenberg. \
-    Cryptology ePrint Archive, Paper 2026/391. Available at: [2026/391.](https://ia.cr/2026/391)
+    **ZKProof 8**. Available at: [2026/391.](https://ia.cr/2026/391)
 - [AC**F**Y26] "_Interactive Proofs for Batch Polynomial Evaluation_". \
     Gal Arnon, Alessandro Chiesa, Giacomo Fenzi, Eylon Yogev. \
     Cryptology ePrint Archive, Paper 2026/448. Available at: [2026/448.](https://ia.cr/2026/448)
@@ -29,18 +29,16 @@ Preprints, publications and short descriptions of the content of the project I w
 ### 2025
 - [B**F**RW25] "_TensorSwitch: Nearly Optimal Polynomial Commitments from Tensor Codes_". \
     Benedikt Bünz, Giacomo Fenzi, Ron D. Rothblum, William Wang. \
-    Cryptology ePrint Archive, Paper 2025/2065. Available at: [2025/2065.](https://ia.cr/2025/2065)
+    **ZKProof 8**. Available at: [2025/2065.](https://ia.cr/2025/2065)
 - [**F**S25] "_Small-field hash-based SNARGs are less sound than conjectured_". \
     Giacomo Fenzi, Antonio Sanso. \
     Cryptology ePrint Archive, Paper 2025/2197. Available at: [2025/2197.](https://ia.cr/2025/2197)
 - [BC**F**W25] "_Linear Time Accumulation Schemes_". \
     Benedikt Bünz, Alessandro Chiesa, Giacomo Fenzi, William Wang. \
-    **TCC 2025 & CAW 2025 & zkSummit13.** Available at: [2025/753.](https://ia.cr/2025/753)
-- [AC**F**Y25] "_Interactive Proofs for Batch Polynomial Evaluation_". \
-    Gal Arnon, Alessandro Chiesa, Giacomo Fenzi, Eylon Yogev. 
+    **TCC 2025 & CAW 2025 & zkSummit13 & ZKProof 8.** Available at: [2025/753.](https://ia.cr/2025/)
 - [BCF**F**MMZ25] "_Time-space trade-offs for the sumcheck protocol_". \
     Anubhav Baweja, Alessandro Chiesa, Elisabetta Fedele, Giacomo Fenzi, Pratyush Mishra, Tushar Mopuri, Andrew Zitek-Estrada. \
-    **TCC 2025.** Available at: [2025/1473.](https://ia.cr/2025/1473)
+    **TCC 2025 & ZKProof 8.** Available at: [2025/1473.](https://ia.cr/2025/1473)
 - [**F**Z25] "_zip: Reducing Proof Sizes for Hash-Based SNARGs_". \
     Giacomo Fenzi, Yuwen Zhang. \
     Cryptology ePrint Archive, Paper 2025/1446. Available at: [2025/1446.](https://ia.cr/2025/1446)
