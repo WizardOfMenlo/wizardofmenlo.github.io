@@ -19,6 +19,9 @@ Preprints, publications and short descriptions of the content of the project I w
 
 ## Full List of Publications
 ### 2026
+- [AB**F**26] "_Open Problems in List Decoding and Correlated Agreement_". \
+    Gal Arnon, Dan Boneh, Giacomo Fenzi. \
+    Available at: [2026/XXX.](https://ia.cr/2026/XXX)
 - [C**F**W26] "_Zero-Knowledge IOPPs for Constrained Interleaved Codes_". \
     Alessandro Chiesa, Giacomo Fenzi, Guy Weissenberg. \
     **ZKProof 8**. Available at: [2026/391.](https://ia.cr/2026/391)
