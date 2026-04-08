@@ -9,6 +9,7 @@ Preprints, publications and short descriptions of the content of the project I w
 
 - STIR 🥣: RS IOPP with fewer queries. **⭐️ Best Paper ⭐️ @ CRYPTO 2024.** [2024/390.](https://ia.cr/2024/390) [Blog-post.]({{< ref "/papers/stir" >}})
 - WHIR 🌪️: Constrained RS IOPP with fewer queries **and** super-fast verification.  [2024/1586.](https://ia.cr/2024/1586) [Blog-post.]({{< ref "/papers/whir" >}})
+- Proximity prize: a 1$ Million Dollar Prize on questions on coding theory. [2026/680](https://ia.cr/2026/680) and [proximityprize.org](proximityprize.org).
 - ZO0K 🦓: Zero-Knowledge IOPPs with Zero-Overhead. [2026/391.](https://ia.cr/2024/391)
 - TensorSwitch 🧮: Nearly-optimal polynomial commitment scheme from tensor codes. [2025/2065.](https://ia.cr/2025/2065)
 - WARP 🌀: A linear time accumulation scheme from any linear code. [2025/753.](https://ia.cr/2025/753)
@@ -21,7 +22,7 @@ Preprints, publications and short descriptions of the content of the project I w
 ### 2026
 - [AB**F**26] "_Open Problems in List Decoding and Correlated Agreement_". \
     Gal Arnon, Dan Boneh, Giacomo Fenzi. \
-    Available at: [2026/XXX.](https://ia.cr/2026/XXX)
+    Available at: [2026/680.](https://ia.cr/2026/680)
 - [C**F**W26] "_Zero-Knowledge IOPPs for Constrained Interleaved Codes_". \
     Alessandro Chiesa, Giacomo Fenzi, Guy Weissenberg. \
     **ZKProof 8**. Available at: [2026/391.](https://ia.cr/2026/391)
