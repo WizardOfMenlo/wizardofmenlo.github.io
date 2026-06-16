@@ -33,7 +33,25 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css" integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn" crossorigin="anonymous" />
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js" integrity="sha384-pK1WpvzWVBQiP0/GjnvRxV4mOb0oxFuyRxJlk6vVw146n3egcN5C925NCP7a7BY8" crossorigin="anonymous"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"></script>
-    <script src="script.js" defer></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        window.renderMathInElement?.(document.body, {
+          delimiters: [
+            { left: '$$', right: '$$', display: true },
+            { left: '$', right: '$', display: false },
+            { left: '\\begin{equation}', right: '\\end{equation}', display: true },
+            { left: '\\begin{equation*}', right: '\\end{equation*}', display: true },
+            { left: '\\begin{align}', right: '\\end{align}', display: true },
+            { left: '\\begin{align*}', right: '\\end{align*}', display: true },
+          ],
+          throwOnError: false,
+        });
+
+        const openHash = () => document.getElementById(decodeURIComponent(location.hash.slice(1)))?.closest('details')?.setAttribute('open', '');
+        openHash();
+        addEventListener('hashchange', openHash);
+      });
+    </script>
   </head>
   <body>
     <a class="skip-link" href="#content">Skip to content</a>
@@ -47,7 +65,7 @@
 
         <nav class="site-nav" aria-label="Primary navigation">
           <a href="#papers">Papers</a>
-          <a href="#trips">Trips</a>
+          <a href="#talks">Talks</a>
           <a href="#writing">Writing</a>
           <a href="#contact">Contact</a>
         </nav>
@@ -56,9 +74,9 @@
     </header>
 
     <main id="content">
-      <section class="hero section" id="home" data-section>
+      <section class="hero section" id="home">
         <div class="container hero-grid">
-          <div class="hero-copy reveal">
+          <div class="hero-copy">
             <p class="eyebrow">EPFL · COMPSEC Lab</p>
             <h1>Giacomo Fenzi</h1>
             <p class="hero-lead">Hi! I am Giacomo, a PhD student at EPFL, where I am lucky enough to be supervised by <a href="https://ic-people.epfl.ch/~achiesa/" target="_blank" rel="noreferrer">Alessandro Chiesa</a>.</p>
@@ -91,7 +109,7 @@
             </div>
           </div>
 
-          <aside class="hero-panel reveal" aria-label="Profile">
+          <aside class="hero-panel" aria-label="Profile">
             <div class="portrait-frame">
               <img
                 src="assets/profile.jpg"
@@ -106,18 +124,18 @@
         </div>
       </section>
 
-      <section class="section" id="papers" data-section>
+      <section class="section" id="papers">
         <div class="container section-shell">
-          <div class="section-heading reveal">
+          <div class="section-heading">
             <h2>Papers</h2>
           </div>
 
           <div class="subsection-block">
-            <div class="section-subhead reveal">
-              <h3>Highlights</h3>
+            <div class="section-subhead">
+              <h3>Selected Publications</h3>
             </div>
             <div class="highlight-grid">
-            <article class="highlight-card highlight-featured reveal">
+            <article class="highlight-card highlight-featured">
               <h4 class="highlight-title">STIR 🥣</h4>
               <span class="highlight-badge">Best Paper @ CRYPTO 2024</span>
               <p class="highlight-desc">Reed-Solomon IOPP with fewer queries.</p>
@@ -126,7 +144,7 @@
                 <a href="#post-stir">Blog post</a>
               </div>
             </article>
-            <article class="highlight-card reveal">
+            <article class="highlight-card">
               <h4 class="highlight-title">WHIR 🌪️</h4>
               <p class="highlight-desc">Constrained RS IOPP with fewer queries <strong>and</strong> super-fast verification.</p>
               <div class="highlight-links">
@@ -134,7 +152,7 @@
                 <a href="#post-whir">Blog post</a>
               </div>
             </article>
-            <article class="highlight-card reveal">
+            <article class="highlight-card">
               <h4 class="highlight-title">Proximity Prize</h4>
               <p class="highlight-desc">A $1 Million Dollar Prize on questions on coding theory.</p>
               <div class="highlight-links">
@@ -142,28 +160,28 @@
                 <a href="https://proximityprize.org" target="_blank" rel="noreferrer">proximityprize.org</a>
               </div>
             </article>
-            <article class="highlight-card reveal">
+            <article class="highlight-card">
               <h4 class="highlight-title">ZO0K 🦓</h4>
               <p class="highlight-desc">Zero-Knowledge IOPPs with Zero-Overhead.</p>
               <div class="highlight-links">
                 <a href="https://ia.cr/2026/391" target="_blank" rel="noreferrer">ePrint</a>
               </div>
             </article>
-            <article class="highlight-card reveal">
+            <article class="highlight-card">
               <h4 class="highlight-title">TensorSwitch 🧮</h4>
               <p class="highlight-desc">Nearly-optimal polynomial commitment scheme from tensor codes.</p>
               <div class="highlight-links">
                 <a href="https://ia.cr/2025/2065" target="_blank" rel="noreferrer">ePrint</a>
               </div>
             </article>
-            <article class="highlight-card reveal">
+            <article class="highlight-card">
               <h4 class="highlight-title">WARP 🌀</h4>
               <p class="highlight-desc">A linear time accumulation scheme from any linear code.</p>
               <div class="highlight-links">
                 <a href="https://ia.cr/2025/753" target="_blank" rel="noreferrer">ePrint</a>
               </div>
             </article>
-            <article class="highlight-card reveal">
+            <article class="highlight-card">
               <h4 class="highlight-title">UC-secure zkSNARKs 🌍</h4>
               <p class="highlight-desc">Commonly deployed zkSNARKs are UC-secure in the ROM.</p>
               <div class="highlight-links">
@@ -171,7 +189,7 @@
                 <a href="#post-uc-snarks">Blog post</a>
               </div>
             </article>
-            <article class="highlight-card reveal">
+            <article class="highlight-card">
               <h4 class="highlight-title">SLAP 👋</h4>
               <p class="highlight-desc">Succinct lattice-based polynomial commitment scheme from SIS.</p>
               <div class="highlight-links">
@@ -179,7 +197,7 @@
                 <a href="#post-slap">Blog post</a>
               </div>
             </article>
-            <article class="highlight-card reveal">
+            <article class="highlight-card">
               <h4 class="highlight-title">Blendy 🍹</h4>
               <p class="highlight-desc">Space-efficient prover for sumcheck.</p>
               <div class="highlight-links">
@@ -192,31 +210,41 @@
           </div>
 
           <div class="subsection-block">
-            <div class="section-subhead reveal">
+            <div class="section-subhead">
               <h3>Full List of Publications</h3>
             </div>
             <div class="papers-by-year publication-years">
             <section class="paper-year" aria-labelledby="papers-year-2026">
-              <div class="paper-year-head reveal">
+              <div class="paper-year-head">
                 <h3 id="papers-year-2026">2026</h3>
               </div>
               <div class="publication-list">
-                <article class="publication-item reveal" id="pub-open-problems-in-list-decoding-and-correlated-agreement">
+                <article class="publication-item" id="pub-tensorswitch-nearly-optimal-polynomial-commitments-from-tensor-codes">
+                  <p class="publication-line publication-title-line">[B<strong>F</strong>RW26] &quot;<em>TensorSwitch: Nearly Optimal Polynomial Commitments from Tensor Codes</em>&quot;.</p>
+                  <p class="publication-line publication-authors">Benedikt Bünz, Giacomo Fenzi, Ron D. Rothblum, William Wang.</p>
+                  <p class="publication-line publication-detail"><strong>CRYPTO 2026 &amp; ZKProof 8</strong>. Available at: <a href="https://ia.cr/2025/2065" target="_blank" rel="noreferrer">2025/2065.</a></p>
+                </article>
+                <article class="publication-item" id="pub-finding-bugs-and-features-using-cryptographically-informed-functional-testing">
+                  <p class="publication-line publication-title-line">[<strong>F</strong>GV26] &quot;<em>Finding Bugs and Features Using Cryptographically-Informed Functional Testing</em>&quot;.</p>
+                  <p class="publication-line publication-authors">Giacomo Fenzi, Jan Gilcher, Fernando Virdia.</p>
+                  <p class="publication-line publication-detail"><strong>RWC 2026 &amp; TCHES 2026.</strong> Available at: <a href="https://ia.cr/2024/1122" target="_blank" rel="noreferrer">2024/1122.</a></p>
+                </article>
+                <article class="publication-item" id="pub-open-problems-in-list-decoding-and-correlated-agreement">
                   <p class="publication-line publication-title-line">[AB<strong>F</strong>26] &quot;<em>Open Problems in List Decoding and Correlated Agreement</em>&quot;.</p>
                   <p class="publication-line publication-authors">Gal Arnon, Dan Boneh, Giacomo Fenzi.</p>
                   <p class="publication-line publication-detail">Available at: <a href="https://ia.cr/2026/680" target="_blank" rel="noreferrer">2026/680.</a></p>
                 </article>
-                <article class="publication-item reveal" id="pub-zero-knowledge-iopps-for-constrained-interleaved-codes">
+                <article class="publication-item" id="pub-zero-knowledge-iopps-for-constrained-interleaved-codes">
                   <p class="publication-line publication-title-line">[C<strong>F</strong>W26] &quot;<em>Zero-Knowledge IOPPs for Constrained Interleaved Codes</em>&quot;.</p>
                   <p class="publication-line publication-authors">Alessandro Chiesa, Giacomo Fenzi, Guy Weissenberg.</p>
                   <p class="publication-line publication-detail"><strong>ZKProof 8</strong>. Available at: <a href="https://ia.cr/2026/391" target="_blank" rel="noreferrer">2026/391.</a></p>
                 </article>
-                <article class="publication-item reveal" id="pub-field-agnostic-snarks-with-small-proofs-via-encode-repeat-accumulate-era-codes">
+                <article class="publication-item" id="pub-field-agnostic-snarks-with-small-proofs-via-encode-repeat-accumulate-era-codes">
                   <p class="publication-line publication-title-line">[B<strong>F</strong>MM26] &quot;<em>Field-Agnostic SNARKs with Small Proofs via Encode-Repeat-Accumulate (ERA) Codes</em>&quot;.</p>
                   <p class="publication-line publication-authors">Anubhav Baweja, Giacomo Fenzi, Pratyush Mishra, Tushar Mopuri.</p>
                   <p class="publication-line publication-detail">Cryptology ePrint Archive, Paper 2026/864. Available at: <a href="https://ia.cr/2026/864" target="_blank" rel="noreferrer">2026/864.</a></p>
                 </article>
-                <article class="publication-item reveal" id="pub-interactive-proofs-for-batch-polynomial-evaluation">
+                <article class="publication-item" id="pub-interactive-proofs-for-batch-polynomial-evaluation">
                   <p class="publication-line publication-title-line">[AC<strong>F</strong>Y26] &quot;<em>Interactive Proofs for Batch Polynomial Evaluation</em>&quot;.</p>
                   <p class="publication-line publication-authors">Gal Arnon, Alessandro Chiesa, Giacomo Fenzi, Eylon Yogev.</p>
                   <p class="publication-line publication-detail">Cryptology ePrint Archive, Paper 2026/448. Available at: <a href="https://ia.cr/2026/448" target="_blank" rel="noreferrer">2026/448.</a></p>
@@ -224,31 +252,41 @@
               </div>
             </section>
             <section class="paper-year" aria-labelledby="papers-year-2025">
-              <div class="paper-year-head reveal">
+              <div class="paper-year-head">
                 <h3 id="papers-year-2025">2025</h3>
               </div>
               <div class="publication-list">
-                <article class="publication-item reveal" id="pub-tensorswitch-nearly-optimal-polynomial-commitments-from-tensor-codes">
-                  <p class="publication-line publication-title-line">[B<strong>F</strong>RW25] &quot;<em>TensorSwitch: Nearly Optimal Polynomial Commitments from Tensor Codes</em>&quot;.</p>
-                  <p class="publication-line publication-authors">Benedikt Bünz, Giacomo Fenzi, Ron D. Rothblum, William Wang.</p>
-                  <p class="publication-line publication-detail"><strong>CRYPTO 2026 &amp; ZKProof 8</strong>. Available at: <a href="https://ia.cr/2025/2065" target="_blank" rel="noreferrer">2025/2065.</a></p>
+                <article class="publication-item" id="pub-whir">
+                  <p class="publication-line publication-title-line">[AC<strong>F</strong>Y25] &quot;<em>WHIR: Reed–Solomon Proximity Testing with Super-Fast Verification</em>&quot;.</p>
+                  <p class="publication-line publication-authors">Gal Arnon, Alessandro Chiesa, Giacomo Fenzi, Eylon Yogev.</p>
+                  <p class="publication-line publication-detail"><strong>EUROCRYPT 2025 &amp; zkSummit12.</strong> Available at: <a href="https://ia.cr/2024/1586" target="_blank" rel="noreferrer">2024/1586.</a> <a href="#post-whir">Accompanying blog-post.</a></p>
                 </article>
-                <article class="publication-item reveal" id="pub-small-field-hash-based-snargs-are-less-sound-than-conjectured">
-                  <p class="publication-line publication-title-line">[<strong>F</strong>S25] &quot;<em>Small-field hash-based SNARGs are less sound than conjectured</em>&quot;.</p>
-                  <p class="publication-line publication-authors">Giacomo Fenzi, Antonio Sanso.</p>
-                  <p class="publication-line publication-detail">Cryptology ePrint Archive, Paper 2025/2197. Available at: <a href="https://ia.cr/2025/2197" target="_blank" rel="noreferrer">2025/2197.</a></p>
-                </article>
-                <article class="publication-item reveal" id="pub-linear-time-accumulation-schemes">
+                <article class="publication-item" id="pub-linear-time-accumulation-schemes">
                   <p class="publication-line publication-title-line">[BC<strong>F</strong>W25] &quot;<em>Linear Time Accumulation Schemes</em>&quot;.</p>
                   <p class="publication-line publication-authors">Benedikt Bünz, Alessandro Chiesa, Giacomo Fenzi, William Wang.</p>
                   <p class="publication-line publication-detail"><strong>TCC 2025 &amp; CAW 2025 &amp; zkSummit13 &amp; ZKProof 8.</strong> Available at: <a href="https://ia.cr/2025/753" target="_blank" rel="noreferrer">2025/753.</a></p>
                 </article>
-                <article class="publication-item reveal" id="pub-time-space-trade-offs-for-the-sumcheck-protocol">
+                <article class="publication-item" id="pub-time-space-trade-offs-for-the-sumcheck-protocol">
                   <p class="publication-line publication-title-line">[BCF<strong>F</strong>MMZ25] &quot;<em>Time-space trade-offs for the sumcheck protocol</em>&quot;.</p>
                   <p class="publication-line publication-authors">Anubhav Baweja, Alessandro Chiesa, Elisabetta Fedele, Giacomo Fenzi, Pratyush Mishra, Tushar Mopuri, Andrew Zitek-Estrada.</p>
                   <p class="publication-line publication-detail"><strong>TCC 2025 &amp; ZKProof 8.</strong> Available at: <a href="https://ia.cr/2025/1473" target="_blank" rel="noreferrer">2025/1473.</a></p>
                 </article>
-                <article class="publication-item reveal" id="pub-zip-reducing-proof-sizes-for-hash-based-snargs">
+                <article class="publication-item" id="pub-blendy-sumcheck">
+                  <p class="publication-line publication-title-line">[CF<strong>F</strong>Z25] &quot;<em>A Time-Space Tradeoff for the Sumcheck Prover</em>&quot;.</p>
+                  <p class="publication-line publication-authors">Alessandro Chiesa, Elisabetta Fedele, Giacomo Fenzi, Andrew Zitek-Estrada.</p>
+                  <p class="publication-line publication-detail"><strong>TCC 2025 &amp; ZKProof 6.</strong> Available at: <a href="https://ia.cr/2024/524" target="_blank" rel="noreferrer">2024/524.</a> <a href="#post-blendy-sumcheck">Accompanying blog-post.</a></p>
+                </article>
+                <article class="publication-item" id="pub-post-quantum-access-control-with-application-to-secure-data-retrieval">
+                  <p class="publication-line publication-title-line">[ABD<strong>F</strong>KKZ25] &quot;<em>Post-Quantum Access Control with Application to Secure Data Retrieval</em>&quot;.</p>
+                  <p class="publication-line publication-authors">Behzad Abdolmaleki, Hannes Blümel, Tianxiang Dai, Giacomo Fenzi, Homa Khajeh, Stefan Köpsell, Maryam Zarezadeh.</p>
+                  <p class="publication-line publication-detail"><strong>Communications in Cryptology 2025</strong>.</p>
+                </article>
+                <article class="publication-item" id="pub-small-field-hash-based-snargs-are-less-sound-than-conjectured">
+                  <p class="publication-line publication-title-line">[<strong>F</strong>S25] &quot;<em>Small-field hash-based SNARGs are less sound than conjectured</em>&quot;.</p>
+                  <p class="publication-line publication-authors">Giacomo Fenzi, Antonio Sanso.</p>
+                  <p class="publication-line publication-detail">Cryptology ePrint Archive, Paper 2025/2197. Available at: <a href="https://ia.cr/2025/2197" target="_blank" rel="noreferrer">2025/2197.</a></p>
+                </article>
+                <article class="publication-item" id="pub-zip-reducing-proof-sizes-for-hash-based-snargs">
                   <p class="publication-line publication-title-line">[<strong>F</strong>Z25] &quot;<em>zip: Reducing Proof Sizes for Hash-Based SNARGs</em>&quot;.</p>
                   <p class="publication-line publication-authors">Giacomo Fenzi, Yuwen Zhang.</p>
                   <p class="publication-line publication-detail">Cryptology ePrint Archive, Paper 2025/1446. Available at: <a href="https://ia.cr/2025/1446" target="_blank" rel="noreferrer">2025/1446.</a></p>
@@ -256,59 +294,32 @@
               </div>
             </section>
             <section class="paper-year" aria-labelledby="papers-year-2024">
-              <div class="paper-year-head reveal">
+              <div class="paper-year-head">
                 <h3 id="papers-year-2024">2024</h3>
               </div>
               <div class="publication-list">
-                <article class="publication-item reveal" id="pub-whir">
-                  <p class="publication-line publication-title-line">[AC<strong>F</strong>Y24] &quot;<em>WHIR: Reed–Solomon Proximity Testing with Super-Fast Verification</em>&quot;.</p>
-                  <p class="publication-line publication-authors">Gal Arnon, Alessandro Chiesa, Giacomo Fenzi, Eylon Yogev.</p>
-                  <p class="publication-line publication-detail"><strong>EUROCRYPT 2025 &amp; zkSummit12.</strong> Available at: <a href="https://ia.cr/2024/1586" target="_blank" rel="noreferrer">2024/1586.</a> <a href="#post-whir">Accompanying blog-post.</a></p>
-                </article>
-                <article class="publication-item reveal" id="pub-uc-snarks">
-                  <p class="publication-line publication-title-line">[C<strong>F</strong>24] &quot;<em>zkSNARKs in the ROM with Unconditional UC-Security</em>&quot;.</p>
-                  <p class="publication-line publication-authors">Alessandro Chiesa, Giacomo Fenzi.</p>
-                  <p class="publication-line publication-detail"><strong>TCC 2024 &amp; ZKProof 6.</strong> Available at: <a href="https://ia.cr/2024/724" target="_blank" rel="noreferrer">2024/724.</a> <a href="#post-uc-snarks">Accompanying blog-post.</a></p>
-                </article>
-                <article class="publication-item reveal" id="pub-stir">
+                <article class="publication-item" id="pub-stir">
                   <p class="publication-line publication-title-line">[AC<strong>F</strong>Y24] &quot;<em>STIR: Reed–Solomon Proximity Testing with Fewer Queries</em>&quot;.</p>
                   <p class="publication-line publication-authors">Gal Arnon, Alessandro Chiesa, Giacomo Fenzi, Eylon Yogev.</p>
                   <p class="publication-line publication-detail"><strong>CRYPTO 2024 (⭐️ Best Paper ⭐️) &amp; zkSummit11 &amp; ZKProof 6.</strong> Available at: <a href="https://ia.cr/2024/390" target="_blank" rel="noreferrer">2024/390.</a> <a href="#post-stir">Accompanying blog-post.</a></p>
                 </article>
-                <article class="publication-item reveal" id="pub-lova-lattice-based-folding-scheme-from-unstructured-lattices">
+                <article class="publication-item" id="pub-uc-snarks">
+                  <p class="publication-line publication-title-line">[C<strong>F</strong>24] &quot;<em>zkSNARKs in the ROM with Unconditional UC-Security</em>&quot;.</p>
+                  <p class="publication-line publication-authors">Alessandro Chiesa, Giacomo Fenzi.</p>
+                  <p class="publication-line publication-detail"><strong>TCC 2024 &amp; ZKProof 6.</strong> Available at: <a href="https://ia.cr/2024/724" target="_blank" rel="noreferrer">2024/724.</a> <a href="#post-uc-snarks">Accompanying blog-post.</a></p>
+                </article>
+                <article class="publication-item" id="pub-lova-lattice-based-folding-scheme-from-unstructured-lattices">
                   <p class="publication-line publication-title-line">[<strong>F</strong>KNP24] &quot;<em>Lova: Lattice-Based Folding Scheme from Unstructured Lattices</em>&quot;.</p>
                   <p class="publication-line publication-authors">Giacomo Fenzi, Christian Knabenhans, Khanh Ngoc Nguyen, Duc Tu Pham</p>
                   <p class="publication-line publication-detail"><strong>ASIACRYPT 2024.</strong> Available at: <a href="https://ia.cr/2024/1964" target="_blank" rel="noreferrer">2024/1964.</a></p>
                 </article>
-                <article class="publication-item reveal" id="pub-blendy-sumcheck">
-                  <p class="publication-line publication-title-line">[CF<strong>F</strong>Z24] &quot;<em>A Time-Space Tradeoff for the Sumcheck Prover</em>&quot;.</p>
-                  <p class="publication-line publication-authors">Alessandro Chiesa, Elisabetta Fedele, Giacomo Fenzi, Andrew Zitek-Estrada.</p>
-                  <p class="publication-line publication-detail"><strong>TCC 2025 &amp; ZKProof 6.</strong> Available at: <a href="https://ia.cr/2024/524" target="_blank" rel="noreferrer">2024/524.</a> <a href="#post-blendy-sumcheck">Accompanying blog-post.</a></p>
-                </article>
-                <article class="publication-item reveal" id="pub-finding-bugs-and-features-using-cryptographically-informed-functional-testing">
-                  <p class="publication-line publication-title-line">[<strong>F</strong>GV24] &quot;<em>Finding Bugs and Features Using Cryptographically-Informed Functional Testing</em>&quot;.</p>
-                  <p class="publication-line publication-authors">Giacomo Fenzi, Jan Gilcher, Fernando Virdia.</p>
-                  <p class="publication-line publication-detail"><strong>RWC 2026 &amp; TCHES 2026.</strong> Available at: <a href="https://ia.cr/2024/1122" target="_blank" rel="noreferrer">2024/1122.</a></p>
-                </article>
-                <article class="publication-item reveal" id="pub-post-quantum-access-control-with-application-to-secure-data-retrieval">
-                  <p class="publication-line publication-title-line">[ABD<strong>F</strong>KKZ24] &quot;<em>Post-Quantum Access Control with Application to Secure Data Retrieval</em>&quot;.</p>
-                  <p class="publication-line publication-authors">Behzad Abdolmaleki, Hannes Blümel, Tianxiang Dai, Giacomo Fenzi, Homa Khajeh, Stefan Köpsell, Maryam Zarezadeh.</p>
-                  <p class="publication-line publication-detail"><strong>Communications in Cryptology 2025</strong>.</p>
-                </article>
-              </div>
-            </section>
-            <section class="paper-year" aria-labelledby="papers-year-2023">
-              <div class="paper-year-head reveal">
-                <h3 id="papers-year-2023">2023</h3>
-              </div>
-              <div class="publication-list">
-                <article class="publication-item reveal" id="pub-slap">
-                  <p class="publication-line publication-title-line">[A<strong>F</strong>LN23] &quot;<em>SLAP: Succinct Lattice-Based Polynomial Commitments from Standard Assumptions</em>&quot;.</p>
+                <article class="publication-item" id="pub-slap">
+                  <p class="publication-line publication-title-line">[A<strong>F</strong>LN24] &quot;<em>SLAP: Succinct Lattice-Based Polynomial Commitments from Standard Assumptions</em>&quot;.</p>
                   <p class="publication-line publication-authors">Martin R. Albrecht, Giacomo Fenzi, Oleksandra Lapiha, Ngoc Khanh Nguyen.</p>
                   <p class="publication-line publication-detail"><strong>EUROCRYPT 2024 &amp; ZKProof 6.</strong> Available at: <a href="https://ia.cr/2023/1469" target="_blank" rel="noreferrer">2023/1469.</a> <a href="#post-slap">Accompanying blog-post.</a> <a href="presentations/slap.pdf">Slides.</a></p>
                 </article>
-                <article class="publication-item reveal" id="pub-towards-pcs">
-                  <p class="publication-line publication-title-line">[<strong>F</strong>MN23] &quot;<em>Lattice-Based Polynomial Commitments: Towards Concrete and Asymptotical Efficiency</em>&quot;.</p>
+                <article class="publication-item" id="pub-towards-pcs">
+                  <p class="publication-line publication-title-line">[<strong>F</strong>MN24] &quot;<em>Lattice-Based Polynomial Commitments: Towards Concrete and Asymptotical Efficiency</em>&quot;.</p>
                   <p class="publication-line publication-authors">Giacomo Fenzi, Hossein Moghaddas, Ngoc Khanh Nguyen.</p>
                   <p class="publication-line publication-detail"><strong>Journal of Cryptology 2024 &amp; ArticCrypt 2025.</strong> Available at: <a href="https://ia.cr/2023/846" target="_blank" rel="noreferrer">2023/846.</a> <a href="#post-towards-pcs">Accompanying blog-post.</a></p>
                 </article>
@@ -319,20 +330,19 @@
         </div>
       </section>
 
-      <section class="section" id="trips" data-section>
+      <section class="section" id="talks">
         <div class="container section-shell">
-          <div class="section-heading reveal">
-            <h2>Trips</h2>
+          <div class="section-heading">
+            <h2>Talks</h2>
           </div>
 
           <div class="trip-panels">
-          <details class="note-card reveal section-fold trip-panel">
+          <details class="note-card section-fold trip-panel">
             <summary>
               <span>
                 <strong>Upcoming</strong>
-                <small>Trips and presentations</small>
               </span>
-              <span class="summary-toggle" data-toggle-label>Open</span>
+              
             </summary>
             <div class="note-body section-fold-body trip-panel-body">
                 <section class="trip-year-group">
@@ -347,13 +357,12 @@
                 </section>
             </div>
           </details>
-          <details class="note-card reveal section-fold trip-panel trip-panel-wide">
+          <details class="note-card section-fold trip-panel trip-panel-wide">
             <summary>
               <span>
                 <strong>Past</strong>
-                <small>Trips and presentations</small>
               </span>
-              <span class="summary-toggle" data-toggle-label>Open</span>
+              
             </summary>
             <div class="note-body section-fold-body trip-panel-body">
                 <section class="trip-year-group">
@@ -386,24 +395,24 @@
         </div>
       </section>
 
-      <section class="section muted-section" id="writing" data-section>
+      <section class="section muted-section" id="writing">
         <div class="container section-shell">
-          <div class="section-heading reveal">
+          <div class="section-heading">
             <h2>Writing</h2>
           </div>
 
           <div class="subsection-block">
-            <div class="section-subhead reveal">
+            <div class="section-subhead">
               <h3>Accompanying posts</h3>
             </div>
             <div class="accordion detail-stack">
-            <details class="note-card reveal detail-card" id="post-whir">
+            <details class="note-card detail-card" id="post-whir">
               <summary>
                 <span>
                   <strong>WHIR: Reed–Solomon Proximity Testing with Super-Fast Verification</strong>
                   <small>2024-09-27</small>
                 </span>
-                <span class="summary-toggle" data-toggle-label>Open</span>
+                
               </summary>
               <div class="note-body detail-body">
                 <div class="detail-header">
@@ -572,13 +581,13 @@ Finally, WHIR achieves state-of-the-art argument size, verifier hash-complexity 
   </div>
               </div>
             </details>
-            <details class="note-card reveal detail-card" id="post-uc-snarks">
+            <details class="note-card detail-card" id="post-uc-snarks">
               <summary>
                 <span>
                   <strong>zkSNARKs in the ROM with Unconditional UC-Security</strong>
                   <small>2024-05-10</small>
                 </span>
-                <span class="summary-toggle" data-toggle-label>Open</span>
+                
               </summary>
               <div class="note-body detail-body">
                 <div class="detail-header">
@@ -629,7 +638,7 @@ Each property then reflects a corresponding property in the ROM that should be u
 </ol>
 <p>We note that, by restricting the adversarial capabilities, our work also shows a full end-to-end proof that Micali and BCS are perfectly complete, adaptive zero knowledge and (straightline) simulation knowledge sound.</p>
 <h2 id="papers-uc-snarks-adaptive-corruptions">Adaptive corruptions</h2>
-<p>Finally, we strengthen each of the properties to show that Micali and BCS in fact satisfy a stronger still notion of UC-security: they are secure in the face of adversaries that can adaptively corrupt parties in the security experiment and force them to reveal the randomness used thus far. This requires a strengthening of the underlying information theoretical building blocks, and we both show PCPs that satisfy this notion and by inspection conclude that common zero knowledge IOPs already satisfy this strengthening.</p>
+<p>Finally, we strengthen each of the properties to show that Micali and BCS in fact satisfy a stronger still notion of UC-security: they are secure in the face of adversaries that can adaptively corrupt parties in the security experiment and force them to the randomness used thus far. This requires a strengthening of the underlying information theoretical building blocks, and we both show PCPs that satisfy this notion and by inspection conclude that common zero knowledge IOPs already satisfy this strengthening.</p>
 <hr>
 <h5 id="papers-uc-snarks-citation">Citation</h5>
 <p>A. Chiesa, G. Fenzi. &ldquo;<em>zkSNARKs in the ROM with Unconditional UC-Security</em>&rdquo;. Cryptology ePrint Archive, Paper 2024/724. Available at: <a href="https://ia.cr/2024/724" target="_blank">https://ia.cr/2024/724</a>
@@ -665,13 +674,13 @@ Each property then reflects a corresponding property in the ROM that should be u
   </div>
               </div>
             </details>
-            <details class="note-card reveal detail-card" id="post-stir">
+            <details class="note-card detail-card" id="post-stir">
               <summary>
                 <span>
                   <strong>STIR: Reed–Solomon Proximity Testing with Fewer Queries</strong>
                   <small>2024-02-21</small>
                 </span>
-                <span class="summary-toggle" data-toggle-label>Open</span>
+                
               </summary>
               <div class="note-body detail-body">
                 <div class="detail-header">
@@ -848,13 +857,13 @@ Taking $d = 2^{24}$ and $\rho = 1/2$ as an example:</p>
   </div>
               </div>
             </details>
-            <details class="note-card reveal detail-card" id="post-blendy-sumcheck">
+            <details class="note-card detail-card" id="post-blendy-sumcheck">
               <summary>
                 <span>
                   <strong>A Time-Space Tradeoff for the Sumcheck Prover</strong>
                   <small>2024-02-20</small>
                 </span>
-                <span class="summary-toggle" data-toggle-label>Open</span>
+                
               </summary>
               <div class="note-body detail-body">
                 <div class="detail-header">
@@ -916,13 +925,13 @@ Previous to this work, two main algorithms to efficiently implement the sumcheck
   </div>
               </div>
             </details>
-            <details class="note-card reveal detail-card" id="post-slap">
+            <details class="note-card detail-card" id="post-slap">
               <summary>
                 <span>
                   <strong>SLAP: Succinct Lattice-Based Polynomial Commitments from Standard Assumptions</strong>
                   <small>2023-09-25</small>
                 </span>
-                <span class="summary-toggle" data-toggle-label>Open</span>
+                
               </summary>
               <div class="note-body detail-body">
                 <div class="detail-header">
@@ -1026,13 +1035,13 @@ In particular, this means that we can compile the protocol to a non-interactive 
   </div>
               </div>
             </details>
-            <details class="note-card reveal detail-card" id="post-towards-pcs">
+            <details class="note-card detail-card" id="post-towards-pcs">
               <summary>
                 <span>
                   <strong>Lattice-Based Polynomial Commitments: Towards Asymptotic and Concrete Efficiency</strong>
                   <small>2023-06-06</small>
                 </span>
-                <span class="summary-toggle" data-toggle-label>Open</span>
+                
               </summary>
               <div class="note-body detail-body">
                 <div class="detail-header">
@@ -1161,18 +1170,18 @@ We also looked at applying the two protocols in Marlin, making also use of some 
           </div>
 
           <div class="subsection-block">
-            <div class="section-subhead reveal">
+            <div class="section-subhead">
               <h3>Blurbs</h3>
               <p>Short blurbs, tips and tricks that didn't find space in the papers or blog posts.</p>
             </div>
             <div class="accordion detail-stack">
-            <details class="note-card reveal detail-card" id="blurb-mmcs-stir-whir">
+            <details class="note-card detail-card" id="blurb-mmcs-stir-whir">
               <summary>
                 <span>
                   <strong>Doing mixed matrix commitments (MMCS) with STIR &amp; WHIR</strong>
                   <small>2024-10-15</small>
                 </span>
-                <span class="summary-toggle" data-toggle-label>Open</span>
+                
               </summary>
               <div class="note-body detail-body">
                 <div class="detail-header">
@@ -1247,13 +1256,13 @@ g^{(2, 1)}, \dots, g^{(2, k)}: \mathcal{L}^{(3)} \to \mathbb{F}$.</p>
   </div>
               </div>
             </details>
-            <details class="note-card reveal detail-card" id="blurb-ldpc-codes">
+            <details class="note-card detail-card" id="blurb-ldpc-codes">
               <summary>
                 <span>
                   <strong>LDPC codes vs RS codes</strong>
                   <small>2024-10-14</small>
                 </span>
-                <span class="summary-toggle" data-toggle-label>Open</span>
+                
               </summary>
               <div class="note-body detail-body">
                 <div class="detail-header">
@@ -1299,13 +1308,13 @@ In comparison, for Reed-Solomon codes one can set $\delta = 1 - \sqrt{\rho}$ or 
   </div>
               </div>
             </details>
-            <details class="note-card reveal detail-card" id="blurb-whir-folding">
+            <details class="note-card detail-card" id="blurb-whir-folding">
               <summary>
                 <span>
                   <strong>Speeding up fold computation</strong>
                   <small>2024-10-03</small>
                 </span>
-                <span class="summary-toggle" data-toggle-label>Open</span>
+                
               </summary>
               <div class="note-body detail-body">
                 <div class="detail-header">
@@ -1361,13 +1370,13 @@ Soundness holds since the prover is sending the same exactly information (as the
   </div>
               </div>
             </details>
-            <details class="note-card reveal detail-card" id="blurb-stir-parameters">
+            <details class="note-card detail-card" id="blurb-stir-parameters">
               <summary>
                 <span>
                   <strong>STIR: Setting Parameters</strong>
                   <small>2024-02-21</small>
                 </span>
-                <span class="summary-toggle" data-toggle-label>Open</span>
+                
               </summary>
               <div class="note-body detail-body">
                 <div class="detail-header">
@@ -1517,14 +1526,11 @@ $$</p>
         </div>
       </section>
 
-      <section class="section contact-section" id="contact" data-section>
-        <div class="container reveal">
+      <section class="section contact-section" id="contact">
+        <div class="container">
           <h2>Contact</h2>
           <div class="contact-row">
             <a class="button button-primary" href="mailto:giacomo.fenzi@epfl.ch">giacomo.fenzi@epfl.ch</a>
-            <button class="button button-secondary" type="button" data-copy="giacomo.fenzi@epfl.ch">
-              Copy email
-            </button>
             <ul class="contact-links" aria-label="External links">
               <li><a href="https://dblp.org/pid/350/5799.html" target="_blank" rel="noreferrer">DBLP</a></li>
               <li><a href="https://scholar.google.com/citations?user=lnJtN4cAAAAJ" target="_blank" rel="noreferrer">Scholar</a></li>
@@ -1540,7 +1546,7 @@ $$</p>
 
     <footer class="site-footer">
       <div class="container footer-inner">
-        <p>© <span id="year"></span> Giacomo Fenzi.</p>
+        <p>© 2026 Giacomo Fenzi.</p>
       </div>
     </footer>
   </body>
