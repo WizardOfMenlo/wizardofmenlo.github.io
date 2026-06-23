@@ -1,1491 +1,428 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Giacomo Fenzi</title>
-    <meta
-      name="description"
-      content="Giacomo Fenzi is a PhD student at EPFL working on proof systems, succinct arguments, polynomial commitments, and post-quantum cryptography."
-    />
-    <meta name="theme-color" content="#f6f3ed" />
-    <link rel="canonical" href="https://gfenzi.io/" />
-    <link rel="icon" href="favicon.ico" sizes="any" />
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
-    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-    <meta property="og:title" content="Giacomo Fenzi" />
-    <meta
-      property="og:description"
-      content="Proof systems, succinct arguments, polynomial commitments, and post-quantum cryptography."
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://gfenzi.io/" />
-    <meta property="og:image" content="https://gfenzi.io/assets/profile.jpg" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Giacomo Fenzi" />
-    <meta
-      name="twitter:description"
-      content="PhD student at EPFL working on proof systems, succinct arguments, polynomial commitments, and post-quantum cryptography."
-    />
-    <meta name="twitter:image" content="https://gfenzi.io/assets/profile.jpg" />
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css" integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn" crossorigin="anonymous" />
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js" integrity="sha384-pK1WpvzWVBQiP0/GjnvRxV4mOb0oxFuyRxJlk6vVw146n3egcN5C925NCP7a7BY8" crossorigin="anonymous"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"></script>
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        window.renderMathInElement?.(document.body, {
-          delimiters: [
-            { left: '$$', right: '$$', display: true },
-            { left: '$', right: '$', display: false },
-            { left: '\\begin{equation}', right: '\\end{equation}', display: true },
-            { left: '\\begin{equation*}', right: '\\end{equation*}', display: true },
-            { left: '\\begin{align}', right: '\\end{align}', display: true },
-            { left: '\\begin{align*}', right: '\\end{align*}', display: true },
-          ],
-          throwOnError: false,
-        });
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Giacomo Fenzi · Cryptography & Proof Systems</title>
+  <meta name="description" content="Academic website for Giacomo Fenzi, PhD student at EPFL working on cryptography, theoretical computer science, proof systems, and zkSNARKs." />
+  <meta name="theme-color" content="#f7f3ea" />
+  <link rel="preload" href="assets/profile.jpg" as="image" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#intro">Skip to content</a>
+  <header class="site-header" aria-label="Primary navigation">
+    <a class="brand" href="#intro"><span>GF</span><strong>Giacomo Fenzi</strong></a>
+    <nav><a href="#intro">Intro</a><a href="#papers">Papers</a><a href="#talks">Talks</a><a href="#writing">Writing</a><a href="#contact">Contact</a></nav>
+  </header>
 
-        const openHash = () => document.getElementById(decodeURIComponent(location.hash.slice(1)))?.closest('details')?.setAttribute('open', '');
-        openHash();
-        addEventListener('hashchange', openHash);
-      });
-    </script>
-  </head>
-  <body>
-    <a class="skip-link" href="#content">Skip to content</a>
-
-    <header class="site-header">
-      <div class="container header-inner">
-        <a class="brand" href="#home" aria-label="Go to top">
-          <span class="brand-mark">GF</span>
-          <span class="brand-text">Giacomo Fenzi</span>
-        </a>
-
-        <nav class="site-nav" aria-label="Primary navigation">
-          <a href="#papers">Papers</a>
-          <a href="#talks">Talks</a>
-          <a href="#writing">Writing</a>
-          <a href="#contact">Contact</a>
-        </nav>
-
+  <main>
+    <section id="intro" class="section hero" aria-label="Introduction">
+      <div class="section-label"><span>00</span><span>EPFL · COMPSEC Lab</span></div>
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="kicker">PhD student · Cryptography · Proof systems</p>
+          <div class="intro-text">
+            <p>Hi! I am Giacomo, a PhD student at EPFL, where I am lucky enough to be supervised by <a href="https://ic-people.epfl.ch/~achiesa/" target="_blank" rel="noreferrer">Alessandro Chiesa</a>.</p>
+            <p>My research is on cryptography and theoretical computer science, focusing on proof systems.</p>
+            <p>Interaction and randomness allow to trustlessly outsource computation and check its correctness with resources exponentially smaller than the original computation. In conjunction with cryptography, these proof systems lead to protocols called zkSNARKs, which play a central role in a number of applications, such as blockchain L2-rollups, anonymous credentials, signatures and more.</p>
+            <p>I study how to make zkSNARKs that are theoretically and concretely efficient, from post-quantum cryptographic primitives.</p>
+          </div>
+          <div class="profile-links" aria-label="Profile links"><a href="mailto:giacomo.fenzi@epfl.ch" >Email</a><a href="assets/cv.pdf" >CV</a><a href="https://dblp.org/pid/350/5799.html" target="_blank" rel="noreferrer">DBLP</a><a href="https://scholar.google.com/citations?user=lnJtN4cAAAAJ" target="_blank" rel="noreferrer">Scholar</a><a href="https://github.com/WizardOfMenlo" target="_blank" rel="noreferrer">GitHub</a></div>
+        </div>
+        <aside class="portrait-card" aria-label="Portrait and research summary">
+          <img src="assets/profile.jpg" alt="Portrait of Giacomo Fenzi" />
+          <div class="portrait-caption">
+            <span>Research focus</span>
+            <p>zkSNARKs · IOPPs · Reed–Solomon codes · lattices · sumcheck</p>
+          </div>
+        </aside>
       </div>
-    </header>
+    </section>
 
-    <main id="content">
-      <section class="hero section" id="home">
-        <div class="container hero-grid">
-          <div class="hero-copy">
-            <p class="eyebrow">EPFL · COMPSEC Lab</p>
-            <h1>Giacomo Fenzi</h1>
-            <p class="hero-lead">Hi! I am Giacomo, a PhD student at EPFL, where I am lucky enough to be supervised by <a href="https://ic-people.epfl.ch/~achiesa/" target="_blank" rel="noreferrer">Alessandro Chiesa</a>.</p>
-            <p class="hero-text">My research is on cryptography and theoretical computer science, focusing on <strong>proof systems</strong>.</p>
-            <p class="hero-text">Interaction and randomness allow to trustlessly outsource computation and check its correctness with resources exponentially smaller than the original computation. In conjunction with cryptography, these proof systems lead to protocols called <strong>zkSNARKs</strong>, which play a central role in a number of applications, such as blockchain L2-rollups, anonymous credentials, signatures and more.</p>
-            <p class="hero-text">I study how to make zkSNARKs that are <strong>theoretically</strong> and <strong>concretely</strong> efficient, from post-quantum cryptographic primitives.</p>
-
-            <div class="hero-actions">
-              <a class="button button-primary" href="mailto:giacomo.fenzi@epfl.ch">Email</a>
-              <a class="button button-secondary" href="assets/cv.pdf" target="_blank" rel="noreferrer">CV</a>
-              <a class="button button-secondary" href="https://dblp.org/pid/350/5799.html" target="_blank" rel="noreferrer">
-                DBLP
-              </a>
-              <a
-                class="button button-secondary"
-                href="https://scholar.google.com/citations?user=lnJtN4cAAAAJ"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Scholar
-              </a>
-              <a
-                class="button button-secondary"
-                href="https://github.com/WizardOfMenlo"
-                target="_blank"
-                rel="noreferrer"
-              >
-                GitHub
-              </a>
-            </div>
-          </div>
-
-          <aside class="hero-panel" aria-label="Profile">
-            <div class="portrait-frame">
-              <img
-                src="assets/profile.jpg"
-                alt="Portrait of Giacomo Fenzi"
-                width="2048"
-                height="1365"
-                loading="eager"
-              />
-            </div>
-
-          </aside>
-        </div>
-      </section>
-
-      <section class="section" id="papers">
-        <div class="container section-shell">
-          <div class="section-heading">
-            <h2>Papers</h2>
-          </div>
-
-          <div class="subsection-block">
-            <details class="selected-publications" open>
-              <summary>Selected Publications</summary>
-              <ul>
-                <li><strong>STIR 🥣</strong> — Reed-Solomon IOPP with fewer queries. <span class="highlight-badge">Best Paper @ CRYPTO 2024</span> <a href="https://ia.cr/2024/390" target="_blank" rel="noreferrer">ePrint</a>; <a href="#post-stir">Blog post</a>.</li>
-                <li><strong>WHIR 🌪️</strong> — Constrained RS IOPP with fewer queries and super-fast verification. <a href="https://ia.cr/2024/1586" target="_blank" rel="noreferrer">ePrint</a>; <a href="#post-whir">Blog post</a>.</li>
-                <li><strong>Proximity Prize</strong> — A $1 Million Dollar Prize on questions on coding theory. <a href="https://ia.cr/2026/680" target="_blank" rel="noreferrer">ePrint</a>; <a href="https://proximityprize.org" target="_blank" rel="noreferrer">proximityprize.org</a>.</li>
-                <li><strong>ZO0K 🦓</strong> — Zero-Knowledge IOPPs with Zero-Overhead. <a href="https://ia.cr/2024/391" target="_blank" rel="noreferrer">ePrint</a>.</li>
-                <li><strong>TensorSwitch 🧮</strong> — Nearly-optimal polynomial commitment scheme from tensor codes. <a href="https://ia.cr/2025/2065" target="_blank" rel="noreferrer">ePrint</a>.</li>
-                <li><strong>WARP 🌀</strong> — A linear time accumulation scheme from any linear code. <a href="https://ia.cr/2025/753" target="_blank" rel="noreferrer">ePrint</a>.</li>
-                <li><strong>UC-secure zkSNARKs 🌍</strong> — Commonly deployed zkSNARKs are UC-secure in the ROM. <a href="https://ia.cr/2024/724" target="_blank" rel="noreferrer">ePrint</a>; <a href="#post-uc-snarks">Blog post</a>.</li>
-                <li><strong>SLAP 👋</strong> — Succinct lattice-based polynomial commitment scheme from SIS. <a href="https://ia.cr/2023/1469" target="_blank" rel="noreferrer">ePrint</a>; <a href="#post-slap">Blog post</a>.</li>
-                <li><strong>Blendy 🍹</strong> — Space-efficient prover for sumcheck. <a href="https://ia.cr/2024/524" target="_blank" rel="noreferrer">ePrint</a>; <a href="https://ia.cr/2025/1473" target="_blank" rel="noreferrer">ePrint (v2)</a>; <a href="#post-blendy-sumcheck">Blog post</a>.</li>
-              </ul>
-            </details>
-          </div>
-
-          <div class="subsection-block">
-            <div class="section-subhead">
-              <h3>Full List of Publications</h3>
-            </div>
-            <div class="papers-by-year publication-years">
-            <section class="paper-year" aria-labelledby="papers-year-2026">
-              <div class="paper-year-head">
-                <h3 id="papers-year-2026">2026</h3>
-              </div>
-              <div class="publication-list">
-                <article class="publication-item" id="pub-tensorswitch-nearly-optimal-polynomial-commitments-from-tensor-codes">
-                  <p class="publication-line publication-title-line">[B<strong>F</strong>RW26] &quot;<em>TensorSwitch: Nearly Optimal Polynomial Commitments from Tensor Codes</em>&quot;.</p>
-                  <p class="publication-line publication-authors">Benedikt Bünz, Giacomo Fenzi, Ron D. Rothblum, William Wang.</p>
-                  <p class="publication-line publication-detail"><strong>CRYPTO 2026 &amp; ZKProof 8</strong>. Available at: <a href="https://ia.cr/2025/2065" target="_blank" rel="noreferrer">2025/2065.</a></p>
-                </article>
-                <article class="publication-item" id="pub-finding-bugs-and-features-using-cryptographically-informed-functional-testing">
-                  <p class="publication-line publication-title-line">[<strong>F</strong>GV26] &quot;<em>Finding Bugs and Features Using Cryptographically-Informed Functional Testing</em>&quot;.</p>
-                  <p class="publication-line publication-authors">Giacomo Fenzi, Jan Gilcher, Fernando Virdia.</p>
-                  <p class="publication-line publication-detail"><strong>RWC 2026 &amp; TCHES 2026.</strong> Available at: <a href="https://ia.cr/2024/1122" target="_blank" rel="noreferrer">2024/1122.</a></p>
-                </article>
-                <article class="publication-item" id="pub-open-problems-in-list-decoding-and-correlated-agreement">
-                  <p class="publication-line publication-title-line">[AB<strong>F</strong>26] &quot;<em>Open Problems in List Decoding and Correlated Agreement</em>&quot;.</p>
-                  <p class="publication-line publication-authors">Gal Arnon, Dan Boneh, Giacomo Fenzi.</p>
-                  <p class="publication-line publication-detail">Available at: <a href="https://ia.cr/2026/680" target="_blank" rel="noreferrer">2026/680.</a></p>
-                </article>
-                <article class="publication-item" id="pub-zero-knowledge-iopps-for-constrained-interleaved-codes">
-                  <p class="publication-line publication-title-line">[C<strong>F</strong>W26] &quot;<em>Zero-Knowledge IOPPs for Constrained Interleaved Codes</em>&quot;.</p>
-                  <p class="publication-line publication-authors">Alessandro Chiesa, Giacomo Fenzi, Guy Weissenberg.</p>
-                  <p class="publication-line publication-detail"><strong>ZKProof 8</strong>. Available at: <a href="https://ia.cr/2026/391" target="_blank" rel="noreferrer">2026/391.</a></p>
-                </article>
-                <article class="publication-item" id="pub-field-agnostic-snarks-with-small-proofs-via-encode-repeat-accumulate-era-codes">
-                  <p class="publication-line publication-title-line">[B<strong>F</strong>MM26] &quot;<em>Field-Agnostic SNARKs with Small Proofs via Encode-Repeat-Accumulate (ERA) Codes</em>&quot;.</p>
-                  <p class="publication-line publication-authors">Anubhav Baweja, Giacomo Fenzi, Pratyush Mishra, Tushar Mopuri.</p>
-                  <p class="publication-line publication-detail">Cryptology ePrint Archive, Paper 2026/864. Available at: <a href="https://ia.cr/2026/864" target="_blank" rel="noreferrer">2026/864.</a></p>
-                </article>
-                <article class="publication-item" id="pub-interactive-proofs-for-batch-polynomial-evaluation">
-                  <p class="publication-line publication-title-line">[AC<strong>F</strong>Y26] &quot;<em>Interactive Proofs for Batch Polynomial Evaluation</em>&quot;.</p>
-                  <p class="publication-line publication-authors">Gal Arnon, Alessandro Chiesa, Giacomo Fenzi, Eylon Yogev.</p>
-                  <p class="publication-line publication-detail">Cryptology ePrint Archive, Paper 2026/448. Available at: <a href="https://ia.cr/2026/448" target="_blank" rel="noreferrer">2026/448.</a></p>
-                </article>
-              </div>
-            </section>
-            <section class="paper-year" aria-labelledby="papers-year-2025">
-              <div class="paper-year-head">
-                <h3 id="papers-year-2025">2025</h3>
-              </div>
-              <div class="publication-list">
-                <article class="publication-item" id="pub-whir">
-                  <p class="publication-line publication-title-line">[AC<strong>F</strong>Y25] &quot;<em>WHIR: Reed–Solomon Proximity Testing with Super-Fast Verification</em>&quot;.</p>
-                  <p class="publication-line publication-authors">Gal Arnon, Alessandro Chiesa, Giacomo Fenzi, Eylon Yogev.</p>
-                  <p class="publication-line publication-detail"><strong>EUROCRYPT 2025 &amp; zkSummit12.</strong> Available at: <a href="https://ia.cr/2024/1586" target="_blank" rel="noreferrer">2024/1586.</a> <a href="#post-whir">Accompanying blog-post.</a></p>
-                </article>
-                <article class="publication-item" id="pub-linear-time-accumulation-schemes">
-                  <p class="publication-line publication-title-line">[BC<strong>F</strong>W25] &quot;<em>Linear Time Accumulation Schemes</em>&quot;.</p>
-                  <p class="publication-line publication-authors">Benedikt Bünz, Alessandro Chiesa, Giacomo Fenzi, William Wang.</p>
-                  <p class="publication-line publication-detail"><strong>TCC 2025 &amp; CAW 2025 &amp; zkSummit13 &amp; ZKProof 8.</strong> Available at: <a href="https://ia.cr/2025/753" target="_blank" rel="noreferrer">2025/753.</a></p>
-                </article>
-                <article class="publication-item" id="pub-time-space-trade-offs-for-the-sumcheck-protocol">
-                  <p class="publication-line publication-title-line">[BCF<strong>F</strong>MMZ25] &quot;<em>Time-space trade-offs for the sumcheck protocol</em>&quot;.</p>
-                  <p class="publication-line publication-authors">Anubhav Baweja, Alessandro Chiesa, Elisabetta Fedele, Giacomo Fenzi, Pratyush Mishra, Tushar Mopuri, Andrew Zitek-Estrada.</p>
-                  <p class="publication-line publication-detail"><strong>TCC 2025 &amp; ZKProof 8.</strong> Available at: <a href="https://ia.cr/2025/1473" target="_blank" rel="noreferrer">2025/1473.</a></p>
-                </article>
-                <article class="publication-item" id="pub-blendy-sumcheck">
-                  <p class="publication-line publication-title-line">[CF<strong>F</strong>Z25] &quot;<em>A Time-Space Tradeoff for the Sumcheck Prover</em>&quot;.</p>
-                  <p class="publication-line publication-authors">Alessandro Chiesa, Elisabetta Fedele, Giacomo Fenzi, Andrew Zitek-Estrada.</p>
-                  <p class="publication-line publication-detail"><strong>TCC 2025 &amp; ZKProof 6.</strong> Available at: <a href="https://ia.cr/2024/524" target="_blank" rel="noreferrer">2024/524.</a> <a href="#post-blendy-sumcheck">Accompanying blog-post.</a></p>
-                </article>
-                <article class="publication-item" id="pub-post-quantum-access-control-with-application-to-secure-data-retrieval">
-                  <p class="publication-line publication-title-line">[ABD<strong>F</strong>KKZ25] &quot;<em>Post-Quantum Access Control with Application to Secure Data Retrieval</em>&quot;.</p>
-                  <p class="publication-line publication-authors">Behzad Abdolmaleki, Hannes Blümel, Tianxiang Dai, Giacomo Fenzi, Homa Khajeh, Stefan Köpsell, Maryam Zarezadeh.</p>
-                  <p class="publication-line publication-detail"><strong>Communications in Cryptology 2025</strong>.</p>
-                </article>
-                <article class="publication-item" id="pub-small-field-hash-based-snargs-are-less-sound-than-conjectured">
-                  <p class="publication-line publication-title-line">[<strong>F</strong>S25] &quot;<em>Small-field hash-based SNARGs are less sound than conjectured</em>&quot;.</p>
-                  <p class="publication-line publication-authors">Giacomo Fenzi, Antonio Sanso.</p>
-                  <p class="publication-line publication-detail">Cryptology ePrint Archive, Paper 2025/2197. Available at: <a href="https://ia.cr/2025/2197" target="_blank" rel="noreferrer">2025/2197.</a></p>
-                </article>
-                <article class="publication-item" id="pub-zip-reducing-proof-sizes-for-hash-based-snargs">
-                  <p class="publication-line publication-title-line">[<strong>F</strong>Z25] &quot;<em>zip: Reducing Proof Sizes for Hash-Based SNARGs</em>&quot;.</p>
-                  <p class="publication-line publication-authors">Giacomo Fenzi, Yuwen Zhang.</p>
-                  <p class="publication-line publication-detail">Cryptology ePrint Archive, Paper 2025/1446. Available at: <a href="https://ia.cr/2025/1446" target="_blank" rel="noreferrer">2025/1446.</a></p>
-                </article>
-              </div>
-            </section>
-            <section class="paper-year" aria-labelledby="papers-year-2024">
-              <div class="paper-year-head">
-                <h3 id="papers-year-2024">2024</h3>
-              </div>
-              <div class="publication-list">
-                <article class="publication-item" id="pub-stir">
-                  <p class="publication-line publication-title-line">[AC<strong>F</strong>Y24] &quot;<em>STIR: Reed–Solomon Proximity Testing with Fewer Queries</em>&quot;.</p>
-                  <p class="publication-line publication-authors">Gal Arnon, Alessandro Chiesa, Giacomo Fenzi, Eylon Yogev.</p>
-                  <p class="publication-line publication-detail"><strong>CRYPTO 2024 (⭐️ Best Paper ⭐️) &amp; zkSummit11 &amp; ZKProof 6.</strong> Available at: <a href="https://ia.cr/2024/390" target="_blank" rel="noreferrer">2024/390.</a> <a href="#post-stir">Accompanying blog-post.</a></p>
-                </article>
-                <article class="publication-item" id="pub-uc-snarks">
-                  <p class="publication-line publication-title-line">[C<strong>F</strong>24] &quot;<em>zkSNARKs in the ROM with Unconditional UC-Security</em>&quot;.</p>
-                  <p class="publication-line publication-authors">Alessandro Chiesa, Giacomo Fenzi.</p>
-                  <p class="publication-line publication-detail"><strong>TCC 2024 &amp; ZKProof 6.</strong> Available at: <a href="https://ia.cr/2024/724" target="_blank" rel="noreferrer">2024/724.</a> <a href="#post-uc-snarks">Accompanying blog-post.</a></p>
-                </article>
-                <article class="publication-item" id="pub-lova-lattice-based-folding-scheme-from-unstructured-lattices">
-                  <p class="publication-line publication-title-line">[<strong>F</strong>KNP24] &quot;<em>Lova: Lattice-Based Folding Scheme from Unstructured Lattices</em>&quot;.</p>
-                  <p class="publication-line publication-authors">Giacomo Fenzi, Christian Knabenhans, Khanh Ngoc Nguyen, Duc Tu Pham</p>
-                  <p class="publication-line publication-detail"><strong>ASIACRYPT 2024.</strong> Available at: <a href="https://ia.cr/2024/1964" target="_blank" rel="noreferrer">2024/1964.</a></p>
-                </article>
-                <article class="publication-item" id="pub-slap">
-                  <p class="publication-line publication-title-line">[A<strong>F</strong>LN24] &quot;<em>SLAP: Succinct Lattice-Based Polynomial Commitments from Standard Assumptions</em>&quot;.</p>
-                  <p class="publication-line publication-authors">Martin R. Albrecht, Giacomo Fenzi, Oleksandra Lapiha, Ngoc Khanh Nguyen.</p>
-                  <p class="publication-line publication-detail"><strong>EUROCRYPT 2024 &amp; ZKProof 6.</strong> Available at: <a href="https://ia.cr/2023/1469" target="_blank" rel="noreferrer">2023/1469.</a> <a href="#post-slap">Accompanying blog-post.</a> <a href="presentations/slap.pdf">Slides.</a></p>
-                </article>
-                <article class="publication-item" id="pub-towards-pcs">
-                  <p class="publication-line publication-title-line">[<strong>F</strong>MN24] &quot;<em>Lattice-Based Polynomial Commitments: Towards Concrete and Asymptotical Efficiency</em>&quot;.</p>
-                  <p class="publication-line publication-authors">Giacomo Fenzi, Hossein Moghaddas, Ngoc Khanh Nguyen.</p>
-                  <p class="publication-line publication-detail"><strong>Journal of Cryptology 2024 &amp; ArticCrypt 2025.</strong> Available at: <a href="https://ia.cr/2023/846" target="_blank" rel="noreferrer">2023/846.</a> <a href="#post-towards-pcs">Accompanying blog-post.</a></p>
-                </article>
-              </div>
-            </section>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="talks">
-        <div class="container section-shell">
-          <div class="section-heading">
-            <h2>Talks</h2>
-          </div>
-
-          <div class="trip-panels">
-          <details class="note-card section-fold trip-panel">
-            <summary>
-              <span>
-                <strong>Upcoming</strong>
-              </span>
-              
-            </summary>
-            <div class="note-body section-fold-body trip-panel-body">
-                <section class="trip-year-group">
-                  <h4>2026</h4>
-                  <ul class="trip-list">
-                    <li>6 May. Rome. Presenting <a href="#pub-zero-knowledge-iopps-for-constrained-interleaved-codes">ZO0K 🦓</a> at <a href="https://zksummit.com" target="_blank" rel="noreferrer">zkSummit.</a></li>
-                    <li>9 May. Rome. Organizing <a href="https://iopfest.xyz" target="_blank" rel="noreferrer">IOPFest.</a></li>
-                    <li>9 May. Rome. Presenting <a href="#pub-zero-knowledge-iopps-for-constrained-interleaved-codes">ZO0K 🦓</a> at <a href="https://zkproof.org" target="_blank" rel="noreferrer">ZKProof.</a></li>
-                    <li>14 May. Rome. Presenting <a href="https://eprint.iacr.org/2024/504" target="_blank" rel="noreferrer">Polylogarithmic Proofs for Multilinears over Binary Towers</a> at <a href="https://eurocrypt.iacr.org" target="_blank" rel="noreferrer">EUROCRYPT26.</a></li>
-                    <li>13-16 July. Cyprus. Attending <a href="https://cedarcrypt.org/" target="_blank" rel="noreferrer">Cedarcrypt.</a></li>
-                  </ul>
-                </section>
-            </div>
-          </details>
-          <details class="note-card section-fold trip-panel trip-panel-wide">
-            <summary>
-              <span>
-                <strong>Past</strong>
-              </span>
-              
-            </summary>
-            <div class="note-body section-fold-body trip-panel-body">
-                <section class="trip-year-group">
-                  <h4>2026</h4>
-                  <ul class="trip-list">
-                    <li>20 January. Online. Presented <a href="#post-whir">WHIR 🌪️</a> at <a href="https://starkware.co/" target="_blank" rel="noreferrer">Starkware.</a></li><li>14 January. Online. Presented <a href="#post-whir">WHIR 🌪️</a> at <a href="https://aztec.network/" target="_blank" rel="noreferrer">Aztec.</a></li>
-                  </ul>
-                </section>
-                <section class="trip-year-group">
-                  <h4>2025</h4>
-                  <ul class="trip-list">
-                    <li>19 December. Online. Presented <a href="https://eprint.iacr.org/2025/2197" target="_blank" rel="noreferrer">Small-field hash-based SNARGs are less sound</a> at <a href="https://ethproofs.org" target="_blank" rel="noreferrer">Ethproofs.</a></li><li>7 November. Online. Presented <a href="https://proximityprize.org" target="_blank" rel="noreferrer">Proximity Prize</a> at <a href="https://ethproofs.org" target="_blank" rel="noreferrer">Ethproofs.</a></li><li>31 October. Lausanne. Presented <a href="https://eprint.iacr.org/2025/753" target="_blank" rel="noreferrer">WARP 🌀</a> at <a href="https://swisscryptoday.github.io/2025/" target="_blank" rel="noreferrer">Swiss Crypyo Day.</a></li><li>4-7 October. Cambridge. Attended the <a href="https://ethereum.foundation" target="_blank" rel="noreferrer">EF</a> summit on PQ interop.</li><li>13-14 August. Sunnyvale. Presented at <a href="https://rsvp.withgoogle.com/events/google-zk-ai-web3-summit_4a974d" target="_blank" rel="noreferrer">Google: ZK &amp; AI Summit.</a></li><li>19 May - 15 August. Berkeley. Attended <a href="https://simons.berkeley.edu/programs/cryptography-10-years-later-obfuscation-proof-systems-secure-computation" target="_blank" rel="noreferrer">Cryptography: 10 Years Later.</a> at <a href="https://simons.berkeley.edu/homepage" target="_blank" rel="noreferrer">Simons</a></li><li>6-11 July. Longyearbyen. Presented <a href="#post-towards-pcs">towards lattice based polynomial commitments</a> at <a href="https://simula-uib.com/arcticcrypt2025/" target="_blank" rel="noreferrer">ArticCrypt25.</a></li><li>20 June. Berkeley. Presented a <a href="presentations/practical-snarks.pdf">survey on efficient succinct arguments</a> at <a href="https://simons.berkeley.edu/programs/cryptography-10-years-later-obfuscation-proof-systems-secure-computation" target="_blank" rel="noreferrer">Cryptography: 10 Years Later</a> at <a href="https://simons.berkeley.edu/homepage" target="_blank" rel="noreferrer">Simons.</a></li><li>2 June. Stanford. Presented <a href="https://eprint.iacr.org/2025/753" target="_blank" rel="noreferrer">WARP 🌀</a> at <a href="https://crypto.stanford.edu/" target="_blank" rel="noreferrer">Stanford.</a></li><li>4-8 May. Madrid. Presented <a href="#post-whir">WHIR 🌪️</a> at <a href="https://eurocrypt.iacr.org/2025/" target="_blank" rel="noreferrer">EUROCRYPT25.</a></li><li>4 May. Madrid. Presented <a href="https://eprint.iacr.org/2025/753" target="_blank" rel="noreferrer">WARP 🌀</a> at <a href="https://caw.cryptanalysis.fun/" target="_blank" rel="noreferrer">CAW.</a></li><li>31 March. Online. Presented <a href="#post-whir">WHIR 🌪️</a> at <a href="https://splab.cis.upenn.edu/seminars.html" target="_blank" rel="noreferrer">Penn&#x27;s Security and Privacy Lab.</a></li><li>23-25 March. Sofia. Presented <a href="#post-whir">WHIR 🌪️</a> at <a href="https://zkproof.org/events/zkproof-7-sofia/" target="_blank" rel="noreferrer">ZKProof7.</a></li><li>18 March. Lausanne. Introduced the <a href="https://compsec.epfl.ch" target="_blank" rel="noreferrer">COMPSEC Lab</a> at <a href="https://www.epfl.ch/education/phd/edic-computer-and-communication-sciences/edic-computer-and-communication-sciences/edic-open-house/" target="_blank" rel="noreferrer">EDIC Open House.</a></li><li>17 March. Online. Presented <a href="https://eprint.iacr.org/2024/1964" target="_blank" rel="noreferrer">Lova 💕</a> at <a href="https://jcs.trusted-third-party.org/" target="_blank" rel="noreferrer">ENSL/CWI/KCL/IRISA Joint Online Cryptography Seminars.</a></li><li>18 February. Paris. Presented <a href="#post-whir">WHIR 🌪️</a> at <a href="https://cryptography.paris" target="_blank" rel="noreferrer">RWC Paris.</a></li>
-                  </ul>
-                </section>
-                <section class="trip-year-group">
-                  <h4>2024</h4>
-                  <ul class="trip-list">
-                    <li>2-6 December. Milan. Presented <a href="#post-uc-snarks">UC-secure zkSNARKs🌍</a> at <a href="https://tcc.iacr.org/2024/" target="_blank" rel="noreferrer">TCC24.</a></li><li>28 November. Zurich. Presented <a href="#post-whir">WHIR 🌪️</a> at <a href="https://research.ibm.com/labs/zurich" target="_blank" rel="noreferrer">IBM Research Zurich.</a></li><li>8 November. Online. Presented <a href="#post-whir">WHIR 🌪️</a> at <a href="https://nexus.xyz/" target="_blank" rel="noreferrer">Nexus speaker series</a> and <a href="https://hackmd.io/@ap95hIPHTcCFbPYZ5pRs5g/S1aHQ9ga0" target="_blank" rel="noreferrer">sumcheck builder group.</a></li><li>30 October. Lausanne. Presented <a href="#post-uc-snarks">UC-secure zkSNARKs🌍</a>, <a href="#post-stir">STIR 🥣</a> and <a href="#post-whir">WHIR 🌪️</a> at <a href="https://lu.ma/7uu1085t" target="_blank" rel="noreferrer">BSA EPFL.</a></li><li>16 October. Online. Presented <a href="#post-stir">STIR 🥣</a> at <a href="https://nexus.xyz/" target="_blank" rel="noreferrer">Nexus speaker series</a> and <a href="https://hackmd.io/@ap95hIPHTcCFbPYZ5pRs5g/S1aHQ9ga0" target="_blank" rel="noreferrer">sumcheck builder group.</a></li><li>12-13 September. Munich. Presented <a href="#post-stir">STIR 🥣</a> at <a href="https://conference.tum-blockchain.com" target="_blank" rel="noreferrer">TUM Blockchain Conference.</a></li><li>2 September. St Gallen. Presented <a href="#post-stir">STIR 🥣</a> at <a href="https://swisscryptoday.github.io/2024/" target="_blank" rel="noreferrer">Swiss Crypyo Day.</a></li><li>18-22 August. Santa Barbara. Presented <a href="#post-stir">STIR 🥣</a> at <a href="https://crypto.iacr.org/2024/" target="_blank" rel="noreferrer">CRYPTO24.</a></li><li>5-9 August. London. Visiting <a href="https://khanhcrypto.github.io/" target="_blank" rel="noreferrer">Khanh</a> at <a href="https://www.kcl.ac.uk/" target="_blank" rel="noreferrer">KCL.</a></li><li>3 July. Online. Presented <a href="#post-stir">STIR 🥣</a> at Starkitecture.</li><li>26-30 May. Zurich. Presented <a href="#post-slap">SLAP 👋</a> at <a href="https://eurocrypt.iacr.org/2024/" target="_blank" rel="noreferrer">EUROCRYPT24.</a></li><li>22-24 May. Berlin. Presented <a href="#post-stir">STIR 🥣</a>, <a href="#post-slap">SLAP 👋</a>, <a href="#post-uc-snarks">UC-secure zkSNARKs🌍</a> and <a href="#post-blendy-sumcheck">Blendy 🍹</a> at <a href="https://zkproof.org/events/zkproof-6-berlin/" target="_blank" rel="noreferrer">ZKProof6.</a></li><li>8-14 April. Athens. Presenting <a href="#post-stir">STIR 🥣</a> at <a href="https://www.zksummit.com/" target="_blank" rel="noreferrer">zkSummit11.</a></li><li>11-14 March. New York. Presented <a href="#post-uc-snarks">UC-secure zkSNARKs🌍</a> at <a href="https://cs.nyu.edu/home/index.html" target="_blank" rel="noreferrer">NYU.</a></li><li>8-11 March. Philadelphia. Presented <a href="#post-uc-snarks">UC-secure zkSNARKs🌍</a> at <a href="https://www.upenn.edu/" target="_blank" rel="noreferrer">Penn.</a></li><li>4-8 March. Boston. Presented <a href="#post-uc-snarks">UC-secure zkSNARKs🌍</a> at <a href="https://www.bu.edu/cs/groups/busec/" target="_blank" rel="noreferrer">BUSec.</a></li>
-                  </ul>
-                </section>
-                <section class="trip-year-group">
-                  <h4>2023</h4>
-                  <ul class="trip-list">
-                    <li>15 Dec. Amsterdam. Presented <a href="#post-slap">SLAP 👋</a> at <a href="https://www.cwi.nl/en/" target="_blank" rel="noreferrer">CWI.</a></li>
-                  </ul>
-                </section>
-            </div>
-          </details>
-          </div>
-        </div>
-      </section>
-
-      <section class="section muted-section" id="writing">
-        <div class="container section-shell">
-          <div class="section-heading">
-            <h2>Writing</h2>
-          </div>
-
-          <div class="subsection-block">
-            <div class="section-subhead">
-              <h3>Accompanying posts</h3>
-            </div>
-            <div class="accordion detail-stack">
-            <details class="note-card detail-card" id="post-whir">
-              <summary>
-                <span>
-                  <strong>WHIR: Reed–Solomon Proximity Testing with Super-Fast Verification</strong>
-                  <small>2024-09-27</small>
-                </span>
-                
-              </summary>
-              <div class="note-body detail-body">
-                <div class="detail-header">
-                  <p class="detail-byline">Gal Arnon, Alessandro Chiesa, Giacomo Fenzi, Eylon Yogev</p>
-                  <div class="detail-meta">
-                    <span class="detail-chip">2024-09-27</span>
-                    <a class="detail-link" href="https://eprint.iacr.org/2024/1586" target="_blank" rel="noreferrer">EUROCRYPT 2025 - ePrint: 2024/1586</a>
-                  </div>
-                  <p class="detail-lead">We present WHIR (Weights Help Improving Rate), an interactive oracle proof of proximity (IOPP) for constrained Reed–Solomon codes. WHIR doubles as a multilinear polynomial commitment scheme, achieving the fastest verification speed of any such scheme while mantaining state-of-the-art argument size, verifier hash complexity and prover times.</p>
-                  <ul class="paper-tags detail-tags" aria-label="Tags"><li>hashes</li><li>concrete</li><li>theory</li></ul>
-                </div>
-
-                <div class="paper-post-content"><p>This blog-post is a short introduction to our new work: &ldquo;WHIR: Reed&ndash;Solomon Proximity Testing with Super-Fast Verification&rdquo;. This is joint work with <a href="https://galarnon42.github.io/" target="_blank">Gal Arnon,</a>
- <a href="https://ic-people.epfl.ch/~achiesa/" target="_blank">Alessandro Chiesa,</a>
- and <a href="https://www.eylonyogev.com/about" target="_blank">Eylon Yogev,</a>
- and the full version is <a href="https://eprint.iacr.org/2024/1586" target="_blank">available on ePrint</a>
-. Code is also available at <a href="https://github.com/WizardOfMenlo/whir" target="_blank">WizardOfMenlo/whir.</a>
-</p>
-<h1 id="papers-whir-whir-">WHIR 🌪️</h1>
-<p>We present WHIR (Weights Help Improving Rate), a concretely efficient IOPP for constrained Reed&ndash;Solomon codes<sup id="papers-whir-fnref:1"><a href="#papers-whir-fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>.</p>
-<p>WHIR is both an IOPP for Reed&ndash;Solomon codes and a multilinear polynomial commitment scheme (PCS), and achieves the <em>fastest verification</em> speed of <em>any</em> such scheme, even including univariate PCS with trusted setup.
-It does so while mantaining state-of-the-art argument size and verifier hash complexity for hash-based schemes, requiring only transparent setup and guaranteeing post-quantum security.</p>
-<p>As a multilinear and univariate PCS, WHIR achieve by far the smallest verification time across all scheme that we tested.
-Taking $d = 2^{24}$ as an example:</p>
-<ul>
-<li>At the 100-bit security level, a WHIR proof verification takes between 610μs (with $\rho = 1/2$) to 290μs (with $\rho = 1/16$). This is a speedup of between <strong>5700×-12000×</strong> against Brakedown, <strong>1200×- 2500×</strong> against Ligero, <strong>164×-345×</strong> against Hyrax, <strong>13×-27×</strong> against PST and <strong>4.0×-8.3×</strong> against KZG.</li>
-<li>At the 128-bit security level, a WHIR proof verification takes between 1.4ms to 700μs achieving a speedup of between <strong>2600×-5300×</strong> against Brakedown, <strong>535×-1100×</strong> against Ligero, <strong>93×-186×</strong> against Greyhound, <strong>108×-216×</strong> against Hyrax, <strong>7×-14×</strong> against PST and <strong>2.6×-5.2×</strong> against KZG.</li>
-</ul>
-<p>As a hash-based multilinear PCS, WHIR compares favourably to BaseFold in (i) argument size (ii) verifier time (iii) verifier hashes.</p>
-<p>Taking $d = 2^{24}$ and $\rho = 1/2$ as an example, at the 100-bit security level:</p>
-<ul>
-<li>WHIR&rsquo;s arguments are 101 KiB vs BaseFold&rsquo;s 7.95 MiB (<strong>74× better</strong>).</li>
-<li>WHIR&rsquo;s verifier runs in 610μs vs BaseFold&rsquo;s 24ms (<strong>39× better</strong>).</li>
-</ul>
-<p>As a low-degree test, WHIR achieves best-in-class verifier time, while mantaining state-of-the-art argument size and verifier hash complexity.
-Taking $d = 2^{24}$ and $\rho = 1/2$ as an example, at the 128-bit security level:</p>
-<ul>
-<li>WHIR&rsquo;s arguments occupy 157 KiB vs STIR&rsquo;s 160 KiB and FRI&rsquo;s 306 KiB (<strong>1.95× better</strong>).</li>
-<li>WHIR&rsquo;s verifier perform 2.7k hashes vs STIR&rsquo;s 2.6k and FRI&rsquo;s 5.6k (<strong>2.1× better</strong>).</li>
-<li>WHIR&rsquo;s verifier runs in 1.0ms vs STIR&rsquo;s 3.8ms and FRI&rsquo;s 3.9ms (<strong>3.8× better</strong>).</li>
-</ul>
-<hr>
-<h2 id="papers-whir-applications">Applications</h2>
-<p>We present a few applications that we believe WHIR is a natural candidate for.</p>
-<h3 id="papers-whir-ethereum-on-chain-verification">Ethereum on chain verification</h3>
-<p>Currently, most onchain verification is done with Groth16 over a BN254 curve. The benefits of such verification is that the proof is constant size and verification is supposed to cheap, keeping both data availability (DA) costs and compute costs low. Currently, this verification costs <a href="https://sepolia.etherscan.io/tx/0x9db0680f9164e045cf1cbf6f6c3a1afff204e2dc6c5af9582fb2ba89ef3e2b12" target="_blank">~280k gas</a>
-.
-We believe that, WHIR can offer significantly competitive compute costs for onchain proof verification (and we are working on a Solidity verifier to confirm this thesis).
-A rough back-of-the-envelope calculation follows.
-On the compute side: a WHIR verifier for a polynomial of size $2^{24}$ and rate $1/2$ performs around 1.5k hashes (using 100-bits of security to compare with BN254). Assuming the hash used is Keccak, and that each of these hashes is for Merkle tree verification (and thus hashes together 64 bytes), each of these hashes costs 48 gas. Thus, the cost of hash-verification is around <strong>96k gas</strong>. Estimating the cost of the field operations is harder, but they tend account for a much smaller portion of the verification costs (on native experiments) compared to the hashing. Increasing the rate to $1/16$ this cost can be reduced even further, to around <strong>53k</strong> gas.
-On the data side, calldata is currently priced at 16 gas per non-zero byte. A WHIR proof for $2^{24}$ variables is between 101 KiB to 48 KiB, resulting in between <strong>1.6m gas</strong> and <strong>790k</strong> gas.<br>
-Overall then, the cost for a WHIR proof verification can be as low as <strong>850k</strong> gas (while still using a not excessively small rate, this can be reduced further), all while not requiring a trusted setup and providing post-quantum security. Further, the cost can be ammortized by aggregation, which WHIR is also very suitable for (next).</p>
-<h3 id="papers-whir-recursive-verification">Recursive verification</h3>
-<p>Due to the small number of hashes, WHIR&rsquo;s verifier (as STIR&rsquo;s was) is a natural candidate for recursion. Again, let&rsquo;s do some back-of-the-envelope calculation. At the 128-bit security level, for a computation of size $2^{28}$, starting with rate $1/2$, WHIR&rsquo;s recursive circuit performs $3.4$k hashes. Assuming both use Poseidon hashing and that each hash contributes ~400 R1CS constraints, the WHIR&rsquo;s recursive circuit size is approximately of size $2^{20}$. Then, running WHIR with even a large rate is a negligible cost (compared to the initial computation), leading to a tiny final proof. For example, running a computation of that size with rate $1/32$ gives a 64KiB proof in less than 3s (on my M1 Macbook), that verifies in less that $350µ$s while performing only 800 hashes.</p>
-<h3 id="papers-whir-zklogin">zkLogin</h3>
-<p>Various blockchains such as <a href="https://sui.io/zklogin" target="_blank">Sui</a>
- and <a href="https://aptos.dev/en/build/guides/aptos-keyless/how-keyless-works" target="_blank">Aptos</a>
- have new onboarding and login strategy which make heavy use of zero-knowledge proofs. Currently, taking Sui&rsquo;s zkLogin as an example, the final circuit is around the size of a million of constraints and is currently proven by using a Groth16 proof system. WHIR could be used instead, reducing both proving time and verification time (which now is native!).</p>
-<h2 id="papers-whir-bitcoin-verification">Bitcoin verification</h2>
-<p>There are efforts to bringing verification of STARKs on Bitcoin. In that setting, field operations are much expensive than hashing (say 5000-2500x). Since WHIR has both extremely small arithmetic and hashing complexity, WHIR&rsquo;s verifier can significantly reduce the cost of verification on Bitcoin compared to FRI and STIR.</p>
-<hr>
-<h1 id="papers-whir-high-level-overview">High-level overview</h1>
-<p>We first introduce constrained Reed&ndash;Solomon codes, then we describe the main protocol and sketch its complexity.</p>
-<h2 id="papers-whir-constrained-reed--solomon-codes">Constrained Reed&ndash;Solomon codes</h2>
-<p>WHIR is an expressive IOPP for a generic class of codes, that we call constrained Reed&ndash;Solomon codes.
-Recall that the Reed&ndash;Solomon code over field $\mathbb{F}$, domain $L \subseteq \mathbb{F}$ and rate $\rho = 2^m/|L|$ is defined as $\mathsf{RS}[\mathbb{F}, L, m] = \{ f: L \to \mathbb{F}: \exists \hat{p} \in \mathbb{F}^{&lt; 2^m}[X] : \hat{p}(L) = f(L)\}$. Equivalently, one can view a univariate polynomial of degree $2^m$ as a multilinear polynomial over $m$ variables, and one can recover evaluations of the former from the evaluations of the latter on points of the form $(x, x^2, \dots, x^{2^{m-1}})$.
-Thus, we rewrite $\mathsf{RS}[\mathbb{F}, L, m] = \{ f: L \to \mathbb{F}: \exists \hat{p} \in \mathbb{F}^{&lt; 2}[X_1, &hellip;, X_m] \text{ s.t. } \forall x \in L ; \hat{p}(x, \dots, x^{2^{m-1}}) = f(x) \}$.
-For any codeword $f \in \mathsf{RS}[\mathbb{F}, L, m]$, we let $\hat{f}$ denote the corresponding multilinear polynomial.</p>
-<p>Constrained Reed&ndash;Solomon codes are defined by a constraint, which consists of a weight polynomial $\hat{w}\in \mathbb{F}[Z, X_1, \dots, X_m]$ and of a target $\sigma \in \mathbb{F}$:</p>
-<p>$$ \mathsf{CRS}[\mathbb{F}, L, m, \hat{w}, \sigma] := \{ f \in \mathsf{RS}[\mathbb{F}, L, m] : \sum_{\mathbf{b}} \hat{w}(\hat{f}(\mathbf{b}), \mathbf{b}) = \sigma \} $$</p>
-<p>Note, for example, that by setting $\hat{w}(Z, X_1, \dots, X_m) = Z \cdot \mathsf{eq}(\mathbf{z}, X_1, \dots, X_m)$<sup id="papers-whir-fnref:2"><a href="#papers-whir-fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> for some $\mathbf{z} \in \sigma$ the constrained code exactly captures Reed&ndash;Solomon codewords whose corresponding polynomial evaluates to $\sigma$ at $\mathbf{z}$.</p>
-<hr>
-<h2 id="papers-whir-whir">WHIR</h2>
-<p>WHIR is an IOPP of proximity for constrained Reed&ndash;Solomon codes. WHIR makes use of both the sumcheck techniques introduced in [ZFC24]<sup id="papers-whir-fnref:3"><a href="#papers-whir-fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> and of the rate improvement techniques in [ACFY24]<sup id="papers-whir-fnref:4"><a href="#papers-whir-fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>.</p>
-<p>Let $k$ be a folding parameter, $\delta \in (0, 1 - \rho)$<sup id="papers-whir-fnref:5"><a href="#papers-whir-fn:5" class="footnote-ref" role="doc-noteref">5</a></sup> a proximity parameter and $t$ a repetition parameter. A WHIR iteration reduces testing that
-$$ f \in \mathsf{CRS}[\mathbb{F}, L, m, \hat{w}, \sigma] $$
-to testing that
-$$ g \in \mathsf{CRS}[\mathbb{F}, L^2, m - k, \hat{w}&rsquo;, \sigma&rsquo;],$$
-for related $g, \hat{w}&rsquo;, \sigma&rsquo;$.</p>
-<p>Further, if $f$ was $\delta$-far from the original code, then, unless with probability approximately $(1 - \delta)^t$, $g$ will be $(1 - \rho&rsquo;)$-far from the smaller code, where $\rho&rsquo; = 2^{1 - k} \cdot \rho$ is the code of this new code.</p>
-<p>The iteration consists of the following steps:</p>
-<ol>
-<li><strong>Sumcheck rounds.</strong> The prover and the verifier engage in $k$ rounds of the sumcheck protocol for the claim
-$$ \sum_{\mathbf{b}} \hat{w}(\hat{f}(\mathbf{b}), \mathbf{b}) = \sigma $$
-where $\hat{f}$ is the multilinear polynomial associated with $f$.
-At the end of the interaction, the prover will have sent quadratic $(\hat{h}_1, \dots, \hat{h}_k)$ while the verifier will have sampled randomness $(\alpha_{1},\dots,\alpha_{k})\in \mathbb{F}^k$. This reduces the initial claim to the simpler claim
-$$ \sum_{\mathbf{b}} \hat{w}(\hat{f}(\alpha_1, \dots, \alpha_k, \mathbf{b}), \alpha_1, \dots, \alpha_k, \mathbf{b}) = \sigma $$</li>
-<li><strong>Claimed codeword.</strong> The prover sends a function $g: L^2 \to \mathbb{F}$. In the honest case, $g$ is the codeword associated to the $(m - k)$-variate multilinear polynomial $\hat{f}(\alpha_1, \dots, \alpha_k, \cdot)$.</li>
-<li><strong>Out-of-domain sample.</strong> The verifier samples and sets $z_0 \gets \mathbb{F}$. We let $\mathbf{z}_0 := (z_0, \dots, z_0^{2^{m-1}})$.</li>
-<li><strong>Out-of-domain answer.</strong> The prover replies with $y_0$. In the honest case $y_0 := \hat{g}(\mathbf{z}_0)$.</li>
-<li><strong>Shift queries and combination randomness.</strong> For every $i \in [t]$, the verifier samples $z_i \gets L^{2^k}$, computes $y_i := \mathsf{Fold}(f, (\alpha_1, \dots, \alpha_k))(z_i)$ by querying $f$<sup id="papers-whir-fnref:6"><a href="#papers-whir-fn:6" class="footnote-ref" role="doc-noteref">6</a></sup>, and sets $\mathbf{z}_i := (z_i, \dots, z_i^{2^{m-1}})$. It then samples $\xi \gets \mathbb{F}$ and sends $z_1, \dots, z_t, \xi$ to the prover.</li>
-<li><strong>Recursive claim.</strong> Prover and verifier set:
-$$ \hat{w}&rsquo;(Z, \mathbf{X}) := \hat{w}(Z, \alpha_1, \dots, \alpha_k, \mathbf{X}) + Z \cdot \sum_{i = 0}^t \xi^{i + 1} \cdot \mathsf{eq}(\mathbf{X}, \mathbf{z}_i) $$
-and
-$$ \sigma&rsquo; := \hat{h}_k(\alpha_k) + \sum_{i = 0}^t \xi^{i + 1} y_i $$</li>
-</ol>
-<p>At each iteration, the verifier performs exactly $t$ queries to the function being tested each of which reads $2^k$ field elements, performs $O(k)$ field operations to check the sumcheck claims and $O(t \cdot 2^k)$ fops to compute the folds<sup id="papers-whir-fnref:7"><a href="#papers-whir-fn:7" class="footnote-ref" role="doc-noteref">7</a></sup>. Additionally, in the final iteration the verifier will have to evaluate a final weight polynomial $\hat{w}$ which contains $O(\sum_i t_i)$ equality polynomials over at most $m$ variables (plus the initial weight).</p>
-<p>The soundness analysis relies on a new property of Reed&ndash;Solomon codes, that we call <strong>mutual correlated agreement</strong>. This is a strenghtening of correlated agreement [BCIKS20]<sup id="papers-whir-fnref:8"><a href="#papers-whir-fn:8" class="footnote-ref" role="doc-noteref">8</a></sup>, which we show holds in the unique decoding regime. We are confident to conjecture that it also holds in the list-decoding regime. Further, we believe that WHIR can be proven sound from weaker assumptions still.
-We refer the reader to the paper for more details.</p>
-<hr>
-<h2 id="papers-whir-benchmarks">Benchmarks</h2>
-<p>We implemented WHIR in Rust, and evaluated its performance. Our code can be found at <a href="https://github.com/WizardOfMenlo/whir" target="_blank">WizardOfMenlo/whir</a>
-. <em>We thank in particular <a href="https://xn--2-umb.com/about/" target="_blank">Remco Bloemen</a>
- for his invaluable help in optimizing the prover performance of WHIR</em>.</p>
-<p>We present some of our comparisons here, and refer the reader to Section 6 of the paper for full details.</p>
-<h3 id="papers-whir-comparison-with-basefold">Comparison with BaseFold</h3>
-<p><img loading="lazy" src="papers/whir/basefold_compare.png" alt=""  />
-</p>
-<p>WHIR achieves significantly smaller argument size compared to BaseFold[ZFC24]<sup id="papers-whir-fnref1:3"><a href="#papers-whir-fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>, while achieving significantly faster proving and verification. In part, this is due to WHIR having a more optimized implementation.</p>
-<h3 id="papers-whir-comparison-with-other-pcses">Comparison with other PCSes</h3>
-<p><img loading="lazy" src="papers/whir/kzg_compare.png" alt=""  />
-
-WHIR achieves the fastest verification time of <strong>any</strong> PCS know thus far. In particular, this includes schemes such as PST and KZG which rely on both a trusted setup and on pairings of elliptic curves.</p>
-<h2 id="papers-whir-comparision-with-ldts">Comparision with LDTs</h2>
-<p><img loading="lazy" src="papers/whir/ldt_compare.png" alt=""  />
-
-Finally, WHIR achieves state-of-the-art argument size, verifier hash-complexity among low-degree tests, while not compromising prover performance and achieving best-in-class verifier performance.</p>
-<hr>
-<h5 id="papers-whir-citation">Citation</h5>
-<p>G. Arnon, A. Chiesa, G. Fenzi, E. Yogev. &ldquo;<em>WHIR: Reed–Solomon Proximity Testing with Super-Fast Verification</em>&rdquo;. Cryptology ePrint Archive, Paper 2024/1586. Available at: <a href="https://ia.cr/2024/1586" target="_blank">https://ia.cr/2024/1586</a>
-.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-BibTeX" data-lang="BibTeX"><span style="display:flex;"><span><span style="color:#0a0;text-decoration:underline">@misc</span>{ArnonCFY,
-</span></span><span style="display:flex;"><span>	<span style="color:#1e90ff">author</span>       = <span style="color:#a50">{Gal Arnon and Alessandro Chiesa and Giacomo Fenzi and Eylon Yogev}</span>,
-</span></span><span style="display:flex;"><span>	<span style="color:#1e90ff">title</span>        = <span style="color:#a50">{WHIR: Reed–Solomon Proximity Testing with Super-Fast Verification}</span>,
-</span></span><span style="display:flex;"><span>	<span style="color:#1e90ff">howpublished</span> = <span style="color:#a50">{Cryptology ePrint Archive, Paper 2024/1586}</span>,
-</span></span><span style="display:flex;"><span>	<span style="color:#1e90ff">year</span>         = <span style="color:#a50">{2024}</span>,
-</span></span><span style="display:flex;"><span>	<span style="color:#1e90ff">note</span>         = <span style="color:#a50">{\url{https://eprint.iacr.org/2024/1586}}</span>,
-</span></span><span style="display:flex;"><span>	<span style="color:#1e90ff">url</span>          = <span style="color:#a50">{https://eprint.iacr.org/2024/1586}</span>
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><hr>
-<h5 id="papers-whir-related-material">Related material</h5>
-<div class="footnotes" role="doc-endnotes">
-<hr>
-<ol>
-<li id="papers-whir-fn:1">
-<p>constrained Reed&ndash;Solomon codes are a generalization of Reed&ndash;Solomon codes which we introduce later.&#160;<a href="#papers-whir-fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="papers-whir-fn:2">
-<p>$\mathsf{eq}(X_1, \dots, X_m, Y_1, \dots, Y_m) = \prod_{i = 1}^m (X_i \cdot Y_i + (1 - X_i) \cdot(1 - Y_i))$.&#160;<a href="#papers-whir-fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="papers-whir-fn:3">
-<p>[ZCF24] Hadas Zeilberger, Binyi Chen, and Ben Fisch. “BaseFold: Efficient Field-Agnostic Poly- nomial Commitment Schemes from Foldable Codes”. In: Proceedings of the 44th Annual International Cryptology Conference. CRYPTO ’24&#160;<a href="#papers-whir-fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#papers-whir-fnref1:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="papers-whir-fn:4">
-<p>[ACFY24] Gal Arnon, Alessandro Chiesa, Giacomo Fenzi, Eylon Yogev. “STIR: Reed&ndash;Solomon Proximity Testing with Fewer Queries”. In: Proceedings of the 44th Annual International Cryptology Conference. CRYPTO ’24. CRYPTO ’24.&#160;<a href="#papers-whir-fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#papers-whir-fnref1:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="papers-whir-fn:5">
-<p>here and in other places, proximity parameter of the form $1 - \rho$ are obtained via an appropriate conjecture on list-decoding of Reed&ndash;Solomon codes up to capacity. Provable bounds are obtained by replacing these with $1 - \sqrt{\rho}$ wherever they appear.&#160;<a href="#papers-whir-fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="papers-whir-fn:6">
-<p>the folding herein is the same as in FRI [BBHR18]<sup id="papers-whir-fnref:9"><a href="#papers-whir-fn:9" class="footnote-ref" role="doc-noteref">9</a></sup> and STIR [ACFY24]<sup id="papers-whir-fnref1:4"><a href="#papers-whir-fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>, and we assume familiarity with it.&#160;<a href="#papers-whir-fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="papers-whir-fn:7">
-<p>traditionally, this step would require $O(t \cdot 2^k)$ fops, and we present an optimization to reduce the cost in $k$, see paper and <a href="#blurb-whir-folding">blurb</a>
-.&#160;<a href="#papers-whir-fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="papers-whir-fn:8">
-<p>[BCIKS20] Eli Ben-Sasson, Dan Carmon, Yuval Ishai, Swastik Kopparty, and Shubhangi Saraf. “Proximity Gaps for Reed–Solomon Codes”. In: Proceedings of the 61st Annual IEEE Symposium on Foundations of Computer Science. FOCS ’20. 2020.&#160;<a href="#papers-whir-fnref:8" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="papers-whir-fn:9">
-<p>[BBHR18] Eli Ben-Sasson, Iddo Bentov, Yinon Horesh, and Michael Riabzev. “Fast Reed–Solomon Interactive Oracle Proofs of Proximity”. In: Proceedings of the 45th International Colloquium on Automata, Languages and Programming. ICALP ’18. 2018,&#160;<a href="#papers-whir-fnref:9" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-</ol>
-</div>
-
-  </div>
-              </div>
-            </details>
-            <details class="note-card detail-card" id="post-uc-snarks">
-              <summary>
-                <span>
-                  <strong>zkSNARKs in the ROM with Unconditional UC-Security</strong>
-                  <small>2024-05-10</small>
-                </span>
-                
-              </summary>
-              <div class="note-body detail-body">
-                <div class="detail-header">
-                  <p class="detail-byline">Alessandro Chiesa, Giacomo Fenzi</p>
-                  <div class="detail-meta">
-                    <span class="detail-chip">2024-05-10</span>
-                    <a class="detail-link" href="https://eprint.iacr.org/2024/724" target="_blank" rel="noreferrer">TCC 2024 - ePrint: 2024/724</a>
-                  </div>
-                  <p class="detail-lead">We show that commonly deployed zkSNARKs are UC-secure in the ROM, with no modifications needed.</p>
-                  <ul class="paper-tags detail-tags" aria-label="Tags"><li>concrete</li><li>theory</li></ul>
-                </div>
-
-                <div class="paper-post-content"><p>This blog-post is a short introduction to our new work: &ldquo;zkSNARKs in the ROM with Unconditional UC-Security&rdquo;. This is joint work with <a href="https://ic-people.epfl.ch/~achiesa/" target="_blank">Alessandro Chiesa,</a>
- and the full version is <a href="https://eprint.iacr.org/2024/724" target="_blank">available on ePrint.</a>
-</p>
-<p>The Universal Composability (UC) [Can01]<sup id="papers-uc-snarks-fnref:1"><a href="#papers-uc-snarks-fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> framework is a &ldquo;gold-standard&rdquo; for security in cryptography.
-UC-secure protocols achieve strong security guarantees against powerful adaptive adversaries, and retain these guarantees when used as part of larger protocols. Zero knowledge succinct non-interactive arguments of knowledge are often used within larger protocols deployed in dynamic environments, and so UC-security is a highly desirable, if not necessary, goal.</p>
-<p>In this work, we show that widely studied and deployed zkSNARKs in the ROM are UC-secure without modifications. Our main theorem states that:</p>
-<p><em>zkSNARKs constructed by instantiating the [BCS]<sup id="papers-uc-snarks-fnref:2"><a href="#papers-uc-snarks-fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> construction with a suitable IOP are unconditionally UC-secure</em></p>
-<p>Above, suitable IOPs are those that zero-knowledge and (state-restoration) knowledge sound, which are the <strong>same conditions</strong> required for the BCS construction to yield zero-knowledge and knowledge sound arguments in the ROM. So, achieving UC-secure zkSNARKs require <strong>no</strong> additional strengthening of the building blocks used to construct those zkSNARKs.</p>
-<p>Unconditional in our setting refers to the fact that our zkSNARKs are secure in the pure random oracle model, and the security is statistical and depends only on the number of queries the environment makes to the random oracle. Further, we also show that the zkSNARKs that we consider are UC-secure in the face of adaptive corruptions.</p>
-<p>Finally, all our results come with <strong>concrete security bounds</strong>, which inform how to set parameters in real systems.</p>
-<h2 id="papers-uc-snarks-modelling">Modelling</h2>
-<p>We consider UC-security in the UC with global subroutines framework [BCHTZ20]<sup id="papers-uc-snarks-fnref:3"><a href="#papers-uc-snarks-fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>, and the global subroutine that we consider is that of the restricted observable programmable global random oracle model [CDGLN18]<sup id="papers-uc-snarks-fnref:4"><a href="#papers-uc-snarks-fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>. This GROM has an interface consisting of four methods: a query method, a programming method, a observe method and a is-programmed method. The query method models a standard random oracle query. The programming method allows <em>every party</em> in the security experiment to program the GROM, and this power is kept &ldquo;in check&rdquo; by the is-programmed method, which allows honest parties to detect whether a point was programmed or not. By this, the simulator is the only party that is allowed to program the GROM undetectably. Finally, the observe method allows gathering the queries made to the GROM by parties outside of the session. Roughly, in Micali and BCS, programming is required for zero-knowledge, while observability for knowledge soundness.
-Since in our setting we target unconditional UC-security, we slightly modify the UC-framework to account for environments that are computationally unbounded and whose only limits are in the number of time they can access &ldquo;resources&rdquo;. To do so, we introduce a mechanism of <strong>budgets</strong>. In our main experiment, the budgets will reflect GROM queries and programming queries and queries to the proving and verification interface.</p>
-<h2 id="papers-uc-snarks-uc-friendly-properties">UC-friendly properties</h2>
-<p>Our UC-security proof is modular. We show that any argument (in the ROM) that satisfies three strong security properties yields a UC-secure argument.
-The three properties we define are:</p>
-<ol>
-<li>UC-friendly completeness</li>
-<li>UC-friendly zero knowledge</li>
-<li>UC-friendly knowledge soundness</li>
-</ol>
-<p>We further show that these properties are in fact <em>necessary</em> for UC-security, giving us confidence that they really are the &ldquo;right ones&rdquo;.</p>
-<p>In each setting we consider adversaries that have adaptive access to random, programming, prover and verifier oracles.
-Each property then reflects a corresponding property in the ROM that should be upheld in the face of this strong adversarial model.</p>
-<ol>
-<li>UC-friendly completeness states that such an adversary cannot cause the prover oracle to output proofs that are not subsequently accepted. Since the adversary has access to a programming oracle, perfect completeness of the underlying argument is in fact not sufficient, and we show a separation. We further puth forth a set of convenient properties that, together with perfect completeness, imply UC-friendly completeness.</li>
-<li>UC-friendly zero knowledge states that the adversary cannot distinguish between two security experiments, in the first of which the prover oracle returns honestly generated proofs and in the latter those proofs are in fact generated by a simulator (which has no access to the witness). Again, we show that adaptive zero knowledge in the ROM does not suffice for achieving this UC-friendly security notion.</li>
-<li>UC-friendly knowledge soundness states that an adversary cannot produce instance-proof pairs that validate successfully but from which an extractor is unable to extract a valid witness (for the corresponding instance). This is a strengthening of simulation extractability to our strong adversarial model. In fact, here we do not know of a separation, and we leave figuring out if one exists to future work.</li>
-</ol>
-<h2 id="papers-uc-snarks-micali-and-bcs-security">Micali and BCS security</h2>
-<p>In light of the previous section, to show that the Micali and BCS construction are UC-secure showing that the satisfy these UC-friendly properties suffices. We focus on Micali for simplicity here, but the case for BCS is entirely analogous.</p>
-<ol>
-<li>UC-friendly completeness follows from perfect completeness of Micali and by showing that it satisfy two properties that we call monotone proofs and unpredictable queries. Roughly, since the prover queries will be unpredictable and the verifier only queries what the prover has previously queried, the adversary cannot use programming to influence verification.</li>
-<li>UC-friendly zero knowledge follows by a careful analysis of the Micali zero knowledge simulator (which requires zero knowledge of the underlying PCP) and by showing that Merkle trees satisfy a notion of UC-friendly hiding.</li>
-<li>UC-friendly knowledge soundness was harder to prove, but ultimately comes down to reducing to straightline state-restoration knowledge soundness of the underlying PCP (which is implied by knowledge soundness of the PCP) and an analysis of Merkle trees that show that they satisfy a notion of UC-friendly extraction suitable for this reduction.</li>
-</ol>
-<p>We note that, by restricting the adversarial capabilities, our work also shows a full end-to-end proof that Micali and BCS are perfectly complete, adaptive zero knowledge and (straightline) simulation knowledge sound.</p>
-<h2 id="papers-uc-snarks-adaptive-corruptions">Adaptive corruptions</h2>
-<p>Finally, we strengthen each of the properties to show that Micali and BCS in fact satisfy a stronger still notion of UC-security: they are secure in the face of adversaries that can adaptively corrupt parties in the security experiment and force them to the randomness used thus far. This requires a strengthening of the underlying information theoretical building blocks, and we both show PCPs that satisfy this notion and by inspection conclude that common zero knowledge IOPs already satisfy this strengthening.</p>
-<hr>
-<h5 id="papers-uc-snarks-citation">Citation</h5>
-<p>A. Chiesa, G. Fenzi. &ldquo;<em>zkSNARKs in the ROM with Unconditional UC-Security</em>&rdquo;. Cryptology ePrint Archive, Paper 2024/724. Available at: <a href="https://ia.cr/2024/724" target="_blank">https://ia.cr/2024/724</a>
-.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-BibTeX" data-lang="BibTeX"><span style="display:flex;"><span><span style="color:#0a0;text-decoration:underline">@misc</span>{ChiesaFenzi24,
-</span></span><span style="display:flex;"><span>	<span style="color:#1e90ff">author</span>       = <span style="color:#a50">{Alessandro Chiesa and Giacomo Fenzi}</span>,
-</span></span><span style="display:flex;"><span>	<span style="color:#1e90ff">title</span>        = <span style="color:#a50">{zkSNARKs in the ROM with Unconditional UC-Security}</span>,
-</span></span><span style="display:flex;"><span>	<span style="color:#1e90ff">howpublished</span> = <span style="color:#a50">{Cryptology ePrint Archive, Paper 2024/724}</span>,
-</span></span><span style="display:flex;"><span>	<span style="color:#1e90ff">year</span>         = <span style="color:#a50">{2024}</span>,
-</span></span><span style="display:flex;"><span>	<span style="color:#1e90ff">note</span>         = <span style="color:#a50">{\url{https://eprint.iacr.org/2024/724}}</span>,
-</span></span><span style="display:flex;"><span>	<span style="color:#1e90ff">url</span>          = <span style="color:#a50">{https://eprint.iacr.org/2024/724}</span>
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><hr>
-<h5 id="papers-uc-snarks-related-material">Related material</h5>
-<div class="footnotes" role="doc-endnotes">
-<hr>
-<ol>
-<li id="papers-uc-snarks-fn:1">
-<p>[Can01] Ran Canetti. “Universally Composable Security: A New Paradigm for Cryptographic Protocols”. In: Proceedings of the 42nd Annual IEEE Symposium on Foundations of Computer Science. FOCS ’01. 2001, pp. 136–145.&#160;<a href="#papers-uc-snarks-fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="papers-uc-snarks-fn:2">
-<p>[BCS16] Eli Ben-Sasson, Alessandro Chiesa, and Nicholas Spooner. “Interactive Oracle Proofs”. In: Proceed- ings of the 14th Theory of Cryptography Conference. TCC ’16-B. 2016, pp. 31–60.&#160;<a href="#papers-uc-snarks-fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="papers-uc-snarks-fn:3">
-<p>[BCHTZ20] Christian Badertscher, Ran Canetti, Julia Hesse, Bjorn Tackmann, and Vassilis Zikas. “Universal Composition with Global Subroutines: Capturing Global Setup Within Plain UC”. In: Proceedings of the 18th Theory of Cryptography Conference. TCC 20. 2020, pp. 1–30.&#160;<a href="#papers-uc-snarks-fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="papers-uc-snarks-fn:4">
-<p>[CDGLN18] Jan Camenisch, Manu Drijvers, Tommaso Gagliardoni, Anja Lehmann, and Gregory Neven. “The Wonderful World of Global Random Oracles”. In: Proceedings of the 37th Annual International Conference on Theory and Application of Cryptographic Techniques. EUROCRYPT ’18. 2018, pp. 280–312.&#160;<a href="#papers-uc-snarks-fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-</ol>
-</div>
-
-  </div>
-              </div>
-            </details>
-            <details class="note-card detail-card" id="post-stir">
-              <summary>
-                <span>
-                  <strong>STIR: Reed–Solomon Proximity Testing with Fewer Queries</strong>
-                  <small>2024-02-21</small>
-                </span>
-                
-              </summary>
-              <div class="note-body detail-body">
-                <div class="detail-header">
-                  <p class="detail-byline">Gal Arnon, Alessandro Chiesa, Giacomo Fenzi, Eylon Yogev</p>
-                  <div class="detail-meta">
-                    <span class="detail-chip">2024-02-21</span>
-                    <a class="detail-link" href="https://eprint.iacr.org/2024/390" target="_blank" rel="noreferrer">CRYPTO 2024 - ePrint: 2024/390</a>
-                  </div>
-                  <p class="detail-lead">We present STIR (Shift To Improve Rate), a concretely efficient interactive oracle proof of proximity (IOPP) for Reed–Solomon codes that achieves the best known query complexity of any concretely efficient IOPP for this problem.</p>
-                  <ul class="paper-tags detail-tags" aria-label="Tags"><li>hashes</li><li>concrete</li><li>theory</li></ul>
-                </div>
-                      <figure class="paper-cover">
-                        <img src="papers/stir/stir_logo.jpg" alt="STIR" loading="lazy" />
-                        <figcaption>STIR</figcaption>
-                      </figure>
-                <div class="paper-post-content"><p>This blog-post is a short introduction to our new work: &ldquo;STIR: Reed-Solomon Proximity Testing with Fewer Queries&rdquo;. This is joint work with <a href="https://galarnon42.github.io/" target="_blank">Gal Arnon</a>
-, <a href="https://ic-people.epfl.ch/~achiesa/" target="_blank">Alessandro Chiesa</a>
-, and <a href="https://www.eylonyogev.com/about" target="_blank">Eylon Yogev</a>
-, and the full version is <a href="https://eprint.iacr.org/2024/390" target="_blank">available on ePrint</a>
-. Code is also available at <a href="https://github.com/WizardOfMenlo/stir" target="_blank">WizardOfMenlo/stir</a>
-. Here are also <a href="presentations/stir.pdf">some slides</a>
- that might be helpful, the <a href="https://youtu.be/OLklJjp8KB4?si=-Brr6YLj6YCoQvh9" target="_blank">recording of the talk at zkSummit11</a>
-, and our episode on <a href="https://open.spotify.com/episode/1CRYtmzNHIFNZ0yceS3aO4?si=721b999fff674618" target="_blank">zkPodcast</a>
-.
-<strong>This paper won Best Paper Award 🥇 at CRYPTO 2024!</strong></p>
-<p>Denote by $\mathsf{RS}[\mathbb{F}, \mathcal{L}, d]$ the Reed-Solomon (RS) code<sup id="papers-stir-fnref:1"><a href="#papers-stir-fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> over the field $\mathbb{F}$ of rate $\rho = d/|\mathcal{L}|$.
-Testing proximity to a RS code is the problem of, given oracle access to $f: \mathcal{L} \to \mathbb{F}$, determining whether</p>
-<ul>
-<li>$f \in \mathsf{RS}[\mathbb{F}, \mathcal{L}, d]$ i.e., $f$ is a RS codeword.</li>
-<li>$\Delta(f, \mathsf{RS}[\mathbb{F}, \mathcal{L}, d]) &gt; \delta$ i.e., $f$ is $\delta$-far (in terms of Hamming distance) from any RS codeword.</li>
-</ul>
-<p>In this work, we consider Interactive Oracle Proofs of Proximity (IOPP) for RS codes, i.e., interactive protocols between a prover and a verifier that aims to test proximity to a RS code in which the prover sends oracle messages.</p>
-<p>The FRI protocol [BBHR18, BCIKS20]<sup id="papers-stir-fnref:2"><a href="#papers-stir-fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> <sup id="papers-stir-fnref:3"><a href="#papers-stir-fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> is one such IOPP, and underlies many SNARK-based real-world systems which offer state-of-the-art technology that protects billions of dollars&rsquo; worth of transactions in blockchains.</p>
-<h1 id="papers-stir-stir-">STIR 🥣</h1>
-<p>We present STIR (Shift To Improve Rate), a concretely efficient IOPP for RS codes that achieves the best known query complexity of any concretely efficient IOPP for this problem.</p>
-<p>When compiled into an argument, STIR compares favourably to FRI in (i) argument size (ii) verifier time (iii) verifier hashes.</p>
-<p>Taking $d = 2^{24}$ and $\rho = 1/2$ as an example:</p>
-<ul>
-<li>STIR arguments&rsquo; have size 160 KiB compared to FRI&rsquo;s 306 KiB (<strong>1.8x better</strong>).</li>
-<li>STIR verifier&rsquo;s perform 2600 hashes compared to FRI&rsquo;s 5600 (<strong>2.13x better</strong>).</li>
-<li>STIR verifier&rsquo;s runtime is 3.8ms compared to FRI&rsquo;s 3.9ms (<strong>1.03x better</strong>).</li>
-</ul>
-<hr>
-<h2 id="papers-stir-high-level-overview">High-level overview</h2>
-<p>The core intuition behind STIR is that decreasing rate makes proximity testing easier. Intuitively, the lower the rate the more redundant the code is, and thus the verifier can make use of more structure in its testing.</p>
-<p>Fix $k$ a &ldquo;folding parameter&rdquo;, a proximity parameter $\delta$, and a repetition parameter $t$.</p>
-<p>Let $\mathcal{C} := \mathsf{RS}[\mathbb{F}, \mathcal{L}, d]$ and $\mathcal{C&rsquo;} := \mathsf{RS}[\mathbb{F}, \mathcal{L}&rsquo;, d/k]$ with $|\mathcal{L}&rsquo;| = |\mathcal{L}|/2$ be two RS codes, and let $\rho, \rho&rsquo;$ be their rates.</p>
-<p>A STIR iteration performs $t$ queries while fulfilling two roles:</p>
-<ol>
-<li>Reduces testing proximity of $f$ to $\mathcal{C}$ to testing proximity of a new (virtual) function $f&rsquo;$ to $\mathcal{C&rsquo;}$.</li>
-<li>Amplifies distance. Roughly, if $f$ is $\delta$-far from $\mathcal{C}$, then $f&rsquo;$ is $(1 - \sqrt{\rho&rsquo;})$-far<sup id="papers-stir-fnref:5"><a href="#papers-stir-fn:5" class="footnote-ref" role="doc-noteref">5</a></sup> from $\mathcal{C&rsquo;}$ (except with probability roughly $(1 - \delta)^t$, we dub this a &ldquo;bad event&rdquo;).</li>
-</ol>
-<p>Testing proximity to $\mathcal{C}&rsquo;$ is now easier. First, the polynomial has had its degree reduced by a factor of $k$. Second, note that $\rho&rsquo; = (2/k) \cdot \rho$, so if $k &gt; 2$ then $\rho&rsquo; &lt; \rho$, so the rate has improved.</p>
-<p>Imagine now applying $M$ STIR iterations. Let $f_i, t_i$, $\mathcal{L}_i$ be the functions tested, repetition parameters and domains at each round. Let also $\rho_i := (2/k)^i \cdot \rho$ and $d_i = d/k^i$. At the end of those iterations, the (honest) prover will send a polynomial $\hat{p}$ of degree $d_M$. The verifier then checks at $t_M$ points of $\mathcal{L}_M$ that $f_M(x) = \hat{p}(x)$.</p>
-<p>Let&rsquo;s analyse soundness of this protocol. First, we bound the probability of a bad event happening at each iteration. At the first round, this probability is $(1 - \delta)^{t_0}$. In later rounds, since the distance was amplified the probability is now:
-$$
-(1 - (1 - \sqrt{\rho_i}))^{t_i} = \rho_i^{t_i/2}
-$$
-If none of these bad events happen, then the polynomial $\hat{p}$ must be at distance $(1 - \sqrt{\rho_M})$ from $\mathcal{C}_M$, and so the final check will detect this with probability at least $1 - \rho_M^{t_M/2}$.</p>
-<p>The overall soundness error of this protocol is then:
-$$
-\varepsilon \leq (1 - \delta)^{t_0} + \sum_{i = 1}^M \rho_i^{t_i/2}.
-$$</p>
-<p>Aiming each term in the above sum to be $\leq 2^{-\lambda}$ so that $\varepsilon \leq (M+1) \cdot 2^{-\lambda}$, leads to setting $t_0 = \frac{\lambda}{- \log (1 - \delta)}$ and $t_i = \frac{\lambda}{- \log \sqrt{\rho_i}}$.</p>
-<p>The improved rate, translates in a decrease in the values of $t_i$ (apart from the first iteration).
-This is where STIR gains its efficiency.</p>
-<p>In FRI, for example, the rate is <em>unchanged</em> between iterations, so each round (apart from the first) will query its corresponding oracle at least $\frac{\lambda}{- \log \sqrt{\rho}}$ times.
-In fact, since FRI does <em>correlated</em> queries, the number of queries will be the same at each round as the first one, and at least $\max \left\{\frac{\lambda}{-\log (1 - \delta)}, \frac{\lambda}{- \log \sqrt{\rho}}\right\}$.
-Roughly then, the total number of queries of the FRI protocol is:
-$$
-O\left(\lambda \log d \cdot \max \left\{ \frac{1}{-\log (1-\delta)}, \frac{1}{-\log \sqrt{\rho}} \right\}\right)
-$$</p>
-<p>STIR instead can perform only:
-$$
-O\left(\frac{\lambda}{-\log (1 - \delta)} + \log d + \lambda \cdot \log \left(\frac{\log d}{-\log \sqrt{\rho}}\right)\right)
-$$</p>
-<hr>
-<h2 id="papers-stir-techniques">Techniques</h2>
-<p>A STIR iteration roughly consists of the combination of two steps:</p>
-<h4 id="papers-stir-folding">Folding</h4>
-<p>As in FRI, folding is the process of reducing the degree of a polynomial from $d$ to $d/k$ by decomposing it into $k$ polynomials of degree $d/k$ and taking a random combination of them.
-We rely mainly on two properties of folding:</p>
-<ol>
-<li>Folding preserves distance (except with probability at most $1 - \mathrm{poly}(|\mathcal{L}|)/\mathbb{F}$, which, assuming a large field, is very small).</li>
-<li>Folding is local. Given oracle access to $f$, computing the value of the fold $f$ at a point in the folded domain is efficient (and involves querying $f$ at exactly $k$ locations).</li>
-</ol>
-<h4 id="papers-stir-quotienting">Quotienting</h4>
-<p>The quotient of a function $f$ w.r.t to a function $p: S \to \mathbb{F}$ is the function of $X$ defined as:
-$$
-\frac{f(X) - \hat{p}(X)}{\prod_{a \in S} (X - a)}
-$$
-where $\hat{p}$ is the polynomial interpolating $p$ over $S$.
-We rely on two properties of quotients:</p>
-<ol>
-<li>If all low-degree polynomials close to $f$ disagree with $p$, then the quotient is far from the RS code.</li>
-<li>Quotienting is local. Given oracle access to $f$, computing the value of the quotient at a point is efficient (and involves querying $f$ at a single location).</li>
-</ol>
-<h3 id="papers-stir-the-stir-iteration">The STIR iteration</h3>
-<p>We describe, at a high level, an iteration of STIR. Let $\mathcal{L}^k = \{ x^k : x \in \mathcal{L} \}$.</p>
-<ol>
-<li><strong>Folding-randomness</strong>: The verifier samples and sends $\alpha \gets \mathbb{F}$.</li>
-<li><strong>Fold</strong>: The prover sends $g$, the evaluation of the folding $\hat{g}$ of $f$ around $\alpha$ over $\mathcal{L}&rsquo;$. (Note, the folding would be a function $\mathcal{L}^k \to \mathbb{F}$ where $|\mathcal{L}^k| = |\mathcal{L}|/k$, while here $\mathcal{L&rsquo;}$ is a domain of size $|\mathcal{L}|/2$.)</li>
-<li><strong>Out-of-domain sample</strong>: The verifier samples and sends $x \gets \mathbb{F}$.</li>
-<li><strong>Out-of-domain reply</strong>: The prover sends $y = \hat{g}(x)$.</li>
-<li><strong>Shift-queries</strong>: The verifier samples $v_1, \dots, v_t \gets \mathcal{L^k}$ and queries $f$ to compute the value of the folding of $f$ at these points (using the local mapping). Denote these values as $y_1, \dots, y_t$.</li>
-<li><strong>New-oracle</strong>: The verifier sets $p$ to be the function $p(x) = y$, $p(v_i) = y_i$. The new function $f&rsquo;$ to be tested is then the quotient of $g$ w.r.t $p$.</li>
-</ol>
-<p>Roughly, the soundness analysis is the following:</p>
-<ol>
-<li>The folding step preserves distance (except with small probability).</li>
-<li>The out-of-domain sample guarantees that there is at most one codeword $u$ within $1 - \sqrt{\rho&rsquo;}$ distance of $g$ which has $\hat{u}(x) = y$ (except with small probability).</li>
-</ol>
-<p>Now, if there is no such codeword, then $f$ will be $1 - \sqrt{\rho&rsquo;}$ far from the RS code, since it is a quotient and $p(x) = y$.
-If instead such a codeword exists, by the first point $\hat{u}$ can agree with the fold on at most a $1 - \delta$ fraction of the domain (since the fold preserves distance). If any of the sampled points $v_i$ are in the disagreement portion, then again the quotient will be $1 - \sqrt{\rho&rsquo;}$ far from the RS code. Thus this happens unless with probability $(1 - \delta)^t$.</p>
-<hr>
-<h1 id="papers-stir-benchmarks">Benchmarks</h1>
-<p>We implemented STIR and FRI in Rust and compared their performance. Our code can be found at <a href="https://github.com/WizardOfMenlo/stir" target="_blank">WizardOfMenlo/stir</a>
-.
-Below, we present the results of our benchmarks when $\rho = 1/2$</p>
-<h5 id="papers-stir-comparison-of-fri-and-stir-fri-is-red-stir-is-blue">Comparison of FRI and STIR. FRI is red, STIR is blue.</h5>
-<p><img loading="lazy" src="papers/stir/1_graph.jpg" alt=""  />
-</p>
-<p>STIR obtains better argument size and verifier hash complexity than FRI for all tested parameters. The overall verifier runtime is also faster then FRI, especially for large degrees.
-Taking $d = 2^{24}$ and $\rho = 1/2$ as an example:</p>
-<ul>
-<li>STIR arguments&rsquo; have size 160 KiB compared to FRI&rsquo;s 306 KiB (<strong>1.8x better</strong>).</li>
-<li>STIR verifier&rsquo;s perform 2600 hashes compared to FRI&rsquo;s 5600 (<strong>2.13x better</strong>).</li>
-<li>STIR verifier&rsquo;s runtime is 3.8ms compared to FRI&rsquo;s 3.9ms (<strong>1.03x better</strong>).</li>
-</ul>
-<p>For a more detailed comparison, see Section 6 of the paper.</p>
-<hr>
-<h3 id="papers-stir-practical-considerations">Practical considerations</h3>
-<p>We consider the prover costs of STIR. In practice, FRI is run in a heavily batched context i.e., instead of testing proximity of a single polynomial to a RS code, a random linear combination of a list of polynomials $f_1, \dots, f_\ell$ is tested. The dominating prover cost is then that of committing to the polynomials, which involves performing $\ell$ FFTs to compute the evaluations of the $f_i$s over $\mathcal{L}$ and then committing to said evaluation. This cost is shared by both FRI and STIR, and, especially in this batch setting, comes to dominate. The rest of the proximity test, which is where STIR is slower than FRI, is independent of the number of polynomials committed. So, changing from FRI to STIR should have an almost negligible effect on prover runtime.</p>
-<p>Further, STIR&rsquo;s improvement in query complexity enable new parameter tradeoffs in which one can achieve better prover time, argument sizes and verifier hash complexity than FRI. For example, [ethSTARK]<sup id="papers-stir-fnref:6"><a href="#papers-stir-fn:6" class="footnote-ref" role="doc-noteref">6</a></sup> uses FRI with $d = 2^{22}$ and $\rho = 1/4$. In our experiments, FRI&rsquo;s prover runs in 11s, yields arguments of size 154 KiB which can be verified by performing $\approx 2800$ hashes. Instead, running STIR with $d = 2^{22}$ and $\rho = 1/2$ yields a prover which runs in 10s, has arguments of size 143 KiB and a verifier which performs $\approx 2200$ hashes. More generally, in the batched setting, we expect the dominating costs of both FRI and STIR to be proportional to $\ell \cdot d/\rho$. If the improvements in argument size/verifier hash allow to set a larger rate (say by a factor of 2), the dominating cost of the STIR prover would as well decrease by that factor.</p>
-<hr>
-<h5 id="papers-stir-citation">Citation</h5>
-<p>G. Arnon, A. Chiesa, G. Fenzi, E. Yogev. &ldquo;<em>STIR: Reed–Solomon Proximity Testing with Fewer Queries</em>&rdquo;. Cryptology ePrint Archive, Paper 2024/390. Available at: <a href="https://ia.cr/2024/390" target="_blank">https://ia.cr/2024/390</a>
-.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-BibTeX" data-lang="BibTeX"><span style="display:flex;"><span><span style="color:#0a0;text-decoration:underline">@misc</span>{ArnonCFY,
-</span></span><span style="display:flex;"><span>	<span style="color:#1e90ff">author</span>       = <span style="color:#a50">{Gal Arnon and Alessandro Chiesa and Giacomo Fenzi and Eylon Yogev}</span>,
-</span></span><span style="display:flex;"><span>	<span style="color:#1e90ff">title</span>        = <span style="color:#a50">{STIR: Reed–Solomon Proximity Testing with Fewer Queries}</span>,
-</span></span><span style="display:flex;"><span>	<span style="color:#1e90ff">howpublished</span> = <span style="color:#a50">{Cryptology ePrint Archive, Paper 2024/390}</span>,
-</span></span><span style="display:flex;"><span>	<span style="color:#1e90ff">year</span>         = <span style="color:#a50">{2024}</span>,
-</span></span><span style="display:flex;"><span>	<span style="color:#1e90ff">note</span>         = <span style="color:#a50">{\url{https://eprint.iacr.org/2024/390}}</span>,
-</span></span><span style="display:flex;"><span>	<span style="color:#1e90ff">url</span>          = <span style="color:#a50">{https://eprint.iacr.org/2024/390}</span>
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><hr>
-<h5 id="papers-stir-related-material">Related material</h5>
-<div class="footnotes" role="doc-endnotes">
-<hr>
-<ol>
-<li id="papers-stir-fn:1">
-<p>Formally $\mathsf{RS}[\mathbb{F}, \mathcal{L}, d] = \{ \hat{p}|_\mathcal{L} : \hat{p} \in \mathbb{F}^{&lt; d}[X] \}$ where $\hat{p}|_\mathcal{L}: \mathcal{L} \to \mathbb{F}$ is the restriction of $\hat{p}$ to $\mathcal{L}$.&#160;<a href="#papers-stir-fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="papers-stir-fn:2">
-<p>[BBHR18] Eli Ben-Sasson, Iddo Bentov, Yinon Horesh, and Michael Riabzev. “Fast Reed–Solomon Interactive Oracle Proofs of Proximity”. In: Proceedings of the 45th International Colloquium on Automata, Languages and Programming. ICALP ’18. 2018,&#160;<a href="#papers-stir-fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="papers-stir-fn:3">
-<p>[BCIKS20] Eli Ben-Sasson, Dan Carmon, Yuval Ishai, Swastik Kopparty, and Shubhangi Saraf. “Proximity Gaps for Reed–Solomon Codes”. In: Proceedings of the 61st Annual IEEE Symposium on Foundations of Computer Science. FOCS ’20. 2020.&#160;<a href="#papers-stir-fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#papers-stir-fnref1:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="papers-stir-fn:4">
-<p>[BGKS20] Eli Ben-Sasson, Lior Goldberg, Swastik Kopparty, and Shubhangi Saraf. “DEEP-FRI: Sampling Outside the Box Improves Soundness”. In: Proceedings of the 11th Innovations in Theoretical Computer Science Conference. ITCS ’20.&#160;<a href="#papers-stir-fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="papers-stir-fn:5">
-<p>Here and throughout, distances of the form $1 - \sqrt{\rho}$ can be improved to $1 - \rho$ by assuming a conjecture on the list-decoding of RS codes proposed in [BCIKS20,BGKS20] <sup id="papers-stir-fnref1:3"><a href="#papers-stir-fn:3" class="footnote-ref" role="doc-noteref">3</a></sup><sup id="papers-stir-fnref:4"><a href="#papers-stir-fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>.&#160;<a href="#papers-stir-fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="papers-stir-fn:6">
-<p>[ethSTARK] StarkWare. ethSTARK Documentation. Cryptology ePrint Archive, Paper 2021/582. <a href="https://eprint.iacr.org/2021/582" target="_blank">https://eprint.iacr.org/2021/582</a>
-. 2021.&#160;<a href="#papers-stir-fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-</ol>
-</div>
-
-  </div>
-              </div>
-            </details>
-            <details class="note-card detail-card" id="post-blendy-sumcheck">
-              <summary>
-                <span>
-                  <strong>A Time-Space Tradeoff for the Sumcheck Prover</strong>
-                  <small>2024-02-20</small>
-                </span>
-                
-              </summary>
-              <div class="note-body detail-body">
-                <div class="detail-header">
-                  <p class="detail-byline">Alessandro Chiesa, Elisabetta Fedele, Giacomo Fenzi, Andrew Zitek-Estrada</p>
-                  <div class="detail-meta">
-                    <span class="detail-chip">2024-02-20</span>
-                    <a class="detail-link" href="https://eprint.iacr.org/2024/524" target="_blank" rel="noreferrer">ePrint: 2024/524</a>
-                  </div>
-                  <p class="detail-lead">We present a new family of algorithms for the sumcheck protocol prover that offer new time-space tradeoffs.</p>
-                  <ul class="paper-tags detail-tags" aria-label="Tags"><li>sumcheck</li><li>concrete</li></ul>
-                </div>
-
-                <div class="paper-post-content"><p>This blog-post is a short introduction to our new work: &ldquo;A Time-Space Tradeoff for the Sumcheck Prover&rdquo;. This is joint work with Alessandro Chiesa, Elisabetta Fedele, Andrew Zitek-Estrada, and the full version is <a href="https://eprint.iacr.org/2024/524" target="_blank">available on ePrint.</a>
- Code accompanying this work can be found at <a href="https://github.com/compsec-epfl/space-efficient-sumcheck" target="_blank">space-efficient-sumcheck.</a>
-</p>
-<p>The sumcheck protocol [LFKN92]<sup id="papers-blendy-sumcheck-fnref:1"><a href="#papers-blendy-sumcheck-fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> is an interactive protocol between a prover and a verifier that allows a verifier to <em>succinctly</em> check claims of the form
-$$ \sum_{\mathbf{b} \in \{0, 1\}^n} p(\mathbf{b}) = \gamma \enspace. $$</p>
-<p>In this note, we consider the case where $p \in \mathbb{F}[X_1, \dots, X_n]$ is a multi-linear polynomial, and write $N = 2^n$ for the size of the prover input.
-For concrete deployments, maximising the prover&rsquo;s efficiency is paramount, as both its time and space complexity can be bottlenecks.
-Previous to this work, two main algorithms to efficiently implement the sumcheck prover were known</p>
-<ul>
-<li>[CTY11]<sup id="papers-blendy-sumcheck-fnref:2"><a href="#papers-blendy-sumcheck-fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>: which runs in time $O(N \log N)$ and uses space $O(\log N)$.</li>
-<li>[VSBW13]<sup id="papers-blendy-sumcheck-fnref:3"><a href="#papers-blendy-sumcheck-fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>: which runs in time $O(N)$ and uses space $O(N)$.</li>
-</ul>
-<h1 id="papers-blendy-sumcheck-blendy-">Blendy 🍹</h1>
-<p>We introduce <strong>Blendy</strong>, a new family of algorithms for the sumcheck prover which run in time $O(k N)$ and use space $O(N^{1/k})$. Before, $k$ is a parameter that regulates the Time-Space tradeoff of our algorithms.</p>
-<p>Our algorithms, at an high level, divides the $n$ rounds of sumcheck into $k$ stages. At the start of each stage, it performs a precomputation to populate a table of size $O(N^{1/k})$, which is then used to compute the polynomials related to that particular stage.</p>
-<p>We implement our algorithms (which is made available at <a href="https://github.com/compsec-epfl/space-efficient-sumcheck/" target="_blank">space-efficient-sumcheck</a>
-) and observe that our algorithm has a similar time-complexity to the state-of-the-art ([VSBW13]<sup id="papers-blendy-sumcheck-fnref1:3"><a href="#papers-blendy-sumcheck-fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>) while using much less memory. Concretely, for $n = 28$, [VSBW] runs in 20.4s while using 5.2 GiB of memory, while Blendy (with $k = 2$) runs in 21.8s while using 1MiB of memory: a 0.93x slowdown traded for a <strong>650x</strong> improvement in memory usage.</p>
-<hr>
-<h5 id="papers-blendy-sumcheck-citation">Citation</h5>
-<p>A. Chiesa, E. Fedele, G. Fenzi, A. Zitek-Estrada. &ldquo;<em>A Time-Space Tradeoff for the Sumcheck Prover</em>&rdquo;. Cryptology ePrint Archive, Paper 2024/524. Available at: <a href="https://ia.cr/2024/524" target="_blank">https://ia.cr/2024/524</a>
-.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-BibTeX" data-lang="BibTeX"><span style="display:flex;"><span><span style="color:#0a0;text-decoration:underline">@misc</span>{ChiesaFFZ24,
-</span></span><span style="display:flex;"><span>	<span style="color:#1e90ff">author</span>       = <span style="color:#a50">{Alessandro Chiesa and Elisabetta Fedele and Giacomo Fenzi and Andrew Zitek-Estrada}</span>,
-</span></span><span style="display:flex;"><span>	<span style="color:#1e90ff">title</span>        = <span style="color:#a50">{A Time-Space Tradeoff for the Sumcheck Prover}</span>,
-</span></span><span style="display:flex;"><span>	<span style="color:#1e90ff">howpublished</span> = <span style="color:#a50">{Cryptology ePrint Archive, Paper 2024/524}</span>,
-</span></span><span style="display:flex;"><span>	<span style="color:#1e90ff">year</span>         = <span style="color:#a50">{2024}</span>,
-</span></span><span style="display:flex;"><span>	<span style="color:#1e90ff">note</span>         = <span style="color:#a50">{\url{https://eprint.iacr.org/2024/524}}</span>,
-</span></span><span style="display:flex;"><span>	<span style="color:#1e90ff">url</span>          = <span style="color:#a50">{https://eprint.iacr.org/2024/524}</span>
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><hr>
-<h5 id="papers-blendy-sumcheck-related-material">Related material</h5>
-<div class="footnotes" role="doc-endnotes">
-<hr>
-<ol>
-<li id="papers-blendy-sumcheck-fn:1">
-<p>Carsten Lund, Lance Fortnow, Howard J. Karloff, and Noam Nisan. “Algebraic Methods for Interactive Proof Systems”. In: Journal of the ACM 39.4 (1992).&#160;<a href="#papers-blendy-sumcheck-fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="papers-blendy-sumcheck-fn:2">
-<p>Graham Cormode, Justin Thaler, and Ke Yi. “Verifying computations with streaming interactive proofs”. In: Proceedings of the VLDB Endowment 5.1 (2011), pp. 25–36.&#160;<a href="#papers-blendy-sumcheck-fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="papers-blendy-sumcheck-fn:3">
-<p>Victor Vu, Srinath Setty, Andrew J. Blumberg, and Michael Walfish. “A hybrid architecture for interactive verifiable computation”. In: Proceedings of the 34th IEEE Symposium on Security and Privacy. Oakland ’13. 2013, pp. 223–237.&#160;<a href="#papers-blendy-sumcheck-fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#papers-blendy-sumcheck-fnref1:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-</ol>
-</div>
-
-  </div>
-              </div>
-            </details>
-            <details class="note-card detail-card" id="post-slap">
-              <summary>
-                <span>
-                  <strong>SLAP: Succinct Lattice-Based Polynomial Commitments from Standard Assumptions</strong>
-                  <small>2023-09-25</small>
-                </span>
-                
-              </summary>
-              <div class="note-body detail-body">
-                <div class="detail-header">
-                  <p class="detail-byline">Martin R. Albrecht, Giacomo Fenzi, Oleksandra Lapiha,  Ngoc Khanh Nguyen</p>
-                  <div class="detail-meta">
-                    <span class="detail-chip">2023-09-25</span>
-                    <a class="detail-link" href="https://eprint.iacr.org/2023/1469" target="_blank" rel="noreferrer">EUROCRYPT 2024 - ePrint: 2023/1469</a>
-                  </div>
-                  <p class="detail-lead">In this paper, we construct a succinct polynomial commitment scheme from standard assumptions.</p>
-                  <ul class="paper-tags detail-tags" aria-label="Tags"><li>lattices</li><li>polynomial-commitments</li><li>theory</li></ul>
-                </div>
-                      <figure class="paper-cover">
-                        <img src="papers/slap/slap_logo.jpg" alt="SLAP" loading="lazy" />
-                        <figcaption>SLAP</figcaption>
-                      </figure>
-                <div class="paper-post-content"><p>This blog-post is a short introduction to our new work: &ldquo;SLAP: Succinct Lattice-Based Polynomial Commitments from Standard Assumptions&rdquo;. This is joint work with Martin Albrecht, Oleksandra Lapiha and Ngoc Khanh Nguyen, and the full version is <a href="https://eprint.iacr.org/2023/1469" target="_blank">available on ePrint</a>
-. Here are also <a href="presentations/slap.pdf">some slides</a>
- that might be helpful.</p>
-<p>In our <a href="#post-towards-pcs">previous paper</a>
-, we looked at the problem of constructing efficient lattice-based polynomial commitments, to be used in as a drop-in replacement to non-post-quantum secure schemes such as KZG.
-In doing so we constructed two schemes making use of the techniques in [WW23]<sup id="papers-slap-fnref:1"><a href="#papers-slap-fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> to obtain succinct verification and extractability. The schemes that we came up two came with a number of caveats namely:</p>
-<ul>
-<li>a common reference string of quadratic size in the degree of the polynomial to commit</li>
-<li>reliance on a non-standard assumption: powerBASIS.</li>
-<li>one of our schemes achieves polylogarithmic verification time, but has non-negligible (inverse polynomial) soundness error.</li>
-<li>the other scheme instead has negligible soundness error, but only quasi-polylogarithmic verification time.</li>
-</ul>
-<p>In this work, we address all of these issues and obtain a lattice-based polynomial commitment scheme with:</p>
-<ul>
-<li>polylogarithmic common reference string size</li>
-<li>quasi-linear commitment time</li>
-<li>polylogarithmic verification time</li>
-<li>negligible soundness error (without parallel repetition)</li>
-<li>security that reduces to the hardness of Module-SIS, a standard lattice assumption.</li>
-</ul>
-<hr>
-<h2 id="papers-slap-roadmap">Roadmap</h2>
-<p>Refer to the <a href="#post-towards-pcs">previous blog post</a>
- for a refresher on polynomial commitment schemes and more.</p>
-<p>Construction of a polynomial commitment scheme is a two-step process:</p>
-<ol>
-<li>Construction of a commitment scheme</li>
-<li>Designing of a proof system for the statement &ldquo;$f(u) = z$ and $\mathbf{t}$ is a commitment to $f$&rdquo;.</li>
-</ol>
-<p>We take a brief look at both of these steps.</p>
-<hr>
-<h2 id="papers-slap-merkle-prisis-commitment">Merkle-PRISIS commitment</h2>
-<p>In order to achieve succinct verification, we require that the first commitment is <em>compressing</em>. Further, we would like the scheme to be binding for <em>arbitrary</em> vectors in $\mathcal{R}_q$.</p>
-<p>Our starting point is a &ldquo;toy&rdquo; 2-to-1 commitment scheme. Below, for some fixed $w, \mathbf{A}$, and denoting by $\mathbf{G}$ the &ldquo;gadget matrix&rdquo; let
-$$
-\mathbf{B} = \begin{bmatrix} \mathbf{A} &amp; &amp; - \mathbf{G} \\ &amp; w\mathbf{A}&amp; -\mathbf{G} \end{bmatrix} \enspace.
-$$</p>
-<ul>
-<li>$\mathsf{Setup}(1^\lambda) \to (\mathsf{pk}, \mathsf{vk})$ samples $\mathbf{A}, w$ and uses [MP12]<sup id="papers-slap-fnref:2"><a href="#papers-slap-fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> sampling to construct a trapdoor $\mathbf{T}$ of $\mathbf{B}$. The verification key consists of $\mathbf{A}, \mathbf{W}$ and the proving key additionally contains $\mathbf{T}$.</li>
-<li>$\mathsf{Com}(\mathsf{pk}, f_0, f_1) \to (\sigma, \mathsf{aux})$ sets $\mathbf{t}_b := f_b \cdot \mathbf{e}_1$. It then uses $\mathbf{T}$ to sample short $\mathbf{s}_0, \mathbf{s}_1$ and $\hat{\mathbf{t}}$ such that $\mathbf{B}[\mathbf{s}_0, \mathbf{s}_1, \hat{\mathbf{t}}]^\top = [-\mathbf{t}_0, -\mathbf{t}_1]^\top$, it then outputs $\mathbf{t} := \mathbf{G}\hat{\mathbf{t}}$ and $(\mathbf{s}_b)_b$ as decommitment.</li>
-<li>$\mathsf{Open}(\mathsf{vk}, f, \sigma, \mathsf{aux})$ checks that the openings are indeed short, and that the equations are all satisfied: namely it checks that, for $b \in \{0,1\}$, $$w^b \mathbf{A}\mathbf{s}_b + \mathbf{t} = \mathbf{t}_b \enspace.$$</li>
-</ul>
-<p>This scheme is binding under a 2-arity version of the PRISIS assumption introduced in our previous work, which we had shown to Module-SIS!
-With this observation, the natural next step is to use this &ldquo;toy&rdquo; scheme recursively, and construct a &ldquo;Merkle tree&rdquo;-like structure.
-To do so, we sample a matrix and a trapdoor for <em>each layer</em> of the tree, and commit to the commitments originating for the bottom layer. Note that this achieves already the efficiency goals that we had set for ourselves, as building a Merkle tree only requires a linear number of invokations of the inner commitment scheme.
-Does this overall scheme satisfy the binding property? Well, in fact if you look at the commitment that is used in the inner nodes of the tree, that is <em>not</em> by itself binding. However, we show that the overall construction is binding under a multi-instance version of the PRISIS assumption of arity 2!
-We then provide a reduction of this multi-instance assumption to the single instance version, which combined with our previous observation reduces binding to Module-SIS. We further show a direct tighter reduction from multi-instance arity 2 PRISIS to Module-SIS, which we use for parameters later on.</p>
-<hr>
-<h2 id="papers-slap-evaluation-protocol">Evaluation protocol</h2>
-<p>The evaluation protocol that we design is conceptually very similar to the one that we developed in our previous work. We take inspiration from FRI and Bulletproofs. In each round of the protocol, the prover splits the polynomial in $2^k$ components (when $k=1$, components correspond to the odd and even coefficients). It sends evaluations of these polynomials and <em>partial opening</em> corresponding to the $k$-th layer of the tree.
-and receives randomness from the verifier, that it uses to compute a new polynomial, of degree roughly $d/2^k$, that corresponds to the random linear combination of those components. Prover and verifier then can efficiently update the common reference string, instance and witness and recurse on the claim.</p>
-<p>By itself, this protocol achieves polylogarithmic verifier and communication complexity, but inherits many of the drawbacks of the previous protocol, namely the inverse polynomial soundness error. To improve, while avoiding parallel repetition, we make use of the techniques of [BHRRS21]<sup id="papers-slap-fnref:3"><a href="#papers-slap-fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>, combined with the amortization techniques that we had talked about in our previous work. Our new protocol (as our old) has efficient proof aggregation, in the sense that proving many statements of the form $\{ f_i(u) = z_i \}_{i \in [r]}$ has cost roughly equivalent to proving a single claim. To amplify soundness, we prove the same claim multiple times, and use the aggregation techniques in order to mantain efficiency. An appropriate setting of parameters then enables us to have an evaluation protocol that has polylogarithmic verifier and communication complexity, and negligible knowledge soundness error.
-In particular, this means that we can compile the protocol to a non-interactive argument using the Fiat-Shamir transform, and achieve a sound non-interactive polynomial commitment scheme with polylogarithmic proof sizes, common reference string, and quasi-linear time prover.</p>
-<p>The scheme here presented is for proving evaluations of polynomials over polynomial rings, while most uses of polynomial commitments in the wild are concerned with finite fields. While we could make use of the techniques in the previous work to obtain such a scheme, we also present a new generic transformation that could be of independent interest.</p>
-<hr>
-<h2 id="papers-slap-instantiations">Instantiations</h2>
-<p>We performed an evaluation of the concrete efficiency of our scheme, details of which you can find in the full version. Concretely, proof sizes for a polynomial of degree $d = 2^{20}$ are around 36 MB, which makes the scheme concretely inefficient. Some of these inefficiencies are inherent in the [MP12]<sup id="papers-slap-fnref1:2"><a href="#papers-slap-fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> trapdoor sampling techniques that we make use of, some from the high number of repetitions that our techniques require. Reaching concrete efficiency is left for, ambitious, future work.</p>
-<hr>
-<h5 id="papers-slap-citation">Citation</h5>
-<p>M. R. Albrecht, G. Fenzi, O. Lapiha, N. K. Nguyen. &ldquo;<em>SLAP: Succinct Lattice-Based Polynomial Commitments from Standard Assumptions</em>&rdquo;. In: <em>Proceedings of the 43rd Annual International Conference on Theory and Application of Cryptographic Techniques</em>. EUROCRYPT &lsquo;24. 2024.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-BibTeX" data-lang="BibTeX"><span style="display:flex;"><span><span style="color:#0a0;text-decoration:underline">@inproceedings</span>{AlbrechtFNL23,
-</span></span><span style="display:flex;"><span>  <span style="color:#1e90ff">author</span>    = <span style="color:#a50">{Martin R. Albrecht and Giacomo Fenzi and Ngoc Khanh Nguyen and Oleksandra Lapiha}</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#1e90ff">title</span>     = <span style="color:#a50">{SLAP: Succinct Lattice-Based Polynomial Commitments from Standard Assumptions}</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#1e90ff">booktitle</span> = <span style="color:#a50">{Proceedings of the 43rd Annual International Conference on Theory and Application of Cryptographic Techniques}</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#1e90ff">series</span>    = <span style="color:#a50">{EUROCRYPT~&#39;24}</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#1e90ff">year</span>      = <span style="color:#a50">{2024}</span>,
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><hr>
-<h5 id="papers-slap-related-material">Related material</h5>
-<div class="footnotes" role="doc-endnotes">
-<hr>
-<ol>
-<li id="papers-slap-fn:1">
-<p>H. Wee and D. J. Wu. &ldquo;Succinct Vector, Polynomial, and Functional Commitments from Lattices&rdquo;. In: EUROCRYPT (3). Vol. 14006. Lecture Notes in Computer Science. Full version: <a href="https://eprint.iacr.org/2022/1515" target="_blank">https://eprint.iacr.org/2022/1515</a>
-. Springer, 2023, pp. 385–416.&#160;<a href="#papers-slap-fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="papers-slap-fn:2">
-<p>D. Micciancio and C. Peikert. &ldquo;Trapdoors for Lattices: Simpler, Tighter, Faster, Smaller&rdquo;. In: EUROCRYPT. 2012, pp. 700–718.&#160;<a href="#papers-slap-fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#papers-slap-fnref1:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="papers-slap-fn:3">
-<p>Alexander R. Block, Justin Holmgren, Alon Rosen, Ron D. Rothblum, and Pratik Soni. &ldquo;Time and Space-Efficient Arguments from Groups of Unknown Order&rdquo;. In: CRYPTO 2021. Lecture Notes in Computer Science. Heidelberg, 2021, pp. 123–152.&#160;<a href="#papers-slap-fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-</ol>
-</div>
-
-  </div>
-              </div>
-            </details>
-            <details class="note-card detail-card" id="post-towards-pcs">
-              <summary>
-                <span>
-                  <strong>Lattice-Based Polynomial Commitments: Towards Asymptotic and Concrete Efficiency</strong>
-                  <small>2023-06-06</small>
-                </span>
-                
-              </summary>
-              <div class="note-body detail-body">
-                <div class="detail-header">
-                  <p class="detail-byline">Giacomo Fenzi, Hossein Moghaddas, Ngoc Khanh Nguyen</p>
-                  <div class="detail-meta">
-                    <span class="detail-chip">2023-06-06</span>
-                    <a class="detail-link" href="https://eprint.iacr.org/2023/846" target="_blank" rel="noreferrer">JoC 2024 - ArticCrypt 2025 - ePrint: 2023/846</a>
-                  </div>
-                  <p class="detail-lead">In this paper, we introduce the powerBASIS assumption, and use it construct quasi-succinct polynomial commitment schemes from lattices.</p>
-                  <ul class="paper-tags detail-tags" aria-label="Tags"><li>lattices</li><li>polynomial-commitments</li><li>theory</li></ul>
-                </div>
-
-                <div class="paper-post-content"><p>In this blog-post, I will be taking a look at my recent work with Hossein Moghaddas and Ngoc Khanh Nguyen, <a href="https://eprint.iacr.org/2023/846" target="_blank">full version</a>
-.
-We extend the vector commitment scheme of [WW23]<sup id="papers-towards-pcs-fnref:1"><a href="#papers-towards-pcs-fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> with an evaluation proof, and achieve a lattice-based polynomial commitment scheme with polylogarithmic proof size and verifier complexity.
-We further investigate the applicability of our techniques to the Polynomial IOP of [Marlin]<sup id="papers-towards-pcs-fnref:2"><a href="#papers-towards-pcs-fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>, show that our scheme is easily batchable and more!</p>
-<hr>
-<h2 id="papers-towards-pcs-polynomial-commitments">Polynomial Commitments</h2>
-<p>A polynomial commitment scheme is a natural generalization of a vector commitment scheme, in which a party is able to commit to a polynomial $f$, and later engage in a <em>evaluation protocol</em> to show that $f(u) = z$. In this work, we consider polynomials of bounded degree $d$ with coefficients over the polynomial ring $\mathcal{R}_q$ (we also show to adapt this construction for polynomials in $\mathbb{F}^{\leq d}[X]$, but details are left for the full version).</p>
-<p>The interface of a polynomial commitment scheme follows partially that of standard commitmentscheme:</p>
-<ul>
-<li>$\mathsf{Setup}(1^\lambda) \to (\mathsf{pk}, \mathsf{vk})$ takes a security parameter and outputs a proving and a verification key.</li>
-<li>$\mathsf{Com}(\mathsf{pk}, f) \to (\sigma, \mathsf{aux})$ takes a proving key and a polynomial $f$ and outputs a commitment $\sigma$ and auxiliary decommitment information $\mathsf{aux}$.</li>
-<li>$\mathsf{Open}(\mathsf{vk}, f, \sigma, \mathsf{aux})$ checks whether $(\sigma, \mathsf{aux})$ are a valid commitment-opening pair for $f$.</li>
-</ul>
-<p>Furthermore, we extend the interface with an evaluation protocol between a prover and a verifier $\mathbf{P}, \mathbf{V}$. We denote the protocol as $\langle \mathbf{P}(\mathsf{pk}, f, \mathsf{aux}), \mathbf{V}(\mathsf{vk}) \rangle(\sigma, u, v)$.</p>
-<p>The properties that we require from a polynomial commitment scheme are:</p>
-<ol>
-<li>Completeness of the commitment scheme: If $\mathsf{pk}, \mathsf{vk}, \sigma, \mathsf{aux} $ are honestly generated (w.r.t to $f$), then $\mathsf{Open}(\mathsf{vk}, f, \sigma, \mathsf{aux}) = 1$.</li>
-<li>Binding of the commitment scheme: The probability that an efficient adversary can find $\sigma, f,g, \mathsf{aux}_f, \mathsf{aux_g}$ such that $\mathsf{Open}(\mathsf{vk}, f, \sigma, \mathsf{aux}_f) = 1 = \mathsf{Open}(\mathsf{vk}, g, \sigma, \mathsf{aux}_g)$ is negligible.</li>
-<li>Evaluation completeness: If $f(u) = z$, the evaluation protocol will accept.</li>
-<li>Evaluation knowledge-soundness: There exists an efficient extractor that, if a malicous prover is able to make the verifier accept with non-negligible probability, is able to extract a polynomial $f$ and an opening $\mathsf{aux}$ such that $f(u) = z$ and $\mathsf{Open}(\mathsf{vk}, f, \sigma, \mathsf{aux}_f) = 1$.</li>
-</ol>
-<p>In the paper, we also consider hiding, but in the interest of space we avoid this here.</p>
-<hr>
-<h2 id="papers-towards-pcs-weewu-commitments">WeeWu Commitments</h2>
-<p>Our starting point is the commitment scheme introduced in [WW23]<sup id="papers-towards-pcs-fnref1:1"><a href="#papers-towards-pcs-fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>. Their commitments relies on the BASIS assumption (Basis-Augmented Short Integer Solution). It roughly states that an adversary that is given access to a random matrix $\mathbf{A}$, should not be able to find a short vector $\mathbf{v}$ such that $\mathbf{A}\mathbf{v} = 0$ even when given access to a trapdoor to sample short preimages of a matrix $\mathbf{B}$ related to $\mathbf{A}$. In their work, the matrix $\mathbf{B}$ is defined as $$\begin{bmatrix}\mathbf{A}_0 &amp;&amp;&amp; - \mathbf{G}\\  &amp; \ddots &amp; &amp; \\ &amp; &amp; \mathbf{A}_d &amp; - \mathbf{G} \end{bmatrix}$$ where $\mathbf{A}_i = \mathbf{W}_i \mathbf{A}$ for $\mathbf{W_i}$ random invertible matrices and $\mathbf{G}$ the gadget matrix of [MP12]<sup id="papers-towards-pcs-fnref:3"><a href="#papers-towards-pcs-fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>.
-We extend this to two new assumptions, the powerBASIS and PRISIS assumptions. Roughly, we introduce more structure in the $\mathbf{W}_i$. In powerBASIS, we let $\mathbf{W}_i = \mathbf{W}^{i}$, while in PRISIS we set $\mathbf{W}_i = w^{i} \mathbf{I}$.
-With this added structure, the commitment scheme that we construct is exactly as in [WW23] (here we present the powerBASIS version).
-Namely:</p>
-<ul>
-<li>$\mathsf{Setup}(1^\lambda) \to (\mathsf{pk}, \mathsf{vk})$ samples $\mathbf{A}, \mathbf{W}$ and uses [MP12]<sup id="papers-towards-pcs-fnref1:3"><a href="#papers-towards-pcs-fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> sampling to construct a trapdoor $\mathbf{T}$ of $\mathbf{B}$. The verification key consists of $\mathbf{A}, \mathbf{W}$ and the proving key additionally contains $\mathbf{T}$.</li>
-<li>$\mathsf{Com}(\mathsf{pk}, f) \to (\sigma, \mathsf{aux})$ uses $\mathbf{T}$ to sample short $\mathbf{z_i}$ and $\hat{\mathbf{c}}$ such that $\mathbf{B}[\mathbf{z}_0, \dots, \mathbf{z}_d, \hat{\mathbf{c}}]^\top = [-f_0 \mathbf{W}^0 \mathbf{e}_1, \dots, - f_d \mathbf{W}^d \mathbf{e}_1]^\top$, it then outputs $\mathbf{c} := \mathbf{G}\hat{\mathbf{c}}$ and $(\mathbf{z}_i)$ as decommitment.</li>
-<li>$\mathsf{Open}(\mathsf{vk}, f, \sigma, \mathsf{aux})$ checks that the openings are indeed short, and that the equations are all satisfied: namely it checks that $$\mathbf{A}\mathbf{z}_i + f_i \mathbf{e}_1 = \mathbf{W}^{-i}\mathbf{c} \enspace.$$</li>
-</ul>
-<p>We then show that this commitment scheme is binding (even with respect to relaxed openings, as customary in the lattice-world).</p>
-<hr>
-<h2 id="papers-towards-pcs-evaluation-proofs">Evaluation Proofs</h2>
-<p>Now, our evaluation protocols are inspired partly by FRI (even though the setting and analysis are completely different). Suppose we aim to show that $f(u) = z$.
-We take our polynomial $f$ and write it as an odd an even part i.e.:
-$$f(X) = f_0(X^2) + Xf_1(X^2)$$
-The prover then sends evaluations $z_0, z_1$ of $f_0, f_1$ on $u^2$.
-The verifier checks that $z_0 + u z_1 = z$ and sends a random challenge $\alpha$ to the prover, and computes an updated commitment $\mathbf{c}&rsquo; = (1 + \alpha \mathbf{W}^{-1}) \mathbf{c}$ and a new verification key where $\mathbf{W}&rsquo; = \mathbf{W}^2$.
-The prover computes a new folded polynomial $g$ and updated opening as follows:
-$$g(X) = f_0(X) + \alpha f_1(X), \mathbf{s}_i = \mathbf{z}_{2i} + \alpha \mathbf{z}_{2i+1}\enspace.$$
-The crucial observation is that the parties now can recurse on the claim that $g(u^2) = z_0 + \alpha z_1$, which is about a polynomial of degree $d/2$. We recurse thus $\log d$ times, until the prover can just send a constant sized opening.
-Note in particular that the additional structure of the powerBASIS construction allowed the verifier to efficiently construct a commitment to $g$ from one to $f$. In particular, note that
-$$\mathbf{A}\mathbf{s}_i + g_i \mathbf{e}_1 = \mathbf{A}\mathbf{z}_{2i} + f_{2i}\mathbf{e}_1 + \alpha \cdot ( \mathbf{A}\mathbf{z}_{2i+1} + f_{2i+1}\mathbf{e}_1)$$
-$$ = \mathbf{W}^{-2i}\mathbf{c} + \alpha \mathbf{W}^{-2i - 1}\mathbf{c} = (\mathbf{W}^2)^{-i} (1 + \alpha \mathbf{W}^{-1})\mathbf{c}$$</p>
-<p>Crucially, compared to other protocols like lattice-bulletproofs, the extraction keeps the norm growth more manageable (at the cost of trusted setup), which should lead to more concretely efficient protocols. The details are in the paper, due to the requirement of a flurry of notation.</p>
-<p>Now, what is left to do is to manage the norm growth. We do this in two ways, which leads to two different protocols (with different tradeoff).</p>
-<ul>
-<li>By selecting the challenge $\alpha$ to be a (signed) monomial, we can ensure that the norm (here and in extraction) remains polynomial throught the $\log d$ rounds of the protocol. This achieves a protocol with polylogarithmic communication and verifier complexity. However, since the challenge set is of size $\mathrm{poly}(\lambda)$, we obtain a non-negligible soundness error, which needs to be mitigated by parallel repetition, making the protocol unsuitable to be made non-interactive via Fiat-Shamir.</li>
-<li>Instead of folding the polynomial halfway, we can aim to fold it in $k$-parts, and sample from an exponentially sized set. The norm growth is then much higher, only making it affordable to run the protocol $\log \log d$ iterations. Choosing $k$ appropriately, we are able to obtain a protocol with negligible knowledge soundness error and verifier and communication complexity &ldquo;quasi-polylogarithmic&rdquo; $d^{1/\log \log d}$<sup id="papers-towards-pcs-fnref:4"><a href="#papers-towards-pcs-fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>.</li>
-</ul>
-<hr>
-<h2 id="papers-towards-pcs-instantiations">Instantiations</h2>
-<p>We then looked at how the scheme could perform concretely. The repetition needed to achieve 128 bits of security in the monomial protocol yields very large proof sizes, in the order of hundred of MBs. The other protocol strikes much closer to concrete efficiency, achieving proof sizes around 6 MBs.
-We also looked at applying the two protocols in Marlin, making also use of some natural ways to aggregate our protocols. With this, we obtain a post-quantum zkSNARK for R1CS with proof size roughly 26 MBs. While this is still rather large, we are confident that further work will follow the asymptotic improvement to yield concretely efficient zkSNARKs from lattices.</p>
-<hr>
-<h2 id="papers-towards-pcs-drawbacks">Drawbacks</h2>
-<p>We inherit many of the drawbacks of [WW23]<sup id="papers-towards-pcs-fnref2:1"><a href="#papers-towards-pcs-fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>, namely:</p>
-<ul>
-<li>The size of the proving key is quadratic in $d$.</li>
-<li>We could not reduce powerBASIS (or original BASIS) to standard assumptions.</li>
-<li>We require a trusted setup.</li>
-</ul>
-<p>Furthermore, we our evaluations proof come with their own drawbacks:</p>
-<ul>
-<li>The concrete proof sizes are rather large.</li>
-<li>We could not achieve a fully polylogarithmic protocol with negligible soundness error.</li>
-</ul>
-<p>We are confident that these drawbacks can be overcome in future work (<a href="#post-slap">wink 😉</a>
-).</p>
-<hr>
-<h2 id="papers-towards-pcs-conclusion">Conclusion</h2>
-<p>Find the <a href="https://eprint.iacr.org/2023/846" target="_blank">full version</a>
- for the gory details!</p>
-<hr>
-<h5 id="papers-towards-pcs-citation">Citation</h5>
-<p>G. Fenzi, H. Moghaddas, N. K. Nguyen. &ldquo;<em>Lattice-Based Polynomial Commitments: Towards Concrete and Asymptotical Efficiency</em>&rdquo;. Cryptology ePrint Archive, Paper 2023/846. Available at: <a href="https://ia.cr/2023/846" target="_blank">https://ia.cr/2023/846</a>
-.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-BibTeX" data-lang="BibTeX"><span style="display:flex;"><span><span style="color:#0a0;text-decoration:underline">@misc</span>{FenziMN23,
-</span></span><span style="display:flex;"><span>	<span style="color:#1e90ff">author</span>       = <span style="color:#a50">{Giacomo Fenzi and Hossein Moghaddas and Ngoc Khanh Nguyen}</span>,
-</span></span><span style="display:flex;"><span>	<span style="color:#1e90ff">title</span>        = <span style="color:#a50">{Lattice-Based Polynomial Commitments: Towards Asymptotic and Concrete Efficiency}</span>,
-</span></span><span style="display:flex;"><span>	<span style="color:#1e90ff">howpublished</span> = <span style="color:#a50">{Cryptology ePrint Archive, Paper 2023/846}</span>,
-</span></span><span style="display:flex;"><span>	<span style="color:#1e90ff">year</span>         = <span style="color:#a50">{2023}</span>,
-</span></span><span style="display:flex;"><span>	<span style="color:#1e90ff">note</span>         = <span style="color:#a50">{\url{https://eprint.iacr.org/2023/846}}</span>,
-</span></span><span style="display:flex;"><span>	<span style="color:#1e90ff">url</span>          = <span style="color:#a50">{https://eprint.iacr.org/2023/846}</span>
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><hr>
-<h5 id="papers-towards-pcs-related-material">Related material</h5>
-<div class="footnotes" role="doc-endnotes">
-<hr>
-<ol>
-<li id="papers-towards-pcs-fn:1">
-<p>H. Wee and D. J. Wu. &ldquo;Succinct Vector, Polynomial, and Functional Commitments from Lattices&rdquo;. In: EUROCRYPT (3). Vol. 14006. Lecture Notes in Computer Science. Full version: <a href="https://eprint.iacr.org/2022/1515" target="_blank">https://eprint.iacr.org/2022/1515</a>
-. Springer, 2023, pp. 385–416.&#160;<a href="#papers-towards-pcs-fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#papers-towards-pcs-fnref1:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#papers-towards-pcs-fnref2:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="papers-towards-pcs-fn:2">
-<p>A. Chiesa, Y. Hu, M. Maller, P. Mishra, N. Vesely, and N. Ward. &ldquo;Marlin: Preprocessing zkSNARKs with Universal and Updatable SRS&rdquo;. In: Proceedings of the 39th Annual International Conference on the Theory and Applications of Cryptographic Techniques. EUROCRYPT ’20. 2020, pp. 738–768.&#160;<a href="#papers-towards-pcs-fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="papers-towards-pcs-fn:3">
-<p>D. Micciancio and C. Peikert. &ldquo;Trapdoors for Lattices: Simpler, Tighter, Faster, Smaller&rdquo;. In: EUROCRYPT. 2012, pp. 700–718.&#160;<a href="#papers-towards-pcs-fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#papers-towards-pcs-fnref1:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="papers-towards-pcs-fn:4">
-<p>We called this quasi-polylogarithmic because it roughly sits between sublinear ($d^{1/t}$ for $t$ a constant) and polylogarithmic $\mathrm{polylog}(d)$.&#160;<a href="#papers-towards-pcs-fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-</ol>
-</div>
-
-  </div>
-              </div>
-            </details>
-            </div>
-          </div>
-
-          <div class="subsection-block">
-            <div class="section-subhead">
-              <h3>Blurbs</h3>
-              <p>Short blurbs, tips and tricks that didn't find space in the papers or blog posts.</p>
-            </div>
-            <div class="accordion detail-stack">
-            <details class="note-card detail-card" id="blurb-mmcs-stir-whir">
-              <summary>
-                <span>
-                  <strong>Doing mixed matrix commitments (MMCS) with STIR &amp; WHIR</strong>
-                  <small>2024-10-15</small>
-                </span>
-                
-              </summary>
-              <div class="note-body detail-body">
-                <div class="detail-header">
-                  <p class="detail-byline">Giacomo Fenzi</p>
-                  <div class="detail-meta">
-                    <span class="detail-chip">2024-10-15</span>
-                    <a class="detail-link" href="https://eprint.iacr.org/2024/390" target="_blank" rel="noreferrer">ePrint: 2024/390</a>
-                  </div>
-                  <p class="detail-lead">Domain shifting to the rescue</p>
-                  <ul class="paper-tags detail-tags" aria-label="Tags"><li>hashes</li><li>concrete</li><li>theory</li></ul>
-                </div>
-
-                <div class="paper-post-content"><p>This post looks at <a href="https://github.com/Plonky3/Plonky3" target="_blank">Plonky3</a>
- and combining Mixed Matrix Commitment Schemes with <a href="#post-stir">STIR 🥣</a>
- and <a href="#post-whir">WHIR 🌪️</a>
- as the low-degree test.</p>
-<p>As far as I understand, the problem that we are aiming to solve is the following:
-The prover has committed to a matrix of functions (note the possibly different number of columns in each row)
-$$
-\begin{bmatrix} f_{1, 1}, \dots, f_{1, n_1} \\ \vdots \\  f_{m, 1}, \dots, f_{m, n_m}  \end{bmatrix}
-$$</p>
-<p>where $f_{i, j}: \mathcal{L}_i \to \mathbb{F}$ for a list of domains $\mathcal{L}_1, \dots, \mathcal{L}_m \subseteq \mathbb{F}$.<sup id="blurbs-mmcs-stir-whir-fnref:1"><a href="#blurbs-mmcs-stir-whir-fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
-<p>The prover wants to show that each $f_{i, j} \in \mathsf{RS}[\mathbb{F}, \mathcal{L}_i, d/2^{i-1}]$.</p>
-<p>Suppose that we want to run an iteration of STIR or WHIR to check this. An important parameter to keep in mind here is the folding factor $k$, typically $4$.<sup id="blurbs-mmcs-stir-whir-fnref:2"><a href="#blurbs-mmcs-stir-whir-fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>
-A STIR or WHIR iteration at each step reduces testing that $f \in \mathsf{RS}[\mathbb{F}, \mathcal{L}, d]$ to testing that $f&rsquo; \in \mathsf{RS}[\mathbb{F}, \mathcal{L}&rsquo;, d/2^k]$<sup id="blurbs-mmcs-stir-whir-fnref:3"><a href="#blurbs-mmcs-stir-whir-fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>.</p>
-<p>Denote by $\mathcal{L}^{(1)} = \mathcal{L}_1, \mathcal{L}^{(2)}, &hellip;, \mathcal{L}^{(M)}$ the domains appearing in the STIR iteration<sup id="blurbs-mmcs-stir-whir-fnref:4"><a href="#blurbs-mmcs-stir-whir-fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>.</p>
-<h2 id="blurbs-mmcs-stir-whir-easy-case">Easy case</h2>
-<p>The easy case is the one in which $\mathcal{L}_1, &hellip;, \mathcal{L}_k = \mathcal{L}^{(1)}$,
-$\mathcal{L}_{k+1}, &hellip;, \mathcal{L}_{2k} = \mathcal{L}^{(2)}$ and so on. In this case, the committer is aware of what STIR will do, and it choses the domain to simplify the accumulation.</p>
-<p>In the first iteration, the prover simply tests a random linear combination of
-$$ \sum_{j \in [n_1]} \epsilon_1^{j - 1} f_{1, j} + \epsilon_1^{n_1} \cdot \sum_{j \in [n_2]} \epsilon_1^{j - 1} \mathsf{Cor}(f_{2, j}, d) + \dots  + \epsilon_i^{n_k} \cdot \sum_{j \in [n_k]} \epsilon_1^{j - 1} \mathsf{Cor}(f_{k, j}, d)$$
-($\mathsf{Cor}(f, d)$ is just some notation for degree correction up to degree $d$ as in the STIR paper.)
-This will define a new virtual function $g^{(1)}: \mathcal{L}^{(2)} \to \mathbb{F}$ to be tested.</p>
-<p>In the next round, the prover instead of just testing $g^{(1)}$, it will test instead</p>
-<p>$$g^{(1)} + \epsilon_2 \cdot \left( \sum_{j \in [n_{k+1}]} \epsilon_2^{j - 1} f_{k+1, j} + \dots  + \epsilon_2^{n_{2k}} \cdot \sum_{j \in [n_{2k}]} \epsilon_2^{j - 1} \mathsf{Cor}(f_{2k, j}, d/2^k) \right)$$
-and so on.</p>
-<p>Soundness follows quite easily, if any of the functions do not satisfy the proximity claim, the sum will be far from low-degree by proximity gaps.</p>
-<h2 id="blurbs-mmcs-stir-whir-harder-case">Harder case</h2>
-<p>In the harder case, there is no relation between the domains that STIR chooses and the ones that the MMCS has committed to. To solve this, we have to do a domain shift. Conveniently, STIR is exactly a protocol for doing domain shifts.</p>
-<p>The prover first does a STIR iteration on
-$$ \sum_{j \in [n_1]} \epsilon_1^{j - 1} f_{1, j} $$
-which defines a function $g^{(1, 1)}: \mathcal{L}^{(2)} \to \mathbb{F}$.
-Then, it does a STIR iteration with folding factor $k - 1$<sup id="blurbs-mmcs-stir-whir-fnref:5"><a href="#blurbs-mmcs-stir-whir-fn:5" class="footnote-ref" role="doc-noteref">5</a></sup> on
-$$ \sum_{j \in [n_2]} \epsilon_1^{j - 1} f_{2, j} $$
-which defines a function $g^{(1, 2)}: \mathcal{L}^{(2)} \to \mathbb{F}$ and so on.
-At the end you will have $k$ functions $g^{(1, 1)}, \dots, g^{(1, k)}$ over the same domain $\mathcal{L}^{(2)}$.</p>
-<p>Then, first run a STIR iteration on a random linear combination of these functions (obtaining a new function $g^{(2, 0)}: \mathcal{L}^{(3)} \to \mathbb{F}$). Then, do $k$ STIR iteration as above on each row of the matrix, obtaining new functions $
-g^{(2, 1)}, \dots, g^{(2, k)}: \mathcal{L}^{(3)} \to \mathbb{F}$.</p>
-<p>Iterating the protocol yields a low-degree test for MMCS. Soundness should follow as above. Of course, if at any point the domains match one can use the same strategy as in the easier case to efficiently reduce the number of running accumulators.</p>
-<div class="footnotes" role="doc-endnotes">
-<hr>
-<ol>
-<li id="blurbs-mmcs-stir-whir-fn:1">
-<p>I am assuming that each row has the same domain, this can be generalized but it involves adding an extra index so I will not.&#160;<a href="#blurbs-mmcs-stir-whir-fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="blurbs-mmcs-stir-whir-fn:2">
-<p>I am using WHIR&rsquo;s folding factor convention, i.e. each iteration will reduce the degree by $2^k$.&#160;<a href="#blurbs-mmcs-stir-whir-fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="blurbs-mmcs-stir-whir-fn:3">
-<p>WHIR in fact reduces it to a test for constrained RS codes i.e. that $f&rsquo; \in \mathsf{CRS}[\mathbb{F}, \mathcal{L}&rsquo;, d/2^k, \hat{w}&rsquo;, \sigma&rsquo;]$, but will ignore this distinction. I have to think it WHIR natively supports this or some more work is needed.&#160;<a href="#blurbs-mmcs-stir-whir-fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="blurbs-mmcs-stir-whir-fn:4">
-<p>Remember that these domains can also be chosen freely, see <a href="#blurb-stir-parameters">this</a>
-.&#160;<a href="#blurbs-mmcs-stir-whir-fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="blurbs-mmcs-stir-whir-fn:5">
-<p>Alternatively, one can use the same folding parameter and then degree correct the resulting function.&#160;<a href="#blurbs-mmcs-stir-whir-fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-</ol>
-</div>
-
-  </div>
-              </div>
-            </details>
-            <details class="note-card detail-card" id="blurb-ldpc-codes">
-              <summary>
-                <span>
-                  <strong>LDPC codes vs RS codes</strong>
-                  <small>2024-10-14</small>
-                </span>
-                
-              </summary>
-              <div class="note-body detail-body">
-                <div class="detail-header">
-                  <p class="detail-byline">Giacomo Fenzi</p>
-                  <div class="detail-meta">
-                    <span class="detail-chip">2024-10-14</span>
-                    <a class="detail-link" href="https://eprint.iacr.org/2024/1586" target="_blank" rel="noreferrer">ePrint: 2024/1586</a>
-                  </div>
-                  <p class="detail-lead">Some thoughts on LDPC codes vs RS codes</p>
-                  <ul class="paper-tags detail-tags" aria-label="Tags"><li>hashes</li><li>concrete</li><li>theory</li></ul>
-                </div>
-
-                <div class="paper-post-content"><p>Just some spare thoughts on LDPC codes and RS codes (for IOPP based SNARKs), as an answer to <a href="https://x.com/valardragon/status/1845620037165425059" target="_blank">Dev&rsquo;s questions</a>
-.</p>
-<p><strong>TLDR; LDPC are an amazing avenue of research, that I hope to explore more, but I am bit skeptical on the current maturity of prover and verifier performance that they bring to the table.</strong></p>
-<p>I think it makes sense to consider the question on two parts: prover time and verifier complexity. This might be a bit simplistic, and I am hoping to learn more about these codes (soon).</p>
-<hr>
-<h2 id="blurbs-ldpc-codes-prover-time">Prover time</h2>
-<p>On the prover side, I like breaking down the complexity into two buckets: (i) <strong>arithmetic complexity</strong> and; (ii) <strong>hashing complexity</strong>. The first is time devoted to FFTs, encodings, anything that involves fops, while the latter is mostly dominated by the hashing to commit to oracles.
-Linear time encodable codes based SNARKs, such as Brakedown and Blaze, mainly improve on (i). Depending on how fast your hash is, I have seen this hashing cost to be the main chunk of the prover&rsquo;s work (accounting for anything between 40%-60% in e.g. WHIR&rsquo;s prover and the Polygon zkEVM). It is a very parallelizable chunk of work, but a large one at that.
-Typically, the size of (ii) is linear in the oracles being committed to i.e. $O(n/\rho)$ (where $n$ is the instance size and $\rho$ the rate of the code).</p>
-<p>LDPC codes improve (i), while either leaving (ii) unchanged or slightly worsening it (because the code have bad distance, typically a smaller rate is required, more on this on the verifier side).</p>
-<p>Now, how much can the improvement on (i) be? Asymptotically, moving from $O(n \log n)$ to $O(n)$ can be a factor of 30x, which is very notable. However, the LDPC codes encoding is now competing against heavily optimized FFTs. Further, these FFTs are very parallel and running (typically) over small fields. And they are <strong>fast</strong>. While I think that the RAA codes encoding, when properly optimized, will leave FFTs behind, I can&rsquo;t confidently say how much quicker we can feasibly get them. My gut feeling is that moving a RS based implementation to a small field is a much larger improvement gain (at a smaller engineering effort) than moving to a LDPC code.</p>
-<p>Just to give some datapoints on this, I was comparing the Blaze and Brakedown numbers with some of our measurements in WHIR. Take this comparison with a bunch of grains of salts: (i) the fields are different; (ii) the machines are different; (iii) we optimized our implementation a fair bit; and (iv) different number of cores (also unclear where the memory bandwidth bottleneck occur, so cannot just divide).
-WHIR on 2^28 variables (on 32 threads) produces a proof in 42s. Blaze (on 192 cores) takes 21s, and Brakedown (on 64 threads) takes similar time.
-So, the 28x theoretical speed-up only results in around a 2x concrete speed-up, at the moment. I am excited to see this reducing further, as I am sure it will, but that&rsquo;s why I&rsquo;m a bit lukewarm on it now.</p>
-<h2 id="blurbs-ldpc-codes-verifier-complexity">Verifier complexity</h2>
-<p>Regarding verifier complexity, the term to really consider is (in the soundness error) $(1 - \delta)^t \leq 2^{-\lambda}$, where $\delta$ is the distance the system operates on and $t$ the number of queries to the initial oracle.
-WHIR and STIR basically show that this $t$ is the bottleneck on the verifier side, as with domain shifting the latter rounds are basically &ldquo;free&rdquo;. Note that $t$ is the bottleneck for both <strong>native verification</strong> and <strong>recursive verification</strong>.
-LDPC codes suffer from two factors: (i) not amazing initial distance to start with (ii) weak generic proximity gaps results (up to $\delta_\mathsf{C}/3$). This effectively limits how large of a distance $\delta$ the prover can run at, making the verifier perform around 1000 queries<sup id="blurbs-ldpc-codes-fnref:1"><a href="#blurbs-ldpc-codes-fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> (to this initial oracle).
-In comparison, for Reed-Solomon codes one can set $\delta = 1 - \sqrt{\rho}$ or even $1- \rho$ (depending on your religious belief) which can lead to as few as 50 or 25 queries to the initial oracle.</p>
-<p>Since the verifier needs to verify $t$ authentication paths (roughly $t \cdot \log n$) hashes, and this typically is its bottleneck (70% of the verifier runtime in WHIR), I don&rsquo;t really expect that currently LDPC codes can give super competitive verifiers.</p>
-<p>Improving the distance of the LDPC code and getting stronger proximity gaps results would of course completely change this section, but if I said I understood what is going on in both these areas I would lie.</p>
-<div class="footnotes" role="doc-endnotes">
-<hr>
-<ol>
-<li id="blurbs-ldpc-codes-fn:1">
-<p>This is for RAA codes in the Blaze paper, Brakedown is around 3000.&#160;<a href="#blurbs-ldpc-codes-fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-</ol>
-</div>
-
-  </div>
-              </div>
-            </details>
-            <details class="note-card detail-card" id="blurb-whir-folding">
-              <summary>
-                <span>
-                  <strong>Speeding up fold computation</strong>
-                  <small>2024-10-03</small>
-                </span>
-                
-              </summary>
-              <div class="note-body detail-body">
-                <div class="detail-header">
-                  <p class="detail-byline">Giacomo Fenzi</p>
-                  <div class="detail-meta">
-                    <span class="detail-chip">2024-10-03</span>
-                    <a class="detail-link" href="https://eprint.iacr.org/2024/1586" target="_blank" rel="noreferrer">ePrint: 2024/1586</a>
-                  </div>
-                  <p class="detail-lead">Computing folds is a large portion of the verifier work in schemes like FRI, STIR and WHIR. We describe an optimization to reduce this cost.</p>
-                  <ul class="paper-tags detail-tags" aria-label="Tags"><li>hashes</li><li>concrete</li></ul>
-                </div>
-
-                <div class="paper-post-content"><p>Our recent work, WHIR 🌪️ (See <a href="https://ia.cr/2024/1586" target="_blank">2024/1586</a>
- and <a href="#post-whir">blog-post.</a>
-) is an IOPP for constrained RS codes with exceptionally fast verification.
-In this blog we explain in detail one of the optimization that we used to achieve a faster verifier, with applications to schemes such as FRI and STIR as well.
-Verifier complexity usually consists of two components: (i) an algebraic component and; (ii) computing hashes.
-Reducing the second load (ii) usually involves reducing the IOPP query complexity, which is the main objective of STIR and WHIR.
-The technique we describe next aims to reduce the other component of verifier cost.</p>
-<h2 id="blurbs-whir-folding-folding">Folding</h2>
-<p>One of the main components of FRI, STIR, and WHIR is the <em>folding</em> operation.
-For $L \subseteq \mathbb{F}$<sup id="blurbs-whir-folding-fnref:1"><a href="#blurbs-whir-folding-fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>, define $L^{2^k} = \{ z^{2^k} : z \in L \}$ and, for $z \in L^{2^k}$, let $\mathcal{B}_z = \{y \in L : y^{2^k} = z \}$. We define $\mathsf{Interpol}$ to be the function that interpolates a polynomial given a list of evaluations, i.e. $\hat{p} := \mathsf{Interpol}(\{1, &hellip;, n\}, (y_1, \dots, y_n))$ is the minimal univariate polynomial such that, for $i \in [n]$, $\hat{p}(i) = y_i$.</p>
-<p>Given a function $f: L \to \mathbb{F}$, the <em>$k$-wise folding</em> of $f$ at $\alpha \in \mathbb{F}$ is defined as the function $\mathsf{Fold}(f, \alpha): L^{2^k} \to \mathbb{F}$ that maps
-$$ z^{2^k} \mapsto \mathsf{Interpol}(\mathcal{B}_z, f(\mathcal{B}_z))(\alpha) $$</p>
-<p>We also define the <em>$k$-multilinear folding</em> to be the function $\mathsf{Fold}^{(k)}(f, (\alpha_1, \dots, \alpha_k)): L^{2^k} \to \mathbb{F}$ obtained by applying the $2$-wise folding $k$ times.</p>
-<p>Typically:</p>
-<ul>
-<li>FRI uses $1$-wise folding, possibly $k$-wise folding.</li>
-<li>STIR uses $k$-wise folding, with $k &gt; 1$.</li>
-<li>WHIR uses $k$-multilinear folding, with $k &gt; 1$.</li>
-</ul>
-<p>In each of these schemes, the prover will commit to a function $f: L \to \mathbb{F}$ by sending a function $\tilde{f}: L^{2^k} \to \mathbb{F}^{2^k}$ such that $\tilde{f}(z^{2^k}) = f(\mathcal{B}_z)$. The verifier will sample (a single or many) challenges $\alpha$, and the verifier will require to compute the folding with respect to $\alpha$ at some randomly sampled element of $L^{2^k}$.</p>
-<h2 id="blurbs-whir-folding-optimizing-folding">Optimizing folding</h2>
-<p>The verifier can use the definition of folding to evaluate it. Naively, this is a quadratic cost, but in fact since $\mathcal{B}_z$ is a smooth coset of $L$, the verifier can use an FFT to evaluate it in time $O(k \cdot 2^k)$. In fact, since the verifier needs only to evaluate the polynomial at a single point, this can in fact be done in linear time $O(2^k)$ via some version of barycentric evaluation for such subsets. (See E.2 in <a href="https://eprint.iacr.org/2013/507.pdf" target="_blank">SNARKs for C</a>
- for example). Concretely, this seems to require $2 \cdot (2^k - 1)$ multiplications.</p>
-<p>We suggest the following optimization. Instead of committing to $f: L \to \mathbb{F}$ as beforehand:</p>
-<ul>
-<li>In the univariate folding case the prover will commit to a related function $\tilde{f}: L^{2^k} \to \mathbb{F}^{&lt;2^k}[X]$ where $\tilde{g}(z^{2^k}) = \mathsf{Interpol}(\mathcal{B}_z, f(\mathcal{B_z}))$.</li>
-<li>In the multilinear folding case the prover will commit to a related function $\tilde{f}: L^{2^k} \to \mathbb{F}^{&lt; 2}[X_1, \dots, X_k]$ where $\tilde{g}(z^{2^k}) = \mathsf{Interpol}(\mathcal{B}_z, f(\mathcal{B_z}))$ (interpreted as a $k$-variate multilinear polynomial).</li>
-</ul>
-<p>Now, when computing the fold, the verifier can simply read the corresponding polynomial and evaluate it at the point $\alpha$, which takes exactly $2^k$ multiplications, roughly a <strong>2x</strong> improvement.
-Soundness holds since the prover is sending the same exactly information (as the two representations can be recovered from one-another).</p>
-<p>Experimentally, this gives around a 20% saving in the WHIR verification.</p>
-<div class="footnotes" role="doc-endnotes">
-<hr>
-<ol>
-<li id="blurbs-whir-folding-fn:1">
-<p>which here we assume to be have a smooth order and a cyclic subgroup of $\mathbb{F}^*$ (or coset of one).&#160;<a href="#blurbs-whir-folding-fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-</ol>
-</div>
-
-  </div>
-              </div>
-            </details>
-            <details class="note-card detail-card" id="blurb-stir-parameters">
-              <summary>
-                <span>
-                  <strong>STIR: Setting Parameters</strong>
-                  <small>2024-02-21</small>
-                </span>
-                
-              </summary>
-              <div class="note-body detail-body">
-                <div class="detail-header">
-                  <p class="detail-byline">Giacomo Fenzi</p>
-                  <div class="detail-meta">
-                    <span class="detail-chip">2024-02-21</span>
-                    <a class="detail-link" href="https://eprint.iacr.org/2024/390" target="_blank" rel="noreferrer">ePrint: 2024/390</a>
-                  </div>
-                  <p class="detail-lead">STIR has a few more parameters to tweak compared to FRI. Here we mention a few and how they impact the concrete performance of the scheme.</p>
-                  <ul class="paper-tags detail-tags" aria-label="Tags"><li>hashes</li><li>concrete</li><li>theory</li></ul>
-                </div>
-
-                <div class="paper-post-content"><p>Our recent work, STIR 🥣 (See <a href="https://ia.cr/2024/390" target="_blank">2024/390</a>
- and <a href="#post-stir">blog-post.</a>
-) is an IOPP for RS codes with improved query complexity compared to the state-of-the art, FRI.
-Compared to FRI, STIR has a few more parameters that one can tweak, which can have a rather large impact on prover time, verifier time and argument size. This short blurb details what these parameters are, and how they translate, concretely, in the resulting argument.
-I won&rsquo;t be completely formal here, details worked out are in Subsection 5.3, Section 6 and Appendix C of the STIR paper.</p>
-<h2 id="blurbs-stir-parameters-parameters">Parameters</h2>
-<p>In this note, we focus on a single iteration of STIR.
-We assume that the following parameters are given:</p>
-<ul>
-<li>A security parameter$\lambda \in \mathbb{N}$.</li>
-<li>The Reed-Solomon code being tested, this includes:
-<ul>
-<li>A field $\mathbb{F}$<sup id="blurbs-stir-parameters-fnref:1"><a href="#blurbs-stir-parameters-fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>.</li>
-<li>A smooth evaluation domain $\mathcal{L} \subseteq \mathbb{F}$.</li>
-<li>A degree bound $d \in \mathbb{N}$.</li>
-<li>An initial rate $\rho := \frac{d}{|\mathcal{L}|}$.</li>
-</ul>
-</li>
-</ul>
-<p>We assume that the proximity bound to be tested from here on is $\delta := 1 - \rho$ (i.e. we are assuming the conjecture and ignoring $\eta$.)
-If instead $\delta$ is in unique decoding range, the protocol can be made simpler by removing the OOD samples. We do not discuss this here.</p>
-<p>A parametrization for a STIR iteration consists of the following:</p>
-<ul>
-<li>An evaluation domain $\mathcal{L}^\star \subseteq \mathbb{F}$.</li>
-<li>A folding parameter $k$.</li>
-<li>The number of OOD-samples $s$.</li>
-<li>The number of queries $t$.</li>
-<li>The PoW bits $\lambda_b$.</li>
-</ul>
-<p>We note that the parameters of each STIR iteration can be chosen independently.</p>
-<h2 id="blurbs-stir-parameters-setting-parameters">Setting parameters</h2>
-<p>This is not the place to precisely tell people how to set the parameters for soundness to hold, that&rsquo;s what the paper is for.
-Here I just want to give some intuition on how one would go about doing this.
-First, I suppose that you would pick evaluation domain $\mathcal{L}^\star$ and folding parameter $k$. Letting $c := \frac{|\mathcal{L}|}{|\mathcal{L}^\star|}$, note that the rate of the new code being tested is $\rho^\star := (c/k) \cdot \rho$. The key observation of STIR is that a lower rate makes testing easier, so the smaller the value $c/k$ is the fewer queries we require in latter iterations. In the paper, we set $c = 2$ to keep a linear proof length, but this is by no means necessary. You can even pick $c &lt; 1$.
-The tradeoff in chosing $\mathcal{L}^\star$ is that:</p>
-<ul>
-<li>Large $\mathcal{L}^\star$ drives the rate down and thus the number of queries in the <em>next</em> iteration quicker.</li>
-<li>However, the prover is then less efficient (as an FFT over $\mathcal{L}^\star$ must be performed).</li>
-</ul>
-<p>Regarding the folding parameter $k$:</p>
-<ul>
-<li>A larger folding parameter $k$ reduces <em>both</em> the degree of the polynomial quicker and decreases the rate of the next iteration, also driving down the number of queris.</li>
-<li>On the other end, the verifier now needs to (at least) compute larger folds, each of which has cost at least linear in $k$, and also needs to read more field elements.</li>
-</ul>
-<p>Once those two parameters are set, the OOD-samples should be set so that they reach $\lambda$ bits of security. In general, for most sane configurations $s = 1$ or $s = 2$ should suffice.</p>
-<p>Finally, $t$ and $\lambda_b$ should be set so that $(1 - \delta)^t &lt; 2^{\lambda - \lambda_b}$. Here there are also some tradeoffs:</p>
-<ul>
-<li>A larger value of $\lambda_b$ drives down verifier time and argument size, at the cost of increased prover time.</li>
-<li>Further, larger $t$ not only increases the argument size but also the verifier running time, as it requires to compute more folds (and the virtual functions become more expensive to compute).</li>
-</ul>
-<h2 id="blurbs-stir-parameters-prover-time">Prover time</h2>
-<p>Prover time in a STIR iteration is easy to estimate.
-We assume that the prover has access to the message $\hat{f} \in \mathbb{F}[X]$ of degree $d$ for the codeword $f: \mathcal{L} \to \mathbb{F}$ being tested.
-The STIR prover does the following:</p>
-<ol>
-<li>Derives $\alpha \in \mathbb{F}$ by FS.</li>
-<li>Computes $\hat{g} := \mathsf{PolyFold}(\hat{f}, \alpha, k) \in \mathbb{F}[X]$ of degree $d/k$.</li>
-<li>Evaluates $\hat{g}$ on $\mathcal{L}^\star $ via a FFT to compute a vector of evaluations $g: \mathcal{L}^\star \to \mathbb{F}$.</li>
-<li>Commits to $g$ using a Merkle tree.</li>
-<li>Derives $x_1, \dots, x_s \in \mathbb{F}$ by FS.</li>
-<li>Evaluates $g$ at $x_1, \dots, x_s$ using Horner&rsquo;s rule.</li>
-<li>Derives $v_1, \dots, v_t \in \mathcal{L}^k$ by FS.</li>
-<li>Computes a new function $\hat{f}^\star \in \mathbb{F}[X]$ of degree $d/k$ by quotienting $\hat{g}$ at $s + t$ points, and degree correcting.</li>
-</ol>
-<p>All summed up, the prover does:</p>
-<ol>
-<li>Squeeze $1 + s + t$ elements out of the FS sponge.</li>
-<li>Computes $2 \cdot |\mathcal{L}^\star|$ hashes for the Merkle commitment.</li>
-<li>Computes an FFT of size $|\mathcal{L}^\star|$ for polynomial of size $d/k$, resulting in $O(|\mathcal{L}^\star| \cdot \log d/k)$ fops.</li>
-<li>Does an additional $O(d)$ fops to compute the folds and $O(d/k)$ fops to compute the quotient and the degree correction.</li>
-</ol>
-<p>So the prover costs are:
-$$
-(1 + s + t) \cdot \mathsf{FS} + 2 \cdot |\mathcal{L}^\star| \cdot \mathsf{H} + \mathsf{FFT}(\mathcal{L}^\star , d/k) + O(d + d/k) \cdot \mathbb{F}
-$$</p>
-<h2 id="blurbs-stir-parameters-argument-size">Argument size</h2>
-<p>Argument size is also easy to estimate, it consists of:</p>
-<ol>
-<li>A single Merkle root (for $g: \mathcal{L}^\star \to \mathbb{F}$).</li>
-<li>$s$ elements of $\mathbb{F}$ (for OOD-samples).</li>
-<li>$t$ authentication paths, for a Merkle tree of $|\mathcal{L}|/k$ leaves, where each leaf is in $\mathbb{F}^k$.</li>
-</ol>
-<p>Assuming that the digest size of the Merkle hash is $2\lambda$ bits, and not accounting for path pruning (which in practice has a large impact), the argument size in bits is then:
-$$
-(1 + t \cdot \log(|\mathcal{L}|/k)) \cdot 2\lambda + (s + t \cdot k) \cdot \log |\mathbb{F}| \enspace.
-$$</p>
-<h2 id="blurbs-stir-parameters-verifier-time">Verifier time</h2>
-<p>The verifier performs the following operations:</p>
-<ol>
-<li>Derives $\alpha \in \mathbb{F}$ by FS.</li>
-<li>Derives $x_1, \dots, x_s \in \mathbb{F}$ by FS.</li>
-<li>Derives $v_1, \dots, v_t \in \mathcal{L}^k$ by FS.</li>
-<li>Queries $f$ at $t$ locations:
-<ul>
-<li>Each query involves reading $k$ fields element and verify a Merkle authentication path of a Merkle tree with $|L|/k$ leaves.</li>
-<li>Derive the value of $f$ at those $t \cdot k$ locations.
-<ul>
-<li>In the first iteration, this requires no additional field operations.</li>
-<li>In latter rounds, the function $f$ is defined as
-$$
-f(x) = \mathsf{DegCorr}\left(\frac{g&rsquo;(x) - \mathsf{Ans}(x)}{V(x)}\right)
-$$ where $g&rsquo;$ is the oracle sent in the previous round, $\mathsf{Ans}, V$ are polynomials of degree $&lt; t&rsquo; + s&rsquo;$ (where $t&rsquo;, s&rsquo;$ are the queries and OOD repetition of the last iterations).</li>
-<li>The degree correction is a (small) constant number of field operations.</li>
-<li>The two polynomials can be computed by interpolation (or with prover assistance, more on this soon™️) at the beginning of the iteration and so the cost is ammortised across each queries.</li>
-<li>Thus, each of these queries only requires evaluating these polynomials at a random point, which costs $O(t&rsquo; + s&rsquo;)$ fops.</li>
-</ul>
-</li>
-<li>Once the value of $f$ is computed, the verifier computes the Fold which costs $O(k)$ fops (or $O(k \cdot \log k)$ fops if using an IFFT for this interpolation, the latter seems asymptotically worse but concretely more efficient in my experiments).</li>
-</ul>
-</li>
-</ol>
-<p>So, in the first iteration the verifier cost is:
-$$
-(1 + s + t) \cdot \mathsf{FS} + t \cdot \log(|L|/k) \cdot \mathsf{H} + O(t \cdot k) \cdot \mathbb{F} \enspace.
-$$
-In the latter iterations instead it is
-$$
-(1 + s + t) \cdot \mathsf{FS} + t \cdot \log(|L|/k) \cdot \mathsf{H} + O\left(t \cdot k \cdot (t&rsquo; + s&rsquo; + 1) \right) \cdot \mathbb{F} \enspace.
-$$</p>
-<p>There are additional tricks that can be done to further drive down the verifier costs. For example, instead of quotienting by $t + s$ points to define the next function to be tested, one can define $t$ functions, each of them consisting of quotients of $1 + s$ points, and test a (degree corrected) random linear combination of them.</p>
-<div class="footnotes" role="doc-endnotes">
-<hr>
-<ol>
-<li id="blurbs-stir-parameters-fn:1">
-<p>For simplicity, I am using a single field here. In practice, you probably would want to have $\mathbb{F} \subseteq \mathbb{H}$ where $\mathbb{H}$ is the extension field you sample from. Since handling this is identical to FRI, I simply won&rsquo;t.&#160;<a href="#blurbs-stir-parameters-fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-</ol>
-</div>
-
-  </div>
-              </div>
-            </details>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section contact-section" id="contact">
-        <div class="container">
-          <h2>Contact</h2>
-          <div class="contact-row">
-            <a class="button button-primary" href="mailto:giacomo.fenzi@epfl.ch">giacomo.fenzi@epfl.ch</a>
-            <ul class="contact-links" aria-label="External links">
-              <li><a href="https://dblp.org/pid/350/5799.html" target="_blank" rel="noreferrer">DBLP</a></li>
-              <li><a href="https://scholar.google.com/citations?user=lnJtN4cAAAAJ" target="_blank" rel="noreferrer">Scholar</a></li>
-              <li><a href="https://github.com/WizardOfMenlo" target="_blank" rel="noreferrer">GitHub</a></li>
-              <li><a href="https://twitter.com/GiacomoFenzi" target="_blank" rel="noreferrer">X</a></li>
-              <li><a href="https://www.linkedin.com/in/giacomo-fenzi" target="_blank" rel="noreferrer">LinkedIn</a></li>
-              <li><a href="https://www.youtube.com/WizardOfMenlo" target="_blank" rel="noreferrer">YouTube</a></li>
-            </ul>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="container footer-inner">
-        <p>© 2026 Giacomo Fenzi.</p>
+    <section id="papers" class="section" aria-labelledby="papers-title">
+      <div class="section-label"><span>01</span><span>Papers</span></div>
+      <div class="section-head publications-head">
+        <h2 id="papers-title">Publications</h2>
       </div>
-    </footer>
-  </body>
+      <div class="pub-subhead"><h3>Selected publications</h3></div>
+      <div class="selected-list">
+        
+        <article class="selected-item">
+          <div class="item-count">01</div>
+          <div>
+            <h3>STIR 🥣</h3>
+            <p>Reed-Solomon IOPP with fewer queries. Best Paper @ CRYPTO 2024</p>
+          </div>
+          <div class="inline-links"><a href="https://ia.cr/2024/390" target="_blank" rel="noreferrer">ePrint</a><a href="https://gfenzi.io/papers/stir/" target="_blank" rel="noreferrer">Blog post</a></div>
+        </article>
+
+        <article class="selected-item">
+          <div class="item-count">02</div>
+          <div>
+            <h3>WHIR 🌪️</h3>
+            <p>Constrained RS IOPP with fewer queries and super-fast verification.</p>
+          </div>
+          <div class="inline-links"><a href="https://ia.cr/2024/1586" target="_blank" rel="noreferrer">ePrint</a><a href="https://gfenzi.io/papers/whir/" target="_blank" rel="noreferrer">Blog post</a></div>
+        </article>
+
+        <article class="selected-item">
+          <div class="item-count">03</div>
+          <div>
+            <h3>Proximity Prize</h3>
+            <p>A $1 Million Dollar Prize on questions on coding theory.</p>
+          </div>
+          <div class="inline-links"><a href="https://ia.cr/2026/680" target="_blank" rel="noreferrer">ePrint</a><a href="https://proximityprize.org" target="_blank" rel="noreferrer">proximityprize.org</a></div>
+        </article>
+
+        <article class="selected-item">
+          <div class="item-count">04</div>
+          <div>
+            <h3>ZO0K 🦓</h3>
+            <p>Zero-Knowledge IOPPs with Zero-Overhead.</p>
+          </div>
+          <div class="inline-links"><a href="https://ia.cr/2026/391" target="_blank" rel="noreferrer">ePrint</a></div>
+        </article>
+
+        <article class="selected-item">
+          <div class="item-count">05</div>
+          <div>
+            <h3>TensorSwitch 🧮</h3>
+            <p>Nearly-optimal polynomial commitment scheme from tensor codes.</p>
+          </div>
+          <div class="inline-links"><a href="https://ia.cr/2025/2065" target="_blank" rel="noreferrer">ePrint</a></div>
+        </article>
+
+        <article class="selected-item">
+          <div class="item-count">06</div>
+          <div>
+            <h3>WARP 🌀</h3>
+            <p>A linear time accumulation scheme from any linear code.</p>
+          </div>
+          <div class="inline-links"><a href="https://ia.cr/2025/753" target="_blank" rel="noreferrer">ePrint</a></div>
+        </article>
+
+        <article class="selected-item">
+          <div class="item-count">07</div>
+          <div>
+            <h3>UC-secure zkSNARKs 🌍</h3>
+            <p>Commonly deployed zkSNARKs are UC-secure in the ROM.</p>
+          </div>
+          <div class="inline-links"><a href="https://ia.cr/2024/724" target="_blank" rel="noreferrer">ePrint</a><a href="https://gfenzi.io/" target="_blank" rel="noreferrer">Blog post</a></div>
+        </article>
+
+        <article class="selected-item">
+          <div class="item-count">08</div>
+          <div>
+            <h3>SLAP 👋</h3>
+            <p>Succinct lattice-based polynomial commitment scheme from SIS.</p>
+          </div>
+          <div class="inline-links"><a href="https://ia.cr/2023/1469" target="_blank" rel="noreferrer">ePrint</a><a href="https://gfenzi.io/papers/slap/" target="_blank" rel="noreferrer">Blog post</a></div>
+        </article>
+
+        <article class="selected-item">
+          <div class="item-count">09</div>
+          <div>
+            <h3>Blendy 🍹</h3>
+            <p>Space-efficient prover for sumcheck.</p>
+          </div>
+          <div class="inline-links"><a href="https://ia.cr/2024/524" target="_blank" rel="noreferrer">ePrint</a><a href="https://ia.cr/2025/1473" target="_blank" rel="noreferrer">ePrint (v2)</a><a href="https://gfenzi.io/papers/blendy-sumcheck/" target="_blank" rel="noreferrer">Blog post</a></div>
+        </article>
+      </div>
+      <div class="pub-subhead pub-subhead-spaced"><h3>Full list of publications</h3></div>
+      <div class="publications-grid">
+        
+        <section class="year-block" aria-labelledby="pub-2026">
+          <h3 id="pub-2026">2026</h3>
+          <div class="pub-list">
+            <article class="publication">
+              <p class="pub-code">[B<strong>F</strong>RW26]</p>
+              <div class="pub-main">
+                <h4>“TensorSwitch: Nearly Optimal Polynomial Commitments from Tensor Codes”.</h4>
+                <p>Benedikt Bünz, Giacomo Fenzi, Ron D. Rothblum, William Wang.</p>
+                <p class="venue">CRYPTO 2026 & ZKProof 8. Available at: <a href="https://ia.cr/2025/2065" target="_blank" rel="noreferrer">2025/2065.</a></p>
+              </div>
+            </article>
+            <article class="publication">
+              <p class="pub-code">[<strong>F</strong>GV26]</p>
+              <div class="pub-main">
+                <h4>“Finding Bugs and Features Using Cryptographically-Informed Functional Testing”.</h4>
+                <p>Giacomo Fenzi, Jan Gilcher, Fernando Virdia.</p>
+                <p class="venue">RWC 2026 & TCHES 2026. Available at: <a href="https://ia.cr/2024/1122" target="_blank" rel="noreferrer">2024/1122.</a></p>
+              </div>
+            </article>
+            <article class="publication">
+              <p class="pub-code">[AB<strong>F</strong>26]</p>
+              <div class="pub-main">
+                <h4>“Open Problems in List Decoding and Correlated Agreement”.</h4>
+                <p>Gal Arnon, Dan Boneh, Giacomo Fenzi.</p>
+                <p class="venue">Available at: <a href="https://ia.cr/2026/680" target="_blank" rel="noreferrer">2026/680.</a></p>
+              </div>
+            </article>
+            <article class="publication">
+              <p class="pub-code">[C<strong>F</strong>W26]</p>
+              <div class="pub-main">
+                <h4>“Zero-Knowledge IOPPs for Constrained Interleaved Codes”.</h4>
+                <p>Alessandro Chiesa, Giacomo Fenzi, Guy Weissenberg.</p>
+                <p class="venue">ZKProof 8. Available at: <a href="https://ia.cr/2026/391" target="_blank" rel="noreferrer">2026/391.</a></p>
+              </div>
+            </article>
+            <article class="publication">
+              <p class="pub-code">[B<strong>F</strong>MM26]</p>
+              <div class="pub-main">
+                <h4>“Field-Agnostic SNARKs with Small Proofs via Encode-Repeat-Accumulate (ERA) Codes”.</h4>
+                <p>Anubhav Baweja, Giacomo Fenzi, Pratyush Mishra, Tushar Mopuri.</p>
+                <p class="venue">Cryptology ePrint Archive, Paper 2026/864. Available at: <a href="https://ia.cr/2026/864" target="_blank" rel="noreferrer">2026/864.</a></p>
+              </div>
+            </article>
+            <article class="publication">
+              <p class="pub-code">[AC<strong>F</strong>Y26]</p>
+              <div class="pub-main">
+                <h4>“Interactive Proofs for Batch Polynomial Evaluation”.</h4>
+                <p>Gal Arnon, Alessandro Chiesa, Giacomo Fenzi, Eylon Yogev.</p>
+                <p class="venue">Cryptology ePrint Archive, Paper 2026/448. Available at: <a href="https://ia.cr/2026/448" target="_blank" rel="noreferrer">2026/448.</a></p>
+              </div>
+            </article></div>
+        </section>
+
+        <section class="year-block" aria-labelledby="pub-2025">
+          <h3 id="pub-2025">2025</h3>
+          <div class="pub-list">
+            <article class="publication">
+              <p class="pub-code">[AC<strong>F</strong>Y25]</p>
+              <div class="pub-main">
+                <h4>“WHIR: Reed–Solomon Proximity Testing with Super-Fast Verification”.</h4>
+                <p>Gal Arnon, Alessandro Chiesa, Giacomo Fenzi, Eylon Yogev.</p>
+                <p class="venue">EUROCRYPT 2025 & zkSummit12. Available at: <a href="https://ia.cr/2024/1586" target="_blank" rel="noreferrer">2024/1586.</a> <a href="https://gfenzi.io/papers/whir/" target="_blank" rel="noreferrer">Accompanying blog-post.</a></p>
+              </div>
+            </article>
+            <article class="publication">
+              <p class="pub-code">[BC<strong>F</strong>W25]</p>
+              <div class="pub-main">
+                <h4>“Linear Time Accumulation Schemes”.</h4>
+                <p>Benedikt Bünz, Alessandro Chiesa, Giacomo Fenzi, William Wang.</p>
+                <p class="venue">TCC 2025 & CAW 2025 & zkSummit13 & ZKProof 8. Available at: <a href="https://ia.cr/2025/753" target="_blank" rel="noreferrer">2025/753.</a></p>
+              </div>
+            </article>
+            <article class="publication">
+              <p class="pub-code">[BCF<strong>F</strong>MMZ25]</p>
+              <div class="pub-main">
+                <h4>“Time-space trade-offs for the sumcheck protocol”.</h4>
+                <p>Anubhav Baweja, Alessandro Chiesa, Elisabetta Fedele, Giacomo Fenzi, Pratyush Mishra, Tushar Mopuri, Andrew Zitek-Estrada.</p>
+                <p class="venue">TCC 2025 & ZKProof 8. Available at: <a href="https://ia.cr/2025/1473" target="_blank" rel="noreferrer">2025/1473.</a></p>
+              </div>
+            </article>
+            <article class="publication">
+              <p class="pub-code">[CF<strong>F</strong>Z25]</p>
+              <div class="pub-main">
+                <h4>“A Time-Space Tradeoff for the Sumcheck Prover”.</h4>
+                <p>Alessandro Chiesa, Elisabetta Fedele, Giacomo Fenzi, Andrew Zitek-Estrada.</p>
+                <p class="venue">TCC 2025 & ZKProof 6. Available at: <a href="https://ia.cr/2024/524" target="_blank" rel="noreferrer">2024/524.</a> <a href="https://gfenzi.io/papers/blendy-sumcheck/" target="_blank" rel="noreferrer">Accompanying blog-post.</a></p>
+              </div>
+            </article>
+            <article class="publication">
+              <p class="pub-code">[ABD<strong>F</strong>KKZ25]</p>
+              <div class="pub-main">
+                <h4>“Post-Quantum Access Control with Application to Secure Data Retrieval”.</h4>
+                <p>Behzad Abdolmaleki, Hannes Blümel, Tianxiang Dai, Giacomo Fenzi, Homa Khajeh, Stefan Köpsell, Maryam Zarezadeh.</p>
+                <p class="venue">Communications in Cryptology 2025.</p>
+              </div>
+            </article>
+            <article class="publication">
+              <p class="pub-code">[<strong>F</strong>S25]</p>
+              <div class="pub-main">
+                <h4>“Small-field hash-based SNARGs are less sound than conjectured”.</h4>
+                <p>Giacomo Fenzi, Antonio Sanso.</p>
+                <p class="venue">Cryptology ePrint Archive, Paper 2025/2197. Available at: <a href="https://ia.cr/2025/2197" target="_blank" rel="noreferrer">2025/2197.</a></p>
+              </div>
+            </article>
+            <article class="publication">
+              <p class="pub-code">[<strong>F</strong>Z25]</p>
+              <div class="pub-main">
+                <h4>“zip: Reducing Proof Sizes for Hash-Based SNARGs”.</h4>
+                <p>Giacomo Fenzi, Yuwen Zhang.</p>
+                <p class="venue">Cryptology ePrint Archive, Paper 2025/1446. Available at: <a href="https://ia.cr/2025/1446" target="_blank" rel="noreferrer">2025/1446.</a></p>
+              </div>
+            </article></div>
+        </section>
+
+        <section class="year-block" aria-labelledby="pub-2024">
+          <h3 id="pub-2024">2024</h3>
+          <div class="pub-list">
+            <article class="publication">
+              <p class="pub-code">[AC<strong>F</strong>Y24]</p>
+              <div class="pub-main">
+                <h4>“STIR: Reed–Solomon Proximity Testing with Fewer Queries”.</h4>
+                <p>Gal Arnon, Alessandro Chiesa, Giacomo Fenzi, Eylon Yogev.</p>
+                <p class="venue">CRYPTO 2024 (⭐️ Best Paper ⭐️) & zkSummit11 & ZKProof 6. Available at: <a href="https://ia.cr/2024/390" target="_blank" rel="noreferrer">2024/390.</a> <a href="https://gfenzi.io/papers/stir/" target="_blank" rel="noreferrer">Accompanying blog-post.</a></p>
+              </div>
+            </article>
+            <article class="publication">
+              <p class="pub-code">[C<strong>F</strong>24]</p>
+              <div class="pub-main">
+                <h4>“zkSNARKs in the ROM with Unconditional UC-Security”.</h4>
+                <p>Alessandro Chiesa, Giacomo Fenzi.</p>
+                <p class="venue">TCC 2024 & ZKProof 6. Available at: <a href="https://ia.cr/2024/724" target="_blank" rel="noreferrer">2024/724.</a> <a href="https://gfenzi.io/" target="_blank" rel="noreferrer">Accompanying blog-post.</a></p>
+              </div>
+            </article>
+            <article class="publication">
+              <p class="pub-code">[<strong>F</strong>KNP24]</p>
+              <div class="pub-main">
+                <h4>“Lova: Lattice-Based Folding Scheme from Unstructured Lattices”.</h4>
+                <p>Giacomo Fenzi, Christian Knabenhans, Khanh Ngoc Nguyen, Duc Tu Pham</p>
+                <p class="venue">ASIACRYPT 2024. Available at: <a href="https://ia.cr/2024/1964" target="_blank" rel="noreferrer">2024/1964.</a></p>
+              </div>
+            </article>
+            <article class="publication">
+              <p class="pub-code">[A<strong>F</strong>LN24]</p>
+              <div class="pub-main">
+                <h4>“SLAP: Succinct Lattice-Based Polynomial Commitments from Standard Assumptions”.</h4>
+                <p>Martin R. Albrecht, Giacomo Fenzi, Oleksandra Lapiha, Ngoc Khanh Nguyen.</p>
+                <p class="venue">EUROCRYPT 2024 & ZKProof 6. Available at: <a href="https://ia.cr/2023/1469" target="_blank" rel="noreferrer">2023/1469.</a> <a href="https://gfenzi.io/papers/slap/" target="_blank" rel="noreferrer">Accompanying blog-post.</a> <a href="https://gfenzi.io/assets/slap.pdf" target="_blank" rel="noreferrer">Slides.</a></p>
+              </div>
+            </article>
+            <article class="publication">
+              <p class="pub-code">[<strong>F</strong>MN24]</p>
+              <div class="pub-main">
+                <h4>“Lattice-Based Polynomial Commitments: Towards Concrete and Asymptotical Efficiency”.</h4>
+                <p>Giacomo Fenzi, Hossein Moghaddas, Ngoc Khanh Nguyen.</p>
+                <p class="venue">Journal of Cryptology 2024 & ArticCrypt 2025. Available at: <a href="https://ia.cr/2023/846" target="_blank" rel="noreferrer">2023/846.</a> <a href="https://gfenzi.io/" target="_blank" rel="noreferrer">Accompanying blog-post.</a></p>
+              </div>
+            </article></div>
+        </section>
+      </div>
+    </section>
+
+    <section id="talks" class="section" aria-labelledby="talks-title">
+      <div class="section-label"><span>02</span><span>Talks</span></div>
+      <div class="section-head">
+        <p class="kicker">Upcoming / Past</p>
+        <h2 id="talks-title">Talks</h2>
+      </div>
+      <div class="talks-layout">
+        <div class="talks-group"><h3>Upcoming</h3><section class="talk-year"><h4>2026</h4><ol><li><time>6 May. Rome.</time><p>Presenting <a href="https://eprint.iacr.org/2026/391" target="_blank" rel="noreferrer">ZO0K 🦓</a> at <a href="https://zksummit.com" target="_blank" rel="noreferrer">zkSummit.</a></p></li><li><time>9 May. Rome.</time><p>Organizing <a href="https://iopfest.xyz" target="_blank" rel="noreferrer">IOPFest.</a></p></li><li><time>9 May. Rome.</time><p>Presenting <a href="https://eprint.iacr.org/2026/391" target="_blank" rel="noreferrer">ZO0K 🦓</a> at <a href="https://zkproof.org" target="_blank" rel="noreferrer">ZKProof.</a></p></li><li><time>14 May. Rome.</time><p>Presenting <a href="https://eprint.iacr.org/2026/448" target="_blank" rel="noreferrer">Polylogarithmic Proofs for Multilinears over Binary Towers</a> at <a href="https://eurocrypt.iacr.org/2026/" target="_blank" rel="noreferrer">EUROCRYPT26.</a></p></li><li><time>13-16 July. Cyprus.</time><p>Attending <a href="https://cedarcrypt.org" target="_blank" rel="noreferrer">Cedarcrypt.</a></p></li></ol></section></div>
+        <div class="talks-group"><h3>Past</h3><section class="talk-year"><h4>2026</h4><ol><li><time>20 January. Online.</time><p>Presented <a href="https://gfenzi.io/papers/whir/" target="_blank" rel="noreferrer">WHIR 🌪️</a> at <a href="https://starkware.co" target="_blank" rel="noreferrer">Starkware.</a></p></li><li><time>14 January. Online.</time><p>Presented <a href="https://gfenzi.io/papers/whir/" target="_blank" rel="noreferrer">WHIR 🌪️</a> at <a href="https://aztec.network" target="_blank" rel="noreferrer">Aztec.</a></p></li></ol></section><section class="talk-year"><h4>2025</h4><ol><li><time>19 December. Online.</time><p>Presented <a href="https://eprint.iacr.org/2025/2197" target="_blank" rel="noreferrer">Small-field hash-based SNARGs are less sound</a> at <a href="https://ethproofs.org" target="_blank" rel="noreferrer">Ethproofs.</a></p></li><li><time>7 November. Online.</time><p>Presented <a href="https://proximityprize.org" target="_blank" rel="noreferrer">Proximity Prize</a> at <a href="https://ethproofs.org" target="_blank" rel="noreferrer">Ethproofs.</a></p></li><li><time>31 October. Lausanne.</time><p>Presented <a href="https://eprint.iacr.org/2025/753" target="_blank" rel="noreferrer">WARP 🌀</a> at <a href="https://swisscryptoday.github.io" target="_blank" rel="noreferrer">Swiss Crypyo Day.</a></p></li><li><time>4-7 October. Cambridge.</time><p>Attended the <a href="https://ethereum.foundation" target="_blank" rel="noreferrer">EF</a> summit on PQ interop.</p></li><li><time>13-14 August. Sunnyvale.</time><p>Presented at <a href="https://rsvp.withgoogle.com/events/zk-and-ai-summit" target="_blank" rel="noreferrer">Google: ZK &amp; AI Summit.</a></p></li><li><time>19 May - 15 August. Berkeley.</time><p>Attended <a href="https://simons.berkeley.edu/programs/cryptography-10-years-later" target="_blank" rel="noreferrer">Cryptography: 10 Years Later.</a> at <a href="https://simons.berkeley.edu" target="_blank" rel="noreferrer">Simons</a></p></li><li><time>6-11 July. Longyearbyen.</time><p>Presented <a href="https://gfenzi.io/" target="_blank" rel="noreferrer">towards lattice based polynomial commitments</a> at <a href="https://simula-uib.com/activities/articcrypt25" target="_blank" rel="noreferrer">ArticCrypt25.</a></p></li><li><time>20 June. Berkeley.</time><p>Presented a <a href="https://simons.berkeley.edu/programs/cryptography-10-years-later" target="_blank" rel="noreferrer">survey on efficient succinct arguments</a> at <a href="https://simons.berkeley.edu/programs/cryptography-10-years-later" target="_blank" rel="noreferrer">Cryptography: 10 Years Later</a> at <a href="https://simons.berkeley.edu" target="_blank" rel="noreferrer">Simons.</a></p></li><li><time>2 June. Stanford.</time><p>Presented <a href="https://eprint.iacr.org/2025/753" target="_blank" rel="noreferrer">WARP 🌀</a> at <a href="https://crypto.stanford.edu" target="_blank" rel="noreferrer">Stanford.</a></p></li><li><time>4-8 May. Madrid.</time><p>Presented <a href="https://gfenzi.io/papers/whir/" target="_blank" rel="noreferrer">WHIR 🌪️</a> at <a href="https://eurocrypt.iacr.org/2025/" target="_blank" rel="noreferrer">EUROCRYPT25.</a></p></li><li><time>4 May. Madrid.</time><p>Presented <a href="https://eprint.iacr.org/2025/753" target="_blank" rel="noreferrer">WARP 🌀</a> at <a href="https://caw.cryptanalysis.fun" target="_blank" rel="noreferrer">CAW.</a></p></li><li><time>31 March. Online.</time><p>Presented <a href="https://gfenzi.io/papers/whir/" target="_blank" rel="noreferrer">WHIR 🌪️</a> at <a href="https://splab.cis.upenn.edu" target="_blank" rel="noreferrer">Penn&#x27;s Security and Privacy Lab.</a></p></li><li><time>23-25 March. Sofia.</time><p>Presented <a href="https://gfenzi.io/papers/whir/" target="_blank" rel="noreferrer">WHIR 🌪️</a> at <a href="https://zkproof.org/events/zkproof-7-sofia/" target="_blank" rel="noreferrer">ZKProof7.</a></p></li><li><time>18 March. Lausanne.</time><p>Introduced the <a href="https://compsec.epfl.ch" target="_blank" rel="noreferrer">COMPSEC Lab</a> at <a href="https://www.epfl.ch/education/phd/edic-computer-and-communication-sciences/edic-open-house/" target="_blank" rel="noreferrer">EDIC Open House.</a></p></li><li><time>17 March. Online.</time><p>Presented <a href="https://eprint.iacr.org/2024/1964" target="_blank" rel="noreferrer">Lova 💕</a> at <a href="https://jcs.trusted-third-party.org" target="_blank" rel="noreferrer">ENSL/CWI/KCL/IRISA Joint Online Cryptography Seminars.</a></p></li><li><time>18 February. Paris.</time><p>Presented <a href="https://gfenzi.io/papers/whir/" target="_blank" rel="noreferrer">WHIR 🌪️</a> at <a href="https://cryptography.paris" target="_blank" rel="noreferrer">RWC Paris.</a></p></li></ol></section><section class="talk-year"><h4>2024</h4><ol><li><time>2-6 December. Milan.</time><p>Presented <a href="https://gfenzi.io/" target="_blank" rel="noreferrer">UC-secure zkSNARKs🌍</a> at <a href="https://tcc.iacr.org/2024/" target="_blank" rel="noreferrer">TCC24.</a></p></li><li><time>28 November. Zurich.</time><p>Presented <a href="https://gfenzi.io/papers/whir/" target="_blank" rel="noreferrer">WHIR 🌪️</a> at <a href="https://research.ibm.com/labs/zurich" target="_blank" rel="noreferrer">IBM Research Zurich.</a></p></li><li><time>8 November. Online.</time><p>Presented <a href="https://gfenzi.io/papers/whir/" target="_blank" rel="noreferrer">WHIR 🌪️</a> at <a href="https://nexus.xyz" target="_blank" rel="noreferrer">Nexus speaker series</a> and <a href="https://hackmd.io" target="_blank" rel="noreferrer">sumcheck builder group.</a></p></li><li><time>30 October. Lausanne.</time><p>Presented <a href="https://gfenzi.io/" target="_blank" rel="noreferrer">UC-secure zkSNARKs🌍</a>, <a href="https://gfenzi.io/papers/stir/" target="_blank" rel="noreferrer">STIR 🥣</a> and <a href="https://gfenzi.io/papers/whir/" target="_blank" rel="noreferrer">WHIR 🌪️</a> at <a href="https://lu.ma" target="_blank" rel="noreferrer">BSA EPFL.</a></p></li><li><time>16 October. Online.</time><p>Presented <a href="https://gfenzi.io/papers/stir/" target="_blank" rel="noreferrer">STIR 🥣</a> at <a href="https://nexus.xyz" target="_blank" rel="noreferrer">Nexus speaker series</a> and <a href="https://hackmd.io" target="_blank" rel="noreferrer">sumcheck builder group.</a></p></li><li><time>12-13 September. Munich.</time><p>Presented <a href="https://gfenzi.io/papers/stir/" target="_blank" rel="noreferrer">STIR 🥣</a> at <a href="https://conference.tum-blockchain.com" target="_blank" rel="noreferrer">TUM Blockchain Conference.</a></p></li><li><time>2 September. St Gallen.</time><p>Presented <a href="https://gfenzi.io/papers/stir/" target="_blank" rel="noreferrer">STIR 🥣</a> at <a href="https://swisscryptoday.github.io" target="_blank" rel="noreferrer">Swiss Crypyo Day.</a></p></li><li><time>18-22 August. Santa Barbara.</time><p>Presented <a href="https://gfenzi.io/papers/stir/" target="_blank" rel="noreferrer">STIR 🥣</a> at <a href="https://crypto.iacr.org/2024/" target="_blank" rel="noreferrer">CRYPTO24.</a></p></li><li><time>5-9 August. London.</time><p>Visiting <a href="https://khanhcrypto.github.io" target="_blank" rel="noreferrer">Khanh</a> at <a href="https://www.kcl.ac.uk" target="_blank" rel="noreferrer">KCL.</a></p></li><li><time>3 July. Online.</time><p>Presented <a href="https://gfenzi.io/papers/stir/" target="_blank" rel="noreferrer">STIR 🥣</a> at Starkitecture.</p></li><li><time>26-30 May. Zurich.</time><p>Presented <a href="https://gfenzi.io/papers/slap/" target="_blank" rel="noreferrer">SLAP 👋</a> at <a href="https://eurocrypt.iacr.org/2024/" target="_blank" rel="noreferrer">EUROCRYPT24.</a></p></li><li><time>22-24 May. Berlin.</time><p>Presented <a href="https://gfenzi.io/papers/stir/" target="_blank" rel="noreferrer">STIR 🥣</a>, <a href="https://gfenzi.io/papers/slap/" target="_blank" rel="noreferrer">SLAP 👋</a>, <a href="https://gfenzi.io/" target="_blank" rel="noreferrer">UC-secure zkSNARKs🌍</a> and <a href="https://gfenzi.io/papers/blendy-sumcheck/" target="_blank" rel="noreferrer">Blendy 🍹</a> at <a href="https://zkproof.org" target="_blank" rel="noreferrer">ZKProof6.</a></p></li><li><time>8-14 April. Athens.</time><p>Presenting <a href="https://gfenzi.io/papers/stir/" target="_blank" rel="noreferrer">STIR 🥣</a> at <a href="https://www.zksummit.com" target="_blank" rel="noreferrer">zkSummit11.</a></p></li><li><time>11-14 March. New York.</time><p>Presented <a href="https://gfenzi.io/" target="_blank" rel="noreferrer">UC-secure zkSNARKs🌍</a> at <a href="https://cs.nyu.edu" target="_blank" rel="noreferrer">NYU.</a></p></li><li><time>8-11 March. Philadelphia.</time><p>Presented <a href="https://gfenzi.io/" target="_blank" rel="noreferrer">UC-secure zkSNARKs🌍</a> at <a href="https://www.upenn.edu" target="_blank" rel="noreferrer">Penn.</a></p></li><li><time>4-8 March. Boston.</time><p>Presented <a href="https://gfenzi.io/" target="_blank" rel="noreferrer">UC-secure zkSNARKs🌍</a> at <a href="https://www.bu.edu" target="_blank" rel="noreferrer">BUSec.</a></p></li></ol></section><section class="talk-year"><h4>2023</h4><ol><li><time>15 Dec. Amsterdam.</time><p>Presented <a href="https://gfenzi.io/papers/slap/" target="_blank" rel="noreferrer">SLAP 👋</a> at <a href="https://www.cwi.nl" target="_blank" rel="noreferrer">CWI.</a></p></li></ol></section></div>
+      </div>
+    </section>
+
+    <section id="writing" class="section" aria-labelledby="writing-title">
+      <div class="section-label"><span>03</span><span>Writing</span></div>
+      <div class="section-head">
+        <p class="kicker">Accompanying posts</p>
+        <h2 id="writing-title">Writing</h2>
+      </div>
+      <div class="writing-grid">
+        
+        <article class="writing-card">
+          <a class="card-link" href="https://gfenzi.io/papers/whir/" target="_blank" rel="noreferrer" aria-label="Read WHIR: Reed–Solomon Proximity Testing with Super-Fast Verification"></a>
+          <div class="writing-meta"><time>2024-09-27</time><span>EUROCRYPT 2025 - ePrint: 2024/1586</span></div>
+          <h3>WHIR: Reed–Solomon Proximity Testing with Super-Fast Verification</h3>
+          <p class="authors">Gal Arnon, Alessandro Chiesa, Giacomo Fenzi, Eylon Yogev</p>
+          <p>We present WHIR (Weights Help Improving Rate), an interactive oracle proof of proximity (IOPP) for constrained Reed–Solomon codes. WHIR doubles as a multilinear polynomial commitment scheme, achieving the fastest verification speed of any such scheme while mantaining state-of-the-art argument size, verifier hash complexity and prover times.</p>
+          <div class="tag-row"><span>hashes</span><span>concrete</span><span>theory</span></div>
+        </article>
+
+        <article class="writing-card">
+          <a class="card-link" href="https://gfenzi.io/" target="_blank" rel="noreferrer" aria-label="Read zkSNARKs in the ROM with Unconditional UC-Security"></a>
+          <div class="writing-meta"><time>2024-05-10</time><span>TCC 2024 - ePrint: 2024/724</span></div>
+          <h3>zkSNARKs in the ROM with Unconditional UC-Security</h3>
+          <p class="authors">Alessandro Chiesa, Giacomo Fenzi</p>
+          <p>We show that commonly deployed zkSNARKs are UC-secure in the ROM, with no modifications needed.</p>
+          <div class="tag-row"><span>concrete</span><span>theory</span></div>
+        </article>
+
+        <article class="writing-card">
+          <a class="card-link" href="https://gfenzi.io/papers/stir/" target="_blank" rel="noreferrer" aria-label="Read STIR: Reed–Solomon Proximity Testing with Fewer Queries"></a>
+          <div class="writing-meta"><time>2024-02-21</time><span>CRYPTO 2024 - ePrint: 2024/390</span></div>
+          <h3>STIR: Reed–Solomon Proximity Testing with Fewer Queries</h3>
+          <p class="authors">Gal Arnon, Alessandro Chiesa, Giacomo Fenzi, Eylon Yogev</p>
+          <p>We present STIR (Shift To Improve Rate), a concretely efficient interactive oracle proof of proximity (IOPP) for Reed–Solomon codes that achieves the best known query complexity of any concretely efficient IOPP for this problem.</p>
+          <div class="tag-row"><span>hashes</span><span>concrete</span><span>theory</span></div>
+        </article>
+
+        <article class="writing-card">
+          <a class="card-link" href="https://gfenzi.io/papers/blendy-sumcheck/" target="_blank" rel="noreferrer" aria-label="Read A Time-Space Tradeoff for the Sumcheck Prover"></a>
+          <div class="writing-meta"><time>2024-02-20</time><span>ePrint: 2024/524</span></div>
+          <h3>A Time-Space Tradeoff for the Sumcheck Prover</h3>
+          <p class="authors">Alessandro Chiesa, Elisabetta Fedele, Giacomo Fenzi, Andrew Zitek-Estrada</p>
+          <p>We present a new family of algorithms for the sumcheck protocol prover that offer new time-space tradeoffs.</p>
+          <div class="tag-row"><span>sumcheck</span><span>concrete</span></div>
+        </article>
+
+        <article class="writing-card">
+          <a class="card-link" href="https://gfenzi.io/papers/slap/" target="_blank" rel="noreferrer" aria-label="Read SLAP: Succinct Lattice-Based Polynomial Commitments from Standard Assumptions"></a>
+          <div class="writing-meta"><time>2023-09-25</time><span>EUROCRYPT 2024 - ePrint: 2023/1469</span></div>
+          <h3>SLAP: Succinct Lattice-Based Polynomial Commitments from Standard Assumptions</h3>
+          <p class="authors">Martin R. Albrecht, Giacomo Fenzi, Oleksandra Lapiha, Ngoc Khanh Nguyen</p>
+          <p>In this paper, we construct a succinct polynomial commitment scheme from standard assumptions.</p>
+          <div class="tag-row"><span>lattices</span><span>polynomial-commitments</span><span>theory</span></div>
+        </article>
+
+        <article class="writing-card">
+          <a class="card-link" href="https://gfenzi.io/" target="_blank" rel="noreferrer" aria-label="Read Lattice-Based Polynomial Commitments: Towards Asymptotic and Concrete Efficiency"></a>
+          <div class="writing-meta"><time>2023-06-06</time><span>JoC 2024 - ArticCrypt 2025 - ePrint: 2023/846</span></div>
+          <h3>Lattice-Based Polynomial Commitments: Towards Asymptotic and Concrete Efficiency</h3>
+          <p class="authors">Giacomo Fenzi, Hossein Moghaddas, Ngoc Khanh Nguyen</p>
+          <p>In this paper, we introduce the powerBASIS assumption, and use it construct quasi-succinct polynomial commitment schemes from lattices.</p>
+          <div class="tag-row"><span>lattices</span><span>polynomial-commitments</span><span>theory</span></div>
+        </article>
+      </div>
+      <div class="section-head compact">
+        <p class="kicker">Blurbs</p>
+        <h2>Blurbs</h2>
+        <p>Short blurbs, tips and tricks that didn't find space in the papers or blog posts.</p>
+      </div>
+      <div class="blurb-grid">
+        
+        <article class="blurb-card">
+          <a class="card-link" href="https://gfenzi.io/" target="_blank" rel="noreferrer" aria-label="Read Doing mixed matrix commitments (MMCS) with STIR &amp; WHIR"></a>
+          <time>2024-10-15</time>
+          <h3>Doing mixed matrix commitments (MMCS) with STIR &amp; WHIR</h3>
+          <p class="authors">Giacomo Fenzi</p>
+          <p>Domain shifting to the rescue</p>
+          <div class="tag-row"><span>hashes</span><span>concrete</span><span>theory</span></div>
+        </article>
+
+        <article class="blurb-card">
+          <a class="card-link" href="https://gfenzi.io/" target="_blank" rel="noreferrer" aria-label="Read LDPC codes vs RS codes"></a>
+          <time>2024-10-14</time>
+          <h3>LDPC codes vs RS codes</h3>
+          <p class="authors">Giacomo Fenzi</p>
+          <p>Some thoughts on LDPC codes vs RS codes</p>
+          <div class="tag-row"><span>hashes</span><span>concrete</span><span>theory</span></div>
+        </article>
+
+        <article class="blurb-card">
+          <a class="card-link" href="https://gfenzi.io/" target="_blank" rel="noreferrer" aria-label="Read Speeding up fold computation"></a>
+          <time>2024-10-03</time>
+          <h3>Speeding up fold computation</h3>
+          <p class="authors">Giacomo Fenzi</p>
+          <p>Computing folds is a large portion of the verifier work in schemes like FRI, STIR and WHIR. We describe an optimization to reduce this cost.</p>
+          <div class="tag-row"><span>hashes</span><span>concrete</span></div>
+        </article>
+
+        <article class="blurb-card">
+          <a class="card-link" href="https://gfenzi.io/" target="_blank" rel="noreferrer" aria-label="Read STIR: Setting Parameters"></a>
+          <time>2024-02-21</time>
+          <h3>STIR: Setting Parameters</h3>
+          <p class="authors">Giacomo Fenzi</p>
+          <p>STIR has a few more parameters to tweak compared to FRI. Here we mention a few and how they impact the concrete performance of the scheme.</p>
+          <div class="tag-row"><span>hashes</span><span>concrete</span><span>theory</span></div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact" class="site-footer" aria-labelledby="contact-title">
+    <div class="section-label"><span>04</span><span>Contact</span></div>
+    <div>
+      <h2 id="contact-title">Contact</h2>
+      <p><a href="mailto:giacomo.fenzi@epfl.ch">giacomo.fenzi@epfl.ch</a></p>
+      <div class="footer-links">
+        <a href="https://dblp.org/pid/350/5799.html" target="_blank" rel="noreferrer">DBLP</a><a href="https://scholar.google.com/citations?user=lnJtN4cAAAAJ" target="_blank" rel="noreferrer">Scholar</a><a href="https://github.com/WizardOfMenlo" target="_blank" rel="noreferrer">GitHub</a><a href="https://twitter.com/GiacomoFenzi" target="_blank" rel="noreferrer">X</a><a href="https://www.linkedin.com/in/giacomo-fenzi/" target="_blank" rel="noreferrer">LinkedIn</a><a href="https://www.youtube.com/@giacomofenzi" target="_blank" rel="noreferrer">YouTube</a>
+      </div>
+      <p class="copyright">© 2026 Giacomo Fenzi.</p>
+    </div>
+  </footer>
+</body>
 </html>
