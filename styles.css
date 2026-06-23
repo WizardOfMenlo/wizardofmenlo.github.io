@@ -91,10 +91,10 @@ img { max-width: 100%; display: block; }
 .section, .site-footer {
   width: min(var(--max), calc(100% - 2rem));
   margin: 0 auto;
-  padding: clamp(5rem, 9vw, 8rem) 0;
+  padding: clamp(2.75rem, 5vw, 4.25rem) 0;
   display: grid;
   grid-template-columns: var(--rail) minmax(0, 1fr);
-  gap: clamp(1.5rem, 5vw, 4rem);
+  gap: clamp(1.25rem, 3.5vw, 3rem);
   border-bottom: 1px solid var(--rule);
 }
 .section-label {
@@ -122,8 +122,8 @@ img { max-width: 100%; display: block; }
 .hero {
   min-height: auto;
   align-items: start;
-  padding-top: clamp(3.25rem, 6vw, 5.5rem);
-  padding-bottom: clamp(4rem, 7vw, 6rem);
+  padding-top: clamp(2rem, 4vw, 3.25rem);
+  padding-bottom: clamp(2.5rem, 5vw, 4rem);
 }
 .hero-grid {
   display: grid;
@@ -209,9 +209,9 @@ h1 {
 .section-head {
   grid-column: 2;
   max-width: 880px;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
-.section-head.compact { margin-top: clamp(3.5rem, 7vw, 6rem); }
+.section-head.compact { margin-top: clamp(2.25rem, 4.5vw, 3.5rem); }
 h2 {
   margin-bottom: .5rem;
   font-family: var(--serif);
@@ -230,7 +230,7 @@ h2 {
 .pub-subhead {
   grid-column: 2;
 }
-.publications-head { margin-bottom: clamp(1.8rem, 4vw, 3rem); }
+.publications-head { margin-bottom: clamp(1.25rem, 3vw, 2rem); }
 .pub-subhead {
   display: flex;
   align-items: center;
@@ -250,7 +250,7 @@ h2 {
   line-height: 1;
   letter-spacing: -.035em;
 }
-.pub-subhead-spaced { margin-top: clamp(3.25rem, 7vw, 5.5rem); }
+.pub-subhead-spaced { margin-top: clamp(2.25rem, 4.5vw, 3.5rem); }
 .selected-list {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -298,7 +298,7 @@ h2 {
 
 .publications-grid {
   display: grid;
-  gap: clamp(2.4rem, 5vw, 4.5rem);
+  gap: clamp(1.75rem, 3.5vw, 3rem);
 }
 .year-block {
   display: grid;
@@ -336,7 +336,7 @@ h2 {
 .talks-layout {
   display: grid;
   grid-template-columns: minmax(260px, .75fr) minmax(0, 1.35fr);
-  gap: clamp(2rem, 6vw, 5rem);
+  gap: clamp(1.75rem, 4vw, 3.25rem);
   align-items: start;
 }
 .talks-group > h3 {
@@ -476,8 +476,8 @@ h2 {
   .section, .site-footer {
     width: min(100% - 1.1rem, var(--max));
     grid-template-columns: 1fr;
-    gap: 1.25rem;
-    padding: 3.25rem 0;
+    gap: .9rem;
+    padding: 2rem 0;
   }
   .section-label {
     position: static;
