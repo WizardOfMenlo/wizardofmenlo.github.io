@@ -433,6 +433,17 @@ h2 {
 .blurb-card h3 { font-size: clamp(1.1rem, 1.5vw, 1.35rem); }
 .blurb-card p { margin-bottom: .55rem; }
 
+.timestamps-content { min-width: 0; }
+.timestamp-list { margin: 0; padding: 0; list-style: none; }
+.timestamp-list li { padding: 1.2rem 0; border-top: 1px solid var(--rule); }
+.timestamp-list p { margin-bottom: .6rem; color: var(--muted); }
+.timestamp-digest {
+  display: block;
+  font-family: var(--mono);
+  font-size: .85rem;
+  overflow-wrap: anywhere;
+}
+
 .site-footer {
   border-bottom: 0;
   padding-bottom: 3rem;
