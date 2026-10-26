@@ -435,6 +435,14 @@ h2 {
 
 .timestamps-content { min-width: 0; }
 .timestamp-list { margin: 0; padding: 0; list-style: none; }
+.section-small {
+  padding: 1.5rem 0 2.5rem;
+  border-top: 1px solid var(--rule);
+  border-bottom: 0;
+  font-size: .9rem;
+}
+.section-small h2 { font-size: clamp(1.4rem, 3vw, 1.9rem); }
+.section-small p { color: var(--muted); }
 .timestamp-list li { padding: 1.2rem 0; border-top: 1px solid var(--rule); }
 .timestamp-list p { margin-bottom: .6rem; color: var(--muted); }
 .timestamp-digest {
